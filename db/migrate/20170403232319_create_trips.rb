@@ -3,6 +3,8 @@ class CreateTrips < ActiveRecord::Migration[5.0]
     create_table :trips do |t|
       t.string :date
       t.integer :rating
+      t.belongs_to :rider
+      t.belongs_to :driver
       t.timestamps
     end
   end

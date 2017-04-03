@@ -3,6 +3,7 @@ class CreateDrivers < ActiveRecord::Migration[5.0]
     create_table :drivers do |t|
       t.string :name
       t.string :vin
+      # t.has_many :trips
       t.timestamps
     end
   end

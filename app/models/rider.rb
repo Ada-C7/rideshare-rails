@@ -1,2 +1,3 @@
-class Passenger < ApplicationRecord
+class Rider < ApplicationRecord
+  has_many :trips
 end

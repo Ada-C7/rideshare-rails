@@ -3,6 +3,7 @@ class CreatePassengers < ActiveRecord::Migration[5.0]
     create_table :passengers do |t|
       t.string :name
       t.string :phone_num
+      # t.has_many :trips
       t.timestamps
     end
   end
