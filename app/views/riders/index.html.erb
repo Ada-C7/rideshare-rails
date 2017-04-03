@@ -3,7 +3,7 @@
 <ul>
   <% @riders.each_with_index do |rider, index| %>
   <li>
-    <%= rider.name %>
+    <%= link_to rider.name, rider_path(rider.id) %>
   </li>
   <% end %>
 </ul>
