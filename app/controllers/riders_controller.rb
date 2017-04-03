@@ -13,6 +13,10 @@ class RidersController < ApplicationController
     redirect_to riders_path
   end
 
+  def show
+    @rider = Rider.find(params[:id])
+  end
+
   private
 
   def rider_params
