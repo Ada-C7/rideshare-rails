@@ -1,0 +1,9 @@
+<h2>List of Riders</h2>
+
+<ul>
+  <% @riders.each_with_index do |rider, index| %>
+  <li>
+    <%= rider.name %>
+  </li>
+  <% end %>
+</ul>
