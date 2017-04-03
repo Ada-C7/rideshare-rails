@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <header>
+      <nav>
+        <%= link_to "List of Riders", riders_path %>
+        <%= link_to "Create New Rider", new_rider_path %>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
