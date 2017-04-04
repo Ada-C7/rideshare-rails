@@ -6,6 +6,7 @@ class CreateTrips < ActiveRecord::Migration[5.0]
       t.integer :passenger_id
       t.integer :rating
       t.string :date
+      t.integer :price
       t.timestamps
     end
   end

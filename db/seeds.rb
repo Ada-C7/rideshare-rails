@@ -16,5 +16,6 @@ csv = CSV.parse(csv_text, :headers => true)
     t.passenger_id = row[2]
     t.date = row[3]
     t.rating = row[4]
+    t.price = rand(1..20)
     t.save
   end
