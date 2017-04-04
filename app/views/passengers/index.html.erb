@@ -3,7 +3,17 @@
 <% all_p = Passenger.all %>
 
 
-
-<% all_p.each do |passenger| %>
-  <%= passenger.name %>
-<% end %>
+<table>
+  <tr>
+    <th>Passenger ID</th>
+    <th>Name</th>
+    <th>Phone</th>
+  </tr>
+  <% all_p.each do |passenger| %>
+  <tr>
+    <td><%= passenger.passenger_id %></td>
+    <td><%= passenger.name %></td>
+    <td><%= passenger.phone_num %></td>
+  </tr>
+  <% end %>
+</table>
