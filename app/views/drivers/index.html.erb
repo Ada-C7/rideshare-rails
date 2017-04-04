@@ -1,0 +1,18 @@
+<h1>All Drivers</h1>
+
+<table>
+  <tr>
+    <th>Driver ID</th>
+    <th>Name</th>
+    <th>VIN</th>
+    <th>Average Rating</th>
+  </tr>
+  <% @drivers.each do |driver| %>
+  <tr>
+    <td><%= driver.driver_id %></td>
+    <td><%= driver.name %></td>
+    <td><%= driver.vin %></td>
+    <td><%= driver.avg_rating %></td>
+  </tr>
+  <% end %>
+</table>
