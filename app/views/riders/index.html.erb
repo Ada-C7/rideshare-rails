@@ -1,6 +1,6 @@
 <h1> List of all riders: </h1>
 <%@riders.each do |rider|%>
 <li>
-  <%= link_to rider.name, rider_path, method:get %>
+  <%= link_to rider.name, rider_path(rider.id) %>
 </li>
 <%end%>
