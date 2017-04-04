@@ -30,7 +30,7 @@ csv.each do |row|
   t = Trip.new
   t.driver_id= row['driver_id'].to_i
   t.rider_id = row['rider_id'].to_i
-  # t.date = row['date']
+  t.date = row['date']
   t.rating = row['rating'].to_i
   t.save
 end

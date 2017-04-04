@@ -20,20 +20,16 @@ class RidersController < ApplicationController
       @rider = Rider.new
   end
 
-
   def create
-    @rider = Rider.new(params[:name] , params[:phone_num])
-
-    respond_to do |format|
+      @rider = Rider.create(rider_params)
       if @rider.save
-        format.html { redirect_to @rider, notice: 'Rider was successfully created.' }
-        format.json { render :show, status: :created, location: @rider }
-      else
-        format.html { render :new }
-        format.json { render json: @rider.errors, status: :unprocessable_entity }
+        redirect_to riders_path
       end
-    end
   end
+
+
+
+
 
   # PATCH/PUT /riders/1
   # PATCH/PUT /riders/1.json
@@ -60,6 +56,14 @@ class RidersController < ApplicationController
   end
 
   private
+
+
+  private
+
+    def rider_params
+      params.require(:rider).permit(:name , :phone_num)
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_rider
       # @rider = Rider.find(params[:id])
