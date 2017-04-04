@@ -23,5 +23,6 @@ class TripsController < ApplicationController
 
   def trip_params
     params.require(:trip).permit(:driver_id, :rider_id, :date, :rating, :cost)
+  end
 
 end
