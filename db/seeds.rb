@@ -7,14 +7,39 @@ require 'csv'
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-CSV.read(('../support/passengers.csv').path, :headers => :true).each do |passenger|
-  Passenger.create(passenger)
+csv_driver = File.read(Rails.root.join('lib', 'seeds', 'drivers.csv'))
+
+csv_d = CSV.parse(csv_driver, :headers => true)
+
+csv_d.each do |row|
+  driver = Driver.new
+  driver.id = row['driver_id']
+  driver.name = row['name']
+  driver.vin = row['vin']
+  driver.save
 end
 
-CSV.read(('../support/drivers.csv').path, :headers => :true).each do |driver|
-  Driver.create(driver)
+csv_passenger = File.read(Rails.root.join('lib', 'seeds', 'passengers.csv'))
+
+csv_p = CSV.parse(csv_passenger, :headers => true)
+
+csv_p.each do |row|
+  passenger = Passenger.new
+  passenger.id = row['passenger_id']
+  passenger.name = row['name']
+  passenger.phone_num = row['phone_num']
+  passenger.save
 end
 
-CSV.read(('../support/trips.csv').path, :headers => :true).each do |trip|
-  Trip.create(trip)
+csv_trip = File.read(Rails.root.join('lib', 'seeds', 'trips.csv'))
+
+csv_t = CSV.parse(csv_trip, :headers => true)
+
+csv_t.each do |row|
+  trip = Trip.new
+  trip.id = row['trip_id']
+  trip.driver_id = row['driver_id']
+  trip.passenger_id = row['passenger_id']
+  trip.date = row['date']
+  trip.rating = row['rating']
 end

@@ -32,8 +32,12 @@ ActiveRecord::Schema.define(version: 20170404190311) do
   create_table "trips", force: :cascade do |t|
     t.string   "date"
     t.integer  "rating"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "driver_id"
+    t.integer  "passenger_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["driver_id"], name: "index_trips_on_driver_id", using: :btree
+    t.index ["passenger_id"], name: "index_trips_on_passenger_id", using: :btree
   end
 
 end
