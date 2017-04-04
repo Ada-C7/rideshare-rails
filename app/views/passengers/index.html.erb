@@ -1,5 +1,9 @@
-<h1>HEADING!</h1>
+<h1>All Passengers!</h1>
 
-<% @passengers.each do |passenger| %>
+<% all_p = Passenger.all %>
+
+
+
+<% all_p.each do |passenger| %>
   <%= passenger.name %>
 <% end %>
