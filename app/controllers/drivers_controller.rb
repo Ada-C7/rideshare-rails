@@ -1,5 +1,9 @@
 class DriversController < ApplicationController
   def index
+    @drivers = Driver.all
+  end
+
+  def show
 
   end
 
@@ -11,9 +15,6 @@ class DriversController < ApplicationController
 
   end
 
-  def show
-
-  end
 
   def edit
 
@@ -26,5 +27,7 @@ class DriversController < ApplicationController
   def destroy
 
   end
+
+
 
 end
