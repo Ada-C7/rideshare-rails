@@ -1,2 +1,6 @@
 <h1> Name: <%= @rider.name %> </h1>
 <h2> ID: <%= @rider.id %> </h2>
+
+<%= link_to "Edit", edit_rider_path(@rider.id) %>
+<%= link_to "Delete", rider_path(@rider), method: :delete,
+    data: {confirm: "Are you sure"} %>
