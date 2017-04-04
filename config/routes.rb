@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  get 'drivers/index'
 
-  get 'riders/index'
+    #DRIVERS
+      get 'drivers/index'
+
+
+    #RIDERS
+      get 'riders/index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
