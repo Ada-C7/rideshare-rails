@@ -4,7 +4,16 @@
 https://pastebin.com/GekBiCYP
 
 ## Automating with Rake Files
+*sources*
+https://stackoverflow.com/questions/12028334/having-trouble-seeding-csv-file-into-rails-app
+
+https://stackoverflow.com/questions/4410794/ruby-on-rails-import-data-from-a-csv-file
+
+https://stackoverflow.com/questions/3346108/how-to-write-rake-task-to-import-data-to-rails-app
+
 *Best Answer* https://stackoverflow.com/questions/12028334/having-trouble-seeding-csv-file-into-rails-app
+
+
 
 ``` ruby  
 require 'csv'
