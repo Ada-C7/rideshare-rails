@@ -1,5 +1,10 @@
-<li>
-  <%=link_to "#{driver.name.capitalize}",driver_path(driver.id)%>
 
+  <table style=" width:80%" >
 
-</li>
+     <% @drivers.each do |item| %>
+        <tr>
+            <td> <%= item.id %> </td>
+            <td> <%=link_to "#{item.name}",driver_path(item.id)%></td>
+            <td> <%= item.vin  %> </td>
+        </tr>
+     <% end %>
