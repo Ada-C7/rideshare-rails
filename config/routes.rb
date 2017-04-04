@@ -8,9 +8,11 @@ Rails.application.routes.draw do
 
     #RIDERS
   resources :riders
-    # member do
-    #   get :delete
-    # end
+
+  get 'riders/new'
+  post 'riders' , to: "riders#create"
+
+  delete 'riders/:id', to: 'riders#destroy'
 
 
 
