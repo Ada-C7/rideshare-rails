@@ -40,3 +40,25 @@ csv.each do |row|
 end
 
 puts "There are now #{Trip.count} rows in the trips table"
+
+
+#what are these parameters actually doing??
+driver_csv = File.read(Rails.root.join('support', 'drivers.csv'))
+driver = CSV.parse(driver_csv, :headers => true, :encoding => 'ISO-8859-1')
+driver.each do |row|
+    d = Driver.new
+    d.name = row['name']
+    d.vin = row['vin']
+    d.save
+end
+puts "There are now #{Driver.count} rows in the drivers table"
+
+rider_csv = File.read(Rails.root.join('support', 'drivers.csv'))
+rider = CSV.parse(rider_csv, :headers => true, :encoding => 'ISO-8859-1')
+rider.each do |row|
+    r = Rider.new
+    r.name = row['name']
+    r.phone_num = row['phone_num']
+    r.save
+end
+puts "There are now #{Rider.count} rows in the riders table"
