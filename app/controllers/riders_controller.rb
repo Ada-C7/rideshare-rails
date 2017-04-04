@@ -4,6 +4,10 @@ class RidersController < ApplicationController
     @riders = Rider.all
   end
 
+  def new
+    @rider = Rider.new
+  end
+
   def create
     @rider = Rider.new(rider_params)
     if @rider.save
@@ -22,10 +26,6 @@ class RidersController < ApplicationController
 
   def edit
     @rider = Rider.find(params[:id])
-  end
-
-  def new
-    @rider = Rider.new
   end
 
   def show

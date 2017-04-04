@@ -7,3 +7,5 @@
 
 <%= button_to "Edit", edit_rider_path(@rider.id)%>
 <%= button_to "Delete", rider_path(@rider.id), method: :delete, data: { confirm: "Are you sure you want to delete #{@rider.name}?"} %>
+
+<%= render partial: "form", locals: {trip: trip} %>

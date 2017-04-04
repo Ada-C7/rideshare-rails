@@ -1,0 +1,15 @@
+<%= form_for @trip do |trip| %>
+  <%= trip.label :rider_id %>
+  <%= trip.text_field :rider_id %>
+
+  <%= trip.label :driver_id %>
+  <%= trip.text_field :driver_id %>
+
+  <%= trip.label :date %>
+  <%= trip.text_field :date %>
+
+  <%= trip.label :rating %>
+  <%= trip.text_field :rating %>
+
+  <%= trip.submit value: "#{action_name} Trip" %>
+<% end %>
