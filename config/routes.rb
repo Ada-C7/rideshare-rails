@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root "riders#index"
+  resources :drivers
+
   resources :riders
 
   root "trips#index" #root defaults to first one
