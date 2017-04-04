@@ -5,11 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-drivers = []
-      CSV.foreach("support/drivers.csv", {:headers => true, header_converters: :symbol, converters: :all}) do |line|
-          drivers << RideShare::Driver.new(line)
-      end
+require 'csv'
 
-      authors.each do |author|
-        Author.create(author)
-      end
+csv_text = File.read(Rails.root.join('support', 'trips.csv' ))
+csv = CSV.parse(csv_text, :headers => true)
+  csv.each do |row|
+    t = Trip.new
+    t.id = row[0]
+    t.driver_id = row[1]
+    t.passenger_id = row[2]
+    t.date = row[3]
+    t.rating = row[4]
+    t.save
+  end
