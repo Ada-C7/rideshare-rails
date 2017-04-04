@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'csv'
+
+driver_info = File.read(Rails.root.join('db', 'CSV', 'drivers.csv'))
+user_info = File.read(Rails.root.join('db', 'CSV', 'riders.csv'))
+trip_info = File.read(Rails.root.join('db', 'CSV', 'trips.csv'))
