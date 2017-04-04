@@ -20,15 +20,15 @@ require 'csv'
 #   end
 # end
 
-passengers_array = []
-CSV.read("support/passengers.csv", headers: true).map do |line|
-  passenger = {name: line[1], phone: line[2]}
-  passengers_array << passenger
+drivers_array = []
+CSV.read("support/drivers.csv", headers: true).map do |line|
+  driver = {name: line[1], vin: line[2]}
+  drivers_array << driver
 end
 
-passengers_array.each do |passenger|
-  newp = Passenger.create(passenger)
-  if !newp.id
-    puts "couldn't create passenger #{passenger.name}"
+drivers_array.each do |driver|
+  newd = Driver.create(driver)
+  if !newd.id
+    puts "couldn't create driver #{driver.name}"
   end
 end
