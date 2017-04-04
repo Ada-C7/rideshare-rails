@@ -27,3 +27,22 @@ drivers = [
 drivers.each do |driver|
   Driver.create(driver)
 end
+
+passengers = [
+  {
+    name: "Addie",
+    phone: "555-5555"
+  },
+  {
+    name: "Janice",
+    phone: "555-3333"
+  },
+  {
+    name: "BlahBlah",
+    phone: "blahblah"
+  }
+]
+
+passengers.each do |passenger|
+  Passenger.create(passenger)
+end
