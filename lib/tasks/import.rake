@@ -45,6 +45,7 @@ namespace :csv do
         :rider_id => row[2],
         :date => row[3],
         :rating=> row[4],
+        :cost => rand(1..100)
       })
       puts "Row added!"
     end
