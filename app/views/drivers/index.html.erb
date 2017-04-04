@@ -15,12 +15,13 @@
       <p id = "index_diver_info">
           <%#= link_to driver.name, driver_path(driver.id) %>
           <%= driver.name %>, <%= driver.vin %>
-      </p>
-      <!-- <p id = "index_driver_buttons">
+      </p id = "index_driver_buttons">
+      <p id = "index_driver_buttons">
+        <%= link_to "Show", driver_path(driver), class: "button_link"%>
         <%#= link_to image_tag("edit1.png", alt: "Edit button", class: "button_image"), edit_animal_path(animal), class: "button_link"%>
         <%#= link_to image_tag("delete_blue1.png", alt: "Delete button", class: "button_image"), animal_path(animal),
         data: {method: :delete, confirm: "Are you sure you want to remove #{animal.name} from the list?"}, class: "button_link"%>
-      </p> -->
+      </p>
     </section>
     <% end %>
   </nav>
