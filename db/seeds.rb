@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+passengers = [
+  {
+    name: "Sandi Metz"
+  },
+  {
+    name: "Chantal"
+  }
+]
+
+passengers.each do |passenger|
+  Passenger.create(passenger)
+end
