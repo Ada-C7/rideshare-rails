@@ -4,6 +4,9 @@
 <div id = "index_site">
   <section id = "index_first_section">
     <h1 id = "index_header_text">List of all drivers</h1>
+    <p id = "index_add_button">
+      <%= link_to "Add driver", new_driver_path, class: "button_link"%>
+    </p>
   </section>
 
   <nav>
@@ -18,9 +21,9 @@
       </p id = "index_driver_buttons">
       <p id = "index_driver_buttons">
         <%= link_to "Show", driver_path(driver), class: "button_link"%>
-        <%#= link_to image_tag("edit1.png", alt: "Edit button", class: "button_image"), edit_animal_path(animal), class: "button_link"%>
-        <%#= link_to image_tag("delete_blue1.png", alt: "Delete button", class: "button_image"), animal_path(animal),
-        data: {method: :delete, confirm: "Are you sure you want to remove #{animal.name} from the list?"}, class: "button_link"%>
+        <%= link_to "Edit", edit_driver_path(driver), class: "button_link"%>
+        <%= link_to "Delete", driver_path(driver),
+        data: {method: :delete, confirm: "Are you sure you want to delete #{driver.name} from the list?"}, class: "button_link"%>
       </p>
     </section>
     <% end %>
