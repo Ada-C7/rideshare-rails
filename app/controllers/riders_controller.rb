@@ -6,4 +6,8 @@ class RidersController < ApplicationController
   def show
     @rider = Rider.find(params[:id])
   end
+
+  def new
+    @rider = Rider.new
+  end
 end
