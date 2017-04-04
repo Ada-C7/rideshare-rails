@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'riders/index'
+
   root "trips#index"
   resources :trips
 
