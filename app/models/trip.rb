@@ -4,5 +4,5 @@ class Trip < ApplicationRecord
 
   validates :driver_id, exclusion: { in: [0] }, presence: true
   validates :user_id, exclusion: { in: [0] }, presence: true
-  validate :rating, length: { in: 0..5 }, presence: true
+  validates :rating, length: { in: 0..5 }, presence: true
 end
