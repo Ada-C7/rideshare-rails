@@ -1,0 +1,11 @@
+<h2> Who Rides With Us? (Also, You.) </h2>
+
+<ul>
+  <% @drivers.each do |driver| %>
+  <li>
+    <%= link_to driver.name, driver_path(driver.id) %>
+  </li>
+  <% end %>
+</ul>
+
+<%= button_to "Add new driver", new_driver_path %>

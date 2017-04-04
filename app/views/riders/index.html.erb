@@ -4,8 +4,9 @@
   <% @riders.each do |rider| %>
   <li>
     <%= link_to rider.name, rider_path(rider.id) %>
-    <%= link_to "Edit Rider", edit_rider_path(rider.id)%>
-    <%= button_to "Delete", rider_path(rider.id), method: :delete, data: { confirm: "Are you sure you want to delete #{rider.name}?"} %>
+
   </li>
   <% end %>
 </ul>
+
+<%= button_to "Add new rider", new_rider_path %>
