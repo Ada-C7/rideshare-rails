@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
     #DRIVERS
-      get 'drivers/index'
+      get 'drivers', to: 'drivers#index', as: 'drivers'
+
+
 
 
     #RIDERS

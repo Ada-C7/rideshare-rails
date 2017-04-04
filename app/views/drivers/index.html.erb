@@ -1,2 +1,27 @@
 <h1>Drivers#index</h1>
 <p>Find me in app/views/drivers/index.html.erb</p>
+
+<div id = "index_site">
+  <section id = "index_first_section">
+    <h1 id = "index_header_text">List of all drivers</h1>
+  </section>
+
+  <nav>
+    <% @drivers.each do |driver| %>
+    <section id = "index_list_section">
+      <!-- <p id = "index_animal_name">
+        <%#= link_to animal.name, animal_path(animal.id) %>
+      </p> -->
+      <p id = "index_diver_info">
+          <%#= link_to driver.name, driver_path(driver.id) %>
+          <%= driver.name %>, <%= driver.vin %>
+      </p>
+      <!-- <p id = "index_driver_buttons">
+        <%#= link_to image_tag("edit1.png", alt: "Edit button", class: "button_image"), edit_animal_path(animal), class: "button_link"%>
+        <%#= link_to image_tag("delete_blue1.png", alt: "Delete button", class: "button_image"), animal_path(animal),
+        data: {method: :delete, confirm: "Are you sure you want to remove #{animal.name} from the list?"}, class: "button_link"%>
+      </p> -->
+    </section>
+    <% end %>
+  </nav>
+</div>

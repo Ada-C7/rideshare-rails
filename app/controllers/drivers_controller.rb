@@ -1,6 +1,7 @@
 class DriversController < ApplicationController
   def index
-
+    puts ">>>>>>amb<<<<<<<<:  Inside tasks index!"
+    @drivers = Driver.all
   end
 
   def new
