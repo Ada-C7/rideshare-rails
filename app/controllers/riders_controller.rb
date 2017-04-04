@@ -8,9 +8,13 @@ class RidersController < ApplicationController
   end
 
   def create
-    Rider.create(rider_params)
+    @rider = Rider.create(rider_params)
 
-    redirect_to riders_path
+    if @rider.save
+      redirect_to riders_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -22,11 +26,14 @@ class RidersController < ApplicationController
   end
 
   def update
-    rider = Rider.find(params[:id])
-    rider.update_attributes(rider_params)
-    rider.save
+    @rider = Rider.find(params[:id])
+    @rider.update_attributes(rider_params)
 
-    redirect_to riders_path(rider)
+    if @rider.save
+      redirect_to riders_path(@rider)
+    else
+      render :edit
+    end
   end
 
   def destroy
