@@ -17,6 +17,23 @@ namespace :csv do
     end
   end
 
+
+  desc "Import CSV Data"
+  task :import_stuff => :environment do
+
+    csv_file_path = 'support/drivers.csv'
+
+    CSV.foreach(csv_file_path) do |row|
+      Driver.create!({
+        :id => row[0],
+        :name => row[1],
+        :vin => row[2],
+      })
+      puts "Row added!"
+    end
+  end
+
+
   task :import_stuff => :environment do
 
     csv_file_path = 'support/trips.csv'
@@ -33,19 +50,6 @@ namespace :csv do
     end
   end
 
-  desc "Import CSV Data"
-  task :import_stuff => :environment do
 
-    csv_file_path = 'support/drivers.csv'
-
-    CSV.foreach(csv_file_path) do |row|
-      Driver.create!({
-        :id => row[0],
-        :name => row[1],
-        :vin => row[2],
-      })
-      puts "Row added!"
-    end
-  end
 
 end
