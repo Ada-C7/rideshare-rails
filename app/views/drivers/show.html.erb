@@ -1,0 +1,9 @@
+<h2>
+  <%= "Who Drives With Us? The answer is  #{@driver.name.upcase}!" %>
+</h2>
+
+<%= "Name:  #{@driver.name}" %> <br>
+<%= "VIN: #{@driver.vin}" %>
+
+<%= button_to "Edit", edit_driver_path(@driver.id)%>
+<%= button_to "Delete", driver_path(@driver.id), method: :delete, data: { confirm: "Are you sure you want to delete #{@driver.name}?"} %>
