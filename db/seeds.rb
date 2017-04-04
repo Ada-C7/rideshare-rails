@@ -18,14 +18,27 @@ require 'csv'
 #   r.phone_num = row["phone_num"]
 #   r.save
 # end
+#
+# csv_text = File.read(Rails.root.join('support', 'drivers.csv'))
+#
+# csv = CSV.parse(csv_text, :headers => true)
+# csv.each do |row|
+#   r = Driver.new
+#   r.id = row['driver_id']
+#   r.name = row['name']
+#   r.vin = row["vin"]
+#   r.save
+# end
 
-csv_text = File.read(Rails.root.join('support', 'drivers.csv'))
+csv_text = File.read(Rails.root.join('support', 'trips.csv'))
 
 csv = CSV.parse(csv_text, :headers => true)
 csv.each do |row|
-  r = Driver.new
-  r.id = row['driver_id']
-  r.name = row['name']
-  r.vin = row["vin"]
+  r = Trip.new
+  r.id = row['trip_id']
+  r.driver_id = row['driver_id']
+  r.rider_id = row['rider_id']
+  r.date = row['date']
+  r.rating = row["rating"]
   r.save
 end
