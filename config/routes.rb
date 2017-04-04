@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
     #RIDERS
   resources :riders
+    # member do
+    #   get :delete
+    # end
 
 
 

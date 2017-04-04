@@ -1,4 +1,4 @@
-<h1>Riders#index</h1>
+<h1>Riders index</h1>
 <table>
   <thead>
     <tr>
@@ -23,7 +23,7 @@
 
 
        <td class="actions">
-         <%= link_to("Show", 'rider_path(rider)', :class => 'action show') %>
+
          <%= link_to("Edit", '#', :class => 'action edit') %>
          <%= link_to("Delete", '#', :class => 'action delete') %>
        </td>
@@ -32,5 +32,4 @@
    </table>
  </div>
 
-
-  <%= link_to("Add New Rider", 'new_rider_path', :class => 'action new') %>
+<%= link_to('Add New Rider' , { :action => 'new'})%>
