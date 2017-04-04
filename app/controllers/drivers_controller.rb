@@ -1,4 +1,4 @@
-class DriverController < ApplicationController
+class DriversController < ApplicationController
   def index
     @drivers = Driver.all
   end
@@ -14,7 +14,7 @@ class DriverController < ApplicationController
 
   def show
     id = params[:id].to_i
-    @driver = Driver.find(id) 
+    @driver = Driver.find(id)
   end
 
   def edit
