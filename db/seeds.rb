@@ -29,3 +29,13 @@ csv = CSV.parse(csv_text, :headers => true)
       t.phone_num = row[2]
       t.save
     end
+
+    csv_text_driver = File.read(Rails.root.join('support', 'drivers.csv' ))
+    csv_driver = CSV.parse(csv_text_driver, :headers => true)
+      csv_driver.each do |row|
+        t = Driver.new
+        t.id = row[0]
+        t.name = row[1]
+        t.vin = row[2]
+        t.save
+      end
