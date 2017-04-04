@@ -19,3 +19,13 @@ csv = CSV.parse(csv_text, :headers => true)
     t.price = rand(1..20)
     t.save
   end
+
+  csv_text_passenger = File.read(Rails.root.join('support', 'passengers.csv' ))
+  csv_passenger = CSV.parse(csv_text_passenger, :headers => true)
+    csv_passenger.each do |row|
+      t = Passenger.new
+      t.id = row[0]
+      t.name = row[1]
+      t.phone_num = row[2]
+      t.save
+    end
