@@ -22,7 +22,7 @@ class RidersController < ApplicationController
 
 
   def create
-    @rider = Rider.new(rider_params)
+    @rider = Rider.new(params[:name] , params[:phone_num])
 
     respond_to do |format|
       if @rider.save
