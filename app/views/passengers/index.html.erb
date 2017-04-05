@@ -1,15 +1,12 @@
 <h1>All Passengers!</h1>
 
-<% all_p = Passenger.all %>
-
-
 <table>
   <tr>
     <th>Passenger ID</th>
     <th>Name</th>
     <th>Phone</th>
   </tr>
-  <% all_p.each do |passenger| %>
+  <% @passengers.each do |passenger| %>
   <tr>
     <td><%= passenger.passenger_id %></td>
     <td><%= passenger.name %></td>

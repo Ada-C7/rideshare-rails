@@ -20,3 +20,15 @@ CSV.foreach("support/drivers.csv", :headers => true) do |line|
 
   puts "#{d.name} saved"
 end
+
+CSV.foreach("support/trips.csv", :headers => true) do |line|
+  t = Trip.new
+  t.trip_id = line[0].to_i
+  t.driver_id = line[1].to_i
+  t.passenger_id = line[2].to_i
+  t.date = line[3].to_s
+  t.rating = line[4].to_i
+  t.save
+
+  puts "#{t.trip_id} saved"
+end

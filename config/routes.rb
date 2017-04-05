@@ -6,5 +6,5 @@ root "passengers#index"
 
 resources :passengers
 resources :drivers
-# resources :trips
+resources :trips
 end

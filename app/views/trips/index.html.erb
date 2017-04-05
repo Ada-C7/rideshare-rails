@@ -1,0 +1,20 @@
+<h1>All Trips!</h1>
+
+<table>
+  <tr>
+    <th>Trip ID</th>
+    <th>Driver ID</th>
+    <th>Passenger ID</th>
+    <th>Date</th>
+    <th>Rating</th>
+  </tr>
+  <% @trips.each do |trip| %>
+  <tr>
+    <td><%= trip.trip_id %></td>
+    <td><%= trip.driver_id %></td>
+    <td><%= trip.passenger_id %></td>
+    <td><%= trip.date %></td>
+    <td><%= trip.rating %></td>
+  </tr>
+  <% end %>
+</table>
