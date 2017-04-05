@@ -46,3 +46,28 @@ passengers = [
 passengers.each do |passenger|
   Passenger.create(passenger)
 end
+
+trips = [
+  {
+    cost: 5.50,
+    rating: 3,
+    driver_id: 1,
+    passenger_id: 2
+  },
+  {
+    cost: 7.55,
+    rating: 5,
+    driver_id: 2,
+    passenger_id: 1
+  },
+  {
+    cost: 15.50,
+    rating: 4,
+    driver_id: 3,
+    passenger_id: 3
+  },
+]
+
+trips.each do |trip|
+  Trip.create(trip)
+end

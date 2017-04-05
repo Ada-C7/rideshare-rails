@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170404230836) do
+ActiveRecord::Schema.define(version: 20170405230215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,18 @@ ActiveRecord::Schema.define(version: 20170404230836) do
     t.string   "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.datetime "date"
+    t.decimal  "cost"
+    t.integer  "rating"
+    t.integer  "driver_id"
+    t.integer  "passenger_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["driver_id"], name: "index_trips_on_driver_id", using: :btree
+    t.index ["passenger_id"], name: "index_trips_on_passenger_id", using: :btree
   end
 
 end
