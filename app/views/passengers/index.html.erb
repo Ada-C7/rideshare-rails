@@ -1,5 +1,7 @@
 <h1>Here are the rideshare passengers...</h1>
 
+<%= button_to "Add an new passenger", new_passenger_path, method: :get %>
+
 <ol>
   <% @passengers.each do |passenger| %>
 
