@@ -4,7 +4,12 @@
   </h1>
   <%#= image_tag(@animal.image_pathway, alt: "Image not available", id: "show_image")%>
   <p>
-    <%= @rider.name%>, <%= @rider.phone_num%>, <%= @rider.phone_num%>
+    <%= @rider.name%>, <%= @rider.phone_num%>
+  </p>
+
+  <p>
+    <%= @rider.average_rating%>
+
   </p>
   <p id = "show_about_text">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -28,10 +33,7 @@
     <% end %>
   </table>
 
-  <p>
-      <% @rider.trips.each do |trip| %>
-      ,
-  </p>
+
 
   <%#= link_to image_tag("left1.png", alt: "Back button", class: "button_image"), animals_path%>
   <%#= link_to image_tag("edit1.png", alt: "Edit button", class: "button_image"), edit_animal_path%>
