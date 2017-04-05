@@ -1,2 +1,22 @@
-<h1>Trips#index</h1>
-<p>Find me in app/views/trips/index.html.erb</p>
+<h1>Trips</h1>
+
+<table>
+  <tr>
+    <th>Trip ID</th>
+    <th>Driver</th>
+    <th>Rider</th>
+    <th>Date</th>
+    <th>Fare</th>
+    <th>Rating</th>
+  </tr>
+  <% @trips.each do |trip| %>
+    <tr>
+      <td><%= link_to trip.id, trip_path(trip.id), method: :get %></td>
+      <td><%= trip.driver.name %></td>
+      <td><%= trip.rider.name %></td>
+      <td><%= trip.date %></td>
+      <td>$<%= trip.fare %></td>
+      <td><%= trip.rating %></td>
+    </tr>
+  <% end %>
+</table>

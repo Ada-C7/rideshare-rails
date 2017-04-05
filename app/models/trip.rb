@@ -4,6 +4,5 @@ class Trip < ApplicationRecord
 
   validates :driver_id, presence: true
   validates :rider_id, presence: true
-  validates :date, presence: true
   validates :fare, presence: true
 end

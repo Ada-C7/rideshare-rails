@@ -53,11 +53,14 @@ end
 # create new trip objects from array
 failed_trip_count = 0
 trips.each do |trip|
+  next if trip[:driver_id] == 0 || trip[:rider_id] == 0
   current_trip = Trip.create(trip)
 
   if !current_trip.id
     failed_trip_count += 1
-    puts "#{current_trip.name} failed to add"
+    puts "Failed to add Driver ID: #{trip[:driver_id]}, Rider ID: #{trip[:rider_id]}, Date: #{trip[:date]}"
   end
 end
 puts "#{failed_trip_count} out of #{trips.length} trips not successfully added"
+
+# Failed to add Driver ID: 61, Rider ID: 168, Date: 4/25/16
