@@ -8298,3 +8298,258 @@ Processing by DriversController#show as HTML
 Completed 200 OK in 61ms (Views: 49.1ms | ActiveRecord: 8.5ms)
 
 
+Started GET "/drivers/" for ::1 at 2017-04-05 15:44:20 -0700
+Processing by DriversController#index as HTML
+  Rendering drivers/index.html.erb within layouts/application
+  [1m[36mDriver Load (5.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  Rendered drivers/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 61ms (Views: 51.7ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/drivers/95" for ::1 at 2017-04-05 15:47:20 -0700
+Processing by DriversController#show as HTML
+  Parameters: {"id"=>"95"}
+  [1m[36mDriver Load (0.4ms)[0m  [1m[34mSELECT  "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 95], ["LIMIT", 1]]
+  Rendering drivers/show.html.erb within layouts/application
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."driver_id" = $1[0m  [["driver_id", 95]]
+  Rendered drivers/show.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 65ms (Views: 44.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/drivers/" for ::1 at 2017-04-05 15:47:24 -0700
+Processing by DriversController#index as HTML
+  Rendering drivers/index.html.erb within layouts/application
+  [1m[36mDriver Load (0.8ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  Rendered drivers/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 38ms (Views: 34.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/drivers/" for ::1 at 2017-04-05 15:48:53 -0700
+Processing by DriversController#index as HTML
+  Rendering drivers/index.html.erb within layouts/application
+  [1m[36mDriver Load (0.6ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  Rendered drivers/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 49ms (Views: 42.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/drivers/29" for ::1 at 2017-04-05 15:48:54 -0700
+Processing by DriversController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mDriver Load (0.9ms)[0m  [1m[34mSELECT  "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering drivers/show.html.erb within layouts/application
+  [1m[36mTrip Load (0.6ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."driver_id" = $1[0m  [["driver_id", 29]]
+  Rendered drivers/show.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 74ms (Views: 67.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/drivers/29/edit" for ::1 at 2017-04-05 15:49:01 -0700
+Processing by DriversController#edit as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mDriver Load (0.3ms)[0m  [1m[34mSELECT  "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering drivers/edit.html.erb within layouts/application
+  Rendered drivers/_form.html.erb (3.6ms)
+  Rendered drivers/edit.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 35ms (Views: 32.0ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/drivers/29" for ::1 at 2017-04-05 15:49:04 -0700
+Processing by DriversController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2pc0eWGAdNr07nOH8g+WoToPugWIurRhiuKmkV7Vr6Vxf+kRAxwJ+Nj4wl29rbvdyj/lCG4UGtVWleAHoyEsEA==", "driver"=>{"name"=>"Ms. Carmelo Swaniawski", "vin"=>"9BENHE4130KV2P38S"}, "commit"=>"Submit", "id"=>"29"}
+  [1m[36mDriver Load (0.4ms)[0m  [1m[34mSELECT  "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDriver Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 AND ("drivers"."id" != $2) LIMIT $3[0m  [["vin", "9BENHE4130KV2P38S"], ["id", 29], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/drivers/29
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/drivers/29" for ::1 at 2017-04-05 15:49:04 -0700
+Processing by DriversController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mDriver Load (0.2ms)[0m  [1m[34mSELECT  "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering drivers/show.html.erb within layouts/application
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."driver_id" = $1[0m  [["driver_id", 29]]
+  Rendered drivers/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 24ms (Views: 20.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/drivers/29" for ::1 at 2017-04-05 16:11:42 -0700
+Processing by DriversController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mDriver Load (0.5ms)[0m  [1m[34mSELECT  "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering drivers/show.html.erb within layouts/application
+  [1m[36mTrip Load (0.5ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."driver_id" = $1[0m  [["driver_id", 29]]
+  Rendered drivers/show.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 88ms (Views: 60.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/drivers/29/edit" for ::1 at 2017-04-05 16:11:46 -0700
+Processing by DriversController#edit as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mDriver Load (0.6ms)[0m  [1m[34mSELECT  "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering drivers/edit.html.erb within layouts/application
+  Rendered drivers/_form.html.erb (2.7ms)
+  Rendered drivers/edit.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 33ms (Views: 29.4ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/drivers/29" for ::1 at 2017-04-05 16:11:48 -0700
+Processing by DriversController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1OfgOrCwB5NVqSKZcYbU2Eerm/zDPIFKt/nJydBGb59/Dz1S0ix6sXm/k0M+JPmkt5vE8SWSL/5rjo9fLbLsKg==", "driver"=>{"name"=>"Ms. Carmelo Swaniawsk", "vin"=>"9BENHE4130KV2P38S"}, "commit"=>"Submit", "id"=>"29"}
+  [1m[36mDriver Load (0.5ms)[0m  [1m[34mSELECT  "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDriver Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 AND ("drivers"."id" != $2) LIMIT $3[0m  [["vin", "9BENHE4130KV2P38S"], ["id", 29], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "drivers" SET "name" = $1, "updated_at" = $2 WHERE "drivers"."id" = $3[0m  [["name", "Ms. Carmelo Swaniawsk"], ["updated_at", 2017-04-05 23:11:48 UTC], ["id", 29]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/drivers/29
+Completed 302 Found in 19ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/drivers/29" for ::1 at 2017-04-05 16:11:48 -0700
+Processing by DriversController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mDriver Load (0.5ms)[0m  [1m[34mSELECT  "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering drivers/show.html.erb within layouts/application
+  [1m[36mTrip Load (0.6ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."driver_id" = $1[0m  [["driver_id", 29]]
+  Rendered drivers/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 28ms (Views: 23.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/drivers/29/edit" for ::1 at 2017-04-05 16:12:04 -0700
+Processing by DriversController#edit as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mDriver Load (0.3ms)[0m  [1m[34mSELECT  "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering drivers/edit.html.erb within layouts/application
+  Rendered drivers/_form.html.erb (2.7ms)
+  Rendered drivers/edit.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 52ms (Views: 23.5ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/drivers/29" for ::1 at 2017-04-05 16:12:07 -0700
+Processing by DriversController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vBQP/GkFcLrIce1Yr//JlEI+2r6ILJHbhcFrc43mGKYX/NKUC5kNmORnXILgXeTosg6Fs26CP29Zti3lcBKbEw==", "driver"=>{"name"=>"Ms. Carmelo Swaniawski", "vin"=>"9BENHE4130KV2P38S"}, "commit"=>"Submit", "id"=>"29"}
+  [1m[36mDriver Load (0.5ms)[0m  [1m[34mSELECT  "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDriver Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 AND ("drivers"."id" != $2) LIMIT $3[0m  [["vin", "9BENHE4130KV2P38S"], ["id", 29], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "drivers" SET "name" = $1, "updated_at" = $2 WHERE "drivers"."id" = $3[0m  [["name", "Ms. Carmelo Swaniawski"], ["updated_at", 2017-04-05 23:12:07 UTC], ["id", 29]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/drivers/29
+Completed 302 Found in 9ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/drivers/29" for ::1 at 2017-04-05 16:12:07 -0700
+Processing by DriversController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mDriver Load (0.9ms)[0m  [1m[34mSELECT  "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering drivers/show.html.erb within layouts/application
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."driver_id" = $1[0m  [["driver_id", 29]]
+  Rendered drivers/show.html.erb within layouts/application (155.1ms)
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 5.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `delete_driver_path' for #<#<Class:0x007fc724dda4d0>:0x007fc72863e3a8>
+Did you mean?  edit_driver_path):
+    11:   Current Rating: <%= @result_driver.rating %>
+    12: </p>
+    13: 
+    14: <%= link_to "Delete", delete_driver_path(@result_driver.id), method: :delete,
+    15:       data: { confirm: "Are you sure you want to delete?"}
+    16:  %>
+  
+app/views/drivers/show.html.erb:14:in `_app_views_drivers_show_html_erb___3425787271727299815_70246676428480'
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.3ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (66.6ms)
+Started GET "/drivers/29" for ::1 at 2017-04-05 16:12:30 -0700
+Processing by DriversController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mDriver Load (0.4ms)[0m  [1m[34mSELECT  "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering drivers/show.html.erb within layouts/application
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."driver_id" = $1[0m  [["driver_id", 29]]
+  Rendered drivers/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 23ms (Views: 19.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/drivers/29" for ::1 at 2017-04-05 16:12:34 -0700
+Processing by DriversController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mDriver Load (0.3ms)[0m  [1m[34mSELECT  "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  Rendering drivers/show.html.erb within layouts/application
+  [1m[36mTrip Load (0.6ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."driver_id" = $1[0m  [["driver_id", 29]]
+  Rendered drivers/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 45ms (Views: 40.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/drivers/" for ::1 at 2017-04-05 16:12:37 -0700
+Processing by DriversController#index as HTML
+  Rendering drivers/index.html.erb within layouts/application
+  [1m[36mDriver Load (0.6ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  Rendered drivers/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 33ms (Views: 30.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/drivers/new" for ::1 at 2017-04-05 16:12:40 -0700
+Processing by DriversController#new as HTML
+  Rendering drivers/new.html.erb within layouts/application
+  Rendered drivers/_form.html.erb (1.6ms)
+  Rendered drivers/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/drivers" for ::1 at 2017-04-05 16:12:49 -0700
+Processing by DriversController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0cQiv6h39WkORW6IVYVxpLMFFlGU1fPvtVU9r83v54J6LP/XyuuISyJT31IaJ1zYQzVJXHJ7XVtpIns5MBtkNw==", "driver"=>{"name"=>"blah blah", "vin"=>"djfhsjdndhsgbtnhs"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDriver Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 LIMIT $2[0m  [["vin", "djfhsjdndhsgbtnhs"], ["LIMIT", 1]]
+  [1m[35mSQL (2.1ms)[0m  [1m[32mINSERT INTO "drivers" ("name", "vin", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "blah blah"], ["vin", "djfhsjdndhsgbtnhs"], ["created_at", 2017-04-05 23:12:49 UTC], ["updated_at", 2017-04-05 23:12:49 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDriver Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "drivers" WHERE "drivers"."vin" = $1 AND ("drivers"."id" != $2) LIMIT $3[0m  [["vin", "djfhsjdndhsgbtnhs"], ["id", 103], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/drivers
+Completed 302 Found in 11ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/drivers" for ::1 at 2017-04-05 16:12:49 -0700
+Processing by DriversController#index as HTML
+  Rendering drivers/index.html.erb within layouts/application
+  [1m[36mDriver Load (0.6ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  Rendered drivers/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/drivers/103" for ::1 at 2017-04-05 16:12:58 -0700
+Processing by DriversController#show as HTML
+  Parameters: {"id"=>"103"}
+  [1m[36mDriver Load (0.4ms)[0m  [1m[34mSELECT  "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 103], ["LIMIT", 1]]
+  Rendering drivers/show.html.erb within layouts/application
+  [1m[36mTrip Load (0.7ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."driver_id" = $1[0m  [["driver_id", 103]]
+  Rendered drivers/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 44ms (Views: 38.5ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/drivers/103" for ::1 at 2017-04-05 16:13:01 -0700
+Processing by DriversController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3FM+4Pg4ZrBHY+Rft6fo4Sw+hzwJjgPGCijxVBBAraV3u+OImqQbkmt1VYX4BcWd3A7YMe8grXLWX7fC7bQuEA==", "id"=>"103"}
+  [1m[36mDriver Load (0.6ms)[0m  [1m[34mSELECT  "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT $2[0m  [["id", 103], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "drivers" WHERE "drivers"."id" = $1[0m  [["id", 103]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/drivers
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/drivers" for ::1 at 2017-04-05 16:13:01 -0700
+Processing by DriversController#index as HTML
+  Rendering drivers/index.html.erb within layouts/application
+  [1m[36mDriver Load (0.5ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  Rendered drivers/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.5ms)
+
+
