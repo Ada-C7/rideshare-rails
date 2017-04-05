@@ -8,4 +8,4 @@
 <%= button_to "Edit", edit_rider_path(@rider.id), method: :get%>
 <%= button_to "Delete", rider_path(@rider.id), method: :delete, data: { confirm: "Are you sure you want to delete #{@rider.name}?"} %>
 
-<%=link_to "Add trip", new_trip_path%>
+<%= button_to "Add new trip", new_trip_path, method: :get%>
