@@ -1,0 +1,16 @@
+<h2>Create a new passenger:</h2>
+
+<section>
+
+<%= form_for @passenger do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :phone_number %>
+<%= f.text_field :phone_number %>
+
+<%= f.submit value:"Create"%>
+
+<% end %>
+</section>
