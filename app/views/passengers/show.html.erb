@@ -2,9 +2,8 @@
   <h3>Name: <%= @passenger[:name] %> <br> Phone Number: <%= @passenger[:phone_num] %></h3>
 
 <h3>Trips:</h3>
-<% array = @passenger.trips %>
-<% array.each do |trip| %>
+<% @passenger.trips.each do |trip| %>
   <%= link_to trip.id, trip_path(trip.id) %>
 <% end %>
 
-<h3>Total amount charged: <%= @passenger.total_amount_charged %></h3>
+<h3>Total amount charged: $<%= @passenger.total_amount_charged %></h3>
