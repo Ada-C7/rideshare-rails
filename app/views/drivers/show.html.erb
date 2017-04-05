@@ -1,3 +1,17 @@
+<h1>Drivers's info</h1>
+<p>Name: <%=@driver.name%></p>
+<p>Vehicle Identification number: <%=@driver.vin%></p>
+<p>Total amount earned: <%=@driver.total_amount%></p>
+<%= link_to "Back to list", drivers_path%>
 
+<h2>Driver's trip list</h2>
+<%@driver.trips.each do |trip|%>
+  <ul>
+    <li>Date: <%=trip.date%></li>
+    <li>Rating: <%=trip.rating%></li>
+    <li>Cost: <%=trip.cost%></li>
+  </ul>
+<%end%>
 
-      </table>
+<%= link_to "Edit driver", edit_driver_path%>
+<%= button_to 'Delete driver', driver_path(@driver.id), method: :delete, data: {confirm: 'Are you sure?' } %>

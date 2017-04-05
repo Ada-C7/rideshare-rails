@@ -1,0 +1,16 @@
+<section>
+  <%= form_for @driver do |f| %>
+
+  <%= f.label  "Driver # #{@driver.id}"%>
+  Name: <%= f.text_field :name%>
+  Vehicle Identification Number: <%= f.text_field :vin %>
+  <%= f.submit value: "#{submit_text}"%>
+<br>
+<br>
+
+  <% end %>
+
+
+
+  <%=link_to "Return Home", drivers_path%>
+</section>
