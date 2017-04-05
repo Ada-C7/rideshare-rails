@@ -9875,3 +9875,508 @@ Migrating to AddDateTrip (20170404235634)
   [1m[36mDriver Load (0.4ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
   [1m[36mTrip Load (1.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips"[0m
+Started GET "/tasks" for ::1 at 2017-04-04 23:24:56 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/tasks"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (4.4ms)
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.2ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (9.8ms)
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (108.2ms)
+Started GET "/" for ::1 at 2017-04-04 23:24:58 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (3.6ms)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2017-04-04 23:25:08 -0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 562ms (Views: 550.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2017-04-04 23:26:12 -0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 44ms (Views: 30.7ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/users" for ::1 at 2017-04-04 23:26:59 -0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users" for ::1 at 2017-04-04 23:27:17 -0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-04 23:30:07 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 35ms (Views: 29.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-04 23:33:15 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1/edit" for ::1 at 2017-04-04 23:37:56 -0700
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (13.3ms)
+  Rendered users/edit.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 44ms (Views: 41.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tasks" for ::1 at 2017-04-04 23:40:09 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/tasks"):
+  
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered collection of /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [8 times] (3.0ms)
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (95.8ms)
+Started GET "/" for ::1 at 2017-04-04 23:40:15 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (3.1ms)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2017-04-04 23:40:20 -0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/new" for ::1 at 2017-04-04 23:40:25 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (1.8ms)
+  Rendered users/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 23ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-04 23:46:15 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (116.7ms)
+Completed 500 Internal Server Error in 124ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `lint_to' for #<#<Class:0x007fb438bd0490>:0x007fb435f9e890>
+Did you mean?  link_to):
+    4: <p> User name: <%= @user.name %> </p>
+    5: <!-- put or patch? -->
+    6: <p><%= link_to "edit", user_path(@user.id), method: :put %></p>
+    7: <p><%= lint_to "delete", user_path(@user.id),data: { confirm: "Are you sure you would like to delete this user?"},
+    8: method: :delete %> %></p>
+  
+app/views/users/show.html.erb:7:in `_app_views_users_show_html_erb___2199346091157160036_70205980550640'
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.7ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (76.4ms)
+Started GET "/users/1" for ::1 at 2017-04-04 23:46:46 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/users/1" for ::1 at 2017-04-04 23:46:49 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"7i+fVSPnZpwN8n+kEg/CT7w/6LlB/W7pwRuoBxu3zZoTSi9eG04AzvhZkr8xBSpYeScwsLyBDmx5qUGRqAkZOA==", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 141ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (undefined local variable or method `user_params' for #<UsersController:0x007fb4354049a8>
+Did you mean?  user_path):
+  
+app/controllers/users_controller.rb:31:in `update'
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (139.4ms)
+Started GET "/users/1" for ::1 at 2017-04-04 23:48:51 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 60ms (Views: 36.5ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/users/1" for ::1 at 2017-04-04 23:48:53 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"yEPLQwzBV3dTxYrPKur0EGzBr97tyOxI27Sfn447mcw1JntINGgxJaZuZ9QJ4BwHqdl31xC0jM1jBnYJPYVNbg==", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:47:in `user_params'
+app/controllers/users_controller.rb:31:in `update'
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.9ms)
+Started PUT "/users/1" for ::1 at 2017-04-04 23:51:19 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"yEPLQwzBV3dTxYrPKur0EGzBr97tyOxI27Sfn447mcw1JntINGgxJaZuZ9QJ4BwHqdl31xC0jM1jBnYJPYVNbg==", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 400 Bad Request in 16ms (ActiveRecord: 5.5ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:47:in `user_params'
+app/controllers/users_controller.rb:31:in `update'
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.2ms)
+Started GET "/users/1" for ::1 at 2017-04-04 23:51:22 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 31ms (Views: 26.8ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/users/1" for ::1 at 2017-04-04 23:51:25 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"fyH4xYklmWxU+cKS2aly8G4JTFYU4B9CxalYRYu9xtaCREjOsYz/PqFSL4n6o5rnqxGUX+mcf8d9G7HTOAMSdA==", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:47:in `user_params'
+app/controllers/users_controller.rb:31:in `update'
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (60.6ms)
+Started GET "/users/2" for ::1 at 2017-04-04 23:51:56 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 21ms (Views: 18.4ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/users/2" for ::1 at 2017-04-04 23:51:58 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"9iC3QMb3LUHs3vhpqH9OqGm1JtQ+0t/25DhjDp08y70LRQdL/l5LExl1FXKLdaa/rK3+3cOuv3NcioqYLoIfHw==", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:47:in `user_params'
+app/controllers/users_controller.rb:31:in `update'
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.8ms)
+Started PUT "/__web_console/repl_sessions/428c2cfd9f32b2afb74b00dec0a804b3" for ::1 at 2017-04-04 23:52:11 -0700
+Started PUT "/__web_console/repl_sessions/428c2cfd9f32b2afb74b00dec0a804b3" for ::1 at 2017-04-04 23:52:14 -0700
+Started PUT "/__web_console/repl_sessions/428c2cfd9f32b2afb74b00dec0a804b3" for ::1 at 2017-04-04 23:52:19 -0700
+Started PUT "/__web_console/repl_sessions/428c2cfd9f32b2afb74b00dec0a804b3" for ::1 at 2017-04-04 23:52:30 -0700
+Started GET "/users/2" for ::1 at 2017-04-04 23:53:13 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 31ms (Views: 19.8ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/users/2" for ::1 at 2017-04-04 23:53:15 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"mFFz/xgYGhiV4aLy22uMfejsjoyaeOBHEg+AP7JVix9lNMP0ILF8SmBKT+n4YWRqLfRWhWcEgMKqvWmpAetfvQ==", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+
+  
+NoMethodError (undefined method `udpate?' for #<User:0x007fb438fbc680>
+Did you mean?  update):
+  
+app/controllers/users_controller.rb:31:in `update'
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.4ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.5ms)
+Started PUT "/users/2" for ::1 at 2017-04-04 23:55:09 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"mFFz/xgYGhiV4aLy22uMfejsjoyaeOBHEg+AP7JVix9lNMP0ILF8SmBKT+n4YWRqLfRWhWcEgMKqvWmpAetfvQ==", "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.8ms)
+
+
+  
+NoMethodError (undefined method `udpate' for #<User:0x007fb438fccfa8>
+Did you mean?  update):
+  
+app/controllers/users_controller.rb:31:in `update'
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.6ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (67.2ms)
+Started PUT "/users/2" for ::1 at 2017-04-04 23:55:45 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"mFFz/xgYGhiV4aLy22uMfejsjoyaeOBHEg+AP7JVix9lNMP0ILF8SmBKT+n4YWRqLfRWhWcEgMKqvWmpAetfvQ==", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 400 Bad Request in 13ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:47:in `user_params'
+app/controllers/users_controller.rb:31:in `update'
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.4ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.7ms)
+Started PUT "/users/2" for ::1 at 2017-04-04 23:55:59 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"mFFz/xgYGhiV4aLy22uMfejsjoyaeOBHEg+AP7JVix9lNMP0ILF8SmBKT+n4YWRqLfRWhWcEgMKqvWmpAetfvQ==", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/users_controller.rb:31:in `update'
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.2ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.5ms)
+Started PUT "/users/2" for ::1 at 2017-04-04 23:56:27 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"mFFz/xgYGhiV4aLy22uMfejsjoyaeOBHEg+AP7JVix9lNMP0ILF8SmBKT+n4YWRqLfRWhWcEgMKqvWmpAetfvQ==", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 177ms (ActiveRecord: 0.2ms)
+
+
+  
+NameError (undefined local variable or method `params_id' for #<UsersController:0x007fb438e18e78>
+Did you mean?  params
+               params=):
+  
+app/controllers/users_controller.rb:31:in `update'
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (122.4ms)
+Started PUT "/users/2" for ::1 at 2017-04-04 23:56:48 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"mFFz/xgYGhiV4aLy22uMfejsjoyaeOBHEg+AP7JVix9lNMP0ILF8SmBKT+n4YWRqLfRWhWcEgMKqvWmpAetfvQ==", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 400 Bad Request in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:47:in `user_params'
+app/controllers/users_controller.rb:31:in `update'
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (64.0ms)
+Started PUT "/__web_console/repl_sessions/dbf3e075387e2c370dec8f2e7891c7b9" for ::1 at 2017-04-04 23:57:21 -0700
+Started PUT "/__web_console/repl_sessions/dbf3e075387e2c370dec8f2e7891c7b9" for ::1 at 2017-04-04 23:57:23 -0700
+Started PUT "/__web_console/repl_sessions/dbf3e075387e2c370dec8f2e7891c7b9" for ::1 at 2017-04-04 23:57:36 -0700
+Started PUT "/__web_console/repl_sessions/dbf3e075387e2c370dec8f2e7891c7b9" for ::1 at 2017-04-04 23:57:45 -0700
+Started PUT "/users/2" for ::1 at 2017-04-05 00:02:14 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"mFFz/xgYGhiV4aLy22uMfejsjoyaeOBHEg+AP7JVix9lNMP0ILF8SmBKT+n4YWRqLfRWhWcEgMKqvWmpAetfvQ==", "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 400 Bad Request in 15ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:49:in `user_params'
+app/controllers/users_controller.rb:33:in `update'
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.9ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/ashtn/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.6ms)
+Started GET "/users" for ::1 at 2017-04-05 00:08:34 -0700
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (60.7ms)
+Completed 200 OK in 99ms (Views: 84.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/1" for ::1 at 2017-04-05 00:08:36 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 32ms (Views: 27.8ms | ActiveRecord: 0.6ms)
+
+
