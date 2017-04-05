@@ -4,11 +4,17 @@ class RidersController < ApplicationController
     end
 
     def new
-      @task = Rider.new
+      @rider = Rider.new
     end
 
     def create
-      Rider.create(rider_params)
+      @rider = Rider.create(rider_params)
+
+      if @rider.save
+        redirect_to riders_path
+      else
+        render :new
+      end
     end
 
     def show
@@ -21,11 +27,13 @@ class RidersController < ApplicationController
     end
 
     def update
-      rider = Rider.find(params[:id])
-      rider.update_attributes(rider_params)
-      rider.save
-
-      redirect_to rider_path(rider)
+      @rider = Rider.find(params[:id])
+      @rider.update_attributes(rider_params)
+      if @rider.save
+        redirect_to rider_path(@rider)
+      else
+        render :edit
+      end
     end
 
     def destroy

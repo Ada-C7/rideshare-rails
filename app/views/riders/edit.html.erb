@@ -1,11 +1,26 @@
+<% if @rider.errors.messages.length > 0 %>
 <section>
-  <%= form_for @rider do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-
-    <%= f.label :phone_num %>
-    <%= f.text_field :phone_num %>
-
-    <%= f.submit value: "Edit Rider" %>
-  <% end %>
+  <h2> Something went wrong</h2>
+  <ul>
+    <%@rider.errors.messages.each do |field, problems| %>
+      <% problems.each do |problem| %>
+        <li>
+          <%= field %>
+          <%= problem %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
 </section>
+<%end%>
+
+
+<%= form_for @rider do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :phone_num %>
+  <%= f.text_field :phone_num %>
+
+  <%= f.submit value: "Edit Rider" %>
+<% end %>
