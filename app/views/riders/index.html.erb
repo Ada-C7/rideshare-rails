@@ -1,0 +1,7 @@
+<h1>All Riders</h1>
+
+<ul>
+    <% @riders.each do |rider| %>
+      <li><%= rider.name %>: <%= rider.phone_num %></li>
+    <% end %>
+</ul>

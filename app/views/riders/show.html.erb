@@ -1,0 +1,7 @@
+<h1>Rider Info</h1>
+
+<p> <%= @rider.name %>: <%= @rider.phone_num %> </p>
+
+<%= link_to "Delete", rider_path(@rider.id),
+  data: { confirm: "Are you sure you want to delete this rider?" },
+  method: :delete %>
