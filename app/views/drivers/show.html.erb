@@ -10,3 +10,7 @@
 <p>
   Current Rating: <%= @rating %>
 </p>
+
+<%= link_to "Delete", delete_driver_path(@result_driver.id), method: :delete,
+      data: { confirm: "Are you sure you want to delete?"}
+ %>
