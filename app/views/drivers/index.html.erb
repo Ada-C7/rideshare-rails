@@ -2,7 +2,7 @@
 <main>
   <ul>
     <% @drivers.each do |driver| %>
-      <li><%= link_to driver[:name].capatalize, driver_path(driver.id) %></li>
+      <li><%= link_to driver[:name].capitalize, driver_path(driver.id) %></li>
     <% end %>
   </ul>
 </main>
