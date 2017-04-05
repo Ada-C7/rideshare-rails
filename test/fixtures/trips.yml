@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  driver_id: 1
+  rider_id: 1
+  date: MyString
+  rating: 1
+
+two:
+  driver_id: 1
+  rider_id: 1
+  date: MyString
+  rating: 1
