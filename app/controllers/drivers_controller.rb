@@ -1,5 +1,5 @@
 class DriversController < ApplicationController
-  # drivers GET    /drivers(.:format)             drivers#index
+  # DONE: drivers GET    /drivers(.:format)             drivers#index
   # POST   /drivers(.:format)             drivers#create
   # new_driver GET    /drivers/new(.:format)         drivers#new
   # edit_driver GET    /drivers/:id/edit(.:format)    drivers#edit
@@ -9,6 +9,9 @@ class DriversController < ApplicationController
   # DELETE /drivers/:id(.:format)         drivers#destroy
 
   def index
+  end
+
+  def create
   end
 
   def new
