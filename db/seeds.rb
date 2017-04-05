@@ -14,21 +14,35 @@ require 'csv'
 # end
 #
 # passengers_array.each do |passenger|
-#   newp = Passenger.create(passenger)
+#   newp = Passenger.create!(passenger)
 #   if !newp.id
 #     puts "couldn't create passenger #{passenger.name}"
 #   end
 # end
+#
+# drivers_array = []
+# CSV.read("support/drivers.csv", headers: true).map do |line|
+#   driver = {name: line[1], vin: line[2]}
+#   drivers_array << driver
+# end
+#
+# drivers_array.each do |driver|
+#   newd = Driver.create!(driver)
+#   if !newd.id
+#     puts "couldn't create driver #{driver.name}"
+#   end
+# end
 
-drivers_array = []
-CSV.read("support/drivers.csv", headers: true).map do |line|
-  driver = {name: line[1], vin: line[2]}
-  drivers_array << driver
+trips_array = []
+CSV.read("support/trips.csv", headers: true).map do |line|
+  date = Time.parse(line[3])
+  trip = { driver_id: line[1].to_i, passenger_id: line[2].to_i, date: date, rating: line[4].to_i, cost: rand(5.0..30.0).round(2) }
+  trips_array << trip
 end
 
-drivers_array.each do |driver|
-  newd = Driver.create(driver)
-  if !newd.id
-    puts "couldn't create driver #{driver.name}"
+trips_array.each do |trip|
+  newt = Trip.create!(trip)
+  if !newt.driver_id
+    puts "couldn't create trip driver #{newt.driver_id}'s trip"
   end
 end
