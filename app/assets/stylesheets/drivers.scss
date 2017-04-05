@@ -56,6 +56,7 @@ html, body {
 }
 
 html, body {
+     display: flex;
 	border: 0;
 	margin: 0;
 	padding: 0;
@@ -65,33 +66,38 @@ html, body {
 	font-weight: normal;
 }
 
-		.drivers {
-               display: flex;
-               flex-direction: row;
-               justify-content: flex-start;
-               align-items: flex-start;
-               flex: 1 1 auto;
+     .drivers {
+          display: flex;
+          flex-direction: row;
+          flex-wrap:wrap;
+          justify-content: flex-start;
+          align-items: stretch;
+          flex: 1 1 auto;
+          width: 33.3vw;
 
-		    background-color: #e06a4e;
-		}
+          background-color: #e06a4e;
+     }
 
-          .trips {
-               display: flex;
-               flex-direction: row;
-               justify-content: flex-start;
-               align-items: flex-start;
-               flex: 1 1 auto;
+     .trips {
+          display: flex;
+          flex-direction: row;
+           flex-wrap:wrap;
+          justify-content: flex-start;
+          align-items: stretch;
+          flex: 1 1 auto;
+          width: 33.3vw;
 
+          background-color: #deb853;
+     }
 
-		    background-color: #deb853;
-		}
+     .passengers {
+          display: flex;
+          flex-direction: row;
+          flex-wrap:wrap;
+          justify-content: flex-start;
+          align-items: stretch;
+          flex: 1 1 auto;
+          width: 33.3vw;
 
-          .passengers {
-              display: flex;
-              flex-direction: row;
-              justify-content: flex-start;
-              align-items: flex-start;
-              flex: 1 1 auto;
-
-              background-color: #789f8a;
-          }
+          background-color: #789f8a;
+     }
