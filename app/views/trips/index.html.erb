@@ -12,8 +12,8 @@
   <% @trips.each do |trip| %>
     <tr>
       <td><%= link_to trip.id, trip_path(trip.id), method: :get %></td>
-      <td><%= trip.driver.name %></td>
-      <td><%= trip.rider.name %></td>
+      <td><%= link_to trip.driver.name, driver_path(trip.driver.id), method: :get %></td>
+      <td><%= link_to trip.rider.name, rider_path(trip.rider.id) %></td>
       <td><%= trip.date %></td>
       <td>$<%= trip.fare %></td>
       <td><%= trip.rating %></td>
