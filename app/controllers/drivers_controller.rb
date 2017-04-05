@@ -9,6 +9,7 @@ class DriversController < ApplicationController
   # DELETE /drivers/:id(.:format)         drivers#destroy
 
   def index
+    @drivers = Driver.all
   end
 
   def create
