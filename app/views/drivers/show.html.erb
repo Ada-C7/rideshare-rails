@@ -6,3 +6,8 @@
 
  <p>average rating, all trips (clicking trip brings up trip details), total earnings
  (each trip -15%), edit/delete button</p>
+
+ <%= link_to "Delete", driver_path(@result_driver.id),
+   data: {confirm: "Do you want to delete this driver? NO GOING BACK!!!"},
+   method: :delete
+ %>

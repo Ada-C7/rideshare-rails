@@ -26,6 +26,12 @@ class PassengersController < ApplicationController
 
   end
 
+  def destroy
+    Passenger.destroy(params[:id])
+
+    redirect_to passengers_path
+  end
+
   def create
     @passenger = Passenger.create passenger_params
 

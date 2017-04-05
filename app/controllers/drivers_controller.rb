@@ -25,6 +25,12 @@ class DriversController < ApplicationController
 
   end
 
+  def destroy
+    Driver.destroy(params[:id])
+
+    redirect_to drivers_path
+  end
+
   def create
     @driver = Driver.create driver_params
 
