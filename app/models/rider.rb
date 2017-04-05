@@ -15,6 +15,15 @@ class Rider < ApplicationRecord
   end
 
 
+    def trips_rated?
+      self.trips.each do |trip|
+        if trip.rating == nil
+          return false
+        end
+      end
+      return true
+    end
+
 
 
 end

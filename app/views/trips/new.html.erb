@@ -1,3 +1,7 @@
-<%= form_for @trip do |f| %>
-  <%= f.submit value: "Create new trip" %>
-<% end %>
+<%if @rider.trips_rated?%>
+  <%= form_for @trip do |f| %>
+    <%= f.submit value: "Create new trip" %>
+  <% end %>
+<%else%>
+  <p> Your trips are not rated. Go back and rate all trips</p>
+<%end%>

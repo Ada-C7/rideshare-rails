@@ -4,13 +4,17 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
+    rider_id = params[:id]
+    @rider = Rider.find(rider_id)
   end
 
   def create
     @trip = Trip.new
     @trip.date = Time.now
     @trip.rating  = nil
-    @trip.rider_id = params[:rider_id]
+
+
+
     @trip.save
   end
 
