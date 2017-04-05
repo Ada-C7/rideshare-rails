@@ -22,16 +22,15 @@ class DriversController < ApplicationController
   def update
     driver = Driver.find(params[:id])
 
-    driver.name = params[:driver][:name]
-    driver.vin = params[:driver][:vin]
-
-    if driver.save
+    if driver.update driver_params
       redirect_to driver_path
+    else
+      render "edit"
     end
 
   end
 
-  def delete
+  def destroy
     Driver.destroy(params[:id])
 
     redirect_to drivers_path
@@ -41,20 +40,12 @@ class DriversController < ApplicationController
 
   def show
     @result_driver = Driver.find(params[:id])
-
-    @rating = []
-
-    @result_driver.trips.each do |trip|
-      @rating << trip.rating.to_f
-    end
-
-    @rating = (@rating.reduce(:+) / @rating.length).round(1)
   end
 
   private
 
   def driver_params
-    params.require(:animal).permit(:name, :vin)
+    params.require(:driver).permit(:name, :vin)
   end
 
 end

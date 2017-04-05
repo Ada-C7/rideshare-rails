@@ -13,8 +13,7 @@ Rails.application.routes.draw do
   get "/drivers/:id/edit", to: "drivers#edit", as: 'edit_driver'
   patch "/drivers/:id", to: "drivers#update"
 
-  delete "/drivers/:id", to: "driver#destroy", as: "delete_driver"
-
+  delete "/drivers/:id", to: "drivers#destroy", as: "delete_driver"
 
   resources :drivers, except: [:edit, :update, :delete]
 
