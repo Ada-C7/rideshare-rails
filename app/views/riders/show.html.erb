@@ -1,4 +1,16 @@
 <h1>Rider's info</h1>
 <p><%=@rider.name%></p>
 <p><%=@rider.phone_num%></p>
+<p><%=@rider.total_amount%></p>
 <%= link_to "Back to list", riders_path%>
+
+<h2>Rider's trip list</h2>
+<%@rider.trips.each do |trip|%>
+  <ul>
+    <li>Date: <%=trip.date%></li>
+    <li>Rating: <%=trip.rating%></li>
+    <li>Cost: <%=trip.cost%></li>
+  </ul>
+<%end%>
+  <%= link_to "Edit rider", edit_rider_path%>
+<%= button_to 'Delete rider', rider_path(@rider.id), method: :delete, data: {confirm: 'Are you sure?' } %>
