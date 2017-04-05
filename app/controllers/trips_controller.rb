@@ -34,7 +34,11 @@ class TripsController < ApplicationController
     if @trip.id != nil
       redirect_to trips_path
     end
+  end
 
+  def destroy
+    Trip.destroy(params[:id])
+    redirect_to trips_path
   end
 
   private
