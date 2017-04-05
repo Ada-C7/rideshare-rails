@@ -20,6 +20,18 @@ class PassengersController < ApplicationController
   end
 
 
+  def edit
+    @passenger = Passenger.find(params[:id])
+  end
+
+  def update
+    passenger = Passenger.find(params[:id])
+    passenger.update(passenger_params)
+    redirect_to passenger_path(passenger)
+  end
+
+
+
   private
   def passenger_params
     return params.require(:passenger).permit(:name, :phone_number)
