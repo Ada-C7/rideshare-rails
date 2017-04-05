@@ -32,7 +32,7 @@ trips.each do |t|
   end
 end
 
-puts "#{success_count} out of #{trips.length} added."
+puts "trip #{success_count} out of #{trips.length} added."
 
 
 drivers = []
@@ -52,7 +52,7 @@ drivers.each do |t|
 
   if driver.id
     success_count += 1
-    puts "#{driver.id} successfully added"
+    puts "driver #{driver.id} successfully added"
   end
 end
 
@@ -72,6 +72,6 @@ riders.each do |t|
 
   if rider.id
     success_count += 1
-    puts "#{rider.id} successfully added"
+    puts "rider #{rider.id} successfully added"
   end
 end
