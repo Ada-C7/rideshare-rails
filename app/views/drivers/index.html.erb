@@ -1,0 +1,10 @@
+<h1>Drivers#index</h1>
+<main>
+  <ul>
+    <% @drivers.each do |driver| %>
+      <li><%= link_to driver[:name].capatalize, driver_path(driver.id) %></li>
+    <% end %>
+  </ul>
+</main>
+<footer>
+</footer>
