@@ -1,3 +1,4 @@
-class RideShareController < ApplicationController
-    
+class RideshareController < ApplicationController
+    def index
+    end
 end
