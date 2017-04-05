@@ -3,4 +3,7 @@ Rails.application.routes.draw do
 
 resources :passengers
 
+# need all restful routes?
+resources :drivers
+
 end

@@ -1,0 +1,9 @@
+<h1>RideShare Drivers</h1>
+
+<%= button_to "Add an new driver", new_driver_path, method: :get %>
+
+<ol>
+  <% @drivers.each do |driver| %>
+    <li> <%= link_to driver.name, driver_path(driver)%> </li>
+  <% end%>
+</ol>
