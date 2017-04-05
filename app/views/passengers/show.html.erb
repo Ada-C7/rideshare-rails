@@ -1,4 +1,8 @@
 <h2>Passenger Number: <%= @passenger[:id] %></h2>
   <h3>Name: <%= @passenger[:name] %> <br> Phone Number: <%= @passenger[:phone_num] %></h3>
 
-<%= Trip.where(passenger_id: @passenger[:id]).to_a %>
+<h3>Trips:</h3>
+<% array = Trip.where(passenger_id: @passenger[:id]).to_a %>
+<% array.each do |trip| %>
+  <%= link_to trip.id, trip_path(trip.id) %>
+<% end %>
