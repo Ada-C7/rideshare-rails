@@ -1,2 +1,13 @@
-<h1>Drivers#show</h1>
-<p>Find me in app/views/drivers/show.html.erb</p>
+<h1>Driver Details</h1>
+
+<ul>
+  <li>Name: <%= @result_driver.name %></li>
+  <li>VIN: <%= @result_driver.vin %></li>
+  <li>Available:
+    <% if @result_driver.available %>
+        YES
+    <% else %>
+        NO
+    <% end %>
+  </li>
+</ul>
