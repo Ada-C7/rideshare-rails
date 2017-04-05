@@ -5,8 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-
 require 'csv'
 
 
@@ -35,3 +33,25 @@ trips.each do |t|
 end
 
 puts "#{success_count} out of #{trips.length} added."
+
+
+drivers = []
+temp_csv = CSV.read(Rails.root.join('support', 'drivers.csv'))
+temp_csv.shift
+temp_csv.each do |driver|
+  driver_hash = Hash.new
+  driver_hash[:name] = driver[1]
+  driver_hash[:vin] = driver[2]
+
+drivers << driver_hash
+end
+
+success_count = 0
+drivers.each do |t|
+  driver = Driver.create(t)
+
+  if driver.id
+    success_count += 1
+    puts "#{driver.id} successfully added"
+  end
+end
