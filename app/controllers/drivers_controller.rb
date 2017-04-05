@@ -12,6 +12,11 @@ class DriversController < ApplicationController
 
     if driver.save
       redirect_to drivers_path
+    end
+  end
+
+  def edit
+    @driver = Driver.find(params[:id])
   end
 
   def update
@@ -51,4 +56,5 @@ class DriversController < ApplicationController
   def driver_params
     params.require(:animal).permit(:name, :vin)
   end
+
 end
