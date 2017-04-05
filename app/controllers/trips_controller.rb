@@ -8,6 +8,26 @@ class TripsController < ApplicationController
     @result_trip = Trip.find(params[:id])
   end
 
+  def edit
+    @trip = Trip.find(params[:id])
+  end
+
+  def update
+    @trip = Trip.find(params[:id])
+
+    @trip.driver_id = trip_params[:driver_id]
+    @trip.passenger_id = trip_params[:passenger_id]
+    @trip.date = trip_params[:date]
+    @trip.rating = trip_params[:rating]
+
+    if @trip.save
+      redirect_to trip_path(@trip.id)
+    else
+      render "edit"
+    end
+
+  end
+
   def create
     @trip = Trip.create trip_params
 
