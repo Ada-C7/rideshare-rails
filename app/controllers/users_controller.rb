@@ -27,9 +27,11 @@ def show
 end
 
 def update
+#   ActionController::ParameterMissing in UsersController#update
+# param is missing or the value is empty: user
   @user = User.find(params[:id])
-  if @user.udpate(user_params)
-    redirect_to #user_path
+  if @user.update(user_params)
+    redirect_to user_path
   else
     render "edit"
   end
@@ -40,4 +42,10 @@ def destroy
   redirect_to #users_path
 end
 
+private
+
+def user_params
+  #will only allow these inputs in the fields of the form
+  params.require(:user).permit(:name, :phone_num)
+end
 end
