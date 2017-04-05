@@ -1,2 +1,30 @@
-<h1>Drivers#show</h1>
-<p>Find me in app/views/drivers/show.html.erb</p>
+<h1>Driver #<%= @driver.id %></h1>
+
+<h2>Details</h2>
+<ul>
+  <li>Name: <%= @driver.name %></li>
+  <li>VIN: <%= @driver.vin %></li>
+</ul>
+
+<h2>Trips</h2>
+<table>
+  <tr>
+    <th>Trip ID</th>
+    <th>Rider</th>
+    <th>Date</th>
+    <th>Fare</th>
+    <th>Rating</th>
+  </tr>
+  <% @driver.trips.each do |trip| %>
+    <tr>
+      <td><%= link_to trip.id, trip_path(trip.id), method: :get %></td>
+      <td><%= link_to trip.rider.name, rider_path(trip.rider.id), method: :get %></td>
+      <td><%= trip.date %></td>
+      <td>$<%= trip.fare %></td>
+      <td><%= trip.rating %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<%= link_to "<<", drivers_path, method: :get %>
