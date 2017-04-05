@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # get 'drivers/index'
 resources :trips, only:[:index, :show]
 resources :welcome, only:[:index, :show]
+resources :drivers, only:[:index, :show]
+resources :passengers, only: [:index, :show]
   # get 'trips' to: 'trips#index', as: 'trips'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
