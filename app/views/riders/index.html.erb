@@ -1,2 +1,9 @@
 <h1>Riders</h1>
 <p>List of Riders here</p>
+<ul>
+<% @riders.each do |rider| %>
+  <li><p>Name: <%= rider.name %></p>
+  <p>Phone: <%= rider.phone %></p></li>
+<% end %>
+
+</ul>
