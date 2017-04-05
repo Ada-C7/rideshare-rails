@@ -11,7 +11,6 @@ end
 
 CSV.foreach("support/drivers.csv", :headers => true) do |line|
   d = Driver.new
-  d.driver_id = line[0].to_i
   d.name = line[1].to_s
   d.vin = line[2].to_s
   # d.avg_rating = line[3]
