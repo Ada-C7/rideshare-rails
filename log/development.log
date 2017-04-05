@@ -6940,3 +6940,11 @@ Processing by DriversController#show as HTML
 Completed 200 OK in 36ms (Views: 29.1ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/drivers/" for ::1 at 2017-04-04 19:16:57 -0700
+Processing by DriversController#index as HTML
+  Rendering drivers/index.html.erb within layouts/application
+  [1m[36mDriver Load (2.2ms)[0m  [1m[34mSELECT "drivers".* FROM "drivers"[0m
+  Rendered drivers/index.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 94ms (Views: 78.7ms | ActiveRecord: 2.2ms)
+
+
