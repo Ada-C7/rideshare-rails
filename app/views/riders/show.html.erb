@@ -4,7 +4,7 @@
   </h1>
   <%#= image_tag(@animal.image_pathway, alt: "Image not available", id: "show_image")%>
   <p>
-    <%= @rider.name%>, <%= @rider.phone_num%>
+    <%= @rider.name%>, <%= @rider.phone_num%>, <%= @rider.phone_num%>
   </p>
   <p id = "show_about_text">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -23,10 +23,6 @@
       <td><%= trip.driver[:name] %></td>
       <td><%= trip[:date] %></td>
         <td><%= trip[:rating] %></td>
-
-
-
-
 
     </tr>
     <% end %>
