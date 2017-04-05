@@ -11,7 +11,6 @@ class DriversController < ApplicationController
     else
       render :new
     end
-    
   end
 
   def new
