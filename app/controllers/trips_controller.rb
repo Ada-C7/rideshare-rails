@@ -22,9 +22,20 @@ class TripsController < ApplicationController
     if trip.save
       redirect_to trip_path(trip.id)
     end
-
   end
 
+  def new
+    @trip = Trip.new
+  end
+
+  def create
+    @trip = Trip.create trip_params
+
+    if @trip.id != nil
+      redirect_to trips_path
+    end
+
+  end
 
   private
 
