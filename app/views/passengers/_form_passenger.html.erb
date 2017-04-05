@@ -1,0 +1,17 @@
+<ul>
+  <% @passenger.errors.each do |column, msg| %>
+    <li>
+      <%= column.capitalize %> <%= msg %>
+    </li>
+  <% end %>
+</ul>
+
+<%= form_for @passenger, method: form_method do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :phone_num %>
+  <%= f.text_field :phone_num %>
+
+  <%= f.submit nil %>
+<% end %>
