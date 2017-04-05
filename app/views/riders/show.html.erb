@@ -1,2 +1,38 @@
-<h1>Riders#show</h1>
-<p>Find me in app/views/riders/show.html.erb</p>
+<h1>Rider details</h1>
+
+  <!-- # include list of trips
+  # each trip links to trip details
+  # (eventually) add links to:
+  # edit rider
+  # delete rider
+  # update rating -->
+
+  <ul>
+    <li>Rider: <%= @rider.name %></li>
+    <li>Phone: <%= @rider.phone_num %></li>
+  </ul>
+
+  <h1>Trips for this rider</h1>
+
+  <table>
+    <tr>
+      <th>Trip ID</th>
+      <th>Driver</th>
+      <th>Date</th>
+      <th>Fare</th>
+      <th>Rating</th>
+    </tr>
+    <% @rider.trips.each do |trip| %>
+      <tr>
+        <td><%= link_to trip.id, trip_path(trip.id), method: :get %></td>
+        <td><%= link_to trip.driver.name, driver_path(trip.driver.id) %></td>
+        <td><%= trip.date %></td>
+        <td>$<%= trip.fare %></td>
+        <td><%= trip.rating %></td>
+      </tr>
+    <% end %>
+  </table>
+
+
+
+  <%= link_to "<<", riders_path, method: :get %>
