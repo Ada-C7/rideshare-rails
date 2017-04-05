@@ -1,12 +1,9 @@
-<main>
-  <h2>Passengers</h2>
+<% content_for :passengers do %>
+<h1>Passengers</h1>
 
-  <ul>
-    <% @passengers.each do |passenger| %>
-      <li>
-        <%= passenger.name %>
-      </li>
-    <% end %>
-  </ul>
-
-</main>
+<ul>
+     <% @passengers.each do |passenger| %>
+          <li> <%= passenger.name %> </li>
+     <% end %>
+</ul>
+<%end%>
