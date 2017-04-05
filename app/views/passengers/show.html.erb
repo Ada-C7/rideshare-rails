@@ -4,3 +4,6 @@
   <li>Name: <%= @result_passenger.name %></li>
   <li>Phone number: <%= @result_passenger.phone_num %></li>
 </ul>
+
+<h2><%= link_to "Edit", edit_passenger_path(@result_passenger.id)%></h2>
+<h2><%= link_to "Delete", passenger_path(@result_passenger.id), data: { confirm: "Are you sure you want to delete this passenger?" }, method: :delete %></h2>

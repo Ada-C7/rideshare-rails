@@ -11,3 +11,6 @@
     <% end %>
   </li>
 </ul>
+
+<h2><%= link_to "Edit", edit_driver_path(@result_driver.id)%></h2>
+<h2><%= link_to "Delete", driver_path(@result_driver.id), data: { confirm: "Are you sure you want to delete this driver?" }, method: :delete %></h2>
