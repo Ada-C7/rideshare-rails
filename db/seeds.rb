@@ -41,7 +41,7 @@ CSV.read("support/trips.csv", headers: true).map do |line|
 end
 
 trips_array.each do |trip|
-  newt = Trip.create!(trip)
+  newt = Trip.create(trip)
   if !newt.driver_id
     puts "couldn't create trip driver #{newt.driver_id}'s trip"
   end
