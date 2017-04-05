@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  root 'welcome#index'
+
     #DRIVERS
       get 'drivers', to: 'drivers#index', as: 'drivers'
 
