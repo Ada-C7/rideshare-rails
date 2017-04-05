@@ -9,8 +9,17 @@ class DriversController < ApplicationController
   end
 
   def create
-    Driver.create(driver_params)
-    redirect_to drivers_path
+    # Driver.create(driver_params)
+    # redirect_to drivers_path
+    @driver = Driver.new(driver_params)
+
+    if @driver.save
+      redirect_to drivers_path
+    else
+      # We know the validations didn't pass
+      render :new
+    end
+
   end
 
   def show

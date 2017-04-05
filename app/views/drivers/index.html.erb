@@ -17,7 +17,7 @@
       </p> -->
       <p id = "index_diver_info">
           <%#= link_to driver.name, driver_path(driver.id) %>
-          <%= driver.name %>, <%= driver.vin %>
+          <%= driver.id %>: <%= driver.name %>, <%= driver.vin %>
       </p id = "index_driver_buttons">
       <p id = "index_driver_buttons">
         <%= link_to "Show", driver_path(driver), class: "button_link"%>

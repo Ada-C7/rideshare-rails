@@ -1,3 +1,21 @@
+<% if @driver.errors.messages.length > 0 %>
+  <section class="errors">
+    <h2>Something went wrong!</h2>
+    <ul>
+      <% @driver.errors.messages.each do |field, problem_list| %>
+        <% problem_list.each do |problem| %>
+          <li>
+            <strong><%= field %>:</strong>
+            <%= problem %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </section>
+<% end %>
+
+
+
 
 <section id = "_form_section">
   <%= form_for @driver do |f| %>
