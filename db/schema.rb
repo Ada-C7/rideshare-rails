@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170404214217) do
+ActiveRecord::Schema.define(version: 20170405220245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,9 +34,9 @@ ActiveRecord::Schema.define(version: 20170404214217) do
     t.integer  "passenger_id"
     t.date     "date"
     t.integer  "rating"
-    t.integer  "cost"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "cost_in_cents"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.index ["driver_id"], name: "index_trips_on_driver_id", using: :btree
     t.index ["passenger_id"], name: "index_trips_on_passenger_id", using: :btree
   end
