@@ -1,5 +1,6 @@
 class RidersController < ApplicationController
   def index
+    @riders = Rider.all
   end
 
   def create
@@ -12,6 +13,7 @@ class RidersController < ApplicationController
   end
 
   def show
+    @rider = Rider.find(params[:id])
   end
 
   def update
