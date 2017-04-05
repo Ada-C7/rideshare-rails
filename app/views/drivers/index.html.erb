@@ -1,5 +1,3 @@
-<h1>Drivers#index</h1>
-<p>Find me in app/views/drivers/index.html.erb</p>
 
 <div id = "index_site">
   <section id = "index_first_section">
@@ -9,23 +7,55 @@
     </p>
   </section>
 
-  <nav>
-    <% @drivers.each do |driver| %>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+
+     <table class="listing" summary="Drivers list">
+
+       <tr class="header">
+         <th>ID</th>
+         <th>Name</th>
+         <th>VIN</th>
+       </tr>
+
+       <% @drivers.each do |driver| %>
+       <tr>
+         <td><%= driver[:id] %></td>
+         <td><%= driver[:name] %></td>
+         <td><%= driver[:vin] %></td>
+
+
+
+         <td class="actions">
+           <%= link_to "Show", driver_path(driver), class: "button_link" %>
+           <%= link_to "Edit", edit_driver_path(driver), class: "button_link" %>
+           <%= link_to "Delete", driver_path(driver),
+           data: {method: :delete, confirm: "Are you sure you want to delete #{driver.name} from the list?"}, class: "button_link" %>
+         </td>
+       </tr>
+       <% end %>
+     </table>
+
+  <!-- <nav>
+    <%# @drivers.each do |driver| %>
     <section id = "index_list_section">
-      <!-- <p id = "index_animal_name">
-        <%#= link_to animal.name, animal_path(animal.id) %>
-      </p> -->
       <p id = "index_diver_info">
           <%#= link_to driver.name, driver_path(driver.id) %>
-          <%= driver.id %>: <%= driver.name %>, <%= driver.vin %>
+          <%#= driver.id %>: <%#= driver.name %>, <%#= driver.vin %>
       </p id = "index_driver_buttons">
       <p id = "index_driver_buttons">
-        <%= link_to "Show", driver_path(driver), class: "button_link"%>
-        <%= link_to "Edit", edit_driver_path(driver), class: "button_link"%>
-        <%= link_to "Delete", driver_path(driver),
+        <%#= link_to "Show", driver_path(driver), class: "button_link"%>
+        <%#= link_to "Edit", edit_driver_path(driver), class: "button_link"%>
+        <%#= link_to "Delete", driver_path(driver),
         data: {method: :delete, confirm: "Are you sure you want to delete #{driver.name} from the list?"}, class: "button_link"%>
       </p>
     </section>
-    <% end %>
-  </nav>
+    <%# end %>
+  </nav> -->
+
 </div>

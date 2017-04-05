@@ -19,7 +19,6 @@ class DriversController < ApplicationController
       # We know the validations didn't pass
       render :new
     end
-
   end
 
   def show
