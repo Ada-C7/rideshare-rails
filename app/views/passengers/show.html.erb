@@ -3,10 +3,8 @@
 
 <h3>Trips:</h3>
 <% array = @passenger.trips %>
-<% total_amount_charged = 0 %>
 <% array.each do |trip| %>
   <%= link_to trip.id, trip_path(trip.id) %>
-  <% total_amount_charged += trip.price %>
 <% end %>
 
-<h3>Total amount charged: <%= total_amount_charged %></h3>
+<h3>Total amount charged: <%= @passenger.total_amount_charged %></h3>
