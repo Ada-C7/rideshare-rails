@@ -30,6 +30,11 @@ class PassengersController < ApplicationController
     redirect_to passenger_path(passenger)
   end
 
+  def destroy
+    Passenger.find(params[:id]).destroy
+    redirect_to passengers_path
+  end
+
 
 
   private
