@@ -6,6 +6,6 @@ resources :passengers
 # need all restful routes?
 resources :drivers
 
-recources :trips, except: :index
+resources :trips, except: :index
 
 end
