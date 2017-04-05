@@ -1,0 +1,14 @@
+<%= form_for @result_passenger do |f| %>
+
+<%= f.label :name, class: "passenger" %></br>
+<%= f.text_field :name %></br>
+
+<%= f.label :phone_num %></br>
+<%= f.text_field :phone_num %></br>
+
+<%= f.submit "Create" %>
+<%= f.submit "Edit" %>
+
+<%= button_to "Home", passengers_path, method: :get %>
+
+<% end %>
