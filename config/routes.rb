@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'passengers/index'
+
   get 'drivers/index'
 
   get 'trips/index'
