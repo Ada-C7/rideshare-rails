@@ -8,10 +8,33 @@
   </p>
   <p id = "show_about_text">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </p id = "trips">
+  </p >
+
+  <table class="listing" summary="Riders Trip List">
+
+    <tr class="header">
+      <th>Driver Name</th>
+      <th>Date</th>
+      <th>Rating</th>
+    </tr>
+
+    <% @rider.trips.each do |trip| %>
+    <tr>
+      <td><%= trip.driver[:name] %></td>
+      <td><%= trip[:date] %></td>
+        <td><%= trip[:rating] %></td>
+
+
+
+
+
+    </tr>
+    <% end %>
+  </table>
 
   <p>
-
+      <% @rider.trips.each do |trip| %>
+      ,
   </p>
 
   <%#= link_to image_tag("left1.png", alt: "Back button", class: "button_image"), animals_path%>

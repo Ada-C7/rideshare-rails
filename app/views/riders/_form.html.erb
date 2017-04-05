@@ -1,44 +1,34 @@
-<%= link_to 'Back', riders_path %>
-
-<div class="riders new">
- <h2>Create Rider</h2>
-
- <%= form_for(@rider, :url => riders_path, :method => 'post') do |f| %>
-
-   <table summary="Subject form fields">
-     <tr>
-       <th>Name</th>
-       <td><%= f.text_field(:name) %></td>
-     </tr>
-     <tr>
-       <th>Phone Number</th>
-       <td><%= f.text_field(:phone_num) %></td>
-     </tr>
-
-   </table>
-
-   <div class="form-buttons">
-     <%= f.submit("Create Subject") %>
-   </div>
-
- <% end %>
-</div>
-
-
-<!-- <%= form_for(rider) do |f| %>
-  <% if rider.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(rider.errors.count, "error") %> prohibited this rider from being saved:</h2>
-
-      <ul>
-      <% rider.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<% if @rider.errors.messages.length > 0 %>
+  <section class="errors">
+    <h2>Something went wrong!</h2>
+    <ul>
+      <% @rider.errors.messages.each do |field, problem_list| %>
+        <% problem_list.each do |problem| %>
+          <li>
+            <strong><%= field %>:</strong>
+            <%= problem %>
+          </li>
+        <% end %>
       <% end %>
-      </ul>
+    </ul>
+  </section>
+<% end %>
+
+
+
+
+<section id = "_form_section">
+  <%= form_for @rider do |f| %>
+    <div>
+      <%= f.label :name, class: "label" %>
+      <%= f.text_field :name, class: "field"%>
+    </div>
+    <div>
+      <%= f.label :phone_num, class: "label"%>
+      <%= f.text_field :phone_num, class: "field"%>
+    </div>
+    <div id = "_form_section_submit">
+      <%= f.submit value: "SAVE"%>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %> -->
+</section>

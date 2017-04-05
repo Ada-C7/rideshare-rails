@@ -1,0 +1,36 @@
+<h1>Trips index</h1>
+<%= link_to('Add New Trip' , { :action => 'new'})%>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+   <table class="listing" summary="Riders list">
+
+     <tr class="header">
+       <th>ID</th>
+       <th>Name</th>
+       <th>Phone Number</th>
+     </tr>
+
+     <% @riders.each do |rider| %>
+     <tr>
+       <td><%= rider[:id] %></td>
+       <td><%= rider[:name] %></td>
+       <td><%= rider[:phone_num] %></td>
+
+
+
+       <td class="actions">
+         <%= link_to("Show", rider_path(rider), :class => 'action show') %>
+         <%= link_to("Edit", rider_path(rider), :class => 'action edit') %>
+         <%= link_to('Delete', rider_path(rider) , data: {method: :delete, confirm: "Are you sure?"}) %>
+       </td>
+     </tr>
+     <% end %>
+   </table>
+ </div>

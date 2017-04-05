@@ -18,12 +18,17 @@ Rails.application.routes.draw do
 
 
     #RIDERS
-  resources :riders
+    get 'riders', to: 'riders#index', as: 'riders'
 
-  get 'riders/new'
-  post 'riders' , to: "riders#create"
+    get 'riders/new', to: 'riders#new', as: 'new_rider'
+    post 'riders', to: 'riders#create'
 
-  delete 'riders/:id', to: 'riders#destroy'
+    get 'riders/:id', to: 'riders#show', as: 'rider'
+    get 'riders/:id/edit', to: 'riders#edit', as: 'edit_rider'
+
+    patch 'riders/:id', to: 'riders#update'
+
+    delete 'riders/:id', to: 'riders#destroy'
 
 
 
