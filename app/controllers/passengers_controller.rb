@@ -7,4 +7,7 @@ class PassengersController < ApplicationController
     @result_passenger = Passenger.find(params[:id])
   end
 
+  def edit
+    @result_passenger = Passenger.find(params[:id])
+  end
 end
