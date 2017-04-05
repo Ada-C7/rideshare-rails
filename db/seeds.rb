@@ -17,7 +17,7 @@ temp_csv.each do |trip|
   trip_hash = Hash.new
   trip_hash[:driver_id] = trip[1]
   trip_hash[:rider_id] = trip[2]
-  trip_hash[:date] = trip[3]
+  trip_hash[:date] = trip[3].to_date
   trip_hash[:rating] = trip[4]
   trip_hash[:cost] = rand(500..1500)
 

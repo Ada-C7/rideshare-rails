@@ -4,12 +4,16 @@ class Trip < ApplicationRecord
                         numericality: { only_integer: true }
 
 
-  validates :rider_id, presence: true
+  validates :rider_id, presence: true,
                        uniqueness: true,
                        numericality: { only_integer: true }
 
   validates :date, presence: true
 
-  validates :cost, presence: true
+  # reading in as string from CSV
+
+  validates :cost, presence: true,
+                   numericality: { only_integer: true }
+
 
 end
