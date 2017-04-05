@@ -15,4 +15,6 @@ class Rider < ApplicationRecord
   end
 
 
+
+
 end

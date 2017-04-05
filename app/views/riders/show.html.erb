@@ -12,6 +12,6 @@
     <li>Cost: <%=trip.cost%></li>
   </ul>
 <%end%>
-
+<%= link_to "Add trip for rider", new_trip_path%>
 <%= link_to "Edit rider", edit_rider_path%>
 <%= button_to 'Delete rider', rider_path(@rider.id), method: :delete, data: {confirm: 'Are you sure?' } %>
