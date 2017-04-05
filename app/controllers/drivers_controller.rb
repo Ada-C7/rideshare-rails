@@ -5,6 +5,7 @@ class DriversController < ApplicationController
 
   def new
     @driver = Driver.new
+      @drivers = Driver.all
   end
 
   def create
@@ -14,24 +15,25 @@ class DriversController < ApplicationController
 
   def show
     id = params[:id].to_i
-    @drivers = Driver.all
-  #   driver_hash = {}
-  #   driver_hash = drivers.map do |driver|
-  #     driver_hash[:name]= driver.name
-  #     driver_hash[:vin] = driver.vin
-  #     driver_hash[:id] = driver.id
-  # end
-    # @drivers = driver_hash
     @driver = Driver.find(id)
   end
 
   def edit
+      id = params[:id].to_i
+      @driver = Driver.find(id)
   end
 
   def update
+    driver = Driver.find(params[:id])
+    driver.update_attributes(driver_params)
+    driver.save
+    redirect_to driver_path
   end
 
   def destroy
+    driver = Driver.find(params[:id])
+    driver.destroy
+    redirect_to drivers_path
   end
 
   private
