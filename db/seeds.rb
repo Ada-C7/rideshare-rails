@@ -53,7 +53,7 @@ driver.each do |row|
 end
 puts "There are now #{Driver.count} rows in the drivers table"
 
-rider_csv = File.read(Rails.root.join('support', 'drivers.csv'))
+rider_csv = File.read(Rails.root.join('support', 'passengers.csv'))
 rider = CSV.parse(rider_csv, :headers => true, :encoding => 'ISO-8859-1')
 rider.each do |row|
     r = Rider.new
