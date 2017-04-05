@@ -1,0 +1,9 @@
+<% content_for :trips do %>
+  <h1>Trips</h1>
+
+  <ul>
+       <% @trips.each do |trip| %>
+            <li> <%= trip.cost %> </li>
+       <% end %>
+  </ul>
+<% end %>
