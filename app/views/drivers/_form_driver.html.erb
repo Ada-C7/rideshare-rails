@@ -1,0 +1,20 @@
+<ul>
+  <% @driver.errors.each do |column, msg| %>
+    <li>
+      <%= column.capitalize %> <%= msg %>
+    </li>
+  <% end %>
+</ul>
+
+<%= form_for @driver, method: form_method do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :vin %>
+  <%= f.text_field :vin %>
+
+  <%= f.label :available %>
+  <%= f.select :available, [["YES", true], ["NO", false]] %>
+
+  <%= f.submit nil %>
+<% end %>
