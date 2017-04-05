@@ -2,7 +2,6 @@ require "CSV"
 
 CSV.foreach("support/passengers.csv", :headers => true) do |line|
   p = Passenger.new
-  p.passenger_id = line[0].to_i
   p.name = line[1].to_s
   p.phone_num = line[2].to_s
   p.save
