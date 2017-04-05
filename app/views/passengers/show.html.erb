@@ -2,7 +2,11 @@
   <h3>Name: <%= @passenger[:name] %> <br> Phone Number: <%= @passenger[:phone_num] %></h3>
 
 <h3>Trips:</h3>
-<% array = Trip.where(passenger_id: @passenger[:id]).to_a %>
+<% array = @passenger.trips %>
+<% total_amount_charged = 0 %>
 <% array.each do |trip| %>
   <%= link_to trip.id, trip_path(trip.id) %>
+  <% total_amount_charged += trip.price %>
 <% end %>
+
+<h3>Total amount charged: <%= total_amount_charged %></h3>
