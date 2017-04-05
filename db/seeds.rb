@@ -55,3 +55,23 @@ drivers.each do |t|
     puts "#{driver.id} successfully added"
   end
 end
+
+riders = []
+temp_csv = CSV.read(Rails.root.join('support', 'passengers.csv'))
+temp_csv.shift
+temp_csv.each do |rider|
+  rider_hash = Hash.new
+  rider_hash[:name] = rider[1]
+  rider_hash[:phone] = rider[2]
+riders << rider_hash
+end
+
+success_count = 0
+riders.each do |t|
+  rider = Rider.create(t)
+
+  if rider.id
+    success_count += 1
+    puts "#{rider.id} successfully added"
+  end
+end
