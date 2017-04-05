@@ -19,7 +19,7 @@ class DriversController < ApplicationController
     @driver.availability = driver_params[:availability]
 
     if @driver.update(driver_params)
-      redirect_to driver_path(driver.id)
+      redirect_to driver_path(@driver.id)
     end
   end
 
