@@ -1,8 +1,16 @@
 <h1> List of all riders: </h1>
-<%@riders.each do |rider|%>
-<ul>
-  <%=rider.id %>
-  <%=link_to rider.name, rider_path(rider.id) %>
-  <%=rider.phone_num %>
-</ul>
-<%end%>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Phone number</th>
+  </tr>
+
+  <%@riders.each do |rider|%>
+    <tr>
+      <td><%=rider.id %></td>
+      <td><%=link_to rider.name, rider_path(rider.id) %></td>
+      <td> <%=rider.phone_num %></td>
+    </tr>
+  <%end%>
+</table>
