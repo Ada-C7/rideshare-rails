@@ -8,6 +8,8 @@ class DriversController < ApplicationController
   # PUT    /drivers/:id(.:format)         drivers#update
   # DELETE /drivers/:id(.:format)         drivers#destroy
 
+  attr_reader :driver
+
   def index
     @drivers = Driver.all
   end
@@ -23,21 +25,23 @@ class DriversController < ApplicationController
   end
 
   def edit
-    @driver = Driver.find(params[:driver_id])
+    @driver = Driver.find(params[:id])
   end
 
   def show
-    index = params[:driver_id]
-    @driver = Driver.find(index)
+    index = params[:id].to_i
+    @driver = Driver.find_by_id(index)
+    logger.info "Review: #{@driver}"
+    logger.info "Review is nil? #{@driver.nil?}"
   end
 
   def update
-    driver = Driver.find(params[:driver_id])
+    driver = Driver.find(params[:id])
     driver.update(driver_params)
   end
 
-  def destroy
-    driver = Driver.find(params[:sdriver_id])
+  def destroy # WORKING
+    driver = Driver.find(params[:id])
     driver.destroy
 
     redirect_to drivers_path
