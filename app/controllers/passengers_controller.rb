@@ -4,7 +4,7 @@ class PassengersController < ApplicationController
   end
 
   def show
-    @passengers = Passenger.all
+
   end
 
 end

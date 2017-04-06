@@ -1,4 +1,13 @@
-<h1>Passengers#index</h1>
-<p>Find me in app/views/passengers/index.html.erb</p>
+<h2>Rideshare Passengers List</h2>
 
+<ul>
+  <% @passengers.each do |passenger| %>
+    <li><%= passenger[:passenger_id] %></li>
+    <li><%= passenger[:name] %></li>
+    <li><%= passenger[:phone_num] %></li>
+  <% end %>
+</ul>
+
+<%= link_to "All Trips", trips_path %>
+<%= link_to "All Drivers", drivers_path %>
 <%= link_to "Return to homepage", welcome_path %>
