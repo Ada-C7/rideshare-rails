@@ -9,6 +9,25 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h2> RideShare </h2>
+      <nav>
+        <ul>
+          <li>Passengers
+            <ul>
+              <li><a href="">Passenger List</a></li>
+              <li><a href="">Passenger +</a></li>
+            </ul>
+          </li>
+          <li>Drivers
+            <ul>
+              <li><a href="">Driver List</a></li>
+              <li><a href="">Driver +</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main><%= yield %></main>
   </body>
 </html>
