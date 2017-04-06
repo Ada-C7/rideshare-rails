@@ -3,5 +3,6 @@
           <h1>Passenger</h1>
           <p>Passenger Name: <%= @passenger.name %></p>
           <p>Phone Number: <%= @passenger.phone %></p>
+          <p><%= link_to "Edit " + @passenger.name, edit_passenger_path %></p>
      </section>
 <% end %>

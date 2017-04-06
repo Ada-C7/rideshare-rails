@@ -16,6 +16,10 @@ class PassengersController < ApplicationController
     redirect_to passengers_path unless passenger.id == nil
   end
 
+  def edit
+    @passenger = Passenger.find(params[:id])
+  end
+
   private
 
   def passenger_params
