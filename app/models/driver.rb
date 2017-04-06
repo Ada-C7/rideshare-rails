@@ -21,9 +21,7 @@ class Driver < ApplicationRecord
     driver = drivers.sample
     if driver.available?(driver)
       return driver.id
-    else
-      puts "this driver has an unrated trip and thus must be driving right now!"
-      
+    else      
       assign_driver
     end
   end
