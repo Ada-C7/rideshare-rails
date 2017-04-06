@@ -8,7 +8,7 @@ def create
   @user = User.create user_params #params[:user]
 
   if @user.id != nil
-    redirect_to #users_path
+    redirect_to users_path
   else
     render "new"
   end
@@ -27,8 +27,6 @@ def show
 end
 
 def update
-#   ActionController::ParameterMissing in UsersController#update
-# param is missing or the value is empty: user
   @user = User.find(params[:id])
   if @user.update(user_params)
     redirect_to user_path
