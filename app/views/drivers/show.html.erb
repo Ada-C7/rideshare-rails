@@ -1,11 +1,13 @@
-<h3><%= @selected_driver.name %></h3>
-<h4>VIN: <%= @selected_driver.vin %></h4>
-<h4>Average rating: <%= @selected_driver.average_rating %></h4>
-<h4>Total net earnings to date: $<%= @selected_driver.total_earnings %></h4>
-<h4>Total number of trips: <%= @selected_driver.trips.length %></h4>
-<h3>All trips</h3>
-<% @selected_driver.trips.each do |trip| %>
-  <h4><%=link_to "Trip #{trip.id}", trip_path(trip.id) %></h4>
-<% end %>
-<h4><%= link_to "Edit Driver", edit_driver_path %></h4>
-<h4><%= link_to "Delete Driver", driver_path, method: :delete %></h4>
+<h3>Name: <%= @selected_driver.name %></h3>
+<p>VIN: <%= @selected_driver.vin %></p>
+<p>Average rating: <%= @selected_driver.average_rating %></p>
+<p>Total net earnings to date: $<%= @selected_driver.total_earnings %></p>
+
+<h3>Trips Driven: <%= @selected_driver.trips.length %></h3>
+<ul><% @selected_driver.trips.each do |trip| %>
+  <li><%=link_to "Trip #{trip.id}", trip_path(trip.id) %></li>
+  <% end %>
+</ul>
+
+<h3>{<%= link_to "Edit Driver", edit_driver_path %>}</h4>
+<h3>{<%= link_to "Delete Driver", driver_path, method: :delete %>}</h4>

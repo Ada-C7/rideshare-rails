@@ -9,14 +9,15 @@
   </head>
 
   <body>
+    <h2>Welcome to Rideshare</h2>
     <nav>
-      <h6><%= link_to 'Home', trips_path %></h6>
-      <h6><%= link_to 'Add New Rider', new_rider_path %></h6>
-      <h6><%= link_to 'Add New Driver', new_driver_path %></h6>
-      <h6><%= link_to 'Show All Riders', riders_path %></h6>
-      <h6><%= link_to 'Show All Drivers', drivers_path %></h6>
-
-
+      <ul>
+        <li><%= link_to '{Home}', trips_path %></li>
+        <li><%= link_to '{All Riders}', riders_path %></li>
+        <li><%= link_to '{All Drivers}', drivers_path %></li>
+        <li><%= link_to '{New Rider}', new_rider_path %></li>
+        <li><%= link_to '{New Driver}', new_driver_path %></li>
+      </ul>
     </nav>
     <%= yield %>
   </body>

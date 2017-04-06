@@ -1,10 +1,9 @@
-<h1>Riders</h1>
-<p>List of Riders here</p>
+<h3>Riders</h3>
+
 <ul>
 <% @riders.each do |rider| %>
-  <li><p> Driver: <%= link_to rider.name, rider_path(rider.id) %></p>
-  <!-- <p>Phone: <%= rider.phone %></p> -->
-  <!-- <p>Total Cost: <%= rider.total_cost(rider.id) %></p></li> -->
+  <li><p> <%= link_to rider.name, rider_path(rider.id) %></p>
+
 <% end %>
 
 </ul>

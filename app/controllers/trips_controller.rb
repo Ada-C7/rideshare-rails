@@ -5,6 +5,7 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
+    @trip.date = Date.current
   end
 
   def create
@@ -15,6 +16,10 @@ class TripsController < ApplicationController
     else
       render "new"  #need to add validations to trip model
     end
+  end
+
+  def show
+    @selected_trip = Trip.find params[:id]
   end
 
 
