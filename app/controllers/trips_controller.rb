@@ -21,8 +21,6 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
   end
 
-
-
     def update
       trip = Trip.find(params[:id])
       trip.update_attributes(trip_params)
