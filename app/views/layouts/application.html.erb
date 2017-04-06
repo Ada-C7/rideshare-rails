@@ -9,6 +9,14 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+        <li><%= link_to "New User", new_user_path %></li>
+        <li><%= link_to "New Driver", new_driver_path %></li>
+        <li><%= link_to "All Users", users_path %></li>
+        <li><%= link_to "All Drivers", drivers_path %></li>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>
