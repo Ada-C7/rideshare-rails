@@ -34,4 +34,9 @@ class DriversController < ApplicationController
   def destroy
   end
 
+  private
+
+  def driver_params
+    return params.require(:driver).permit(:driver_id, :name, :vin)
+  end
 end
