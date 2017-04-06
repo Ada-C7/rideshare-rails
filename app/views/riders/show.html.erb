@@ -1,6 +1,6 @@
 <h2>Name: <%= @rider.name %></h2>
 <p>Phone: <%= @rider.phone %></p>
-<p>Total Charged: $<%= (@rider.total_cost(@rider.id)/100.00).to_f.round(2)%></p>
+<p>Total Charged: $<%= (@rider.total_cost/100.00).to_f.round(2)%></p>
 <!-- NOT CENTS -->
 
 <h2>Trips Taken: <%= @rider.trips.length %> </h2>
