@@ -7,7 +7,7 @@
 <h2>Driver's trip list</h2>
 <%@driver.trips.each do |trip|%>
   <ul>
-    <li>Date: <%=trip.date%></li>
+    <li>Date: <%=link_to "#{trip.date}", trip_path(trip.id)%></li>
     <li>Rating: <%=trip.rating%></li>
     <li>Cost: <%=trip.cost%></li>
   </ul>
