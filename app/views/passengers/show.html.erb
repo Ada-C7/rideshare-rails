@@ -1,6 +1,11 @@
-<h1>Driver Details</h1>
+<h1>Passenger Details</h1>
 
 <ul>
   <li>Name: <%= @result_passenger.name %></li>
   <li>Phone number: <%= @result_passenger.phone_num %></li>
 </ul>
+
+<p>
+  <%= link_to "Back to Passenger List", passengers_path %>
+  <%= link_to "Edit", edit_passenger_path(@result_passenger.id) %>
+</p>
