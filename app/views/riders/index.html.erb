@@ -3,7 +3,8 @@
 <ul>
 <% @riders.each do |rider| %>
   <li><p>Name: <%= rider.name %></p>
-  <p>Phone: <%= rider.phone %></p></li>
+  <p>Phone: <%= rider.phone %></p>
+  <p>Total Cost: <%= rider.total_cost(rider.id) %></p></li>
 <% end %>
 
 </ul>
