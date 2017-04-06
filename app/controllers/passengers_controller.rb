@@ -10,7 +10,7 @@ class PassengersController < ApplicationController
 
   def create
     Passenger.create(passenger_params)
-    redirect_to passenger_path
+    redirect_to passengers_path
   end
 
   def show

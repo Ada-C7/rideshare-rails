@@ -23,7 +23,10 @@ class DriversController < ApplicationController
 
   def update
     driver = Driver.find(params[:id])
-    driver.update_attributes(driver_params).save
+    driver = driver.update_attributes(driver_params)
+    # update_attributes is calling save - because of validations?
+    # so I don't need to call save 
+    # driver.save
     redirect_to driver_path
   end
 

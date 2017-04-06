@@ -8,7 +8,12 @@
     <li>Name: <%= @driver[:name] %></li>
     <li>Vin: <%= @driver[:vin] %></li>
   </ul>
+
+  <p><%= link_to 'Edit Driver', edit_driver_path %></p>
+
 </main>
 
 <footer>
+  <p><%= link_to 'Drivers', drivers_path %></p>
+  <p><%= link_to 'Back', :back %></p>
 </footer>
