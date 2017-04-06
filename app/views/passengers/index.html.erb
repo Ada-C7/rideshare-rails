@@ -2,8 +2,10 @@
 
 <ul>
   <% @passengers.each do |passenger| %>
-    <%= render partial: "passenger_summary", locals: {passenger: passenger} %>
+    <li>
+      <%= render partial: "passenger_summary", locals: {passenger: passenger} %>
+    </li>
   <% end %>
 </ul>
 
-<%= link_to "", %>
+<%= link_to "Add a new passenger", new_passenger_path %>

@@ -4,14 +4,27 @@ class PassengersController < ApplicationController
     @passengers = Passenger.all
   end
 
-  def new
-    @passenger = Passenger.new
-  end
-
+# View one driver
   def show
     @passenger = Passenger.find(params[:id])
   end
 
+# Create a driver
+  def new
+    @passenger = Passenger.new
+  end
+
+  def create
+    @passenger = Passenger.new(passenger_params)
+    if @passenger.save
+      redirect_to passenger_path
+    else
+      #we know the validations didn't pass
+      render :new
+    end
+  end
+
+  # Edit a driver
   def edit
     @passenger = Passenger.find(params[:id])
   end
@@ -19,20 +32,9 @@ class PassengersController < ApplicationController
   def update
     #this is something that I'm not sure it's right
     passenger = Passenger.find(params[:id])
-    passenger.update_attributes(passanger_params)
-    passenger.save
+    passenger.update(passanger_params)
 
     redirect_to passenger_path(passenger) #like do I need this or should it be somethign else?
-  end
-
-  def create
-    @passenger = Passenger.new(passenger_params)
-    if @passenger.save
-      redirect_to passengers_path
-    else
-      #we know the validations didn't pass
-      render :new
-    end
   end
 
   def destroy
