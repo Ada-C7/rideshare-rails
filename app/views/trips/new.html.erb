@@ -1,8 +1,10 @@
 <%if @trip.rider.trips_rated?%>
-  <%= form_for @trip do |f| %>
+  <%= form_for ([@trip.rider, @trip]) do |f| %>
+    <%= f.label :cost %>
+    <%= f.text_field :cost %>
     <%= f.submit value: "Create new trip" %>
   <% end %>
 <%else%>
-  <p> Your trips are not rated. Go back and rate all trips</p>
-  <%= link_to "Back to rider", rider_path(@trip.rider.id)%>
+<p> You cannot create a new trip if previous trips are not rated. Go back and rate all trips</p>
+<%= link_to "Back to rider", rider_path(@trip.rider.id)%>
 <%end%>

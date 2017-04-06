@@ -1,0 +1,13 @@
+<%= form_for ([@trip.rider, @trip])  do |f| %>
+  <%= radio_button_tag(:rating, "1") %>
+  <%= label_tag(:one, "1") %>
+  <%= radio_button_tag(:rating, "2") %>
+  <%= label_tag(:two, "2") %>
+  <%= radio_button_tag(:rating, "3") %>
+  <%= label_tag(:three, "3") %>
+  <%= radio_button_tag(:rating, "4") %>
+  <%= label_tag(:four, "4") %>
+  <%= radio_button_tag(:rating, "5") %>
+  <%= label_tag(:five, "5") %>
+  <%= f.submit value: "Rate this trip" %>
+<% end %>

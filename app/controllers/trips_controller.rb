@@ -1,25 +1,27 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trip.all
+    rider = Rider.find(params[:rider_id])
+    @trips = rider.trips
   end
 
   def new
-    @trip = Trip.new
-    @rider_id = params[:id]
-    @trip.rider = Rider.find(@rider_id)
+    rider = Rider.find(params[:rider_id])
+    @trip = rider.trips.build
   end
 
   def create
-    @trip = Trip.new
-    @trip.date = Time.now
-    @trip.rating  = nil
-    @trip.rider_id = @rider_id
-    @trip.driver_id = rand(1..100)
+    rider = Rider.find(params[:rider_id])
+    default_params = {id: rand(601...10000),date: Time.now, rating: nil, rider_id: rider.id, driver_id: rand(1..100)}
+    @trip = rider.trips.create(default_params)
+
+    @trip.update_attributes(trip_params)
     @trip.save
+    redirect_to rider_path(@trip.rider_id)
   end
 
   def show
-    @trip = Trip.find(params[:id])
+    rider = Rider.find(params[:rider_id])
+    @trip = rider.trips.find(params[:id])
   end
 
   def edit
@@ -28,12 +30,13 @@ class TripsController < ApplicationController
 
   def update
     @trip = Trip.find(params[:id])
-    @trip.update_attributes(trip_params)
+    @trip.update_attributes(rider_trip_params)
     if @trip.save
       redirect_to trip_path(@trip)
     else
       render :edit
     end
+
   end
 
   def destroy
@@ -44,6 +47,10 @@ class TripsController < ApplicationController
 
   private
   def trip_params
-    return params.require(:trip).permit(:date, :rating)
+    return params.require(:trip).permit(:cost, :rating)
   end
+
+  def rider_trip_params
+  params.require(:rider_trip).permit(:rating)
+end
 end

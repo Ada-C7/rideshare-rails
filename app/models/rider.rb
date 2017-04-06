@@ -9,18 +9,31 @@ class Rider < ApplicationRecord
   def total_amount
     total = 0
     self.trips.each do |trip|
-      total += trip.cost
+      if trip.cost == nil
+        next
+      else
+        total += trip.cost
+      end
     end
     return total
   end
 
 
     def trips_rated?
-      self.trips.each do |trip|
-        if trip.rating == nil
-          return false
-        end
-      end
+
+      # l = self.trips.length - 1
+      # (0..l).each do |i|
+      #   if self.trips[i].rating == nil
+      #     return false
+      #   else
+      #     return true
+      #   end
+      # end
+      # self.trips.each do |trip|
+      #   if trip.rating == nil
+      #     return false
+      #   end
+      # end
       return true
     end
 

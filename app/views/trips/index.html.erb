@@ -6,6 +6,7 @@
     <th>Rating</th>
     <th>Rider id</th>
     <th>Driver id</th>
+    <th>Cost</th>
   </tr>
 
   <%@trips.each do |trip|%>
@@ -15,6 +16,7 @@
       <td> <%=trip.rating%></td>
       <td> <%=trip.rider_id%></td>
       <td> <%=trip.driver_id%></td>
+      <td> <%=trip.cost%></td>
     </tr>
   <%end%>
 </table>
