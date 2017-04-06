@@ -1,0 +1,19 @@
+<ul>
+  <%= form_for @passenger do |f| %>
+    <li>
+      <%= f.label :name, "Name: " %>
+      <%= f.text_field :name %>
+    </li>
+    <li>
+      <%= f.label :phone, "Phone Number: " %>
+      <%= f.text_field :phone %>
+    </li>
+</ul>
+
+<p class="button">
+  <%= f.submit %>
+</p>
+<% end %>
+<p class="button">
+    <%= link_to "Cancel", passengers_path %>
+</p>
