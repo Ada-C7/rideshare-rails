@@ -23,10 +23,12 @@ class DriversController < ApplicationController
   end
 
   def edit
-    @driver = Driver.find(params[:id])
+    @driver = Driver.find(params[:driver_id])
   end
 
   def show
+    index = params[:driver_id].to_i
+    @driver = Driver.find(index)
   end
 
   def update
