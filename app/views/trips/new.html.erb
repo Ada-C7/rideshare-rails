@@ -1,7 +1,19 @@
-<%if @rider.trips_rated?%>
+<h1>Create a new trip</h1>
+<header>
+<!-- render partial: header  -->
+</header>
+
+
+<%if @trip.rider.trips_rated?%>
   <%= form_for @trip do |f| %>
+  <%= f.label :name, "Welcome, #{Rider.find(params[:id]).name}!" %>
+  <br>
+  <%= f.label :driver_id, "You will be riding with #{Driver.find(@random_driver).name}!" %>
+  <br>
+<br>
     <%= f.submit value: "Create new trip" %>
   <% end %>
 <%else%>
   <p> Your trips are not rated. Go back and rate all trips</p>
+  <%= link_to "Back to rider", rider_path(@trip.rider.id)%>
 <%end%>
