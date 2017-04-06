@@ -2,14 +2,12 @@
 
 <table>
   <tr>
-    <th>Driver ID</th>
     <th>Name</th>
     <th>VIN</th>
   </tr>
   <% @drivers.each do |driver| %>
     <tr>
-      <td><%= link_to driver.id, driver_path(driver.id), method: :get %></td>
-      <td><%= driver.name %></td>
+      <td><%= link_to driver.name, driver_path(driver.id), method: :get %></td>
       <td><%= driver.vin %></td>
     </tr>
   <% end %>
