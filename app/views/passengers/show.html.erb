@@ -28,10 +28,10 @@
     </ul>
   <% end %>
 
-  <% @passenger.trips.each do |trip| %>
+  <% @passenger.trips.order("date ASC").each do |trip| %>
     <ul>
       <li>
-        Date: <%= link_to trip.date, trip_path(trip.id) %>
+        Date: <%= link_to trip.date, trip_path(trip.id) %> -- Driver: <%= link_to trip.driver.name, driver_path(trip.driver_id) %>
       </li>
       <li>
         Rating: <%= trip.rating %>

@@ -1,0 +1,44 @@
+<% if @trip.errors.any? %>
+  <ul class="error">
+    <% @trip.errors.each do |field, msg| %>
+      <li>
+        Oops! <strong><%= field.capitalize %></strong> <%= msg %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<ul>
+  <li>
+    Passenger: <%= link_to @trip.passenger.name, passenger_path(@trip.passenger.id) %>
+  </li>
+  <li>
+    Driver: <%= link_to @trip.driver.name, driver_path(@trip.driver.id) %>
+  </li>
+  <li>
+    Date: <%= @trip.date %>
+  </li>
+  <li>
+    Cost: $<%= @trip.cost %>
+  </li>
+</ul>
+
+<%= form_for @trip do |f| %>
+  <ul>
+    <li>
+      <%= f.label :rating, "Rating: " %>
+      <%= f.number_field(:rating, in: 1..5, step: 1)  %>
+    </li>
+  </ul>
+
+  <section class="button">
+    <ul>
+      <li>
+        <%= f.submit %>
+      </li>
+      <li>
+        <%= link_to "Cancel", :back %>
+      </li>
+    </ul>
+  </section>
+<% end %>

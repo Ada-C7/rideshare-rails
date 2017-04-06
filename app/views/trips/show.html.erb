@@ -24,7 +24,7 @@
 <section class="trip-nav">
   <ul>
     <li>
-      <%= link_to "Edit Trip", edit_trip_path %>
+      <%= link_to "Edit Trip", edit_trip_path(@trip.id) %>
     </li>
     <li>
       <%= link_to "Delete Trip", trip_path(@trip.id), method: :delete, data: {confirm: "Do you really want to delete this trip?"} %>
