@@ -1,2 +1,46 @@
-<h1>Passengers#show</h1>
-<p>Find me in app/views/passengers/show.html.erb</p>
+<h1> <%= @passenger.name %> </h1>
+<section class="passenger-details">
+
+  <ul>
+    <li>
+      Name: <%= @passenger.name %>
+    </li>
+    <li>
+      Phone: <%= @passenger.phone %>
+    </li>
+    <li>
+      Total charged: $TBD
+    </li>
+  </ul>
+
+</section>
+<h2><%= @passenger.name %>'s Trips</h2>
+<section class="passenger-trips">
+  <%= button_to "New Trip", new_trip_path, method: :post %>
+  <% @passenger.trips.each do |trip| %>
+    <ul>
+      <li>
+        Date: <%= link_to trip.date, trip_path(trip.id) %>
+      </li>
+      <li>
+        Rating: <%= trip.rating %>
+      </li>
+    </ul>
+  <% end %>
+  <% if @passenger.trips.size == 0 %>
+    <p>
+      No trips found.
+    </p>
+  <% end %>
+</section>
+
+<section class="passenger-nav">
+  <ul>
+    <li>
+      <%= link_to "Edit Passenger", edit_passenger_path %>
+    </li>
+    <li>
+      <%= link_to "Delete Passenger", passenger_path(@passenger.id), method: :delete, data: {confirm: "Do you really want to delete this passenger? All trips associated with the passenger will also be deleted."} %>
+    </li>
+  </ul>
+</section>

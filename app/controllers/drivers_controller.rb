@@ -35,7 +35,16 @@ class DriversController < ApplicationController
   end
 
   def destroy
+    @driver = Driver.find(params[:id])
+    dtrips = @driver.trips.count
+    count = 0
+    @driver.trips.each do |trip|
+      trip.destroy
+      count += 1
+    end
+    puts "deleted #{count} out of #{dtrips} trips for #{@driver.name}"
     Driver.destroy(params[:id])
+    puts "deleted #{@driver.name}"
     redirect_to :root
   end
 
