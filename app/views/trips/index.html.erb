@@ -1,0 +1,10 @@
+
+<table style=" width:80%" >
+
+
+  <% @trips.each do |item| %>
+  <%= render partial: 'trip_summary', locals:{item:item}%>
+  <% end %>
+
+
+</table>
