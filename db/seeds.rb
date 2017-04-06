@@ -28,7 +28,7 @@ csv_p.each do |row|
   passenger.id = row['passenger_id']
   passenger.name = row['name']
   passenger.phone_num = row['phone_num']
-  passenger.save
+  passenger.save!
 end
 
 csv_trip = File.read(Rails.root.join('lib', 'seeds', 'trips.csv'))
