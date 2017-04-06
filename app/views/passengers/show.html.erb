@@ -27,6 +27,11 @@
       </li>
     </ul>
   <% end %>
+  <% if @passenger.trips.size == 0 %>
+    <p>
+      No trips found.
+    </p>
+  <% end %>
 </section>
 
 <section class="passenger-nav">

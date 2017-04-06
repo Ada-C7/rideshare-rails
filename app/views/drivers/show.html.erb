@@ -29,6 +29,11 @@
       </li>
     </ul>
   <% end %>
+  <% if @driver.trips.size == 0 %>
+    <p>
+      No trips found.
+    </p>
+  <% end %>
 </section>
 
 <section class="trip-nav">
