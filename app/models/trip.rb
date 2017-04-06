@@ -2,10 +2,10 @@ class Trip < ApplicationRecord
   belongs_to :rider
   belongs_to :driver
 
-  # will need to add error messages in views, and possibly more validations 
+  # will need to add error messages in views, and possibly more validations
 
-  validates :driver_id, presence: true
-  validates :rider_id, presence: true
+  validates :driver_id, presence: true, numericality: { only_integer: true }
+  validates :rider_id, presence: true, numericality: { only_integer: true }
   validates :date, presence: true
-  validates :rating, presence: true
+  validates :rating, presence: true, numericality: { only_integer: true, greater_than: 0, less_than: 6 }
 end
