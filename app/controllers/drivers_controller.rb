@@ -13,6 +13,9 @@ class DriversController < ApplicationController
   end
 
   def create
+    Driver.create(driver_params)
+
+    redirect_to driver_path
   end
 
   def new
@@ -30,4 +33,5 @@ class DriversController < ApplicationController
 
   def destroy
   end
+
 end
