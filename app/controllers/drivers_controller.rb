@@ -10,6 +10,7 @@ class DriversController < ApplicationController
 
   def create
     Driver.create(driver_params)
+    redirect_to driver_path
   end
 
   def show
@@ -23,10 +24,12 @@ class DriversController < ApplicationController
   def update
     driver = Driver.find(params[:id])
     driver.update_attributes(driver_params).save
+    redirect_to driver_path
   end
 
   def destroy
     Driver.find(params[:id]).destroy
+    redirect_to drivers_path
   end
 
 private
