@@ -1,3 +1,9 @@
+<h1>Create a new trip</h1>
+<header>
+<!-- render partial: header  -->
+</header>
+
+
 <%if @trip.rider.trips_rated?%>
   <%= form_for ([@trip.rider, @trip]) do |f| %>
     <%= f.label :cost %>
