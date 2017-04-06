@@ -1,28 +1,24 @@
 <header>
-<h1>Driver Info</h1>
+<h1>Driver: <%= "#{@driver.name}" %></h1>
 </header>
 
 <main>
   <h2>Info:</h2>
-  <ul>
-    <li>Name: <%= @driver[:name] %></li>
-    <li>Vin: <%= @driver[:vin] %></li>
-    <li>Average Rating: <%= @driver.calculate_average_rating %></li>
-    <li>Earnings: $<%= @driver.calculate_earnings %></li>
-  </ul>
+    <%= render partial: 'driver_info' %>
 
   <h3>Trips:</h3>
     <ul>
     <% @driver.get_trips.each do |trip| %>
-      <li> Trip ID: <%= link_to "#{trip.id}", trip_path %>
+         <li>Trip ID: <%= link_to "#{trip.id}", trip_path %>
       <% end %>
     </ul>
 
-  <p><%= link_to 'Edit Driver', edit_driver_path %></p>
-  <p><%= link_to "Delete Driver",
-        @driver, method: :delete,
-        data: { confirm: "You sure?" } %></p>
-
+  <section>
+    <p><%= link_to 'Edit Driver', edit_driver_path %></p>
+    <p><%= link_to "Delete Driver",
+            @driver, method: :delete,
+            data: { confirm: "You sure?" } %></p>
+  </section>
 </main>
 
 <footer>
