@@ -1,4 +1,6 @@
 <h2>Passengers</h2>
+<h3><%= link_to "Add a new passenger", new_passenger_path %></h3>
+
 
 <ul>
   <% @passengers.each do |passenger| %>
@@ -7,5 +9,3 @@
     </li>
   <% end %>
 </ul>
-
-<%= link_to "Add a new passenger", new_passenger_path %>
