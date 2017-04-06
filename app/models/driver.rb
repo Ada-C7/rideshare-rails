@@ -8,9 +8,10 @@ class Driver < ApplicationRecord
   def average_rating
     array_of_ratings = trips.all.collect {|t| t.rating}
     if array_of_ratings != []
-      return array_of_ratings.sum.to_f/array_of_ratings.length
+      avg = array_of_ratings.sum.to_f/array_of_ratings.length
+      return avg.round(1)
     else
-      return Float::NAN
+      return "-"
     end
   end
 
