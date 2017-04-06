@@ -18,6 +18,7 @@ class RidersController < ApplicationController
   end
 
   def edit
+    @rider = Rider.find(params[:id])
   end
 
   def show
@@ -25,9 +26,16 @@ class RidersController < ApplicationController
   end
 
   def update
+    rider = Rider.find(params[:id])
+
+    if rider.update(rider_params)
+      redirect_to rider_path
+    end
   end
 
   def destroy
+    Rider.destroy(params[:id])
+    redirect_to riders_path
   end
 
   private
