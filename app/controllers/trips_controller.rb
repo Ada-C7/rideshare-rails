@@ -26,7 +26,7 @@ class TripsController < ApplicationController
       trip = Trip.find(params[:id])
       trip.update_attributes(trip_params)
       trip.save
-      redirect_to trips_path(trip)
+      redirect_to trip_path(trip)
     end
 
     def destroy
