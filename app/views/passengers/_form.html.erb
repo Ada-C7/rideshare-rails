@@ -8,8 +8,8 @@
   </ul>
 <% end %>
 
-<ul>
-  <%= form_for @passenger do |f| %>
+<%= form_for @passenger do |f| %>
+  <ul>
     <li>
       <%= f.label :name, "Name: " %>
       <%= f.text_field :name %>
@@ -18,16 +18,16 @@
       <%= f.label :phone, "Phone Number: " %>
       <%= f.text_field :phone %>
     </li>
-</ul>
-
-<section class="button">
-  <ul>
-    <li>
-      <%= f.submit %>
-    </li>
-    <% end %>
-    <li>
-      <%= link_to "Cancel", :back %>
-    </li>
   </ul>
-</section>
+
+  <section class="button">
+    <ul>
+      <li>
+        <%= f.submit %>
+      </li>
+      <li>
+        <%= link_to "Cancel", :back %>
+      </li>
+    </ul>
+  </section>
+<% end %>

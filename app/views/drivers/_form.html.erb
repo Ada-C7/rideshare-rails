@@ -8,8 +8,8 @@
   </ul>
 <% end %>
 
-<ul>
-  <%= form_for @driver do |f| %>
+<%= form_for @driver do |f| %>
+  <ul>
     <li>
       <%= f.label :name, "Name: " %>
       <%= f.text_field :name %>
@@ -25,9 +25,9 @@
       <li>
         <%= f.submit %>
       </li>
-      <% end %>
       <li>
         <%= link_to "Cancel", :back %>
       </li>
     </ul>
   </section>
+<% end %>
