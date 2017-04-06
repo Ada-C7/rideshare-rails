@@ -10,7 +10,7 @@ class DriversController < ApplicationController
 
   def create
     Driver.create(driver_params)
-    redirect_to driver_path
+    redirect_to drivers_path
   end
 
   def show
