@@ -12,8 +12,9 @@ csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
   passenger = Passenger.new
   passenger.name = row['name']
-  passenger.name = row['passenger_id']
-  passenger.name = row['phone_num']
-  passenger.save
+  passenger.passenger_id = row['passenger_id']
+  passenger.phone_num = row['phone_num']
+  passenger.save!
+
   puts row.to_hash
 end
