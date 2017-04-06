@@ -1,0 +1,14 @@
+<ul>
+  <% @trip.errors.each do |column, msg| %>
+    <li>
+      <%= column.capitalize %> <%= msg %>
+    </li>
+  <% end %>
+</ul>
+
+<%= form_for @trip, method: form_method do |f| %>
+  <%= f.label :rating %>
+  <%= f.select :rating, [[1,1],[2,2],[3,3],[4,4],[5,5]] %>
+
+  <%= f.submit nil %>
+<% end %>
