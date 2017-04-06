@@ -19,7 +19,8 @@ class DriversController < ApplicationController
   def update
     @driver = Driver.find(params[:id])
     @driver.name = driver_params[:name]
-    @driver.phone_num = driver_params[:phone_num]
+    @driver.lic_plate = driver_params[:lic_plate]
+    @driver.vin = driver_params[:vin]
     if @driver.save
       redirect_to driver_path(@driver.id)
     end
@@ -48,7 +49,7 @@ class DriversController < ApplicationController
   private
 
   def driver_params
-    params.require(:driver).permit(:name, :phone_num)
+    params.require(:driver).permit(:name, :lic_plate, :vin)
   end
 
 end
