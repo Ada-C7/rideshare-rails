@@ -20,14 +20,17 @@
        <tr class="header">
          <th>ID</th>
          <th>Name</th>
-         <th>VIN</th>
+         <!-- <th>VIN</th> -->
+         <th>Average rating</th>
+
        </tr>
 
        <% @drivers.each do |driver| %>
        <tr>
          <td><%= driver[:id] %></td>
          <td><%= driver[:name] %></td>
-         <td><%= driver[:vin] %></td>
+         <!-- <td><%#= driver[:vin] %></td> -->
+         <td><%= driver.average_rating.round(1) %></td>
 
 
 
