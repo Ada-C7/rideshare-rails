@@ -10,8 +10,8 @@ class TripsController < ApplicationController
 
   def create
     trip_data = trip_params
-    Trip.create(trip_data)
-    redirect_to passengers_path(@passenger)
+    trip = Trip.create(trip_data)
+    redirect_to passenger_path(trip.passenger_id)
   end
 
   def show
