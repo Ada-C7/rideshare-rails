@@ -1,0 +1,20 @@
+<h1>Driver#show</h1>
+<p>Find me in app/views/driver/show.html.erb</p>
+
+<h2><%= @result_driver.name %></h2>
+
+<p>
+  <%= @result_driver.id %>
+</p>
+
+<p>
+  VIN: <%= @result_driver.vin %>
+</p>
+
+<p>
+  Current Rating: <%= @result_driver.rating %>
+</p>
+
+<%= link_to "Delete", driver_path(@result_driver.id), method: :delete,
+      data: { confirm: "Are you sure you want to delete?"}
+ %>
