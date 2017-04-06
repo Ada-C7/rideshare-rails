@@ -18,6 +18,13 @@ class PassengersController < ApplicationController
     @passenger = Passenger.find(params[:id])
   end
 
+  def destroy
+  passenger = Passenger.find(params[:id])
+  passenger.destroy
+
+  redirect_to passengers_path
+  end
+
   private
   def passenger_params
     return params.require(:passenger).permit(:id, :name, :phone_num)
