@@ -5,7 +5,9 @@
 <%= link_to "Delete", rider_path(@rider), method: :delete,
     data: {confirm: "Are you sure"} %>
 
-<%= @rider.trips.each do |trip| %>
-<%= trip.date %>
-<%= trip.rating %>
-<% end %>
+    <ul> <% @rider.trips.each_with_index do |trip, index| %>
+    <h3> Trip <%= trip.id %> </h3>
+    <li><%= trip.date %></li>
+    <li><%= trip.rating %></li>
+    <% end %>
+    </ul>

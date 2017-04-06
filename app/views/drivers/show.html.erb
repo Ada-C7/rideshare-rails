@@ -4,3 +4,10 @@
 <%= link_to "Edit", edit_driver_path(@driver.id) %>
 <%= link_to "Delete", driver_path(@driver), method: :delete,
     data: {confirm: "Are you sure"} %>
+
+<ul> <% @driver.trips.each_with_index do |trip, index| %>
+<h3> Trip <%= trip.id %> </h3>
+<li><%= trip.date %></li>
+<li><%= trip.rating %></li>
+<% end %>
+</ul>
