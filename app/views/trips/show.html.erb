@@ -6,9 +6,13 @@
 <h3>Driver's ID: <%= @trip.driver.id %></h3>
 
 <h3>Passenger's Name: <%= @trip.passenger.name %></h3>
-<h3>Passenger's Name: <%= @trip.passenger.id %></h3>
+<h3>Passenger's ID: <%= @trip.passenger.id %></h3>
 
+<h3>Trip Date: <%= @trip.date %></h3>
 
+<h3>Trip Cost: <%= @trip.cost_in_cents %></h3>
+
+<h3>Trip Rating: <%= @trip.rating %></h3>
 
 <%= button_to "Edit Trip", edit_trip_path, :class => "button", :method => :get %>
 
