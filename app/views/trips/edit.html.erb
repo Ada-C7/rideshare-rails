@@ -1,4 +1,6 @@
 
+<h1>Rate your trip</h1>
+
 <%= form_for ([@trip.rider, @trip])  do |f| %>
   <%= radio_button_tag(:rating, "1") %>
   <%= label_tag(:one, "1") %>
@@ -12,12 +14,6 @@
   <%= label_tag(:five, "5") %>
   <%= f.submit value: "Rate this trip" %>
 <% end %>
-
-<h1>Rate your trip</h1>
-<header>
-<!-- render partial: header  -->
-</header>
-
 
 <%= link_to "See Rider", rider_path(@trip.rider_id)%>
 <%= link_to "See all Riders", riders_path%>
