@@ -22,6 +22,10 @@ class PassengersController < ApplicationController
     end
   end
 
+  def new
+    @passenger = Passenger.new
+  end
+
   def destroy
     Passenger.destroy(params[:id])
 

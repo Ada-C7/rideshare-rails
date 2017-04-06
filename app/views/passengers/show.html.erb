@@ -8,4 +8,6 @@
 <p>
   <%= link_to "Back to Passenger List", passengers_path %>
   <%= link_to "Edit", edit_passenger_path(@result_passenger.id) %>
+  <%= button_to 'Delete', passenger_path(@result_passenger.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+
 </p>

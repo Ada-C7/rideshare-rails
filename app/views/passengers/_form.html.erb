@@ -1,4 +1,4 @@
-<%= form_for @result_passenger do |f| %>
+<%= form_for @passenger, method: form_method do |f| %>
 
 <%= f.label :name, class: "passenger" %></br>
 <%= f.text_field :name %></br>
@@ -11,9 +11,9 @@
 
 <%#= button_to "Home", passengers_path, method: :get %>
 
-<%= button_to 'Delete', passenger_path(@result_passenger.id), method: :delete, data: { confirm: 'Are you sure?' } %>
 
 
 <% end %>
-<%#= link_to 'Delete', passenger_path(@result_passenger.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+
 <%= link_to "Back to Passenger List", passengers_path %>
