@@ -10,8 +10,7 @@ class PassengersController < ApplicationController
 
   def create
     Passenger.create(passenger_params)
-
-    redirect_to passengers_path
+    redirect_to passenger_path
   end
 
   def show
@@ -26,14 +25,12 @@ class PassengersController < ApplicationController
     passenger = Passenger.find(params[:id])
     passenger.update_attributes(passenger_params)
     passenger.save
-
     redirect_to passenger_path(passenger)
   end
 
   def destroy
     passenger = Passenger.find(params[:id])
     passenger.destroy
-
     redirect_to passengers_path
   end
 
@@ -41,5 +38,4 @@ class PassengersController < ApplicationController
     def passenger_params
       return params.require(:passenger).permit(:name, :phone_num)
     end
-
 end
