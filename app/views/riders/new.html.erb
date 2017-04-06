@@ -1,25 +1,4 @@
-<%= link_to 'Back', riders_path %>
-
-<div class="riders new">
- <h2>Create Rider</h2>
-
- <%= form_for(@rider, :url => riders_path, :method => 'post') do |f| %>
-
-   <table summary="Subject form fields">
-     <tr>
-       <th>Name</th>
-       <td><%= f.text_field(:name) %></td>
-     </tr>
-     <tr>
-       <th>Phone Number</th>
-       <td><%= f.text_field(:phone_num) %></td>
-     </tr>
-
-   </table>
-
-   <div class="form-buttons">
-     <%= f.submit("Create Subject") %>
-   </div>
-
- <% end %>
-</div>
+<%= render partial: "form"%>
+<section id = "new_section">
+  <%= link_to "To list of riders", riders_path, class: "button_link"%>
+</section>

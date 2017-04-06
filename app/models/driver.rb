@@ -13,5 +13,5 @@ class Driver < ApplicationRecord
       return Float::NAN
     end
   end
-  
+
 end

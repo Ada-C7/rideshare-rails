@@ -3,7 +3,7 @@ class RidersController < ApplicationController
 
 
   def index
-    @riders = Rider.all
+    @riders = Rider.all.order(:id)
   end
 
   def show
@@ -24,9 +24,11 @@ class RidersController < ApplicationController
   end
 
   def create
-    @rider = Rider.create(rider_params)
+    @rider = Rider.new(rider_params)
     if @rider.save
       redirect_to riders_path
+    else
+        render :new
     end
   end
 
@@ -42,7 +44,7 @@ class RidersController < ApplicationController
   end
 
   def update
-    @rider = Rider.find(params[:id])
+    rider = Rider.find(params[:id])
     rider.update_attributes(rider_params)
     rider.save
     # redirect_to animal_path(animal)
@@ -50,7 +52,7 @@ class RidersController < ApplicationController
   end
 
 
-end
+
 
 
 
@@ -58,4 +60,5 @@ private
 
 def rider_params
   params.require(:rider).permit(:name , :phone_num)
+end
 end
