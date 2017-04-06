@@ -9,15 +9,5 @@
 </ul>
 
 
-<%= form_for @trip, method: form_method do |f| %>
-
-  <%= f.label :driver_id %>
-  <%= f.text_field :driver_id %>
-  <%= f.label :user_id %>
-  <%= f.text_field :user_id %>
-  <%= f.label :rating %>
-  <%= f.select :rating, options_for_select(1..5) %>
-
-  <%= f.submit action_name %>
 
 <% end %>
