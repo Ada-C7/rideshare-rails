@@ -1,24 +1,14 @@
+<nav class="side">
+    <div class="side__inner">
+        <div class="top"><%= link_to "Home", root_path %></div>
 
 
 
-<header class="nav_container">
-
-                <nav class="page_link">
-                    <%= link_to "Home", root_path %>
-
-                </nav>
-
-                <nav class="page_link">
-                    <%= link_to "Drivers", 'drivers#index'%>
-
-                </nav>
-
-                <nav class="page_link">
-                    <%= link_to "Riders", 'riders#index'%>
-
-                </nav>
+        <div class="bottom">
 
 
-
-
-</header>
+            <%= link_to "Drivers", 'drivers#index'%>
+            <%= link_to "Riders", 'riders#index'%>
+        </div>
+    </div>
+</nav>
