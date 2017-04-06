@@ -1,10 +1,9 @@
 <h1>Drivers</h1>
-<p>List of Drivers here</p>
-
+<h4><%= link_to "Create New Driver", new_driver_path %></h4>
 <ul>
 <% @drivers.each do |driver| %>
-  <li><p>Name: <%= driver.name %></p>
-  <p>VIN: <%= driver.vin %></p></li>
+  <li><%= driver.id %>: <%=link_to driver.name, driver_path(driver.id) %>   (average rating: <%=driver.average_rating(driver.id) %>)</li>
 <% end %>
+
 
 </ul>
