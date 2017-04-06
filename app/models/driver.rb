@@ -5,11 +5,15 @@ class Driver < ApplicationRecord
   validates :vin, presence: true, uniqueness: true, length: { is: 17 }
   validates :availability, inclusion: { in: [true, false] }, allow_nil: true
 
-
-
   def avg_rating
-  ratings_array = trips.map(&:rating)
-  ratings_array.sum / ratings_array.size.to_f
+    ratings_array = trips.map(&:rating)
+    ratings_array.sum / ratings_array.size.to_f
+  end
+
+  def total_earnings
+    cost_array = trips.map(&:cost)
+    total = cost_array.sum
+    return (total - (total * 0.15)).round(2)
   end
 
 end

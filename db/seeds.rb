@@ -35,7 +35,8 @@ CSV.open('support/trips.csv', 'r', :headers => true).each do |line|
   date = line["date"].to_s #need to change to date field
   rating = line["rating"].to_i
 
-  trip_array << {driver_id: driver_id, rider_id: rider_id, date: date, rating: rating}
+  cost = (rand(0.00...100.00)).round(2)
+  trip_array << {driver_id: driver_id, rider_id: rider_id, date: date, rating: rating, cost: cost }
 end
 
 Trip.create(trip_array)
