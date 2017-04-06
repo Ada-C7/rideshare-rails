@@ -16,3 +16,11 @@
   <%= f.submit %>
 
   <% end %>
+
+  <ul>
+    <% @trip.errors.each do | field, msg | %>
+    <li>
+      <%= field %> <%= msg %>
+    </li>
+    <% end %>
+  </ul>

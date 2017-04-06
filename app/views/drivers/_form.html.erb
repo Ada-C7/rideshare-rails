@@ -11,7 +11,7 @@
 <% end %>
 
 <ul>
-  <%= @driver.errors.each do | field, msg | %>
+  <% @driver.errors.each do | field, msg | %>
   <li>
     <%= field %> <%= msg %>
   </li>

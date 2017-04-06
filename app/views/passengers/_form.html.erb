@@ -9,3 +9,11 @@
   <%= f.submit %>
 
   <% end %>
+
+  <ul>
+    <% @passenger.errors.each do | field, msg | %>
+    <li>
+      <%= field %> <%= msg %>
+    </li>
+    <% end %>
+  </ul>
