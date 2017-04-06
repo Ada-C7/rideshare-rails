@@ -1,4 +1,4 @@
-<%= link_to driver.name(driver.id) %>
+<%= link_to driver.name, driver_path(driver.id) %>
 <%= link_to "Edit", "/drivers/#{driver.id}/edit" %>
 <%= link_to "Delete", "/drivers/#{driver.id}", method: :delete,
 data: { confirm: "Are you sure you want to delete #{driver.id}" } %>

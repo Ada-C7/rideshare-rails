@@ -3,8 +3,6 @@
 <h3> <%= link_to "New Driver", new_driver_path %> </h3>
 
   <% @drivers.each do |driver| %>
-  <%= render partial: "driver_summary", locals: { driver: driver } %>
+  <li><%= render partial: "driver_summary", locals: { driver: driver } %>
 
-  <%end%>
-
-<%= link_to "Add a new Driver", new_driver_path %>
+  <%end%></li>
