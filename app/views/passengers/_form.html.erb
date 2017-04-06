@@ -20,10 +20,14 @@
     </li>
 </ul>
 
-<p class="button">
-  <%= f.submit %>
-</p>
-<% end %>
-<p class="button">
-    <%= link_to "Cancel", passengers_path %>
-</p>
+<section class="button">
+  <ul>
+    <li>
+      <%= f.submit %>
+    </li>
+    <% end %>
+    <li>
+      <%= link_to "Cancel", :back %>
+    </li>
+  </ul>
+</section>
