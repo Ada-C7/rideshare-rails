@@ -1,1 +1,14 @@
-<h1>Working</h1>
+<section>
+  <%= form_for @driver do |t| %>
+  <%= t.label :driver_id %>
+  <%= t.text_field :driver_id %>
+
+  <%= t.label :name %>
+  <%= t.text_field :name %>
+
+  <%= t.label :vin %>
+  <%= t.text_field :vin %>
+
+  <%= t.submit value: "#{submit_text}" %>
+  <% end %>
+</section>
