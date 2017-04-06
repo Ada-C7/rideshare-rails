@@ -1,5 +1,14 @@
-<h1><%= "Trip ##{@trip.id}"%></h1>
+<h1><%= "Trip ID: #{@trip.id}"%></h1>
 
+<ul>
+
+
+<li><%= "Date: #{@trip.date}"%></li>
+<li><%= "Passenger: #{@trip.passenger.name}"%></li>
+<li><%= "Driver: #{@trip.driver.name}"%></li>
+<li><%= "Cost: $#{'%.2f' % (@trip.cost/100.0)}"%></li>
+<li><%= "Rating: #{"★" * @trip.rating}" %></li>
+</ul>
 
 <%= button_to "Update trip infomration", edit_trip_path(@trip),
   method: :get %>
