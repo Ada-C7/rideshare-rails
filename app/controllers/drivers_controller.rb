@@ -26,7 +26,7 @@ class DriversController < ApplicationController
 
   def update
     driver = Driver.find(params[:id])
-    driver.update(animal_params)
+    driver.update(driver_params)
 
     redirect_to driver_path(driver)
   end
