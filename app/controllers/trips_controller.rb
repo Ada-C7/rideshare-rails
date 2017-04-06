@@ -4,17 +4,23 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = Trip.new
-    @trip.date = Date.current
-    @trip.rating = 0
-    @trip.cost = rand(5.0..30.0).round(2)
-    @trip.driver_id = Driver.assign_driver
-    # @trip.driver = Driver.all.sample
-    @trip.passenger_id = params[:passenger_id]
-    if @trip.save
-      redirect_to passenger_path(params[:passenger_id])
+    passenger = Passenger.find(params[:passenger_id])
+    if passenger.all_trips_rated?
+      @trip = Trip.new
+      @trip.date = Date.current
+      @trip.rating = 0
+      @trip.cost = rand(5.0..30.0).round(2)
+      @trip.driver_id = Driver.assign_driver
+      # @trip.driver = Driver.all.sample
+      @trip.passenger_id = params[:passenger_id]
+      if @trip.save
+        redirect_to passenger_path(params[:passenger_id])
+      else
+        puts "didn't create new trip"
+        redirect_to passenger_path(params[:passenger_id])
+      end
     else
-      puts "didn't create new trip"
+      flash[:error] = "You must rate all your trips before creating a new trip!"
       redirect_to passenger_path(params[:passenger_id])
     end
   end
@@ -38,8 +44,10 @@ class TripsController < ApplicationController
   end
 
   def destroy
+    @trip = Trip.find(params[:id])
+    passenger = @trip.passenger
     Trip.destroy(params[:id])
-    redirect_to :root
+    redirect_to passenger_path(passenger.id)
   end
 
   private
