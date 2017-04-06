@@ -5,6 +5,10 @@ class PassengersController < ApplicationController
     @passengers = Passenger.all
   end
 
+  def new
+    @passenger = Passenger.new
+  end
+
   def create
     Passenger.create(passenger_params)
     redirect_to passengers_path

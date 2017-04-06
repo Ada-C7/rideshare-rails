@@ -11,7 +11,7 @@ csv_text = File.read(Rails.root.join('support', 'trips.csv' ))
 csv = CSV.parse(csv_text, :headers => true)
   csv.each do |row|
     t = Trip.new
-    t.id = row[0]
+    # t.id = row[0]
     t.driver_id = row[1]
     t.passenger_id = row[2]
     t.date = row[3]
@@ -24,7 +24,7 @@ csv = CSV.parse(csv_text, :headers => true)
   csv_passenger = CSV.parse(csv_text_passenger, :headers => true)
     csv_passenger.each do |row|
       t = Passenger.new
-      t.id = row[0]
+      # t.id = row[0]
       t.name = row[1]
       t.phone_num = row[2]
       t.save
@@ -34,7 +34,7 @@ csv = CSV.parse(csv_text, :headers => true)
     csv_driver = CSV.parse(csv_text_driver, :headers => true)
       csv_driver.each do |row|
         t = Driver.new
-        t.id = row[0]
+        # t.id = row[0]
         t.name = row[1]
         t.vin = row[2]
         t.save
