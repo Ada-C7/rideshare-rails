@@ -4,7 +4,7 @@ class PassengersController < ApplicationController
   end
 
   def new
-    @passenger = Passenger.new(passenger_params)
+    @passenger = Passenger.new
   end
 
   def create
@@ -35,7 +35,16 @@ class PassengersController < ApplicationController
   end
 
   def destroy
+    @passenger = Passenger.find(params[:id])
+    ptrips = @passenger.trips.count
+    count = 0
+    @passenger.trips.each do |trip|
+      trip.destroy
+      count += 1
+    end
+    puts "deleted #{count} out of #{ptrips} trips for #{@passenger.name}"
     Passenger.destroy(params[:id])
+    puts "deleted #{@passenger.name}"
     redirect_to :root
   end
 

@@ -1,2 +1,43 @@
-<h1>Drivers#show</h1>
-<p>Find me in app/views/drivers/show.html.erb</p>
+<h1> <%= @driver.name %> </h1>
+<section class="driver-details">
+
+  <ul>
+    <li>
+      Name: <%= @driver.name %>
+    </li>
+    <li>
+      VIN: <%= @driver.vin %>
+    </li>
+    <li>
+      Total Earned: TBD
+    </li>
+    <li>
+      Average Rating: TBD
+    </li>
+  </ul>
+
+</section>
+<h2><%= @driver.name %>'s Trips</h2>
+<section class="driver-trips">
+  <% @driver.trips.each do |trip| %>
+    <ul>
+      <li>
+        Date: <%= link_to trip.date, trip_path(trip.id) %>
+      </li>
+      <li>
+        Rating: <%= trip.rating %>
+      </li>
+    </ul>
+  <% end %>
+</section>
+
+<section class="trip-nav">
+  <ul>
+    <li>
+      <%= link_to "Edit Driver", edit_driver_path %>
+    </li>
+    <li>
+      <%= link_to "Delete Driver", driver_path(@driver.id), method: :delete, data: {confirm: "Do you really want to delete this driver? All trips associated with the driver will also be deleted."} %>
+    </li>
+  </ul>
+</section>
