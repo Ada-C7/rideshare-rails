@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'drivers/index'
+  root "passengers#index"
 
-root "passengers#index"
-
-resources :passengers
-resources :drivers
-resources :trips
+  resources :passengers
+  resources :drivers
+  resources :trips
 end

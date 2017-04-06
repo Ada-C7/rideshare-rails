@@ -2,15 +2,13 @@
 
 <table>
   <tr>
-    <th>Driver ID</th>
     <th>Name</th>
     <th>VIN</th>
     <th>Average Rating</th>
   </tr>
   <% @drivers.each do |driver| %>
   <tr>
-    <td><%= driver.id %></td>
-    <td><%= driver.name %></td>
+    <td><%= link_to driver.name, driver_path(driver.id) %></td>
     <td><%= driver.vin %></td>
     <td><%= driver.avg_rating %></td>
   </tr>
