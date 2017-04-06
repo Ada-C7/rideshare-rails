@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'csv'
+
+
+driver_array = []
+  CSV.open('support/drivers.csv', 'r', :headers => true).each do |line|
+    name = line["name"].to_s
+    vin = line["vin"].to_s
+
+    driver_array << {name: name, vin: vin}
+  end
+
+Driver.create(driver_array)
