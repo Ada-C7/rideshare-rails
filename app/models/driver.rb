@@ -3,7 +3,9 @@ class Driver < ApplicationRecord
   validates :vin, presence: true, length: {is: 17}
   has_many :trips
 
-
+  def show_trip
+    trips.all
+  end
 
   def average_rating
     array_of_ratings = trips.all.collect {|t| t.rating}

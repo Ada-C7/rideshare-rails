@@ -12,8 +12,8 @@ Rails.application.routes.draw do
       get 'drivers/:id', to: 'drivers#show', as: 'driver'
       get 'drivers/:id/edit', to: 'drivers#edit', as: 'edit_driver'
 
-      patch 'drivers/:id', to: 'drivers#update'
 
+      patch 'drivers/:id', to: 'drivers#update'
       delete 'drivers/:id', to: 'drivers#destroy'
 
 
@@ -27,8 +27,19 @@ Rails.application.routes.draw do
     get 'riders/:id/edit', to: 'riders#edit', as: 'edit_rider'
 
     patch 'riders/:id', to: 'riders#update'
-
     delete 'riders/:id', to: 'riders#destroy'
+
+    #TRIPS
+    get 'trips', to: 'trips#index', as: 'trips'
+
+    get 'trips/new', to: 'trips#new', as: 'new_trip'
+    post 'trips', to: 'trips#create'
+
+    get 'trips/:id', to: 'trips#show', as: 'trip'
+
+
+    patch 'trips/:id', to: 'trips#update'
+    delete 'trips/:id', to: 'trips#destroy'
 
 
 
