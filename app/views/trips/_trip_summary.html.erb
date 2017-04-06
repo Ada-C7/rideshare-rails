@@ -1,8 +1,0 @@
-          <tr>
-            <td> <%= item.date %> </td>
-            <%driver = item.driver_id%>
-
-            <td> Driver #: <%= item.driver_id%>, <%=driver > 0 ? Driver.find(driver).name : "Invalid Driver ID"%> </td>
-            <td> <%=link_to "#{item.rider_id}",trip_path(item.id)%></td>
-            <td> <%= item.cost  %> </td>
-          </tr>

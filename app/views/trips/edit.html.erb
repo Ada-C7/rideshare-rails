@@ -1,0 +1,25 @@
+<h1>Rate your trip</h1>
+<header>
+<!-- render partial: header  -->
+</header>
+<%= form_for @trip do |f| %>
+<%= f.label :name, "Passenger: #{Rider.find(params[:id]).name}!" %>
+<% f.hidden_field :rider_id, :value=>@rider_id%>
+<% f.hidden_field :driver_id, :value=>@random_driver%>
+<br>
+<%= f.label :driver_id, "Driver: #{Driver.find(@trip.driver_id).name}" %>
+<br>
+Rating: <%= f.text_field  :rating%>
+<br>
+  <%= f.submit value: "Rate Trip" %>
+<% end %>
+
+
+<%= link_to "See Rider", rider_path(@trip.rider_id)%>   
+<%= link_to "See all Riders", riders_path%>
+<br>
+<%= link_to "See Driver", driver_path(@trip.driver_id)%>
+
+
+<%= link_to "See all Drivers", drivers_path%>
+<br>

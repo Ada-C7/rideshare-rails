@@ -14,9 +14,11 @@ class TripsController < ApplicationController
     @trip = Trip.new
     @trip.date = Time.now
     @trip.rating  = nil
-    @trip.rider_id = @rider_id
+    @trip.rider_id = params[:id]
     @trip.driver_id = @random_driver
     @trip.save
+
+    redirect_to rider_path(params[:id])
   end
 
   def show
