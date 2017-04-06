@@ -4,7 +4,7 @@ class PassengersController < ApplicationController
   end
 
   def new
-    @passenger = Passenger.new(passenger_params)
+    @passenger = Passenger.new
   end
 
   def create

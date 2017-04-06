@@ -1,0 +1,33 @@
+<% if @driver.errors.any? %>
+  <ul class="error">
+    <% @driver.errors.each do |field, msg| %>
+    <li>
+      Oops! <strong><%= field.capitalize %></strong> <%= msg %>
+    </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @driver do |f| %>
+  <ul>
+    <li>
+      <%= f.label :name, "Name: " %>
+      <%= f.text_field :name %>
+    </li>
+    <li>
+      <%= f.label :vin, "VIN Number: " %>
+      <%= f.text_field :vin %>
+    </li>
+  </ul>
+
+  <section class="button">
+    <ul>
+      <li>
+        <%= f.submit %>
+      </li>
+      <li>
+        <%= link_to "Cancel", :back %>
+      </li>
+    </ul>
+  </section>
+<% end %>
