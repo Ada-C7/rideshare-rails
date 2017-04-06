@@ -2,6 +2,6 @@
 
 <ul>
     <% @trips.each do |trip| %>
-      <li> Driver: <%= trip.driver_id %> Rider: <%= trip.rider_id %> </li>
+      <li> Driver: <%= link_to trip.driver, driver_path(trip.driver_id) %> Rider: <%= link_to trip.rider, rider_path(trip.rider_id) %> Rating: <%= trip.rating %></li>
     <% end %>
 </ul>
