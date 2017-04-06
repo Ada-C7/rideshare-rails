@@ -2,7 +2,7 @@
 
 <ul>
   <% @passengers.each do |passenger| %>
-    <%= render partial: "", locals: {} %>
+    <%= render partial: "passenger_summary", locals: {passenger: passenger} %>
   <% end %>
 </ul>
 

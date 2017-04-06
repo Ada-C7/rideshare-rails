@@ -26,7 +26,13 @@ class PassengersController < ApplicationController
   end
 
   def create
-    Passenger.create(passenger_params)
+    @passenger = Passenger.new(passenger_params)
+    if @passenger.save
+      redirect_to passengers_path
+    else
+      #we know the validations didn't pass
+      render :new
+    end
   end
 
   def destroy
