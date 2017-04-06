@@ -1,9 +1,10 @@
+<section>
+
+
 <div id = "index_site">
   <section id = "index_first_section">
     <h1 id = "index_header_text">List of all drivers</h1>
-    <p id = "index_add_button">
-      <%= link_to "Add driver", new_driver_path, class: "button_link"%>
-    </p>
+
   </section>
 
   <table>
@@ -15,14 +16,14 @@
 
 
      <table class="listing" summary="Drivers list">
-
-       <tr class="header">
+<div class="tbl-header">
+       <tr class="tbl-header" >
          <th>ID</th>
          <th>Name</th>
          <!-- <th>VIN</th> -->
          <th>Average rating</th>
 
-       </tr>
+       </tr></div>
 
        <% @drivers.each do |driver| %>
        <tr>
@@ -33,7 +34,7 @@
 
 
 
-         <td class="actions">
+         <td class="table_link">
            <%= link_to "Show", driver_path(driver), class: "button_link" %>
            <%= link_to "Edit", edit_driver_path(driver), class: "button_link" %>
            <%= link_to "Delete", driver_path(driver),
@@ -60,4 +61,9 @@
     <%# end %>
   </nav> -->
 
+  <p class="table_link"id = "index_add_button">
+    <%= link_to "Add driver", new_driver_path, class: "button_link"%>
+  </p>
+
 </div>
+</section>

@@ -6,8 +6,13 @@
 
         <div class="bottom">
 
-          <%= link_to "Ada Find-a-Ride", root_path %>            <%= link_to "Drivers", 'drivers#index'%>
-            <%= link_to "Riders", 'riders#index'%>
+          <%= link_to "Ada Find-a-Ride", root_path %>
+           <%= link_to "Drivers", drivers_path %>
+            <%= link_to "Add Driver", new_driver_path %>
+             <%= link_to "Riders", riders_path %>
+             <%= link_to "Add Rider", new_rider_path %>
+
+
         </div>
     </div>
 </nav>

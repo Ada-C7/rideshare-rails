@@ -9,9 +9,8 @@
         <th>ID</th>
         <th>Name</th>
         <th>Phone Number</th>
-          <th>Show</th>
-            <th>Edit</th>
-              <th>Delete</th>
+        <th>Actions</th>
+
 
     </tr>
   </thead>
@@ -19,32 +18,25 @@
 </div>
 <div class="tbl-content">
   <table cellpadding="0" cellspacing="0" border="0">
-    <tbody>
+
      <% @riders.each do |rider| %>
      <tr>
        <td><%= rider[:id] %></td>
        <td><%= rider[:name] %></td>
        <td><%= rider[:phone_num] %></td>
 
-       <td class="table_link">  <%= link_to "Show", rider_path(rider), class: "button_link" %> </td>
-
-       <td class="table_link">  <%= link_to "Edit", edit_rider_path(rider), class: "button_link" %>  </td>
-       <td class="table_link"><%= link_to('Delete', rider_path(rider) , data: {method: :delete, confirm: "Are you sure?"}) %>
-
-
-
-     </td></td>
-
-</tr>
-
-
-
+       <td class="table_link">
+           <%= link_to "Show", rider_path(rider), class: "button_link" %>
+         <%= link_to "Edit", edit_rider_path(rider), class: "button_link" %>
+      <%= link_to('Delete', rider_path(rider) , data: {method: :delete, confirm: "Are you sure?"}) %></td>
+   </tr>
      <% end %>
    </table>
-
  </div>
-
 </section>
+
+
+
 <div class="table_link">
-  <%= link_to('Add New Rider' , { :action => 'new'})%>
+  <%= link_to "Add Rider", new_rider_path, class: "button_link"%>
 </div>

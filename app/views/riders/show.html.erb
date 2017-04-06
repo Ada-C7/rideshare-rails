@@ -11,6 +11,9 @@
 
     <p>
       Trip Average : <%= @rider.average_rating%>
+      <div class="table_link">
+      <%= link_to "Add Trip", new_trip_path, class: "button_link"%>
+      </div>
 
     </p>
     <p id = "show_about_text">
@@ -44,6 +47,9 @@
       </tr>
       <% end %>
     </table>
+
+
+
 
 
 

@@ -14,14 +14,20 @@ class TripsController < ApplicationController
 
 
   def edit
-      @trips = Trip.new
+    @trips = Trip.new
   end
 
   def create
-      @trip = Trip.new(trip_params)
-      if @trip.save
-        redirect_to trips_path
-      end
+    @trip = Trip.new(trip_params)
+    @driver = Driver.find_by(id: params[:id])
+    @trip.driver = @driver.id
+    @trip.save
+    if @trip.save
+      redirect_to trips_path
+    end
+
+
+
   end
 
   def update
@@ -50,9 +56,9 @@ class TripsController < ApplicationController
 
   private
 
-    def trip_params
-      params.require(:trip).permit(:rider_id , :driver_id , :date , :rating )
-    end
+  def trip_params
+    params.require(:trip).permit(:rider_id , :driver_id , :date , :rating )
+  end
 
 
 
