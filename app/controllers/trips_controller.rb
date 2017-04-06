@@ -6,7 +6,7 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.create(trip_params)
 
-    if @trip.create
+    if @trip.id != nil
       redirect_to trips_path(params[:id])
     else
       render "new"
