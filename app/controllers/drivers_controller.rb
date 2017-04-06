@@ -42,9 +42,9 @@ class DriversController < ApplicationController
   def driver_trips
   end
 
-  # def earnings
-  #   #questions here - this borrows from cost per trip in trips - should the math logic be in the model instead of the controller?
-  # end
+  def earnings
+    #questions here - this possibly borrows from cost per trip in trips - the math logic might need to be in the model instead of the controller, not certain.
+  end
 
   private
 
