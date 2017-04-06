@@ -34,7 +34,7 @@ csv = CSV.parse(csv_text, :headers => true)
     csv_driver = CSV.parse(csv_text_driver, :headers => true)
       csv_driver.each do |row|
         t = Driver.new
-        t.id = row[0]
+        # t.id = row[0]
         t.name = row[1]
         t.vin = row[2]
         t.save
