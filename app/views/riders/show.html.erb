@@ -7,14 +7,24 @@
 <h2>Rider's trip list</h2>
 <%@rider.trips.each do |trip|%>
   <ul>
-    <li>Date: <%=trip.date%></li>
+    <li><%=link_to trip.date, trip_path(trip.id)%></li>
     <li>Rating: <%=trip.rating%></li>
     <li>Cost: <%=trip.cost%></li>
+    <li>Trip id: <%=trip.id%></li>
+    <%= form_for trip  do |f| %>
+      <%= radio_button_tag("trip[rating]", "1") %>
+      <%= label_tag(:one, "1") %>
+      <%= radio_button_tag("trip[rating]", "2") %>
+      <%= label_tag(:two, "2") %>
+      <%= radio_button_tag("trip[rating]", "3") %>
+      <%= label_tag(:three, "3") %>
+      <%= radio_button_tag("trip[rating]", "4") %>
+      <%= label_tag(:four, "4") %>
+      <%= radio_button_tag("trip[rating]", "5") %>
+      <%= label_tag(:five, "5") %>
+      <%= f.submit value: "Rate this trip" %>
+    <% end %>
   </ul>
-
-
-
-
 <%end%>
 <%= link_to "Add trip for rider", new_rider_trip_path(@rider.id)%>
 <%= link_to "Edit rider", edit_rider_path%>

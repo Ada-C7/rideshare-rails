@@ -20,8 +20,9 @@ class TripsController < ApplicationController
   end
 
   def show
-    rider = Rider.find(params[:rider_id])
-    @trip = rider.trips.find(params[:id])
+    # rider = Rider.find(params[:rider_id])
+    # @trip = rider.trips.find(params[:id])
+    @trip = Trip.find(params[:id])
   end
 
   def edit
@@ -30,7 +31,7 @@ class TripsController < ApplicationController
 
   def update
     @trip = Trip.find(params[:id])
-    @trip.update_attributes(rider_trip_params)
+    @trip.update_attributes(trip_params)
     if @trip.save
       redirect_to trip_path(@trip)
     else
@@ -47,7 +48,7 @@ class TripsController < ApplicationController
 
   private
   def trip_params
-    return params.require(:trip).permit(:cost, :rating)
+    return params.require(:trip).permit( :cost, :rating)
   end
 
   def rider_trip_params
