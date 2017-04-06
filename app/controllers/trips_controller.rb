@@ -5,20 +5,16 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
-
+    @rider_id = params[:id]
+    @trip.rider = Rider.find(@rider_id)
   end
 
   def create
     @trip = Trip.new
     @trip.date = Time.now
     @trip.rating  = nil
-    # rider_id = params[:id]
-    # @trip.rider = Rider.find(rider_id)
-    @trip.rider_id = params[:id]
-    # @rider = Rider.find(rider_id)
-
-    # @trip.driver_id = 2
-
+    # @trip.rider_id = @trip.rider.id
+    # @trip.driver_id = rand(1..100)
     @trip.save
   end
 
