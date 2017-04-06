@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index', as: 'welcome'
+
   # get 'welcome/index'
 
   # get 'passengers/index'

@@ -1,4 +1,5 @@
-<h1>Passengers#index</h1>
-<p>Find me in app/views/passengers/index.html.erb</p>
+<h2><%= @passenger[:name] %></h2>
+<h3><%= @passenger[:passenger_id] %></h3>
+<h4><%= @passenger[:phone_num] %></h4>
 
-<%= link_to "Return to homepage", welcome_path %>
+<%= link_to "Return to List of passengers", passengers_path %>
