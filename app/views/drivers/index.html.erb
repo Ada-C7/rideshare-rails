@@ -1,13 +1,12 @@
 <% content_for :drivers do %>
-<h1>Drivers</h1>
-
-<ul>
-     <% @drivers.each do |driver| %>
-          <li> <%= driver.name %> </li>
-     <% end %>
-</ul>
+     <h1>Drivers</h1>
+     <ul>
+          <% @drivers.each do |driver| %>
+               <%= link_to driver.name, driver_path(driver.id) %>
+          <% end %>
+     </ul>
 <%end%>
 
 <% content_for :passengers do %>
-<h1>Passengers</h1>
+     <h1>Passengers</h1>
 <%end%>
