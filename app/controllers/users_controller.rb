@@ -38,8 +38,8 @@ def update
 end
 
 def destroy
-  user.destroy(params[:id])
-  redirect_to #users_path
+  User.destroy(params[:id])
+  redirect_to users_path
 end
 
 private
