@@ -1,18 +1,24 @@
 <h1><%= "#{@passenger.name}"%></h1>
 
 <h3><%= @passenger.phone_number %></h3>
-<%= button_to "Update passenger's infomration", edit_passenger_path(@passenger),
-  method: :get %>
-
-<%= button_to "Delete passenger", passenger_path(@passenger), method: :delete,
-  data: {confirm: "Are you sure you want to delete #{@passenger.name}?"} %>
 
 <ul>
-    <% @passenger.trips.each do |trip| %>
-      <li>
-        <%= link_to "Trip ID #{trip.id}", trip_path(trip) %>
-        <%= "Trip Date: #{trip.date}" %>
-        <%= "Rating: #{"★" * trip.rating}" %>
-      </li>
-    <% end %>
+  <% @passenger.trips.each do |trip| %>
+  <li>
+    <ul class="trip_details">
+      <li><%= link_to "Trip ID #{trip.id}", trip_path(trip) %>  </li>
+      <li><%= "Date: #{trip.date}" %> </li>
+      <li><%= "Cost: $#{'%.2f' % (trip.cost/100.0)}"%> </li>
+      <li><%= "Rating: #{"★" * trip.rating}" %> </li>
+    </ul>
+  </li>
+  <% end %>
 </ul>
+
+
+
+<%= button_to "Update passenger's infomration", edit_passenger_path(@passenger),
+method: :get %>
+
+<%= button_to "Delete passenger", passenger_path(@passenger), method: :delete,
+data: {confirm: "Are you sure you want to delete #{@passenger.name}?"} %>
