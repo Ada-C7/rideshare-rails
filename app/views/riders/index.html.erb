@@ -2,9 +2,9 @@
 <p>List of Riders here</p>
 <ul>
 <% @riders.each do |rider| %>
-  <li><p>Name: <%= rider.name %></p>
-  <p>Phone: <%= rider.phone %></p>
-  <p>Total Cost: <%= rider.total_cost(rider.id) %></p></li>
+  <li><p> Driver: <%= link_to rider.name, rider_path(rider.id) %></p>
+  <!-- <p>Phone: <%= rider.phone %></p> -->
+  <!-- <p>Total Cost: <%= rider.total_cost(rider.id) %></p></li> -->
 <% end %>
 
 </ul>
