@@ -12,7 +12,7 @@
       <li>
         <%= link_to "Trip ID #{trip.id}", trip_path(trip) %>
         <%= "Trip Date: #{trip.date}" %>
-        <%= "Rating: #{trip.rating}" %>
+        <%= "Rating: #{"★" * trip.rating}" %>
       </li>
     <% end %>
 </ul>
