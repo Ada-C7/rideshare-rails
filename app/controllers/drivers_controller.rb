@@ -32,6 +32,8 @@ class DriversController < ApplicationController
   end
 
   def update
+    driver = Driver.find(params[:driver_id])
+    driver.update(driver_params)
   end
 
   def destroy
