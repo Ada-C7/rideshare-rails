@@ -4,8 +4,30 @@
 
 <%= @result_passenger.phone_num %>
 
+<% @trips = Trip.where(passenger_id: @result_passenger.id) %>
 
- <p>list of trips, grand total, create button that links to trip#
+<table>
+  <tr>
+    <th>Trip ID</th>
+    <th>Driver ID</th>
+    <th>Passenger ID</th>
+    <th>Date</th>
+    <th>Rating</th>
+  </tr>
+  <% @trips.each do |trip| %>
+  <tr>
+    <td><%= link_to trip.id, trip_path(trip.id) %></td>
+    <td><%= link_to trip.driver.name, driver_path(trip.driver_id) %></td>
+    <td><%= link_to trip.passenger.name, passenger_path(trip.passenger_id) %></td>
+    <td><%= trip.date %></td>
+    <td><%= trip.rating %></td>
+  </tr>
+  <% end %>
+</table>
+
+
+
+ <p> grand total, create button that links to trip#
 create (don't allow user to do this if passenger hasn't rated all trips)</p>
 
 <%= link_to "Edit", edit_passenger_path %>
