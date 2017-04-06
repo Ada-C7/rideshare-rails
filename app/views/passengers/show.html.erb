@@ -16,7 +16,18 @@
 </section>
 <h2><%= @passenger.name %>'s Trips</h2>
 <section class="passenger-trips">
-  <%= button_to "New Trip", new_trip_path, method: :post %>
+  <%= button_to "New Trip", new_trip_path(@passenger.id), method: :post %>
+
+  <% if @passenger.errors.any? %>
+    <ul class="error">
+      <% @passenger.errors.each do |field, msg| %>
+      <li>
+        Oops! <strong><%= field.capitalize %></strong> <%= msg %>
+      </li>
+      <% end %>
+    </ul>
+  <% end %>
+
   <% @passenger.trips.each do |trip| %>
     <ul>
       <li>

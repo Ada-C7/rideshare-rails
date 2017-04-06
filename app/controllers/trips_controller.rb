@@ -3,16 +3,19 @@ class TripsController < ApplicationController
     @trips = Trip.all
   end
 
-  def new
-    @trip = Trip.new
-  end
-
   def create
-    @trip = Trip.create(trip_params)
+    @trip = Trip.new
+    @trip.date = Date.current
+    @trip.rating = 0
+    @trip.cost = rand(5.0..30.0).round(2)
+    # @trip.driver_id = Driver.assign_driver
+    @trip.driver = Driver.all.sample
+    @trip.passenger_id = params[:passenger_id]
     if @trip.save
-      redirect_to :root
+      redirect_to trip_path(@trip.id)
     else
-      render :new
+      puts "didn't create new trip"
+      redirect_to passenger_path(params[:passenger_id])
     end
   end
 
