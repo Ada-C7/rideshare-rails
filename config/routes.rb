@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :riders
+  resources :riders do
+    resources :trips, only: [:new, :create]
+  end
   resources :drivers
-  resources :trips 
+  resources :trips, except: [:new, :create]
 end

@@ -4,15 +4,6 @@ class TripsController < ApplicationController
     @trips = Trip.all
   end
 
-  def create
-    @trip = Trip.new(trip_params)
-    if @trip.save
-      redirect_to trips_path
-    else
-      render :new
-    end
-  end
-
   def destroy
     trip = Trip.find(params[:id])
     trip.destroy
@@ -24,8 +15,18 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
   end
 
-  def new(rid)
-    @trip = Trip.new(rider_id: rid)
+  def new
+    @trip = Trip.new(params[:id])
+  end
+
+  def create
+    rider = Rider.find(params[:rider_id])
+    @trip = rider.trips.build(trip_params)
+    @trip.save
+      # redirect_to trip_path
+    # else
+    #   render :new
+    # end
   end
 
   def show
@@ -43,7 +44,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    return params.require(:trip).permit(:name, :phone_num)
+    return params.require(:trip).permit(:driver_id, :rider_id, :date, :rating)
   end
 
 end
