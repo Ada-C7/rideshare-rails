@@ -7,10 +7,18 @@
   <li>
     Phone: <%= @rider.phone_num %>
   </li>
+  <li> Total cost: <%= @rider.total_cost %> </li>
 </ul>
+
+<%= form_for @trip do |f| %>
+<%= f.label :rating %>
+<%= f.select :rating, [1, 2, 3, 4, 5] %>
+<%= f.submit %>
 
 <%= link_to "Edit", edit_rider_path(@rider.id) %>
 
 <%= link_to "Delete", rider_path(@rider.id),
   data: { confirm: "Are you sure you want to delete this rider?" },
   method: :delete %>
+
+<!-- update create method to automatically assign price for trip, and automatically assign rider and driver -->
