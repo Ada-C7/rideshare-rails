@@ -5,7 +5,7 @@ class Driver < ApplicationRecord
 
 
 
-  def average
+  def average_rating
     array_of_ratings = trips.all.collect {|t| t.rating}
     if array_of_ratings != []
       return array_of_ratings.sum.to_f/array_of_ratings.length
@@ -13,5 +13,5 @@ class Driver < ApplicationRecord
       return Float::NAN
     end
   end
-  
+
 end

@@ -1,25 +1,25 @@
 <section id = "show_section">
   <h1>
-    Meet <%= @driver.name%>!
+    Meet the driver <%= @driver.name%>!
   </h1>
-  <%#= image_tag(@animal.image_pathway, alt: "Image not available", id: "show_image")%>
-  <p>
-    <%= @driver.name%>, <%= @driver.vin%>
+
+    <%= @driver.name%> (vin: <%= @driver.vin%>)
   </p>
+  <P>
+    Average rating from passengers: <%= @driver.average_rating.round(1) %>
+  </P>
   <p id = "show_about_text">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </p>
 
-  <P>
-    <%#= @driver.trips.all.collect {|t| t.rating}.length %>
-    <%= @driver.average %>
-
-  </P>
+  <h3>
+    List of <%= @driver.name%>'s passengers
+  </h3>
 
   <table class="listing" summary="Riders Trip List">
 
     <tr class="header">
-      <th>Rider Name</th>
+      <th>Name</th>
       <th>Date</th>
       <th>Rating</th>
     </tr>
@@ -28,18 +28,19 @@
     <tr>
       <td><%= trip.rider[:name] %></td>
       <td><%= trip[:date] %></td>
-        <td><%= trip[:rating] %></td>
-
+      <td><%= trip[:rating] %></td>
     </tr>
     <% end %>
+
   </table>
 
 
 
 
-
-  <%#= link_to image_tag("left1.png", alt: "Back button", class: "button_image"), animals_path%>
-  <%#= link_to image_tag("edit1.png", alt: "Edit button", class: "button_image"), edit_animal_path%>
-  <%#= link_to image_tag("delete_blue1.png", alt: "Delete button", class: "button_image"), animal_path,
-  data: {method: :delete, confirm: "Are you sure you want to remove #{@animal.name} from the list?"}%>
-</section>
+  <p>
+    <%= link_to "Back", drivers_path%>
+    <%= link_to "Edit", edit_driver_path%>
+    <%= link_to "Delete", driver_path,
+    data: {method: :delete, confirm: "Are you sure you want to delete #{@driver.name} from the list?"}%>
+  </p>
+  </section>
