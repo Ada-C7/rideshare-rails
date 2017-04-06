@@ -1,6 +1,13 @@
 <h1>Rider Info</h1>
 
-<p> <%= @rider.name %>: <%= @rider.phone_num %> </p>
+<ul>
+  <li>
+    Name: <%= @rider.name %>
+  </li>
+  <li>
+    Phone: <%= @rider.phone_num %>
+  </li>
+</ul>
 
 <%= link_to "Delete", rider_path(@rider.id),
   data: { confirm: "Are you sure you want to delete this rider?" },

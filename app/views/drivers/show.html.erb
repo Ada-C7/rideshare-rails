@@ -2,8 +2,8 @@
 
 
 <ul>
-  <li> <%= @result_driver.name %> </li>
-  <li> <%= @result_driver.vin %> </li>
-  <li> <%= @result_driver.availability %> </li>
+  <li> Name: <%= @result_driver.name %> </li>
+  <li> VIN: <%= @result_driver.vin %> </li>
+  <li> Available? <%= @result_driver.availability %> </li>
 </ul>
-  <%= link_to "Delete", driver_path(@result_driver.id), data: { confirm: "Are you sure you want to delete" }, method: :delete %> 
+  <%= link_to "Delete", driver_path(@result_driver.id), data: { confirm: "Are you sure you want to delete" }, method: :delete %>
