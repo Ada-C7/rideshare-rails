@@ -9,8 +9,13 @@ class DriversController < ApplicationController
   end
 
   def create
-    Driver.create(driver_params)
-    redirect_to drivers_path
+    # using the bang will give a rails error message and tell you what validation failed
+    @driver = Driver.new(driver_params)
+    if @driver.save
+      redirect_to drivers_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -22,12 +27,16 @@ class DriversController < ApplicationController
   end
 
   def update
-    driver = Driver.find(params[:id])
-    driver = driver.update_attributes(driver_params)
+    @driver = Driver.find(params[:id])
+    if @driver.update_attributes(driver_params)
+      redirect_to driver_path
+    else
+      render :edit
+    end
     # update_attributes is calling save - because of validations?
-    # so I don't need to call save 
+    # so I don't need to call save
     # driver.save
-    redirect_to driver_path
+    # redirect_to driver_path
   end
 
   def destroy

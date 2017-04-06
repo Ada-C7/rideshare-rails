@@ -4,6 +4,16 @@
 
 <main>
   <%= render partial: "form", locals: { submit_text: "Edit Driver"} %>
+
+  <% if @driver.errors.any? %>
+    <ul>
+      <% @driver.errors.each do |column, message| %>
+        <li>
+          <%= column.capitalize %> <%= message %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 </main>
 
 <footer>
