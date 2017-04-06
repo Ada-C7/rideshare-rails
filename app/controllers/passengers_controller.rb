@@ -23,10 +23,9 @@ class PassengersController < ApplicationController
   end
 
   def destroy
-    @result_passenger = Passenger.destroy(params[:id])
-    if @result_passenger.destroy
-      redirect_to animals_path
-    end
+    Passenger.destroy(params[:id])
+
+    redirect_to passengers_path
   end
 
   private
