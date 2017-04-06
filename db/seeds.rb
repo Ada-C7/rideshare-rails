@@ -17,6 +17,7 @@ csv.each do |row|
   trip.passenger_id = row["passenger_id"]
   trip.date = row["date"]
   trip.rating = row["rating"]
+  trip.cost = rand(1..600)
 
   trip.save
 end
