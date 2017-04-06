@@ -4,10 +4,10 @@
 <h2>Trips:</h2>
 <ul>
 <% @rider.trips.each do |trip| %>
-<li>
-    Trip id: <%= trip.id %>
-    Driver id: <%= trip.driver_id %>
-    Rating: <%= trip.rating %>
-</li>
+    <li>
+        Trip id: <%= trip.id %>
+        Driver id: <%= link_to trip.driver_id, driver_path(trip.driver.id) %>
+        Rating: <%= trip.rating %>
+    </li>
 <% end %>
 </ul>

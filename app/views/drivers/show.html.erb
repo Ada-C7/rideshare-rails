@@ -1,0 +1,15 @@
+<h1>Meet your Driver</h1>
+<h2>Driver id:</h2> <%= @driver.id %>
+<h2>Name:</h2> <%= @driver.name %>
+<h2>Vin:</h2> <%= @driver.vin %>
+<h2>Trips:</h2>
+<ul>
+    <% @driver.trips.each do |trip| %>
+    <li>
+        Trip id: <%= trip.id %>
+        Rider id: <%= trip.rider.id %>
+        Rider name: <%= link_to trip.rider.name, rider_path(trip.rider.id) %>
+        Rating: <%= trip.rating %>
+    </li>
+    <% end %>
+</ul>
