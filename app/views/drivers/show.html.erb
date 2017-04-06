@@ -1,9 +1,9 @@
 <h1>Drivers</h1>
 
-<h2><%= @driver[:name] %></h2>
+<h4><%= "Driver ID: " + @driver.id.to_s %></h4>
 
-<h3><%= "Name: " @driver[:name] %></h3>
-<h3><%= "VIN Number" @driver[:vin]  %></h3>
+<h4><%= "Name: " + @driver.name %></h4>
+<h4><%= "VIN Number: " + @driver.vin  %></h4>
 
 <%= link_to "Back to Driver List", drivers_path %>
 <%= link_to "Edit This Driver", edit_driver_path %>
