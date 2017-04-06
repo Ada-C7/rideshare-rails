@@ -13,8 +13,8 @@ class TripsController < ApplicationController
     @trip = Trip.new
     @trip.date = Time.now
     @trip.rating  = nil
-    # @trip.rider_id = @trip.rider.id
-    # @trip.driver_id = rand(1..100)
+    @trip.rider_id = @rider_id
+    @trip.driver_id = rand(1..100)
     @trip.save
   end
 
