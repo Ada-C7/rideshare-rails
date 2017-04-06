@@ -1,7 +1,1 @@
-<%= form_for @passenger do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :phone_num %>
-  <%= f.text_field :phone_num %>
-  <%= f.submit value: "Edit Passenger" %>
-<% end %>
+<%= render partial: "form", locals: { submit_text: "Edit" }%>
