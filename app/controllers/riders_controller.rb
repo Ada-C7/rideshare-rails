@@ -17,6 +17,11 @@ class RidersController < ApplicationController
     end
   end
 
+  # def trip_list
+  #   @rider = Rider.find(params[:id])
+  #   @trips = Trip.find(@rider.id)
+  # end
+
   def show
     @rider = Rider.find(params[:id])
   end

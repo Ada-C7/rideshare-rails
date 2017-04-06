@@ -5,4 +5,7 @@
 <%= link_to "Delete", rider_path(@rider), method: :delete,
     data: {confirm: "Are you sure"} %>
 
-<%= render partial: "trips/form" %>
+<%= @rider.trips.each do |trip| %>
+<%= trip.date %>
+<%= trip.rating %>
+<% end %>

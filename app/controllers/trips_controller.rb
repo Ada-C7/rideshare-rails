@@ -1,4 +1,11 @@
 class TripsController < ApplicationController
+
+  def index
+      # redirect_to :controller => 'riders', :action => 'trip_list'
+      @trips = Trip.all
+      @trips.rider
+  end
+
   def show
     @trip = Trip.find(params[:id])
   end
@@ -11,7 +18,7 @@ class TripsController < ApplicationController
     @trip = Trip.create(trip_params)
 
     if @trip.save
-      redirect_to trips_path(@trip)
+      redirect_to rider_trips_path(@trip)
     else
       render :new
     end
@@ -26,7 +33,7 @@ class TripsController < ApplicationController
     @trip.update_attributes(trip_params)
 
     if @trip.save
-      redirect_to trips_path(@trip)
+      redirect_to rider_trips_path(@trip)
     else
       render :edit
     end
@@ -36,7 +43,7 @@ class TripsController < ApplicationController
     trip = Trip.find(params[:id])
     trip.destroy
 
-    redirect_to trips_path
+    redirect_to rider_trips_path
   end
 
   private
