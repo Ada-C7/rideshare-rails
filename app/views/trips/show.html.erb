@@ -1,2 +1,33 @@
-<h1>Trips#show</h1>
-<p>Find me in app/views/trips/show.html.erb</p>
+<h1> Viewing trip from <%= @trip.date %> </h1>
+<section class="trip-details">
+
+  <ul>
+    <li>
+      Passenger: <%= link_to @trip.passenger.name, passenger_path(@trip.passenger.id) %>
+    </li>
+    <li>
+      Driver: <%= link_to @trip.driver.name, driver_path(@trip.driver.id) %>
+    </li>
+    <li>
+      Date: <%= @trip.date %>
+    </li>
+    <li>
+      Cost: $<%= @trip.cost %>
+    </li>
+    <li>
+      Rating: <%= @trip.rating %>
+    </li>
+  </ul>
+
+</section>
+
+<section class="trip-nav">
+  <ul>
+    <li>
+      <%= link_to "Edit Trip", edit_trip_path %>
+    </li>
+    <li>
+      <%= link_to "Delete Trip", trip_path(@trip.id), method: :delete, data: {confirm: "Do you really want to delete this trip?"} %>
+    </li>
+  </ul>
+</section>
