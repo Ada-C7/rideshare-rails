@@ -2,6 +2,6 @@
 
 <ul>
     <% @riders.each do |rider| %>
-      <li> Rider: <%= rider.name %> Phone: <%= rider.phone_num %> </li>
+      <li> Rider: <%= link_to rider.name, rider_path(rider.id) %> Phone: <%= rider.phone_num %> </li>
     <% end %>
 </ul>

@@ -1,0 +1,9 @@
+<h1>Rider Info</h1>
+<h2>Name:</h2> <%= @rider.name %>
+<h2>Phone:</h2> <%= @rider.phone_num %>
+<h2>Trips:</h2>
+
+<% @rider.trips.each do |trip| %>
+    Trip id: <%= trip.id %>
+    Driver id: <%= trip.driver_id %>
+ <% end %>
