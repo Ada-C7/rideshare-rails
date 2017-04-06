@@ -9,7 +9,8 @@ class TripsController < ApplicationController
   end
 
   def create
-    Trip.create(trip_params)
+    trip_data = trip_params
+    Trip.create(trip_data)
     redirect_to trips_path
   end
 
@@ -20,8 +21,6 @@ class TripsController < ApplicationController
   def edit
     @trip = Trip.find(params[:id])
   end
-
-
 
     def update
       trip = Trip.find(params[:id])

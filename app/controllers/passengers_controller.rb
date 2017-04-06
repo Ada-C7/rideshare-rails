@@ -5,14 +5,28 @@ class PassengersController < ApplicationController
     @passengers = Passenger.all
   end
 
+  def new
+    @passenger = Passenger.new
+  end
 
   def create
     Passenger.create(passenger_params)
     redirect_to passengers_path
   end
 
+  def edit
+    @passenger = Passenger.find(params[:id])
+  end
+
   def show
     @passenger = Passenger.find(params[:id])
+  end
+
+  def destroy
+  passenger = Passenger.find(params[:id])
+  passenger.destroy
+
+  redirect_to passengers_path
   end
 
   private

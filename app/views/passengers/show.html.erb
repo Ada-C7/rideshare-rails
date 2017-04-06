@@ -2,7 +2,13 @@
   <h3>Name: <%= @passenger[:name] %> <br> Phone Number: <%= @passenger[:phone_num] %></h3>
 
 <h3>Trips:</h3>
-<% array = Trip.where(passenger_id: @passenger[:id]).to_a %>
-<% array.each do |trip| %>
+<% @passenger.trips.each do |trip| %>
   <%= link_to trip.id, trip_path(trip.id) %>
 <% end %>
+
+<h3>Total amount charged: $<%= @passenger.total_amount_charged %></h3>
+
+<%= link_to "Add a new trip", new_trip_path %>
+
+<%= link_to "Edit passenger", edit_passenger_path %>
+<%= link_to "Delete passenger", passenger_path(@passenger), data: {method: :delete, confirm: "Are you sure you want to delete this passenger: #{@passenger.name}?"} %>
