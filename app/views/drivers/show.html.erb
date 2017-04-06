@@ -22,6 +22,8 @@
       <th>Name</th>
       <th>Date</th>
       <th>Rating</th>
+      <th>Show Trip</th>
+
     </tr>
 
     <% @driver.trips.each do |trip| %>
@@ -29,6 +31,10 @@
       <td><%= trip.rider[:name] %></td>
       <td><%= trip[:date] %></td>
       <td><%= trip[:rating] %></td>
+      <td>
+        <%= link_to "Show", trip_path(trip), class: "button_link" %>
+      </td>
+
     </tr>
     <% end %>
 

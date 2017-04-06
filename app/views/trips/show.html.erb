@@ -1,8 +1,6 @@
-<h1> <%= @rider.name%>'s Trip'</h1>
+<h1> <%= @trip.rider.name %>'s Trip</h1>
 
-<p id = "show_about_text">
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-</p >
+
 
 <table class="listing" summary="Riders Trip List">
 
@@ -10,20 +8,19 @@
     <th>Driver Name</th>
     <th>Date</th>
     <th>Rating</th>
-    <th>Trip</th>
-
+    <th>Show</th>
   </tr>
 
-  <% @rider.trips.each do |trip| %>
+
   <tr>
-    <td><%= trip.driver[:name] %></td>
-    <td><%= trip[:date] %></td>
-      <td><%= trip[:rating] %></td>
 
 
+    <td><%= @trip.driver.name %></td>
+    <td><%= @trip[:date] %></td>
+    <td><%= @trip[:rating] %></td>
 
 
 
   </tr>
-  <% end %>
+
 </table>

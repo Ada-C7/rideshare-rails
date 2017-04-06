@@ -5,7 +5,7 @@ class TripsController < ApplicationController
   end
 
   def show
-    @trips = Trip.find(params[:id])
+    @trip = Trip.find(params[:id])
   end
 
   def new

@@ -25,7 +25,9 @@
        <td><%= rider[:id] %></td>
        <td><%= rider[:name] %></td>
        <td><%= rider[:phone_num] %></td>
-       <td class="table_link">  <%= link_to("Show", rider_path(rider), :class => 'button_link') %>   </td>
+
+       <td class="table_link">  <%= link_to "Show", rider_path(rider), class: "button_link" %> </td>
+
        <td class="table_link">  <%= link_to "Edit", edit_rider_path(rider), class: "button_link" %>  </td>
        <td class="table_link"><%= link_to('Delete', rider_path(rider) , data: {method: :delete, confirm: "Are you sure?"}) %>
 
