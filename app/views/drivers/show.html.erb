@@ -1,7 +1,7 @@
 <h3><%= @selected_driver.name %></h3>
 <h4>VIN: <%= @selected_driver.vin %></h4>
 <h4>Average rating: <%= @selected_driver.average_rating %></h4>
-<h4>Total net earnings to date: $<%= @selected_driver.total_earnings(@selected_driver.id) %></h4>
+<h4>Total net earnings to date: $<%= @selected_driver.total_earnings %></h4>
 <h4>Total number of trips: <%= @selected_driver.trips.length %></h4>
 <h3>All trips</h3>
 <% @selected_driver.trips.each do |trip| %>

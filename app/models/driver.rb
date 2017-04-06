@@ -16,10 +16,9 @@ class Driver < ApplicationRecord
     return (total_rating/trip_count).round(2)
   end
 
-  def total_earnings id
-    driver = Driver.find id
+  def total_earnings
     gross_earnings = 0
-    driver.trips.each do |trip|
+    trips.each do |trip|
       gross_earnings += trip.cost
     end
     return (gross_earnings/100 * 0.85).round(2)
