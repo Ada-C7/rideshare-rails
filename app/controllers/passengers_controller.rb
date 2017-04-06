@@ -18,6 +18,13 @@ class PassengersController < ApplicationController
     @passenger = Passenger.find(params[:id])
   end
 
+  def update
+    passenger = Passenger.find(params[:id])
+    passenger.update_attributes(passenger_params)
+    passenger.save
+    redirect_to passengers_path(passenger)
+  end
+
   def show
     @passenger = Passenger.find(params[:id])
   end
