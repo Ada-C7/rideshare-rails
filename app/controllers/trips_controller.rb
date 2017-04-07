@@ -12,8 +12,13 @@ class TripsController < ApplicationController
   end
 
   def create
-    trip = Trip.create(trip_params)
-    redirect_to trips_path unless trip.id == nil
+    @trip = Trip.create(trip_params)
+
+    if @trip.id != nil
+         redirect_to trips_path
+    else
+         render "new"
+    end
   end
 
   def edit
