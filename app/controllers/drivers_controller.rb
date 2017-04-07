@@ -28,7 +28,6 @@ class DriversController < ApplicationController
 
   def show
     @driver = Driver.find_by_id(params[:id].to_i)
-    @trips_by_driver = @driver.trips
   end
 
   def update
