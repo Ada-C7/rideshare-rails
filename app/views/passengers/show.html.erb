@@ -2,14 +2,17 @@
      <section class="yield">
           <h1 class="title"><%= @passenger.name %></h1>
           <ul class="list">
-               <li><span>Passenger Name:</span> <%= @passenger.name %></li>
-               <li><span>Phone Number:</span> <%= @passenger.phone %></li>
-               <ul class=><span>Trips:</span> <% @passenger.trips.map do | trip | %>
+               <li><span> Passenger Name: </span> <%= @passenger.name %></li>
+               <li><span> Phone Number: </span> <%= @passenger.phone %></li>
+               <ul>
+                    <li><span> Trips: </span></li>
+                    <% @passenger.trips.map do | trip | %>
                     <li>
-                         Trip #<span><%= trip.id %></span> with driver <span><%= trip.driver.name %></span>  on <span><%= trip.date %></span> .
+                         <span> Trip </span> #<%= trip.id %> with <span>driver</span> <%= trip.driver.name %> for $<%= trip.cost %>.
                          <% end %>
                     </li>
                </ul>
+               <li><span> Total Amount Charged: </span> $<%= @passenger.trips.sum("cost") %></li>
                <p>
                     <%= button_to "Edit", edit_passenger_path, method: :get %>
                     <%=button_to "Delete", passenger_path,
