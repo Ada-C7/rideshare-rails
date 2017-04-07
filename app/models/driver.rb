@@ -58,4 +58,8 @@ class Driver < ApplicationRecord
     Driver.where("id < ?", self.id).last
   end
 
+  def self.search(search)
+    where("name ILIKE ? OR vin ILIKE ?", "%#{search}%", "%#{search}%")
+  end
+
 end

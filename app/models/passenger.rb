@@ -31,4 +31,8 @@ class Passenger < ApplicationRecord
     Passenger.where("id < ?", self.id).last
   end
 
+  def self.search(search)
+    where("name ILIKE ? OR phone ILIKE ?", "%#{search}%", "%#{search}%")
+  end
+
 end

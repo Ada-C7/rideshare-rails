@@ -1,2 +1,72 @@
-<h1>Trips#index</h1>
-<p>Find me in app/views/trips/index.html.erb</p>
+<%= button_to 'Reset Search', trips_path, method: :get %>
+
+<h1>Trips</h1>
+<section id="trips-list">
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Passenger</th>
+      <th>Driver</th>
+      <th>Cost</th>
+      <th>Rating</th>
+    </tr>
+    <tr>
+      <td>
+        <%= form_tag(trips_path, method: :get, id: "search-date-form") do %>
+          <%= text_field_tag :search_date, params[:search_date] %>
+          <%= submit_tag "Search", name: nil %>
+        <% end %>
+      </td>
+      <td>
+        <%= form_tag(trips_path, method: :get, id: "search-passenger-form") do %>
+          <%= text_field_tag :search_passenger, params[:search_passenger] %>
+          <%= submit_tag "Search", name: nil %>
+        <% end %>
+      </td>
+      <td>
+        <%= form_tag(trips_path, method: :get, id: "search-driver-form") do %>
+          <%= text_field_tag :search_driver, params[:search_driver] %>
+          <%= submit_tag "Search", name: nil %>
+        <% end %>
+      </td>
+      <td>
+        <%= form_tag(trips_path, method: :get, id: "search-cost-form") do %>
+          <%= text_field_tag :search_cost, params[:search_cost] %>
+          <%= submit_tag "Search", name: nil %>
+        <% end %>
+      </td>
+      <td>
+        <%= form_tag(trips_path, method: :get, id: "search-rating-form") do %>
+          <%= text_field_tag :search_rating, params[:search_rating] %>
+          <%= submit_tag "Search", name: nil %>
+        <% end %>
+      </td>
+    </tr>
+    <% @trips.each do |trip| %>
+      <tr>
+        <td>
+          <%= trip.date %>
+        </td>
+        <td>
+          <%= link_to trip.passenger.name, passenger_path(trip.passenger.id) %>
+        </td>
+        <td>
+          <%= link_to trip.driver.name, driver_path(trip.driver.id) %>
+        </td>
+        <td>
+          <%= trip.cost %>
+        </td>
+        <td>
+          <%= trip.rating %>
+        </td>
+      </tr>
+
+    <% end %>
+  </table>
+
+  <% if @trips.size == 0 %>
+    <p>
+      No trips found.
+    </p>
+  <% end %>
+</section>

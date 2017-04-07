@@ -1,6 +1,19 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trip.all
+    @trips = Trip.all.order("created_at ASC")
+    if params[:search_date]
+      @trips = @trips.search_date(params[:search_date]).order("created_at ASC")
+    elsif params[:search_passenger]
+      @trips = @trips.search_passenger(params[:search_passenger]).order("created_at ASC")
+    elsif params[:search_driver]
+      @trips = @trips.search_driver(params[:search_driver]).order("created_at ASC")
+    elsif params[:search_rating]
+      @trips = @trips.search_rating(params[:search_rating]).order("created_at ASC")
+    elsif params[:search_cost]
+      @trips = @trips.search_cost(params[:search_cost]).order("created_at ASC")
+    else
+      @trips = @trips.all.order("created_at ASC")
+    end
   end
 
   def create

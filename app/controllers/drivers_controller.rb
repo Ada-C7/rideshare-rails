@@ -1,6 +1,11 @@
 class DriversController < ApplicationController
   def index
-    @drivers = Driver.all
+    @drivers = Driver.all.order("created_at ASC")
+    if params[:search]
+      @drivers = @drivers.search(params[:search]).order("created_at ASC")
+    else
+      @drivers = @drivers.all.order("created_at ASC")
+    end
   end
 
   def new
