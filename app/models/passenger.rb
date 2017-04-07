@@ -12,4 +12,13 @@ class Passenger < ApplicationRecord
     total_amount_charged
   end
 
+  def all_trips_complete?
+    self.trips.each do |trip|
+      if trip.rating == nil
+        return false
+      end
+    end
+    return true
+  end
+
 end
