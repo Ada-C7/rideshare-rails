@@ -1,0 +1,16 @@
+<h1>Add a Passenger</h2>
+<section>
+  <%= form_for @passenger do |f| %>
+  <%= f.label :name, "Passenger name" %>
+  <%= f.text_field :name %>
+
+    <%= f.label :passenger_id, "Passenger ID" %>
+    <%= f.text_field :passenger_id %>
+
+
+    <%= f.label :phone_num, "Passenger Phone Number" %>
+    <%= f.text_field :phone_num %>
+
+    <%= f.submit value: "Add #{submit_text} Passenger" %>
+  <% end %>
+</section>
