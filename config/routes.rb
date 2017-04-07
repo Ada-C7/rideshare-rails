@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "passengers#index"
+  root "rideshare#index"
 
   resources :passengers
   resources :drivers
