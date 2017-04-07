@@ -8,10 +8,10 @@ class TripsController < ApplicationController
     @rider = Rider.find(params[:rider_id])
     @trip = @rider.trips.build
   end
-
+#id: rand(601...10000),
   def create
     rider = Rider.find(params[:rider_id])
-    default_params = {id: rand(601...10000),date: Date.today, rating: nil, rider_id: rider.id, driver_id: rand(1..100)}
+    default_params = {date: Date.today, rating: nil, rider_id: rider.id, driver_id: rand(1..100)}
     @trip = rider.trips.create(default_params)
 
     @trip.update_attributes(trip_params)
