@@ -3,7 +3,7 @@ class TripsController < ApplicationController
     @trips = Trip.all
   end
 
-  def new
+  def new # if statement for brand new trip vs. trip via rider
     @trip = Trip.new
     @trip.date = Date.current
   end

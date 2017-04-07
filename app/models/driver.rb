@@ -25,5 +25,14 @@ class Driver < ApplicationRecord
 
   end
 
+  def self.qual_driver
+    qual_drivers = []
+    Trip.all.each do |trip|
+      if trip.driver.average_rating >= 4
+        qual_drivers << trip.driver
+      end
+    end
+    return qual_drivers
+  end
 
 end
