@@ -20,6 +20,8 @@ class DriversController < ApplicationController
 
     if @driver.update(driver_params)
       redirect_to driver_path(@driver.id)
+    else
+      render "edit"
     end
   end
 
@@ -32,6 +34,8 @@ class DriversController < ApplicationController
 
     if @driver.id != nil
       redirect_to drivers_path
+    else
+      render "new"
     end
   end
 
@@ -41,10 +45,10 @@ class DriversController < ApplicationController
     redirect_to drivers_path
   end
 
-private
+  private
 
-def driver_params
-  params.require(:driver).permit(:name, :vin, :availability)
-end
+  def driver_params
+    params.require(:driver).permit(:name, :vin, :availability)
+  end
 
 end

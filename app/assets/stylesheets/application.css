@@ -23,6 +23,11 @@ html, body {
   min-height: 100%;
 }
 
+.errors {
+  font-family: 'Luckiest Guy';
+  color: red;
+}
+
 h1, h2, h3 {
   font-family: 'Luckiest Guy', cursive;
 }

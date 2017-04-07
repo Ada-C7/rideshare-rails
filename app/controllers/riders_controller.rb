@@ -16,6 +16,8 @@ class RidersController < ApplicationController
 
     unless rider.id == nil
       redirect_to riders_path
+    else
+      render "new"
     end
   end
 
@@ -31,7 +33,9 @@ class RidersController < ApplicationController
 
     if @rider.save
       redirect_to rider_path
-    end
+    else
+      render "edit"
+    end 
   end
 
   def destroy

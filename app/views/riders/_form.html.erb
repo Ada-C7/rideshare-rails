@@ -1,3 +1,13 @@
+<ul class="errors">
+  <% @rider.errors.each do |field, msg| %>
+  <li>
+    <%= field %> <%= msg %>
+  </li>
+    <% end %>
+
+</ul>
+
+
 <%= form_for @rider do |f| %>
 
 <%= f.label :name %>
