@@ -17,8 +17,13 @@
   position:relative;
 }
 
-.navigation > ul > li:hover {
 
+.navigation ul li ul li :visited {
+  color: white;
+}
+
+.navigation ul li ul li :link {
+  color: white;
 }
 
 ul.menu {
@@ -28,4 +33,13 @@ ul.menu {
     width: 125px;
     padding-left: 5px;
     margin-left: -5px;
+    opacity: 0;
+}
+
+ul.menu li {
+  padding: 5px 5px;
+}
+
+.navigation li:hover .menu {
+  opacity: 1;
 }
