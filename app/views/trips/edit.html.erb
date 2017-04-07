@@ -3,10 +3,10 @@
 <!-- <%#= render partial: "form", locals: { action_name: "Update", form_method: :update } %> -->
 <%= form_for @trip, method: :patch do |f| %>
 
-  <%= f.label :driver%>
-  <%= f.select :driver, options_for_select(@drivers) %>
+  <%= f.label :driver_id %>
+  <%= f.select :driver_id, @drivers.map {|d| [d.name, d.id] } %>
   <%= f.label :user %>
-  <%= f.select :user, options_for_select(@users) %>
+  <%= f.select :user, @users.map {|u| [u.name, u.id]} %>
   <%= f.label :rating %>
   <%= f.select :rating, options_for_select(1..5) %>
 
