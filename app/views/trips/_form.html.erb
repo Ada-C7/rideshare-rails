@@ -1,4 +1,19 @@
 <section>
+  <% if @trip.errors.messages.length > 0 %>
+    <h2> Unable to <%= text %>: </h2>
+
+    <ul>
+      <% @trip.errors.messages.each do |field, problem_list| %>
+        <% problem_list.each do |problem| %>
+          <li><%= field %> : <%= problem %></li>
+        <% end %>
+      <% end %>
+    </ul>
+
+  <% end %>
+</section>
+
+<section>
   <%= form_for @trip do |f| %>
 
   <%= f.label :passenger_id %>
@@ -17,7 +32,7 @@
   <%= f.label :rating %>
   <%= f.text_field :rating %>
 
-  <%= f.submit button_text%>
+  <%= f.submit text.capitalize%>
 
   <% end %>
 </section>
