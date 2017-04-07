@@ -17,7 +17,7 @@ class PassengersController < ApplicationController
   def create
     @passenger = Passenger.new(passenger_params)
     if @passenger.save
-      redirect_to passenger_path
+      redirect_to passengers_path
     else
       #we know the validations didn't pass
       render :new
@@ -45,7 +45,7 @@ class PassengersController < ApplicationController
   end
 
   private
-    def passanger_params
+    def passenger_params
       return params.require(:passenger).permit(:name, :phone_num)
     end
 

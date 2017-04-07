@@ -16,7 +16,7 @@ csv_d.each do |row|
   driver.id = row['driver_id']
   driver.name = row['name']
   driver.vin = row['vin']
-  driver.save
+  driver.save!
 end
 
 csv_passenger = File.read(Rails.root.join('lib', 'seeds', 'passengers.csv'))
@@ -42,4 +42,5 @@ csv_t.each do |row|
   trip.passenger_id = row['passenger_id']
   trip.date = row['date']
   trip.rating = row['rating']
+  trip.save!
 end
