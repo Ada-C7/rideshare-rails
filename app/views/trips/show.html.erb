@@ -7,15 +7,18 @@
 <main>
   <%= render "shared/menu" %>
 
+
   <section>
     <%= render "trip_summary" %>
 
-  
+    <p><%= link_to "Link to Driver", driver_path(@trip.driver.id) %></p>
+
+
+
 
     <%= button_to "Edit Trip", edit_trip_path, :class => "button", :method => :get %>
 
     <%= button_to "Delete Trip", trip_path(@trip), :class => "button", :method => :delete,
         data: { confirm: "Are you sure you want to delete trip #{@trip.id}?" } %>
-
     </section>
 </main>

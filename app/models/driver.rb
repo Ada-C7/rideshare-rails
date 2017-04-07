@@ -21,7 +21,7 @@ class Driver < ApplicationRecord
 
   def calculate_earnings
     return nil if trips.empty?
-    total_cost_in_cents = trips.map { |trip| trip.cost_in_cents }.sum
+    total_cost_in_cents = trips.map { |trip| trip.cost_in_cents.to_f }.sum
     total_cost_in_dollars = total_cost_in_cents / 100
     drivers_earnings = total_cost_in_dollars * 0.85
     drivers_earnings.round(2)
