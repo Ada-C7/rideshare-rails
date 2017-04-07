@@ -1,9 +1,9 @@
 class TripsController < ApplicationController
+before_action :find_rider, only: [:create]
 
   def index
       # redirect_to :controller => 'riders', :action => 'trip_list'
-      @trips = Trip.all
-      @trips.rider
+      @trips = [Trip.find(params[:rider_id])]
   end
 
   def show
@@ -14,8 +14,12 @@ class TripsController < ApplicationController
     @trip = Trip.new
   end
 
+  def find_rider
+    @rider = Rider.find(params[:rider_id])
+  end
+
   def create
-    @trip = Trip.create(trip_params)
+    @trip = @rider.trip_request
 
     if @trip.save
       redirect_to rider_trips_path(@trip)
@@ -49,7 +53,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    return params.require(:trip).permit(:date, :rating)
+      return params.require(:trip).permit(:date, :driver_id, :rider_id, :rating)
   end
 
 end
