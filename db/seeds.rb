@@ -19,12 +19,11 @@ end
 
 driver_successes = 0
 drivers.each do |driver|
-  driver = Driver.new(driver)
-  driver.save
+  driver = Driver.create(driver)
   if driver.id
     driver_successes += 1
   else
-    # puts "FAILED ON #{driver[:name]}"
+    puts "FAILED ON #{driver[:name]}"
   end
 end
 
@@ -39,18 +38,17 @@ CSV.read("../support/passengers.csv"[1..-1]).each do |line|
   }
 end
 
-# passenger_successes = 0
-# passengers.each do |passenger|
-#   passenger = Passenger.new(passenger)
-#   passenger.save
-#   if passenger.id
-#     passenger_successes += 1
-#   else
-#     puts "FAILED ON #{passenger[:name]}"
-#   end
-# end
-#
-# puts "Created #{passenger_successes} out of #{passengers.length} passengers."
+passenger_successes = 0
+passengers.each do |passenger|
+  passenger = Passenger.create(passenger)
+  if passenger.id
+    passenger_successes += 1
+  else
+    puts "FAILED ON #{passenger[:name]}"
+  end
+end
+
+puts "Created #{passenger_successes} out of #{passengers.length} passengers."
 
 trips = []
 CSV.read("../support/trips.csv"[1..-1]).each do |line|
