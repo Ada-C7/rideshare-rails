@@ -4,5 +4,13 @@
           <p> Driver Name: <%= @driver.name %> </p>
           <p> Driver VIN: <%= @driver.vin %> </p>
           <p> Driver Status: <%= @driver.status ? "Available" : "Not Available"%> </p>
+          <p><%= button_to "Edit", edit_driver_path, method: :get %> </p>
+          <p>
+               <%=
+                    button_to "Delete", driver_path, method: :delete,
+                    data: { confirm: "Are you confident you'd like to delete this driver?" },
+                    method: :delete
+               %>
+          </p>
      </section>
 <% end %>
