@@ -1,0 +1,49 @@
+#rider{
+  margin-top: 10px;
+  float: left;
+  width: 345px;
+  border-radius: 10px;
+  height: 300px;
+  margin-left: 3px;
+}
+#driver{
+  margin-top: 10px;
+  float: right;
+  width: 370px;
+  border-radius: 10px;
+  height: 300px;
+  margin-right: 3px;
+}
+
+#welcome{
+  float: left;
+  display: inline-block;
+  margin: 3%;
+  margin-top: 10%;
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+}
+
+section{
+  border-radius: 5px;
+  margin-top: 100px;
+  height: 320px;
+  /*background-color: rgba(175,158,121,5);*/
+  background-color: #FCF3E0;
+  opacity: .7;
+  border: 5px ;
+
+}
+header h2{
+  font-size: 36px;
+  margin-top: 0;
+}
+
+header a{
+  background-color: #FCF3E0;
+  border-radius: 5px;
+}
+header a:hover{
+  background-color: blue;
+  color: white;
+}
