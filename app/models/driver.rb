@@ -32,7 +32,22 @@ class Driver < ApplicationRecord
     trips.each do |trip|
       total += trip.cost
     end
-    return total
+    return total.round(2)
+  end
+
+  def average_rating
+    average = 0
+    total = 0
+    trips = self.trips
+    trips.each do |trip|
+      total += trip.rating
+    end
+    if total == 0
+      average = "No trips rated yet"
+    else
+      average = "#{(total/trips.length).round(1)} / 5"
+    end
+
   end
 
 end
