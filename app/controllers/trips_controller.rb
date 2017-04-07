@@ -8,14 +8,19 @@ class TripsController < ApplicationController
   end
 
   def new
-     @trip = Trip.new
+    @trip = Trip.new(rider_id: params[:rider_id])
   end
 
   def create
-     trip = Trip.create trip_params
-     unless trip.id == nil
-         redirect_to trips_path
-     end
+    trip = Trip.new
+    trip.rider_id = params[:rider_id]
+    trip.driver_id = rand(1..100)
+
+    if trip.save
+      redirect_to root_path
+    else
+      puts trip.errors.messages
+    end
   end
 
   def edit
@@ -41,8 +46,8 @@ class TripsController < ApplicationController
     redirect_to trips_path
   end
 
-  private
-  def trip_params
-    params.require(:trip).permit(:driver_id, :rider_id, :cost, :rating)
-  end
+  # private
+  # def trip_params
+  #   params.require(:trip).permit(:driver_id, :rider_id, :cost, :rating)
+  # end
 end

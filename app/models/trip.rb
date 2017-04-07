@@ -4,7 +4,7 @@ class Trip < ApplicationRecord
 
   validates :driver_id, presence: true, numericality: { only_integer: true, greater_than: 0 }
   validates :rider_id, presence: true, numericality: { only_integer: true, greater_than: 0 }
-  validates :rating, presence: true, numericality: true
+  validates :rating, numericality: { allow_nil: true, only_integer: true, greater_than: 0 }
   # def my_link_to(user)
   #   no_name = trip.driver.name
   #   return "" if no_name.blank?
