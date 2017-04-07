@@ -3,6 +3,10 @@ class TripsController < ApplicationController
     @trips = Trip.all
   end
 
+  def show
+    @trip = Trip.find(params[:id])
+  end
+
   def edit
     @trip = Trip.find(params[:id])
   end
@@ -16,7 +20,7 @@ class TripsController < ApplicationController
     trip.rating = params[:trip][:rating]
 
     if trip.save
-      redirect_to trips_path
+      redirect_to trip_path(trip.id)
     end
   end
 end
