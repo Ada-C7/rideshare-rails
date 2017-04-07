@@ -30,11 +30,6 @@ class PassengersController < ApplicationController
     redirect_to passenger_path(passenger)
   end
 
-  # def update_rating
-  #   passenger = Passenger.find(params[:id])
-  #   passenger.update(passenger_params)
-  # end
-
   def destroy
     Passenger.find(params[:id]).destroy
     redirect_to passengers_path

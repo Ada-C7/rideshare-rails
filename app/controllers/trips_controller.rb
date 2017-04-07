@@ -28,6 +28,14 @@ class TripsController < ApplicationController
     redirect_to trip_path(trip)
   end
 
+  # strong params?
+  def update_rating
+    trip = Trip.find(params[:id])
+    trip.update(params.permit(:rating))
+
+    redirect_to passenger_path(trip.passenger)
+  end
+
   def destroy
     Trip.find(params[:id]).destroy
     # where to redirect? passenger page?
