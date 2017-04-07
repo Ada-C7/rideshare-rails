@@ -3,3 +3,13 @@
   <h1>Add Passenger</h1>
 
   <%= render partial: "form", locals: { submit_text: "Add New"} %>
+
+  <% if @passenger.errors.any? %>
+    <ul>
+      <% @passenger.errors.each do |column, message| %>
+        <li>
+          <%= column.capitalize %> <%= message %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
