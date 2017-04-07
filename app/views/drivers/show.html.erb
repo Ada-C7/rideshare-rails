@@ -6,6 +6,8 @@ VIN: <%= @result_driver.vin %>
 
 Average rating: <%= @result_driver.find_avg_rating.round(1) %>
 
+Total Earned: $<%= @result_driver.calc_income.round(2) %>
+
 <table>
   <tr>
     <th>Trip ID</th>
@@ -13,6 +15,7 @@ Average rating: <%= @result_driver.find_avg_rating.round(1) %>
     <th>Passenger ID</th>
     <th>Date</th>
     <th>Rating</th>
+    <th>Cost</th>
   </tr>
   <% @result_driver.trips.each do |trip| %>
   <tr>
@@ -21,14 +24,10 @@ Average rating: <%= @result_driver.find_avg_rating.round(1) %>
     <td><%= link_to trip.passenger.name, passenger_path(trip.passenger_id) %></td>
     <td><%= trip.date %></td>
     <td><%= trip.rating %></td>
+    <td><%= trip.cost %></td>
   </tr>
   <% end %>
 </table>
-
-
-
- <p>ALSO NEED TO DISPLAY: total earnings
- (each trip -15%)</p>
 
  <%= link_to "Delete", driver_path(@result_driver.id),
    data: {confirm: "Do you want to delete this driver? NO GOING BACK!!!"},

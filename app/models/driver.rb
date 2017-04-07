@@ -17,9 +17,25 @@ class Driver < ApplicationRecord
     end
 
     trips.each do | trip |
-      # @avg_rating = "%.2f" % (@trips.sum { | trip | trip.rating }/@trips.length.to_f)
       total += trip.rating.to_f
     end
+
     return total / trips.length
   end
+
+  def calc_income
+    trips = self.trips
+    total = 0
+
+    if trips.length == 0
+      return 0
+    end
+
+    trips.each do | trip |
+      total += trip.cost
+    end
+
+    return total * 0.85
+  end
+
 end

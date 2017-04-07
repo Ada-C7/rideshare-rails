@@ -16,6 +16,7 @@ $ <%= @result_passenger.trips_cost %>
     <th>Passenger ID</th>
     <th>Date</th>
     <th>Rating</th>
+    <th>Cost</th>
   </tr>
   <% @trips.each do |trip| %>
   <tr>
@@ -25,13 +26,14 @@ $ <%= @result_passenger.trips_cost %>
     <td><%= link_to trip.passenger.name, passenger_path(trip.passenger_id) %></td>
     <td><%= trip.date %></td>
     <td><%= trip.rating %></td>
+    <td><%= trip.cost %></td>
   </tr>
   <% end %>
 </table>
 
 <%= link_to "Create a new trip!", new_trip_path %>
 
- <p> grand total, create button that links to trip#
+ <p> create button that links to trip#
 wont' allow user to do this if passenger hasn't rated all trips</p>
 
 <%= link_to "Edit", edit_passenger_path %>
