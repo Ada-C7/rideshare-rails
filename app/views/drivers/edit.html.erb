@@ -1,0 +1,15 @@
+<h1>Edit Driver</h1>
+
+<%= form_for @driver do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :driver_id %>
+  <%= f.text_field :driver_id %>
+
+  <%= f.label :vin %>
+  <%= f.text_field :vin %>
+
+  <%= f.submit value: "Submit changes" %>
+  <%= link_to "Cancel", drivers_path %>
+<%= end %>
