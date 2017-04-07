@@ -24,8 +24,8 @@ class TripsController < ApplicationController
     @trip = rider.trips.build(trip_params)
     if @trip.save
       redirect_to trip_path(@trip.id)
-    # else
-    #   render :new
+    else
+      render :new
     end
   end
 
