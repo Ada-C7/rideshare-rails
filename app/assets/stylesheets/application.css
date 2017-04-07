@@ -76,3 +76,17 @@
 .dropdown:hover .dropbtn {
     background-color: #7289FF;
 }
+
+.passenger-index, .driver-index {
+  text-decoration: none;
+  color: black;
+}
+
+.passenger-index:hover, .driver-index:hover {
+  color: #D388FF;
+}
+
+.home-button {
+  text-decoration: none;
+  color: white;
+}
