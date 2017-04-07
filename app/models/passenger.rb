@@ -1,6 +1,9 @@
 class Passenger < ApplicationRecord
   has_many :trips
 
+  validates :name, presence: true
+  validates :phone_number, presence: true, length: {minimum:7}
+
   def spent
     trips.map {|trip| trip.cost}.reduce(:+)
   end
