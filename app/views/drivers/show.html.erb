@@ -1,25 +1,29 @@
-<%= render "shared/menu" %>
+
 
 <header>
   <h1>Driver: <%= "#{@driver.name}" %></h1>
 </header>
 
 <main>
-  <h2>Info:</h2>
-    <%= render partial: 'driver_info' %>
 
-  <h3>Trips:</h3>
-    <ul>
-    <% @driver.trips.each do |trip| %>
-         <li>Trip ID: <%= link_to "#{trip.id}", trip_path %>
-      <% end %>
-    </ul>
-
+  <%= render "shared/menu" %>
   <section>
-    <p><%= link_to 'Edit Driver', edit_driver_path %></p>
-    <p><%= link_to "Delete Driver",
-            @driver, method: :delete,
-            data: { confirm: "You sure?" } %></p>
+    <h2>Info:</h2>
+      <%= render partial: 'driver_info' %>
+
+    <h3>Trips:</h3>
+      <ul>
+      <% @driver.trips.each do |trip| %>
+           <li>Trip ID: <%= link_to "#{trip.id}", trip_path %>
+        <% end %>
+      </ul>
+
+    <div>
+      <p><%= link_to 'Edit Driver', edit_driver_path %></p>
+      <p><%= link_to "Delete Driver",
+              @driver, method: :delete,
+              data: { confirm: "You sure?" } %></p>
+    </div>
   </section>
 </main>
 

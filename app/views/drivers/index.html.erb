@@ -1,12 +1,16 @@
-<%= render "shared/menu" %>
 
-<h1>Drivers#index</h1>
+<header>
+  <h1>Drivers#index</h1>
+</header>
 
 <main>
-  <ul>
-    <%= render partial: "driver_summary" %>
-  </ul>
-</main>
 
-<footer>
-</footer>
+  <%= render "shared/menu" %>
+
+  <section>
+    <ul>
+      <%= render partial: "driver_summary" %>
+    </ul>
+  </section>
+
+</main>
