@@ -1,24 +1,25 @@
 <% content_for :passengers do %>
      <section class="yield">
           <h1 class="title"><%= @passenger.name %></h1>
-            <ul class="list">
-              <li><span>Passenger Name:</span> <%= @passenger.name %></li>
-              <li><span>Phone Number:</span> <%= @passenger.phone %></li>
-              <li><span>Trips:</span> <%= @passenger.trips.map do | trip | %>
-
-                  <%= trip.id %>: <%= trip.driver.name %>
-
-                   <% end %>
-              </li>
-            </ul>
-
-            <p>
-              <%= button_to "Edit", edit_passenger_path, method: :get %>
-              <%=
-                button_to "Delete", passenger_path,
-                data: { confirm: "Are you sure you want to delete this passenger?" },
-                method: :delete
-              %>
-            </p>
+          <ul class="list">
+               <li><span> Passenger Name: </span> <%= @passenger.name %></li>
+               <li><span> Phone Number: </span> <%= @passenger.phone %></li>
+               <ul>
+                    <li><span> Trips: </span></li>
+                    <% @passenger.trips.map do | trip | %>
+                    <li>
+                         <span> Trip </span> #<%= trip.id %> with <span>driver</span> <%= trip.driver.name %> for $<%= trip.cost %>.
+                         <% end %>
+                    </li>
+               </ul>
+               <li><span> Total Amount Charged: </span> $<%= @passenger.trips.sum("cost") %></li>
+               <p>
+                    <%= button_to "Edit", edit_passenger_path, method: :get %>
+                    <%=button_to "Delete", passenger_path,
+                         data: { confirm: "Are you sure you want to delete this passenger?" },
+                         method: :delete
+                    %>
+               </p>
+          </ul>
      </section>
 <% end %>
