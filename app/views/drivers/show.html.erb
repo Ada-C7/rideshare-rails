@@ -1,6 +1,7 @@
 <h1><%= "#{@driver.name}"%></h1>
 
 <h3>VIN: <%= @driver.vin %></h3>
+<h3>ID: <%= @driver.id %></h3>
 
 <%= button_to "Update driver's information", edit_driver_path, method: :get %>
 

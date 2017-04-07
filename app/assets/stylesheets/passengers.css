@@ -1,0 +1,8 @@
+ul.trip_details {
+  padding-left: 0;
+}
+
+.trip_details li  {
+  display: inline-block;
+  margin-right: 2%;
+}
