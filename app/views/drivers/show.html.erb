@@ -1,4 +1,4 @@
-<article class="show">
+<article class="index">
   <h1>Driver Details</h1>
 
 
@@ -11,7 +11,7 @@
   <%= link_to "Edit", edit_driver_path(@result_driver.id) %>
   <%= link_to "Delete", driver_path(@result_driver.id), data: { confirm: "Are you sure you want to delete" }, method: :delete %>
 
-  <section class="past_trips">
+  <section class="scroll">
     <h4>Past Trips</h4>
     <ul>
       <% @result_driver.trips.each do |trip| %>
