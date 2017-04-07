@@ -4,6 +4,7 @@ class TripsController < ApplicationController
   end
 
   def create
+    #raise
     #Find random driver and assign it to user, as well as start with a rating of 0
     #user_id = user making new trip
     #cost functionality
@@ -11,8 +12,9 @@ class TripsController < ApplicationController
     #Trip will not be saved if last Trip object has rating of 0
 
     # @trip = Trip.create(trip_params)
-    user = User.find(params[:id])
-    last_trip = user.trips.last
+    ##param is empty , how to
+    #user = User.find(find_user)
+    last_trip = find_user.trips.last
 
     trip = Trip.new
     trip[:user_id] = params[:id]
@@ -27,7 +29,7 @@ class TripsController < ApplicationController
     elsif trip.save
       redirect_to edit_rating_path(trip.id)
     else
-      render "new"
+      render "show"
     end
   end
 
@@ -54,6 +56,9 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
 
     if @trip.update trip_params
+      ##########################
+      #@trip.id or @trip.user.id
+      ##########################
       redirect_to user_path(@trip.id)
     else
       render "edit"
@@ -68,5 +73,13 @@ class TripsController < ApplicationController
   private
   def trip_params
     params.require(:trip).permit(:driver_id, :user_id, :rating)
+  end
+
+  def find_trip
+    @trip = Trip.find(params[:id])
+  end
+
+  def find_user
+    @user = User.find(params[:user_id])
   end
 end
