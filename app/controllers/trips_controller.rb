@@ -4,7 +4,7 @@ class TripsController < ApplicationController
   end
 
   def new
-    @trips = Trip.new
+    @trip = Trip.new
   end
 
   def create
@@ -14,7 +14,7 @@ class TripsController < ApplicationController
   end
 
   def show
-    @trips = Trip.find(params[:id])
+    @trip = Trip.find(params[:id])
   end
 
 private

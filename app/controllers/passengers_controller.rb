@@ -12,10 +12,11 @@ class PassengersController < ApplicationController
   end
 
   def create
-  Passenger.create(passenger_params)
+    Passenger.create(passenger_params)
 
-  redirect_to passengers_path
-end
+    redirect_to passengers_path
+  end
+
 
 private
   def passenger_params
