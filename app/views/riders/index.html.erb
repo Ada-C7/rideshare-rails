@@ -1,0 +1,9 @@
+<h2>List of Riders</h2>
+
+<ul>
+  <% @riders.each_with_index do |rider, index| %>
+  <li>
+    <%= link_to rider.name, rider_path(rider.id) %>
+  </li>
+  <% end %>
+</ul>

@@ -1,0 +1,13 @@
+<h1> Name: <%= @trip.date %> </h1>
+<h2> ID: <%= @trip.id %> </h2>
+
+
+<% if @trip.rating != nil %>
+<h2> Rating: <%= @trip.rating %> </h2>
+<%= link_to "Change Your Rating", edit_rider_trip_path(@rider, @trip) %>
+<% else %>
+<%= link_to "Rate Your Ride", edit_rider_trip_path(@rider, @trip) %>
+<% end %>
+
+<%= link_to "Delete", rider_trip_path(@trip), method: :delete,
+    data: {confirm: "Are you sure"} %>

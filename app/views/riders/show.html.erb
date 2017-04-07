@@ -1,0 +1,15 @@
+<h1> Name: <%= @rider.name %> </h1>
+<h2> ID: <%= @rider.id %> </h2>
+
+<%= link_to "Edit", edit_rider_path(@rider.id) %>
+<%= link_to "Delete", rider_path(@rider), method: :delete,
+    data: {confirm: "Are you sure"} %>
+
+    <ul> <% @rider.trips.each_with_index do |trip, index| %>
+    <li><strong> <%= link_to "Trip: #{trip.id}", rider_trip_path(@rider, trip)  %> </strong></li>
+    <li>date: <%= trip.date %></li>
+    <li>rating: <%= trip.rating %></li>
+    <% end %>
+    </ul>
+
+<%= link_to "Trip Request", rider_trips_path(@rider), method: :post %>

@@ -1,0 +1,13 @@
+<h1> Name: <%= @driver.name %> </h1>
+<h2> ID: <%= @driver.id %> </h2>
+
+<%= link_to "Edit", edit_driver_path(@driver.id) %>
+<%= link_to "Delete", driver_path(@driver), method: :delete,
+    data: {confirm: "Are you sure"} %>
+
+<ul> <% @driver.trips.each_with_index do |trip, index| %>
+<li><strong><%= link_to "Trip: #{trip.id}", rider_trip_path(trip.rider_id, trip) %> <strong></li>
+<li><%= trip.date %></li>
+<li><%= trip.rating %></li>
+<% end %>
+</ul>
