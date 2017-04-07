@@ -24,7 +24,8 @@ class Driver < ApplicationRecord
     if self.trips.empty?
       0
     else
-      self.trips.map { |trip| trip.fare }.reduce(:+).round(2)
+      gross_earnings = self.trips.map { |trip| trip.fare }.reduce(:+)
+      (gross_earnings * 0.85).round(2)
     end
   end
 end

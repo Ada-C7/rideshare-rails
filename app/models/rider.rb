@@ -10,7 +10,7 @@ class Rider < ApplicationRecord
     if self.trips.empty?
       0
     else
-      self.trips.map { |trip| trip.fare}.reduce(:+)
+      self.trips.map { |trip| trip.fare}.reduce(:+).round(2)
     end
   end
 end
