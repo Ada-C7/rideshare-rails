@@ -22,7 +22,7 @@ before_action :find_rider, only: [:create]
     @trip = @rider.trip_request
 
     if @trip.save
-      redirect_to rider_trips_path(@trip)
+      redirect_to rider_trips_path(@rider)
     else
       render :new
     end

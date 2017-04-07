@@ -3,7 +3,7 @@
 <ul>
   <% @trips.each_with_index do |trip, index| %>
   <li>
-    <%= link_to trip.date, rider_trips_path(trip.id) %>
+    <%= link_to trip.date, rider_trip_path(trip.rider.id, trip.id) %>
   </li>
   <% end %>
 </ul>
