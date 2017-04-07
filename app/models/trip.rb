@@ -6,10 +6,7 @@ class Trip < ApplicationRecord
     validates :date, presence: true
     validates :date, format: {with: /[1-9\-\/]+/}
 
-    validates :rider_id, presence: true
-    validates :rider_id, numericality: {greater_than: 0}
-
-    validates :driver_id, presence: true
-    validates :driver_id, numericality: {greater_than: 0}
+    validates :cost, presence: true
+    validates :cost, numericality: {:greater_than_or_equal_to => 0} 
 
 end

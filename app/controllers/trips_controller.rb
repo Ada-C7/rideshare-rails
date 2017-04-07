@@ -7,16 +7,21 @@ class TripsController < ApplicationController
   def new
     @rider = Rider.find(params[:rider_id])
     @trip = @rider.trips.build
+
   end
 #id: rand(601...10000),
   def create
     rider = Rider.find(params[:rider_id])
     default_params = {date: Date.today, rating: nil, rider_id: rider.id, driver_id: rand(1..100)}
     @trip = rider.trips.create(default_params)
-
     @trip.update_attributes(trip_params)
     @trip.save
-    redirect_to rider_path(@trip.rider_id)
+    if @trip.save
+      redirect_to rider_path(@trip.rider_id)
+    else
+      render :new
+    end
+
   end
 
   def show
@@ -29,12 +34,13 @@ class TripsController < ApplicationController
 
   def update
     @trip = Trip.find(params[:id])
-    @trip.update_attributes(trip_params)
-    if @trip.save
-      redirect_to trip_path(@trip)
-    else
-      render :edit
-    end
+    @trip.update_attributes(rating_params)
+    @trip.save
+    # if @trip.save
+    #   redirect_to trip_path(@trip)
+    # else
+    #   render :edit
+    # end
 
   end
 
@@ -49,7 +55,7 @@ class TripsController < ApplicationController
     return params.require(:trip).permit( :cost, :rating)
   end
 
-  def rider_trip_params
-  params.require(:rider_trip).permit(:rating)
-end
+  def rating_params
+  params.require(:trip).permit(:rating)
+  end
 end
