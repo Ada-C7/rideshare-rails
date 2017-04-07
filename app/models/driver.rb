@@ -6,16 +6,13 @@ class Driver < ApplicationRecord
 
   validates :vin, presence: true
   validates :vin, format: {with: /[1-9a-zA-Z]+/}
-  #
-  # validates :driver_id, presence: true
-  # validates :driver_id, numericality: {greater_than: 0}
-  #
+
   def total_amount
     total = 0
     self.trips.each do |trip|
       total += trip.cost
     end
-    return total.round(2)
+    return (total - total * 0.15).round(2)
   end
 
   def average_rating
@@ -26,6 +23,10 @@ class Driver < ApplicationRecord
       end
       rating += trip.rating
     end
-    return (rating/self.trips.length).round(2)
+    if rating != 0
+      return (rating/self.trips.length).round(2)
+    else
+      return "0"
+    end
   end
 end
