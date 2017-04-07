@@ -1,5 +1,5 @@
 <header>
-<h1>Driver: <%= "#{@driver.name}" %></h1>
+  <h1>Driver: <%= "#{@driver.name}" %></h1>
 </header>
 
 <main>
@@ -8,7 +8,7 @@
 
   <h3>Trips:</h3>
     <ul>
-    <% @driver.get_trips.each do |trip| %>
+    <% @driver.trips.each do |trip| %>
          <li>Trip ID: <%= link_to "#{trip.id}", trip_path %>
       <% end %>
     </ul>
