@@ -6,5 +6,4 @@ class Trip < ApplicationRecord
   validates :passenger_id, presence: true
   validates :date, presence: true
   validates :rating, presence: true, inclusion: { in: (1..5) }
-  validates :cost, presence: true
 end
