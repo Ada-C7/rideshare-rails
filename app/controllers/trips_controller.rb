@@ -30,7 +30,9 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new
-    @trip.driver_id = @trip.rand_driver.id 
+    if @trip.rand_driver != nil
+      @trip.driver_id = @trip.rand_driver.id
+    end
     @trip.rider_id = params[:id]
     @trip.date = "1/1/17" #create method for giving today's date
 
