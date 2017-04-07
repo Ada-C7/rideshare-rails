@@ -6,36 +6,38 @@
     <%= button_to "Next Trip", @trip.next(@trip.id), method: :get %>
   </li>
 </ul>
+<article class="show-contents">
 
-<section class="trip-details">
-  <h1> Viewing trip from <%= @trip.date.strftime("%b %d, %Y") %> </h1>
-  <ul>
-    <li>
-      Passenger: <%= link_to @trip.passenger.name, passenger_path(@trip.passenger.id) %>
-    </li>
-    <li>
-      Driver: <%= link_to @trip.driver.name, driver_path(@trip.driver.id) %>
-    </li>
-    <li>
-      Date: <%= @trip.date.strftime("%b %d, %Y") %>
-    </li>
-    <li>
-      Cost: $<%= @trip.cost %>
-    </li>
-    <li>
-      Rating: <%= @trip.rating %>
-    </li>
-  </ul>
+  <section class="trip-details">
+    <h1> Trip on <%= @trip.date.strftime("%b %d, %Y") %> </h1>
+    <ul>
+      <li>
+        Passenger: <%= link_to @trip.passenger.name, passenger_path(@trip.passenger.id) %>
+      </li>
+      <li>
+        Driver: <%= link_to @trip.driver.name, driver_path(@trip.driver.id) %>
+      </li>
+      <li>
+        Date: <%= @trip.date.strftime("%b %d, %Y") %>
+      </li>
+      <li>
+        Cost: $<%= @trip.cost %>
+      </li>
+      <li>
+        Rating: <%= @trip.rating %>
+      </li>
+    </ul>
 
-</section>
+  </section>
 
-<section class="trip-nav">
-  <ul>
-    <li>
-      <%= button_to "Edit Trip", edit_trip_path(@trip.id), method: :get %>
-    </li>
-    <li>
-      <%= button_to "Delete Trip", trip_path(@trip.id), method: :delete, data: {confirm: "Do you really want to delete this trip?"} %>
-    </li>
-  </ul>
-</section>
+  <section class="trip-nav">
+    <ul>
+      <li>
+        <%= button_to "Edit Trip", edit_trip_path(@trip.id), method: :get %>
+      </li>
+      <li>
+        <%= button_to "Delete Trip", trip_path(@trip.id), method: :delete, data: {confirm: "Do you really want to delete this trip?"} %>
+      </li>
+    </ul>
+  </section>
+</article>

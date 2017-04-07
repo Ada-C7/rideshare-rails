@@ -4,43 +4,43 @@
 <section id="trips-list">
   <table>
     <tr>
-      <th>Date</th>
-      <th>Passenger</th>
-      <th>Driver</th>
-      <th>Cost</th>
-      <th>Rating</th>
-    </tr>
-    <tr>
       <td>
         <%= form_tag(trips_path, method: :get, id: "search-date-form") do %>
-          <%= text_field_tag :search_date, params[:search_date] %>
+          <%= text_field_tag :search_date, params[:search_date], placeholder: "yyyy, mm, or dd" %>
           <%= submit_tag "Search", name: nil %>
         <% end %>
       </td>
       <td>
         <%= form_tag(trips_path, method: :get, id: "search-passenger-form") do %>
-          <%= text_field_tag :search_passenger, params[:search_passenger] %>
+          <%= text_field_tag :search_passenger, params[:search_passenger], placeholder: "first, last or full" %>
           <%= submit_tag "Search", name: nil %>
         <% end %>
       </td>
       <td>
         <%= form_tag(trips_path, method: :get, id: "search-driver-form") do %>
-          <%= text_field_tag :search_driver, params[:search_driver] %>
+          <%= text_field_tag :search_driver, params[:search_driver], placeholder: "name" %>
           <%= submit_tag "Search", name: nil %>
         <% end %>
       </td>
       <td>
         <%= form_tag(trips_path, method: :get, id: "search-cost-form") do %>
-          <%= text_field_tag :search_cost, params[:search_cost] %>
+          <%= text_field_tag :search_cost, params[:search_cost], placeholder: "$$.$$" %>
           <%= submit_tag "Search", name: nil %>
         <% end %>
       </td>
       <td>
         <%= form_tag(trips_path, method: :get, id: "search-rating-form") do %>
-          <%= text_field_tag :search_rating, params[:search_rating] %>
+          <%= text_field_tag :search_rating, params[:search_rating], placeholder: "0-5" %>
           <%= submit_tag "Search", name: nil %>
         <% end %>
       </td>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th>Passenger</th>
+      <th>Driver</th>
+      <th>Cost</th>
+      <th>Rating</th>
     </tr>
     <% @trips.each do |trip| %>
       <tr>

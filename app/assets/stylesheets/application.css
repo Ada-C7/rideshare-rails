@@ -102,6 +102,22 @@ header ul {
 h1 {
   display: block;
   text-align: center;
+  font-size: 2.5em;
+}
+
+th {
+  font-size: 1.25em;
+}
+#trips-list {
+  display: block;
+}
+
+#trips-list table {
+  text-align: center;
+}
+
+#trips-list table tr:nth-child(2n+3) {
+  background-color: #d9fcf6;
 }
 
 #passengers-list, #drivers-list {
@@ -125,7 +141,7 @@ h1 {
   padding-bottom: 50px;
 }
 
-.passenger-details h1, .driver-details h1 {
+.passenger-details h1, .driver-details h1, .trip-details h1 {
   text-align: left;
   font-size: 2em;
 }
