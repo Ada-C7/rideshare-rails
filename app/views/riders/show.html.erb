@@ -7,8 +7,8 @@
 
     <ul> <% @rider.trips.each_with_index do |trip, index| %>
     <li><strong> <%= link_to "Trip: #{trip.id}", rider_trip_path(@rider, trip)  %> </strong></li>
-    <li><%= trip.date %></li>
-    <li><%= trip.rating %></li>
+    <li>date: <%= trip.date %></li>
+    <li>rating: <%= trip.rating %></li>
     <% end %>
     </ul>
 

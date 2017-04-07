@@ -1,8 +1,8 @@
-<!-- <% if @rider.errors.messages.length > 0 %>
+<% if @trip.errors.messages.length > 0 %>
 <section class="errors">
   <h2> Something wrong! </h2>
   <ul>
-    <% @rider.errors.messages.each do |field, problem_list| %>
+    <% @trip.errors.messages.each do |field, problem_list| %>
     <% problem_list.each do |problem| %>
     <li>
       <%= field %>:
@@ -12,4 +12,13 @@
     <% end %>
   </ul>
 </section>
-<% end %> -->
+<% end %>
+
+<h4>Edit Your Trip</h4>
+<p>Please rate between 1 and 5: </p>
+
+<%= form_for(@trip, url: rider_trip_path, method: :patch) do |f| %>
+<%= f.label :rating %>
+<%= f.text_field :rating %>
+<%= f.submit %>
+<% end %>

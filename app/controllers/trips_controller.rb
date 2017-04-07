@@ -1,11 +1,5 @@
 class TripsController < ApplicationController
-before_action :find_rider, only: [:create]
-
-  # def index
-  #     # redirect_to :controller => 'riders', :action => 'trip_list'
-  #     @trips = Trip.where(rider_id: @rider.id)
-  # end
-
+before_action :find_rider, only: [:create, :show]
   def show
     @trip = Trip.find(params[:id])
   end
@@ -35,9 +29,8 @@ before_action :find_rider, only: [:create]
   def update
     @trip = Trip.find(params[:id])
     @trip.update_attributes(trip_params)
-
     if @trip.save
-      redirect_to rider_trips_path(@trip)
+      redirect_to rider_trip_path(@trip.rider_id, @trip.id)
     else
       render :edit
     end
