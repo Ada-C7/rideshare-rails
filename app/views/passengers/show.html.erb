@@ -7,30 +7,42 @@
   </li>
 </ul>
 
-<section class="passenger-details">
-  <h1> Passenger <%= @passenger.name %> </h1>
-  <ul>
-    <li>
-      Name: <%= @passenger.name %>
-    </li>
-    <li>
-      Phone: <%= @passenger.phone %>
-    </li>
-    <li>
-      Total charged: $<%= @passenger.total_charged.round(2) %>
-    </li>
-  </ul>
+<article class="show-contents">
+  <section class="passenger-details">
+    <h1> Passenger <%= @passenger.name %> </h1>
+    <ul>
+      <li>
+        Name: <%= @passenger.name %>
+      </li>
+      <li>
+        Phone: <%= @passenger.phone %>
+      </li>
+      <li>
+        Total charged: $<%= @passenger.total_charged.round(2) %>
+      </li>
+    </ul>
 
-</section>
-<h2><%= @passenger.name %>'s Trips</h2>
-<section class="passenger-trips">
-  <%= button_to "New Trip", new_trip_path(@passenger.id), method: :post %>
+    <section class="passenger-nav">
+      <ul>
+        <li>
+          <%= button_to "Edit Passenger", edit_passenger_path, method: :get %>
+        </li>
+        <li>
+          <%= button_to "Delete Passenger", passenger_path(@passenger.id), method: :delete, data: {confirm: "Do you really want to delete this passenger? All trips associated with the passenger will also be deleted."} %>
+        </li>
+      </ul>
+    </section>
+  </section>
+  
+  <h2><%= @passenger.name %>'s Trips</h2>
+  <section class="passenger-trips">
+    <%= button_to "New Trip", new_trip_path(@passenger.id), method: :post %>
 
-  <% flash.each do |key, value| %>
+    <% flash.each do |key, value| %>
     <p class="alert alert-<%= key %>"><%= value %></p>
-  <% end %>
+    <% end %>
 
-  <% if @passenger.errors.any? %>
+    <% if @passenger.errors.any? %>
     <ul class="error">
       <% @passenger.errors.each do |field, msg| %>
       <li>
@@ -38,32 +50,41 @@
       </li>
       <% end %>
     </ul>
-  <% end %>
+    <% end %>
 
-  <% @passenger.trips.order("created_at DESC").each do |trip| %>
-    <ul>
-      <li>
-        Date: <%= link_to trip.date.strftime("%b %d, %Y"), trip_path(trip.id) %> -- Driver: <%= link_to trip.driver.name, driver_path(trip.driver_id) %>
-      </li>
-      <li>
-        Rating: <%= trip.rating %>
-      </li>
-    </ul>
-  <% end %>
-  <% if @passenger.trips.size == 0 %>
+    <table class="indi-table">
+      <tr>
+        <th>
+          Date
+        </th>
+        <th>
+          Driver
+        </th>
+        <th>
+          Rating
+        </th>
+      </tr>
+
+      <% @passenger.trips.order("created_at DESC").each do |trip| %>
+      <tr>
+        <td>
+          <%= link_to trip.date.strftime("%b %d, %Y"), trip_path(trip.id) %>
+        </td>
+        <td>
+          <%= link_to trip.driver.name, driver_path(trip.driver_id) %>
+        </td>
+        <td>
+          <%= trip.rating %>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+
+    <% if @passenger.trips.size == 0 %>
     <p>
       No trips found.
     </p>
-  <% end %>
-</section>
+    <% end %>
+  </section>
 
-<section class="passenger-nav">
-  <ul>
-    <li>
-      <%= button_to "Edit Passenger", edit_passenger_path, method: :get %>
-    </li>
-    <li>
-      <%= button_to "Delete Passenger", passenger_path(@passenger.id), method: :delete, data: {confirm: "Do you really want to delete this passenger? All trips associated with the passenger will also be deleted."} %>
-    </li>
-  </ul>
-</section>
+</article>

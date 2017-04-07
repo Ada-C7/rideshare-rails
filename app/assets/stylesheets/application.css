@@ -115,30 +115,29 @@ h1 {
   display: inline-block;
 }
 
-#search-form {
+#search-form, .next-prev li {
   padding-left: 20px;
   display: inline-block;
 }
 
 /*show*/
-h1 {
-
+.passenger-details, .driver-details {
+  padding-bottom: 50px;
 }
 
-h2 {
-
+.passenger-details h1, .driver-details h1 {
+  text-align: left;
+  font-size: 2em;
 }
 
 .next-prev {
   display: block;
 }
 
-.next-prev li {
-  display: inline-block;
-}
-
-.passenger-details, .driver-details {
-
+.show-contents {
+  padding-top: 50px;
+  padding-left: 100px;
+  width: 100%;
 }
 
 .passenger-trips, .driver-trips {
@@ -149,6 +148,9 @@ h2 {
 
 }
 
+.indi-table {
+  text-align: center;
+}
 
 /*edit/new page*/
 h2 {
@@ -157,7 +159,7 @@ h2 {
 
 .new-edit {
   padding-top: 50px;
-  padding-left: 100;
+  padding-left: 100px;
   width: 100%;
 }
 .form {

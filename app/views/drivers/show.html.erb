@@ -6,51 +6,71 @@
     <%= button_to "Next Driver", @driver.next, method: :get %>
   </li>
 </ul>
+<article class="show-contents">
 
-<section class="driver-details">
-  <h1> Driver <%= @driver.name %> </h1>
-  <ul>
-    <li>
-      Name: <%= @driver.name %>
-    </li>
-    <li>
-      VIN: <%= @driver.vin %>
-    </li>
-    <li>
-      Total Earned: $<%= @driver.total_earned %>
-    </li>
-    <li>
-      Average Rating: <%= @driver.average_rating %>
-    </li>
-  </ul>
-
-</section>
-<h2><%= @driver.name %>'s Trips</h2>
-<section class="driver-trips">
-  <% @driver.trips.each do |trip| %>
+  <section class="driver-details">
+    <h1> Driver <%= @driver.name %> </h1>
     <ul>
       <li>
-        Date: <%= link_to trip.date.strftime("%b %d, %Y"), trip_path(trip.id) %>  --  <%= link_to trip.passenger.name, passenger_path(trip.passenger.id) %>
+        Name: <%= @driver.name %>
       </li>
       <li>
-        Rating: <%= trip.rating %>
+        VIN: <%= @driver.vin %>
+      </li>
+      <li>
+        Total Earned: $<%= @driver.total_earned %>
+      </li>
+      <li>
+        Average Rating: <%= @driver.average_rating %>
       </li>
     </ul>
-  <% end %>
-  <% if @driver.trips.size == 0 %>
-    <p>
-      No trips found.
-    </p>
-  <% end %>
-</section>
 
-<section class="driver-nav">
-  <ul>
-    <li>
-      <%= button_to "Edit Driver", edit_driver_path, method: :get %>
-    </li>
-    <li>
-      <%= button_to "Delete Driver", driver_path(@driver.id), method: :delete, data: {confirm: "Do you really want to delete this driver? All trips associated with the driver will also be deleted."} %>
-    </li>
-  </ul>
-</section>
+    <section class="driver-nav">
+      <ul>
+        <li>
+          <%= button_to "Edit Driver", edit_driver_path, method: :get %>
+        </li>
+        <li>
+          <%= button_to "Delete Driver", driver_path(@driver.id), method: :delete, data: {confirm: "Do you really want to delete this driver? All trips associated with the driver will also be deleted."} %>
+        </li>
+      </ul>
+    </section>
+  </section>
+
+
+  <h2><%= @driver.name %>'s Trips</h2>
+  <section class="driver-trips">
+    <table class="indi-table">
+      <tr>
+        <th>
+          Date
+        </th>
+        <th>
+          Passenger
+        </th>
+        <th>
+          Rating
+        </th>
+      </tr>
+      <% @driver.trips.each do |trip| %>
+      <tr>
+        <td>
+          <%= link_to trip.date.strftime("%b %d, %Y"), trip_path(trip.id) %>
+        </td>
+        <td>
+          <%= link_to trip.passenger.name, passenger_path(trip.passenger.id) %>
+        </td>
+        <td>
+          <%= trip.rating %>
+        </td>
+      </tr>
+      <% end %>
+
+      <% if @driver.trips.size == 0 %>
+      <p>
+        No trips found.
+      </p>
+      <% end %>
+    </section>
+
+  </article>
