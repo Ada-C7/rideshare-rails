@@ -9,10 +9,10 @@
   <%= f.select :rating, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5]], prompt: "Please Select" %>
 
   <%= f.label :driver_id %>
-  <%= f.select :driver_id, Driver.all.map { |driver| [driver.name, driver.id]} %>
+  <%= f.select :driver_id, Driver.all.map { |driver| [driver.name, driver.id]}, prompt: "Please Select" %>
 
   <%= f.label :passenger_id %>
-  <%= f.select :passenger_id, Passenger.all.map { |passenger| [passenger.name, passenger.id]} %>
+  <%= f.select :passenger_id, Passenger.all.map { |passenger| [passenger.name, passenger.id]}, prompt: "Please Select" %>
 
   <%= f.submit %>
 <% end %>

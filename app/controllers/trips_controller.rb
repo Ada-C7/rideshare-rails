@@ -27,6 +27,11 @@ class TripsController < ApplicationController
     end
   end
 
+  def destroy
+    Trip.destroy(params[:id])
+    redirect_to trips_path
+  end
+
   def trip_params
     params.require(:trip).permit(:date, :cost, :rating, :driver_id, :passenger_id)
   end
