@@ -97,7 +97,7 @@ nav {
           padding: 1.8em 0 0 0.4em;
      }
 
-.index {
+.yield {
      display: flex;
      flex: 1 1 auto;
      flex-direction: column;
@@ -118,6 +118,10 @@ nav {
           padding: 1em 0 0;
      }
 
+.hidden {
+	display: none;
+}
+
 h1, h2, h3 {
 	font-family: 'Righteous', serif;
 	letter-spacing: -.01em;
@@ -129,11 +133,11 @@ h1 {
 }
 
 h2 {
-	font-size: 3.0em;
+	font-size: 2.0em;
 }
 
 h3 {
-	font-size: 2.0em;
+	font-size: 1.0em;
 }
 
 h4, h5, h6, p, span, a, input, textarea {
@@ -150,16 +154,8 @@ h6 {
 	text-transform: uppercase;
 }
 
-p, span {
-	font-size: 1.2em;
-	letter-spacing: .04em;
-	line-height: 1.8em;
-}
-
-@media all and (max-width: 599px) {
-    p, span {
-	   font-size: 2.4em;
-    }
+li span {
+     font-weight: 900;
 }
 
 a {
@@ -192,30 +188,33 @@ nav a {
           border-radius: .8em;
      }
 
-     .driver-nav a {
+     .driver-button a {
           color: #e06a4e;
      }
 
-     .trip-nav a {
+     .trip-button a {
           color: #deb853;
      }
 
-     .passenger-nav a {
+     .passenger-button a {
           color: #789F8A;
      }
 
-     .driver-nav a:hover {
-          background-color: #7b220d;
+     .driver-button a:hover {
+          background-color: #953a25;
      }
 
-     .trip-nav a:hover {
+     .trip-button a:hover {
           background-color: #a97b01;
      }
 
-     .passenger-nav a:hover {
+     .passenger-button a:hover {
           background-color: #0a373a;
      }
 
+form {
+	padding: 1em 0 0;
+}
 
      select {
          -webkit-appearance: none;
@@ -228,15 +227,15 @@ nav a {
      	display: flex;
 
      	background: transparent;
-     	border: solid .6em white;
-     	border-bottom: none;
+     	border: solid .6em #232423;
+     	border-left: none;
      	border-right: none;
      	border-top: none;
      	border-radius: .4em;
 
-     	color: white;
-     	font-family: 'Source Sans Pro', sans-serif;
-     	font-size: 1.8em;
+     	color: #232423;
+     	font-family: 'Lato', sans-serif;
+     	font-size: 1em;
      	font-weight: 400;
      	letter-spacing: .04em;
 
@@ -256,45 +255,45 @@ nav a {
      }
 
      input:not([type=submit]):not([type=file]):hover, textarea:hover, select:hover {
-     	background: white;
-     	border: solid .6em #af4f35;
-     	border-bottom: none;
+     	background: #fff;
+     	border: solid .6em #232423;
+     	border-left: none;
      	border-right: none;
      	border-top: none;
 
-     	color: #af4f35;
+     	color: #232423;
      }
 
      ::-webkit-input-placeholder {
-     	color: white;
-     	opacity: 0.3;
+     	color: #232423;
+     	opacity: 0.9;
      }
 
      :-ms-input-placeholder {
-     	color: white;
-     	opacity: 0.3;
+     	color: #232423;
+     	opacity: 0.9;
      }
 
      ::-moz-placeholder {
-     	color: white;
-     	opacity: 0.3;
+     	color: #232423;
+     	opacity: 0.9;
      }
 
      :-moz-placeholder {
-     	color: white;
-     	opacity: 0.3;
+     	color: #232423;
+     	opacity: 0.9;
      }
 
      input[type=submit] {
      	padding: .6em .8em;
 
-     	background-color: #af4f35;
+     	background-color: #232423;
      	border: none;
      	border-radius: .4em;
-     	color: white;
-     	display: inline-block;
+		color: #e06a4e;
+		display: inline-block;
      	font-family: 'Source Sans Pro', serif;
-     	font-size: 1.8em;
+     	font-size: 1em;
      	font-weight: 400;
      	letter-spacing: .04rem;
      	text-align: center;
@@ -302,8 +301,8 @@ nav a {
      	text-transform: uppercase;
      }
 
-     	input[type=submit]:hover {
-     		background-color: #ca5839;
+     input[type=submit]:hover {
+     		background-color: #953a25;
      	}
 
      span input[type=submit] {
@@ -313,9 +312,8 @@ nav a {
 
      .button_to {
      	display: inline-block;
+
      }
-
-
 
 @media all and (max-width: 750px) {
 
