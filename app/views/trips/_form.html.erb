@@ -1,39 +1,35 @@
-<% if @trip.errors.messages.length > 0 %>
-  <section class="errors">
-    <h2>Something went wrong!</h2>
-    <ul>
-      <% @trip.errors.messages.each do |field, problem_list| %>
-        <% problem_list.each do |problem| %>
-          <li>
-            <strong><%= field %>:</strong>
-            <%= problem %>
-          </li>
-        <% end %>
-      <% end %>
-    </ul>
-  </section>
-<% end %>
 
-
+<h1>Add a Trip</h1>
 
 
 <section id = "_form_section">
-  <%= form_for @trip do |f| %>
-    <div>
-      <%= f.label :driver, class: "label" %>
-      <%= f.text_field :driver, class: "field"%>
-    </div>
+  <%= form_for @trips do |f| %>
 
 
-    <div>
-      <%= f.label :date, class: "label"%>
-      <%= f.text_field :date, class: "field"%>
-    </div>
 
-    <div>
-      <%= f.label :phone_num, class: "label"%>
-      <%= f.text_field :phone_num, class: "field"%>
-    </div>
+    <tr>
+      <th>Date Created</th>
+      <td><%= f.datetime_select(:created_at, :order => [:month, :day, :year]) %></td>
+    </tr>
+
+
+      <tr>
+          <th>Driver</th>
+          <td><%= f.select(:driver, Driver.all.map {|p| [p.name]} ) %></td>
+        </tr>
+
+
+
+
+
+
+
+        <!-- #HASH
+        f.select (:visible, {"Visible"=> 1, "Hidden" => 2})
+
+        #Array of arrays
+        f.select (:trip_id, Trip.all.map {|p| [p.rating]}) -->
+
 
 
 
@@ -43,5 +39,6 @@
     <div id = "_form_section_submit">
       <%= f.submit value: "SAVE"%>
     </div>
+
   <% end %>
 </section>

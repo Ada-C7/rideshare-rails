@@ -3,9 +3,19 @@ class Driver < ApplicationRecord
   validates :vin, presence: true, length: {is: 17}
   has_many :trips
 
-  def show_trip
-    trips.all
+
+
+  def random_driver
+    trips = Trips.all
+    if trips.sample(:rating) == !nil
+      return trips.driver
+    else trips.sample(:rating) == nil
+    end
   end
+
+
+
+
 
   def average_rating
     array_of_ratings = trips.all.collect {|t| t.rating}

@@ -5,6 +5,7 @@ class DriversController < ApplicationController
 
   def new
     @driver = Driver.new
+    # @random_driver = Driver.sample
   end
 
   def create
