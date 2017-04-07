@@ -4,11 +4,14 @@
   <tr>
     <th>Name</th>
     <th>VIN</th>
+    <th>Average Rating</th>
+
   </tr>
   <% @drivers.each do |driver| %>
     <tr>
       <td><%= link_to driver.name, driver_path(driver.id), method: :get %></td>
       <td><%= driver.vin %></td>
+      <td><%= driver.average_rating %></td>
     </tr>
   <% end %>
 </table>
