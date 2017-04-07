@@ -13,7 +13,7 @@
       <li><%= link_to "Trip ID #{trip.id}", trip_path(trip) %>  </li>
       <li><%= "Date: #{trip.date}" %> </li>
       <li><%= "Cost: $#{'%.2f' % (trip.cost/100.0)}"%> </li>
-      <li><%= "Rating: #{"★" * trip.rating}" %> </li>
+      <%= render partial: "trips/rating", locals: {trip: trip} %>
     </ul>
   </li>
   <% end %>

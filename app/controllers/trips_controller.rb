@@ -6,12 +6,9 @@ class TripsController < ApplicationController
   end
 
   def create
+    Trip.create(driver_id: rand(1..300), passenger_id: params[:passenger_id], date: Date.today, cost: rand(1..5000), rating:2)
 
-
-
-    Trip.create(driver_id: rand(1..300), passenger_id: params[:pid], date: Date.today, cost: rand(1..5000), rating:2)
-    redirect_to passenger_path(params[:pid])
-    #render?
+    redirect_to passenger_path(params[:passenger_id])
   end
 
 
@@ -44,4 +41,13 @@ class TripsController < ApplicationController
   end
 
 
+  # def generate_params
+  #     {
+  #       driver_id: rand(1..300),
+  #       passenger_id: params[:pid],
+  #       date: Date.today,
+  #       cost: rand(1..5000),
+  #       rating:2
+  #     }
+  # end
 end

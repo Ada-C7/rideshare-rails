@@ -9,6 +9,6 @@ resources :passengers
 resources :drivers
 
 resources :trips, except: [:index, :new, :create]
-post 'trips/:pid', to: 'trips#create', as: 'create_trip'
+post 'trips/:passenger_id', to: 'trips#create', as: 'create_trip'
 
 end
