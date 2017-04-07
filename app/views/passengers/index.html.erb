@@ -1,10 +1,13 @@
 <h2>Rideshare Passengers List</h2>
 
+<%= link_to "Add a new passenger", new_passenger_path %>
+
 <ul>
   <% @passengers.each do |passenger| %>
     <li><%= link_to passenger.name, passenger_path(passenger.id) %></li>
   <% end %>
 </ul>
+
 
 <%= link_to "All Trips", trips_path %>
 <%= link_to "All Drivers", drivers_path %>
