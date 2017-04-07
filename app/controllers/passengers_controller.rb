@@ -12,8 +12,13 @@ class PassengersController < ApplicationController
   end
 
   def create
-    passenger = Passenger.create(passenger_params)
-    redirect_to passengers_path unless passenger.id == nil
+    @passenger = Passenger.create(passenger_params)
+
+    unless @passenger.id == nil
+      redirect_to passengers_path
+    else
+      render "new"
+    end
   end
 
   def edit
