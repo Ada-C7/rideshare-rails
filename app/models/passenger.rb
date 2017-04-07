@@ -4,4 +4,18 @@ class Passenger < ApplicationRecord
 
   has_many :trips
 
+  def total_cost
+
+    trips_array = trips
+    
+    cost_array = []
+
+    trips_array.each do |trip|
+      cost_array << trip.cost
+    end
+
+    cost = cost_array.sum
+
+  end
+
 end
