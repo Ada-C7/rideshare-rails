@@ -10,7 +10,7 @@
   <% end %>
 </ul>
 
-<%= form_for @trip, method: form_method do |f| %>
+<%= form_for @trip, method: :patch do |f| %>
 
   <%= f.label :rating %>
   <%= f.select :rating, options_for_select(1..5) %>
