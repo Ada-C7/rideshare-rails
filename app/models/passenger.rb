@@ -23,4 +23,12 @@ class Passenger < ApplicationRecord
     return total.round(2)
   end
 
+  def next
+    Passenger.where("id > ?", self.id).first
+  end
+
+  def prev
+    Passenger.where("id < ?", self.id).last
+  end
+
 end

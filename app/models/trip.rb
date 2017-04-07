@@ -7,4 +7,16 @@ class Trip < ApplicationRecord
   validates :date, presence: true
   validates :rating, presence: true
   validates :cost, presence: true
+
+  def next(id)
+    this_trip = Trip.find(id)
+    trips = this_trip.passenger.trips
+    trips.where("id > ?", self.id).first
+  end
+
+  def prev(id)
+    this_trip = Trip.find(id)
+    trips = this_trip.passenger.trips
+    trips.where("id < ?", self.id).last
+  end
 end

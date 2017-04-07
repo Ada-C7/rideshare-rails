@@ -1,6 +1,7 @@
 <h1> Viewing trip from <%= @trip.date %> </h1>
 <section class="trip-details">
-
+  <%= link_to "Previous Trip", @trip.prev(@trip.id) %>
+  <%= link_to "Next Trip", @trip.next(@trip.id) %>
   <ul>
     <li>
       Passenger: <%= link_to @trip.passenger.name, passenger_path(@trip.passenger.id) %>

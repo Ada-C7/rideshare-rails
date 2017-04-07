@@ -1,6 +1,7 @@
 <h1> <%= @passenger.name %> </h1>
 <section class="passenger-details">
-
+  <%= link_to "Previous Passenger", @passenger.prev %>
+  <%= link_to "Next Passenger", @passenger.next %>
   <ul>
     <li>
       Name: <%= @passenger.name %>

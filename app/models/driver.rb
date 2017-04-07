@@ -45,9 +45,17 @@ class Driver < ApplicationRecord
     if total == 0
       average = "No trips rated yet"
     else
-      average = "#{(total/trips.length).round(1)} / 5"
+      average = "#{(total/trips.length)}/5"
     end
 
+  end
+
+  def next
+    Driver.where("id > ?", self.id).first
+  end
+
+  def prev
+    Driver.where("id < ?", self.id).last
   end
 
 end
