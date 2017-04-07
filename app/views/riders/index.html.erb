@@ -1,9 +1,15 @@
-<h1>All Riders</h1>
+<article class="index">
 
-<ul>
-    <% @riders.each do |rider| %>
-      <li>
-        <%= link_to rider.name, rider_path(rider.id) %>
-      </li>
-    <% end %>
-</ul>
+  <h1>All Riders</h1>
+
+  <div class="scroll">
+    <ul>
+        <% @riders.each do |rider| %>
+          <li>
+            <%= link_to rider.name, rider_path(rider.id) %>
+          </li>
+        <% end %>
+    </ul>
+  </div>
+
+</article>
