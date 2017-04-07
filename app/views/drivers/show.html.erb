@@ -4,6 +4,8 @@
 <p>Driver ID: <%= @driver[:driver_id] %></p>
 <p>VIN Number: <%= @driver[:vin] %></p>
 
+<%= link_to "Edit Driver", edit_driver_path %>
+
 <%= link_to "All Trips", trips_path %>
 <%= link_to "All Passengers", passengers_path %>
 <%= link_to "All Drivers", drivers_path %>
