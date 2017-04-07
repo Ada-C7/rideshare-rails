@@ -1,0 +1,36 @@
+<section>
+  <h2>Something went wrong!</h2>
+  <% if @trip.errors.messages.length > 0 %>
+  <ul>
+    <% @trip.errors.messages.each do |field, problem_list| %>
+      <% problem_list.each do |problem| %>
+    <li>
+      <strong><%= field %>: </strong>
+      <%= problem %>
+    </li>
+      <% end %>
+    <% end %>
+  </ul>
+  <% end %>
+</section>
+
+<section>
+  <%= form_for @trip do |f| %>
+    <%= f.label :trip_id %>
+    <%= f.text_field :trip_id %>
+
+    <%= f.label :driver_id %>
+    <%= f.text_field :driver_id %>
+
+    <%= f.label :passenger_id %>
+    <%= f.text_field :passenger_id %>
+
+    <%= f.label :date %>
+    <%= f.text_field :date %>
+
+    <%= f.label :rating %>
+    <%= f.text_field :rating %>
+
+    <%= f.submit value: "#{submit_text}" %>
+  <% end %>
+</section>
