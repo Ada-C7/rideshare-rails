@@ -9,11 +9,15 @@
   </head>
 
   <body>
-    <h1><%= link_to "RideShare", root_path %></h1>
-    <h1><%= link_to "Create new passenger", new_passenger_path %></h1>
-    <h1><%= link_to "Create new driver", new_driver_path %></h1>
-    <h1><%= link_to "List all passengers", passengers_path %></h1>
-    <h1><%= link_to "List all drivers", drivers_path %></h1>
+    <header>
+      <h1><%= link_to "RideShare", root_path %></h1>
+      <nav>
+        <ul><p><%= link_to "New Passenger", new_passenger_path %></p></ul>
+        <ul><p><%= link_to "New Driver", new_driver_path %></p></ul>
+        <ul><p><%= link_to "View Passengers", passengers_path %></p></ul>
+        <ul><p><%= link_to "View Drivers", drivers_path %></p></ul>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>

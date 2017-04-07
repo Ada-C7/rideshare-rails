@@ -1,10 +1,10 @@
-<h1>The passenger you selected!</h1>
+<h2><%= @result_passenger.name %></h2>
 
-<%= @result_passenger.name %>
+<h3>Phone: <%= @result_passenger.phone_num %></h3>
 
-<%= @result_passenger.phone_num %>
+<h3>Total Spent: $ <%= @result_passenger.trips_cost %></h3>
 
-$ <%= @result_passenger.trips_cost %>
+<h2><%= @result_passenger.name %>'s Trips</h2>
 
 <% @trips = Trip.where(passenger_id: @result_passenger.id) %>
 
@@ -31,14 +31,11 @@ $ <%= @result_passenger.trips_cost %>
   <% end %>
 </table>
 
-<%= link_to "Create a new trip!", new_trip_path %>
+<%= link_to "Create a new trip!", new_trip_path, class: :button %>
 
- <p> create button that links to trip#
-wont' allow user to do this if passenger hasn't rated all trips</p>
-
-<%= link_to "Edit", edit_passenger_path %>
+<%= link_to "Edit", edit_passenger_path, class: :button %>
 
 <%= link_to "Delete", passenger_path(@result_passenger.id),
   data: {confirm: "Do you want to delete this passenger? NO GOING BACK!!!"},
-  method: :delete
+  method: :delete, class: :button
 %>

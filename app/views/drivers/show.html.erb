@@ -1,17 +1,16 @@
-<h1>The driver you selected!</h1>
+<h2><%= @result_driver.name %></h2>
 
-Driver name: <%= @result_driver.name %>
+<h3>VIN: <%= @result_driver.vin %></h3>
 
-VIN: <%= @result_driver.vin %>
+<h3>Average rating: <%= @result_driver.find_avg_rating.round(1) %></h3>
 
-Average rating: <%= @result_driver.find_avg_rating.round(1) %>
+<h3>Total Earned: $<%= @result_driver.calc_income.round(2) %></h3>
 
-Total Earned: $<%= @result_driver.calc_income.round(2) %>
+<h2><%= @result_driver.name %>'s Trips</h2>
 
 <table>
   <tr>
     <th>Trip ID</th>
-    <th>Driver ID</th>
     <th>Passenger ID</th>
     <th>Date</th>
     <th>Rating</th>
@@ -20,17 +19,16 @@ Total Earned: $<%= @result_driver.calc_income.round(2) %>
   <% @result_driver.trips.each do |trip| %>
   <tr>
     <td><%= link_to trip.id, trip_path(trip.id) %></td>
-    <td><%= link_to trip.driver.id, driver_path(trip.driver_id) %></td>
     <td><%= link_to trip.passenger.name, passenger_path(trip.passenger_id) %></td>
     <td><%= trip.date %></td>
     <td><%= trip.rating %></td>
-    <td><%= trip.cost %></td>
+    <td>$<%= trip.cost %></td>
   </tr>
   <% end %>
 </table>
 
  <%= link_to "Delete", driver_path(@result_driver.id),
    data: {confirm: "Do you want to delete this driver? NO GOING BACK!!!"},
-   method: :delete
+   method: :delete, class: :button
  %>
-<%= link_to "Edit", edit_driver_path %>
+<%= link_to "Edit", edit_driver_path, class: :button %>
