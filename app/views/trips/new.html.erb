@@ -5,16 +5,12 @@
 
 
 <%if @trip.rider.trips_rated?%>
-  <%= form_for @trip do |f| %>
-  <%= f.label :name, "Welcome, #{Rider.find(params[:id]).name}!" %>
- <% f.hidden_field :rider_id, :value=>@rider_id%>
-  <% f.hidden_field :driver_id, :value=>@random_driver%>
-  <br>
-  <%= f.label :driver_id, "You will be riding with #{Driver.find(@random_driver).name}!" %>
-  <br>
+  <%= form_for ([@trip.rider, @trip]) do |f| %>
+    <%= f.label :cost %>
+    <%= f.text_field :cost %>
     <%= f.submit value: "Create new trip" %>
   <% end %>
 <%else%>
-  <p> Your trips are not rated. Go back and rate all trips</p>
-  <%= link_to "Back to rider", rider_path(@rider_id)%>
+<p> You cannot create a new trip if previous trips are not rated. Go back and rate all trips</p>
+<%= link_to "Back to rider", rider_path(@trip.rider.id)%>
 <%end%>

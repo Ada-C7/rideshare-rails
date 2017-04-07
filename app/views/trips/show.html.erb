@@ -4,8 +4,8 @@
 <p>Trip Cost: <%=@trip.cost%></p>
 <p>Rating: <%=@trip.rating%></p>
 
-<%= link_to "Edit Rating", edit_trip_path(@trip.id)%>
-<br>
+<%= button_to 'Delete trip', trip_path(@trip.id), method: :delete, data: {confirm: 'Are you sure?' } %>
+
 <%= link_to "See Rider", rider_path(@trip.rider_id)%>
 <%= link_to "See all Riders", riders_path%>
 <br>

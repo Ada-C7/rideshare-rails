@@ -9,7 +9,8 @@ class RidersController < ApplicationController
 
     def create
       @rider = Rider.create(rider_params)
-
+      # @rider.id = rand(300..1000)
+      @rider.save
       if @rider.save
         redirect_to riders_path
       else
@@ -43,6 +44,6 @@ class RidersController < ApplicationController
 
     private
     def rider_params
-      return params.require(:rider).permit(:name, :phone_num)
+      return params.require(:rider).permit(:name, :phone_num, :rating)
     end
 end

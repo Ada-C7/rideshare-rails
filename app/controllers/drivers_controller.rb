@@ -5,17 +5,21 @@ class DriversController < ApplicationController
 
   def new
     @driver = Driver.new
-      @drivers = Driver.all
+
   end
 
   def create
-    Driver.create(driver_params)
-    #redirect_to #we can choose path together
+    @driver = Driver.create(driver_params)
+    @driver.save
+    if @driver.save
+      redirect_to drivers_path
+    else
+      render :new
+    end
   end
 
   def show
-    id = params[:id].to_i
-    @driver = Driver.find(id)
+    @driver = Driver.find(params[:id])
   end
 
   def edit
@@ -38,7 +42,7 @@ class DriversController < ApplicationController
 
   private
   def driver_params
-    return params.require(:driver).permit(:name, :vin, :id)
+    return params.require(:driver).permit(:name, :vin)
   end
 
 end

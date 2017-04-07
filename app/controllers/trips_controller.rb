@@ -1,24 +1,22 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trip.all
+    rider = Rider.find(params[:rider_id])
+    @trips = rider.trips
   end
 
   def new
-    @trip = Trip.new
-    @rider_id = params[:id]
-    @trip.rider = Rider.find(@rider_id)
-    @random_driver = rand(1..100)
+    @rider = Rider.find(params[:rider_id])
+    @trip = @rider.trips.build
   end
-
+#id: rand(601...10000),
   def create
-    @trip = Trip.new
-    @trip.date = Time.now
-    @trip.rating  = nil
-    @trip.rider_id = params[:id]
-    @trip.driver_id = @random_driver
-    @trip.save
+    rider = Rider.find(params[:rider_id])
+    default_params = {date: Date.today, rating: nil, rider_id: rider.id, driver_id: rand(1..100)}
+    @trip = rider.trips.create(default_params)
 
-    redirect_to rider_path(params[:id])
+    @trip.update_attributes(trip_params)
+    @trip.save
+    redirect_to rider_path(@trip.rider_id)
   end
 
   def show
@@ -37,16 +35,21 @@ class TripsController < ApplicationController
     else
       render :edit
     end
+
   end
 
   def destroy
     @trip = Trip.find(params[:id])
     @trip.destroy
-    redirect_to trips_path
+    redirect_to rider_path(@trip.rider_id)
   end
 
   private
   def trip_params
-    return params.require(:trip).permit(:date, :rating)
+    return params.require(:trip).permit( :cost, :rating)
   end
+
+  def rider_trip_params
+  params.require(:rider_trip).permit(:rating)
+end
 end
