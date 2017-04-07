@@ -18,6 +18,7 @@ class TripsController < ApplicationController
   end
 
   def edit
+    @trip = Trip.find(params[:id])
   end
 
   def show
@@ -25,8 +26,20 @@ class TripsController < ApplicationController
   end
 
   def update
+    trip = Trip.find(params[:id])
+
+    if trip.update(trip_params)
+      redirect_to trip_path(params[:id])
+    end
   end
 
   def destroy
   end
+
+  private
+
+  def trip_params
+    params.require(:trip).permit(:date, :rating, :fare)
+  end
+
 end

@@ -29,7 +29,7 @@ class RidersController < ApplicationController
     rider = Rider.find(params[:id])
 
     if rider.update(rider_params)
-      redirect_to rider_path
+      redirect_to rider_path(params[:id])
     end
   end
 

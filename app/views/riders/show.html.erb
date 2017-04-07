@@ -32,7 +32,13 @@
         <td><%= link_to trip.driver.name, driver_path(trip.driver.id) %></td>
         <td><%= trip.date %></td>
         <td>$<%= trip.fare %></td>
-        <td><%= trip.rating %></td>
+        <td>
+          <% if trip.rating.nil? %>
+            <%= link_to "[add rating]", edit_trip_path(trip.id), method: :get %>
+          <% else %>
+            <%= trip.rating %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </table>

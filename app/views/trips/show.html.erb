@@ -6,4 +6,5 @@
   <li>Date: <%= @trip.date %></li>
   <li>Fare: $<%= @trip.fare %></li>
   <li>Rating: <%= @trip.rating %></li>
+  <li><%= link_to "[edit]", edit_trip_path(@trip.id), method: :get %></li>
 </ul>
