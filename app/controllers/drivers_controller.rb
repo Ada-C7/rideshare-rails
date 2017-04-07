@@ -35,6 +35,7 @@ class DriversController < ApplicationController
     driver.update(driver_params)
   end
 
+
   def destroy
     driver = Driver.find(params[:id])
     driver.destroy

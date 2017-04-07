@@ -1,0 +1,19 @@
+<h1>Rideshare Rails</h1>
+<nav class = 'navigation'>
+  <ul>
+    <li>Passenger
+      <ul class = 'menu'>
+        <li><%= link_to "Create New Passenger", new_passenger_path, method: :get %></li>
+        <li><%= link_to "Passenger List", passengers_path %></li>
+      </ul>
+    </li>
+    <li>Driver
+      <ul class = 'menu'>
+        <li><%= link_to "Create New Driver", new_driver_path, method: :get %></li>
+        <li><%= link_to "Driver List", drivers_path %></li>
+      </ul>
+    </li>
+
+  </ul>
+
+</nav>
