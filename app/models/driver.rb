@@ -17,7 +17,7 @@ class Driver < ApplicationRecord
     end
   end
 
-  def random_driver_id
+  def self.random_driver_id
     found = false
     until found
       id = Driver.all.collect {|t| t.id}.sample
