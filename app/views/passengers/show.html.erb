@@ -6,10 +6,12 @@
 
 <h3>Passenger's Phone Number: <%= @passenger[:phone_num]%></h3>
 
+<h3>Amount Charged: $<%= @passenger.calculate_charges%></h3>
+
 <h3>Passenger's Trips: </h3>
   <ul>
   <% @passenger.trips.each do |trip| %>
-       <li>Trip ID: <%= link_to "#{trip.id}", trip_path %>
+       <li>Trip ID: <%= link_to "#{trip.id}", trip_path(trip.id) %>
     <% end %>
   </ul>
 

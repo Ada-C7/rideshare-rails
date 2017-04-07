@@ -6,7 +6,7 @@
 <h3>Driver's Name: <%= @trip.driver.name %></h3>
 <h3>Driver's ID: <%= @trip.driver.id %></h3>
 
-<p><%= link_to "Link to Driver", driver_path(@trip.driver_id) %></p>
+<p><%= link_to "Link to Driver", driver_path(@trip.driver.id) %></p>
 
 
 <h3>Passenger's Name: <%= @trip.passenger.name %></h3>
@@ -16,7 +16,7 @@
 
 <h3>Trip Date: <%= @trip.date %></h3>
 
-<h3>Trip Cost: <%= @trip.cost_in_cents %></h3>
+<h3>Trip Cost: $<%= @trip.cost_in_cents.to_f / 100 %></h3>
 
 <h3>Trip Rating: <%= @trip.rating %></h3>
 

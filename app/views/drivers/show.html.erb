@@ -11,7 +11,7 @@
   <h3>Trips:</h3>
     <ul>
     <% @driver.trips.each do |trip| %>
-         <li>Trip ID: <%= link_to "#{trip.id}", trip_path %>
+         <li>Trip ID: <%= link_to "#{trip.id}", trip_path(trip.id) %>
       <% end %>
     </ul>
 
