@@ -1,6 +1,6 @@
 <% content_for :passengers do %>
   <section class="yield">
     <h2 class="title">Edit <%= @passenger.name %></h2>
-    <%= render partial: "form" %>
+    <%= render partial: "form", locals: { action_name: "Edit Passenger"} %>
   </section>
 <% end %>

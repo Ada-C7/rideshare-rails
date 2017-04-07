@@ -5,20 +5,15 @@
 </ul>
 
 <%= form_for @trip do |f| %>
-  <%= f.label :date %>
   <%= f.date_field :date %>
 
-  <%= f.label :cost %>
-  <%= f.text_field :cost %>
+  <%= f.text_field :cost, placeholder: "Cost" %>
 
-  <%= f.label :rating %>
-  <%= f.select :rating, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5]], prompt: "Please Select" %>
+  <%= f.select :rating, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5]], prompt: "Select Rating" %>
 
-  <%= f.label :driver_id %>
-  <%= f.select :driver_id, Driver.all.map { |driver| [driver.name, driver.id]}, prompt: "Please Select" %>
+  <%= f.select :driver_id, Driver.all.map { |driver| [driver.name, driver.id]}, prompt: "Select Driver" %>
 
-  <%= f.label :passenger_id %>
-  <%= f.select :passenger_id, Passenger.all.map { |passenger| [passenger.name, passenger.id]}, prompt: "Please Select" %>
+  <%= f.select :passenger_id, Passenger.all.map { |passenger| [passenger.name, passenger.id]}, prompt: "Select Passenger" %>
 
-  <%= f.submit %>
+  <%= f.submit action_name, class: "trip-submit"%>
 <% end %>
