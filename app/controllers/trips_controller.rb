@@ -30,7 +30,7 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new
-    @trip.driver_id = @trip.rand_driver.id 
+    @trip.driver_id = @trip.rand_driver.id
     @trip.rider_id = params[:id]
     @trip.date = "1/1/17" #create method for giving today's date
 
@@ -44,14 +44,10 @@ class TripsController < ApplicationController
     redirect_to trips_path
   end
 
-
-
   private
 
   def trip_params
     params.require(:trip).permit(:driver_id, :rider_id, :date, :rating)
   end
-
-
 
 end

@@ -7,7 +7,7 @@ class Driver < ApplicationRecord
 
   def avg_rating
     ratings_array = trips.map(&:rating)
-    ratings_array.sum / ratings_array.size.to_f
+    (ratings_array.sum / ratings_array.size.to_f).round(2)
   end
 
   def total_earnings
