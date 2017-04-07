@@ -21,9 +21,18 @@ class Driver < ApplicationRecord
     driver = drivers.sample
     if driver.available?(driver)
       return driver.id
-    else      
+    else
       assign_driver
     end
+  end
+
+  def total_earned
+    total = 0
+    trips = self.trips
+    trips.each do |trip|
+      total += trip.cost
+    end
+    return total
   end
 
 end
