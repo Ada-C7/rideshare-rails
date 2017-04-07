@@ -1,9 +1,9 @@
-<ul class="nextprev">
+<ul class="next-prev">
   <li>
-    <%= link_to "Previous Driver", @driver.prev %>
+    <%= button_to "Previous Driver", @driver.prev, method: :get %>
   </li>
   <li>
-    <%= link_to "Next Driver", @driver.next %>
+    <%= button_to "Next Driver", @driver.next, method: :get %>
   </li>
 </ul>
 
@@ -47,10 +47,10 @@
 <section class="driver-nav">
   <ul>
     <li>
-      <%= link_to "Edit Driver", edit_driver_path %>
+      <%= button_to "Edit Driver", edit_driver_path, method: :get %>
     </li>
     <li>
-      <%= link_to "Delete Driver", driver_path(@driver.id), method: :delete, data: {confirm: "Do you really want to delete this driver? All trips associated with the driver will also be deleted."} %>
+      <%= button_to "Delete Driver", driver_path(@driver.id), method: :delete, data: {confirm: "Do you really want to delete this driver? All trips associated with the driver will also be deleted."} %>
     </li>
   </ul>
 </section>

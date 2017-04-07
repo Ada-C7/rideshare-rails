@@ -9,27 +9,20 @@
   </ul>
   <% end %>
 
-<%= form_for @driver do |f| %>
-  <ul>
-    <li>
-      <%= f.label :name, "Name: " %>
-      <%= f.text_field :name %>
-    </li>
-    <li>
-      <%= f.label :vin, "VIN Number: " %>
-      <%= f.text_field :vin %>
-    </li>
-  </ul>
-</section>
-
-  <section class="button">
+  <%= form_for @driver do |f| %>
     <ul>
+      <li>
+        <%= f.label :name, "Name: " %>
+        <%= f.text_field :name %>
+      </li>
+      <li>
+        <%= f.label :vin, "VIN Number: " %>
+        <%= f.text_field :vin %>
+      </li>
       <li>
         <%= f.submit %>
       </li>
-      <li>
-        <%= link_to "Cancel", :back %>
-      </li>
     </ul>
-  </section>
-<% end %>
+  <% end %>
+  <%= button_to "Cancel", :back, method: :get %>
+</section>

@@ -1,9 +1,9 @@
-<ul class="nextprev">
+<ul class="next-prev">
   <li>
-    <%= link_to "Previous Passenger", @passenger.prev %>
+    <%= button_to "Previous Passenger", @passenger.prev, method: :get %>
   </li>
   <li>
-    <%= link_to "Next Passenger", @passenger.next %>
+    <%= button_to "Next Passenger", @passenger.next, method: :get %>
   </li>
 </ul>
 
@@ -60,10 +60,10 @@
 <section class="passenger-nav">
   <ul>
     <li>
-      <%= link_to "Edit Passenger", edit_passenger_path %>
+      <%= button_to "Edit Passenger", edit_passenger_path, method: :get %>
     </li>
     <li>
-      <%= link_to "Delete Passenger", passenger_path(@passenger.id), method: :delete, data: {confirm: "Do you really want to delete this passenger? All trips associated with the passenger will also be deleted."} %>
+      <%= button_to "Delete Passenger", passenger_path(@passenger.id), method: :delete, data: {confirm: "Do you really want to delete this passenger? All trips associated with the passenger will also be deleted."} %>
     </li>
   </ul>
 </section>
