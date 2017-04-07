@@ -10,9 +10,9 @@ method: :delete %></p>
   <%#= link_to "add trip", trips_path, method: :create,  id: @user.id %>
   <%#= link_to "Add Trip", create_trip_path, {:controller => "trips", :action => "create", :user => @user.id } %>
 
-<%= link_to "Add Trip", create_trip_path { :action => :create}, :method :post %>
+<%#= link_to "Add Trip", new_trip_path { :action => :create}, :method :post %>
 
-<%#= link_to "Add Trip", create_trip_path, :method => :post %>
+<%= link_to "Add Trip", new_trip_path(@user.id), :method => :post %>
 
     <%#= link_to "Add Trip", create_trip_path, method: :post %>
 
