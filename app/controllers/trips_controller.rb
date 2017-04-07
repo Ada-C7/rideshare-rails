@@ -7,8 +7,8 @@ class TripsController < ApplicationController
 
   def create
     #message if driver = nil and no driver available
-    Trip.create(driver: Trip.find_driver, passenger_id: params[:passenger_id],
-      date: Date.today, cost: rand(1..5000))
+    Trip.create(generate_params(params[:passenger_id]))
+
     redirect_to passenger_path(params[:passenger_id])
   end
 
@@ -37,5 +37,14 @@ class TripsController < ApplicationController
   private
   def trip_params
     return params.require(:trip).permit(:driver_id, :passenger_id, :rating, :date)
+  end
+
+  def generate_params(passenger_id)
+    {
+      driver: Trip.find_driver,
+      passenger_id: passenger_id,
+      date: Date.today,
+      cost: rand(1..5000)
+    }
   end
 end

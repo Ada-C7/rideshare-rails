@@ -1,6 +1,11 @@
 <!-- disply rating as stars, out of a max rating of 5 stars -->
 <li> Rating:
   <% trip.rating ||= 0 %>
-  <%= "★" * trip.rating %>
-  <%= "☆" * (5 - trip.rating) %>
+
+  <% if trip.rating == 0 %>
+    <%= "★" * trip.rating %>
+    <%= "☆" * (5 - trip.rating) %>
+  <% else %>
+    <%= link_to "☆", edit_trip_path(id: trip.id, rating: 2), method: :patch %>
+  <% end %>
 </li>

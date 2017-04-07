@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 root 'passengers#index'
 
 resources :passengers
+# able to do this using more restful route? need to pass in new rating
+# patch 'passengers/:id/:rating', to: 'tasks#update_rating', as: 'update_rating'
 
 # need all restful routes?
 resources :drivers
