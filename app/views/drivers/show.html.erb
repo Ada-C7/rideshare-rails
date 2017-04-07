@@ -4,6 +4,27 @@
 
 <%= @result_driver.vin %>
 
+<% @trips = Trip.where(driver_id: @result_driver.id) %>
+
+<table>
+  <tr>
+    <th>Trip ID</th>
+    <th>Driver ID</th>
+    <th>Passenger ID</th>
+    <th>Date</th>
+    <th>Rating</th>
+  </tr>
+  <% @trips.each do |trip| %>
+  <tr>
+    <td><%= link_to trip.id, trip_path(trip.id) %></td>
+    <td><%= link_to trip.driver.name, driver_path(trip.driver_id) %></td>
+    <td><%= link_to trip.passenger.name, passenger_path(trip.passenger_id) %></td>
+    <td><%= trip.date %></td>
+    <td><%= trip.rating %></td>
+  </tr>
+  <% end %>
+</table>
+
  <p>average rating, all trips (clicking trip brings up trip details), total earnings
  (each trip -15%), edit/delete button</p>
 
