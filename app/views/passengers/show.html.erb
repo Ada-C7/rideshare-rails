@@ -4,6 +4,12 @@
             <ul class="list">
               <li><span>Passenger Name:</span> <%= @passenger.name %></li>
               <li><span>Phone Number:</span> <%= @passenger.phone %></li>
+              <li><span>Trips:</span> <%= @passenger.trips.map do | trip | %>
+
+                  <%= trip.id %>: <%= trip.driver.name %>
+
+                   <% end %>
+              </li>
             </ul>
 
             <p>
