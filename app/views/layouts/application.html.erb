@@ -11,6 +11,7 @@
 
   <body>
       <section class="drivers">
+           <section class="branding"></section>
           <nav>
               <ul>
                   <li class="driver-button"><%= link_to "Drivers", drivers_path %></li>
@@ -26,6 +27,11 @@
           </nav>
       </section>
       <section class="trips">
+          <section class="branding">
+               <%= link_to root_path do %>
+                    <%= image_tag "hitch-icon.png"%>
+               <% end %>
+          </section>
           <nav>
               <ul>
                   <li class="trip-button"><%= link_to "Trips", trips_path %></li>
@@ -41,6 +47,7 @@
           </nav>
       </section>
       <section class="passengers">
+           <section class="branding"></section>
           <nav>
               <ul>
                   <li class="passenger-button"><%= link_to "Passengers", passengers_path %></li>

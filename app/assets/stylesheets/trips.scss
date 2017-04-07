@@ -83,6 +83,25 @@ html, body {
      background-color: #789f8a;
 }
 
+.branding {
+   display: flex;
+   flex: 1 1 auto;
+
+   align-items: center;
+   justify-content: center;
+   min-height: 6em;
+   max-height: 6em;
+
+   border-bottom: solid .1em #232423;
+}
+
+.branding img {
+	width: 6em;
+
+	border-radius: 50%;
+	border: solid .2em #232423;
+}
+
 nav {
    display: flex;
    flex: 1 1 auto;
@@ -320,5 +339,22 @@ form {
      body {
           flex-direction: column;
      }
+
+	.branding {
+		border: none;
+	}
+
+	.trips {
+		order: 1;
+	}
+
+	.drivers {
+		order: 2;
+	}
+
+	.passengers {
+		order: 3;
+	}
+
 
 }
