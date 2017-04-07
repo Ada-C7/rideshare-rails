@@ -9,7 +9,7 @@
     <%= f.label :price %>
     <%= f.text_field :price %>
     <%= f.label :rating %>
-    <%= f.text_field :rating %>
+    <%= f.select :rating, [1, 2, 3, 4, 5]%>
     <%= f.submit value: "#{submit_text} trip" %>
   <% end %>
 </section>

@@ -8,5 +8,17 @@
     <% end %>
   </ul>
   <% end %>
-  
-<%= render partial: "form", locals: { submit_text: "Create" }%>
+
+
+  <%= form_for @trip do |f| %>
+    <%= f.label :driver_id %>
+    <%= f.text_field :driver_id %>
+    <%= f.label :passenger_id %>
+    <%= f.text_field :passenger_id %>
+    <%= f.label :date %>
+    <%= f.text_field :date %>
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+    <%= f.submit value: "create trip" %>
+  <% end %>
+<!-- <%= render partial: "form", locals: { submit_text: "Create" }%> -->
