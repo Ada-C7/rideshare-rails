@@ -7,9 +7,10 @@
 <h3>Passenger's Phone Number: <%= @passenger[:phone_num]%></h3>
 
 <h3>Passenger's Trips: </h3>
-
   <ul>
-
+  <% @passenger.trips.each do |trip| %>
+       <li>Trip ID: <%= link_to "#{trip.id}", trip_path %>
+    <% end %>
   </ul>
 
 <%= button_to "Edit Passenger", edit_passenger_path, :class => "button", :method => :get %>
