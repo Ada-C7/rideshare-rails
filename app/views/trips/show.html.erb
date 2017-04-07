@@ -1,0 +1,9 @@
+<link href="https://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet">
+
+<h1><%= @trip[:id] %></h1>
+<p> Date: <%=@trip[:date] %>
+    Rating: <%=@trip[:rating] %>
+    Driver: <%=@trip[:driver_id] %>
+    Passenger: <%=@trip[:passenger_id] %></p>
+<%= link_to "Back to Trip List", trips_path %>
+<%= link_to "Home", welcome_path %>

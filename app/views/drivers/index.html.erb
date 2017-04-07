@@ -1,0 +1,10 @@
+<link href="https://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet">
+
+<header><h1>Drivers</h1></header>
+
+<h3> <%= link_to "New Driver", new_driver_path %> <%= link_to "Home", welcome_path %> </h3>
+
+  <% @drivers.each do |driver| %>
+  <li><%= render partial: "driver_summary", locals: { driver: driver } %>
+
+  <%end%></li>
