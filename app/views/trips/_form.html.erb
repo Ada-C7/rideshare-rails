@@ -2,12 +2,12 @@
   <%= form_for @trip do |f| %>
 
   <%= f.label :passenger_id %>
-  <%= f.text_field :passenger_id %>
+  <%= f.text_field :passenger_id, value: @trip.passenger.name, disabled: true  %>
 
   <%= f.label :driver_id %>
-  <%= f.text_field :driver_id %>
+  <%= f.text_field :driver_id, value: @trip.driver.name, disabled: true  %>
 
-  <%= f.label :date %>
+  <%= f.label :date, "Date (YYYY-MM-DD)" %>
   <%= f.text_field :date %>
 
   <%= f.label :cost %>

@@ -1,3 +1,24 @@
+
+<section>
+  <% if @driver.errors.messages.length > 0 %>
+    <h2> Unable to <%= text %>: </h2>
+
+    <ul>
+      <% @driver.errors.messages.each do |field, problem_list| %>
+        <% problem_list.each do |problem| %>
+          <li><%= field %> : <%= problem %></li>
+        <% end %>
+      <% end %>
+    </ul>
+
+  <% end %>
+</section>
+
+
+
+
+
+
 <section>
   <%= form_for @driver do |f| %>
     <%= f.label :name %>
@@ -6,6 +27,6 @@
     <%= f.label :vin, "VIN" %>
     <%= f.text_field :vin %>
 
-    <%= f.submit button_text %>
+    <%= f.submit text.capitalize %>
   <% end %>
 </section>
