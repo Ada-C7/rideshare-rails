@@ -6,9 +6,12 @@ class TripsController < ApplicationController
   end
 
   def create
-    Trip.create(trip_params)
-    # where to redirect? passenger page?
-    # redirect_to trips_path
+
+
+
+    Trip.create(driver_id: rand(1..300), passenger_id: params[:pid], date: Date.today, cost: rand(1..5000), rating:2)
+    redirect_to passenger_path(params[:pid])
+    #render?
   end
 
 

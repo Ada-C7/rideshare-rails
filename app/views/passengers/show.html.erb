@@ -3,6 +3,9 @@
 <h3>Total spent: $<%= '%.2f' % (@passenger.spent/100.0) %></h3>
 <h3><%= @passenger.phone_number %></h3>
 
+
+<%= button_to "Request a ride", create_trip_path(@passenger.id), method: :post, data: {confirm: "We are sending a driver your way now. Confirm trip?"}%>
+
 <ul>
   <% @passenger.trips.each do |trip| %>
   <li>

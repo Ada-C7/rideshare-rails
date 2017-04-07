@@ -8,6 +8,7 @@ resources :passengers
 # need all restful routes?
 resources :drivers
 
-resources :trips, except: :index
+resources :trips, except: [:index, :new, :create]
+post 'trips/:pid', to: 'trips#create', as: 'create_trip'
 
 end
