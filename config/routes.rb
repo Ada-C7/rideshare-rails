@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # get 'drivers/index'
 resources :trips, only:[:index, :show]
 resources :welcome, only:[:index, :show]
-resources :drivers, only:[:index, :show]
+resources :drivers#, only:[:index, :show, :create, :new]
 resources :passengers, only: [:index, :show]
   # get 'trips' to: 'trips#index', as: 'trips'
 
