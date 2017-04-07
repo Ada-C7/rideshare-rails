@@ -8,11 +8,6 @@
                <li> <span> Driver Status: </span> <%= @driver.status ? "Available" : "Not Available"%> </li>
           </ul>
 
-     <section class="details">
-          <h1>Driver</h1>
-          <p> Driver Name: <%= @driver.name %> </p>
-          <p> Driver VIN: <%= @driver.vin %> </p>
-          <p> Driver Status: <%= @driver.status ? "Available" : "Not Available"%> </p>
           <p><%= button_to "Edit", edit_driver_path, method: :get %> </p>
           <p>
                <%=
