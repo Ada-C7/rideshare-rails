@@ -83,19 +83,45 @@ Main
 */
 h2 {
   text-align: center;
-  padding-top: 10px;
 }
+
 main {
   background-color: white;
   margin: 0 auto;
   max-width: 750px;
   min-width: 400px;
+  padding: 10px;
+  box-shadow:5px 0px 50px 2px gray;
 }
+
 table {
   margin: 0px auto;
   text-align: center;
 }
+
 th {
   border-top: 1px dashed gray;
   border-bottom: 1px dashed gray;
+}
+
+th {
+  padding: 5px 0;
+}
+
+tr:nth-child(2) td {
+  padding-top: 10px;
+}
+
+td {
+  padding: 2px 5px;
+}
+
+label, input {
+  display: block;
+  text-align: center;
+  margin: 5px auto;
+}
+
+input[type="submit"] {
+  margin-top: 15px;
 }
