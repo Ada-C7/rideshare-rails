@@ -1,3 +1,5 @@
+<%= render "shared/menu" %>
+
 <h1>Passenger Info:</h1>
 
 <h2>Passenger Name: <%= @passenger[:name] %></h2>
@@ -14,5 +16,3 @@
 
 <%= button_to "Delete Passenger", passenger_path(@passenger), :class => "button", :method => :delete,
   data: { confirm: "Are you sure you want to delete passenger #{@passenger.name}?" } %>
-
-<%= link_to "Go back to Passenger List", passengers_path %>
