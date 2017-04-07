@@ -18,4 +18,5 @@ class Trip < ApplicationRecord
                    numericality: { only_integer: true }
 
 
+
 end
