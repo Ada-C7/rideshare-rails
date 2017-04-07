@@ -1,5 +1,8 @@
 class Passenger < ApplicationRecord
   has_many :trips
+  validates :name, presence: { message: "Name field cannot be blank." }
+  validates :phone_num, uniqueness: true, presence: { message: "Phone Number field cannot be blank." }
+
 
   def total_amount_charged
     total_amount_charged = 0
