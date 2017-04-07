@@ -7,7 +7,7 @@ VIN: <%= @result_driver.vin %>
 <!-- # returns an array of hashes -->
 <% @trips = Trip.where(driver_id: @result_driver.id) %>
 
-Average rating: <%= @trips.sum { | trip | trip.rating }/@trips.length.to_f %>
+Average rating: <%= "%.2f" % (@trips.sum { | trip | trip.rating }/@trips.length.to_f) %>
 
 <table>
   <tr>
@@ -30,7 +30,7 @@ Average rating: <%= @trips.sum { | trip | trip.rating }/@trips.length.to_f %>
 
 
 
- <p>ALSO NEED TO DISPLAY: average rating, total earnings
+ <p>ALSO NEED TO DISPLAY: total earnings
  (each trip -15%)</p>
 
  <%= link_to "Delete", driver_path(@result_driver.id),
