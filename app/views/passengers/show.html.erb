@@ -4,6 +4,8 @@
 
 <%= @result_passenger.phone_num %>
 
+$ <%= @result_passenger.trips_cost %>
+
 <% @trips = Trip.where(passenger_id: @result_passenger.id) %>
 
 <table>
