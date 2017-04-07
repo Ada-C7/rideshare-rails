@@ -1,10 +1,10 @@
 class TripsController < ApplicationController
 before_action :find_rider, only: [:create]
 
-  def index
-      # redirect_to :controller => 'riders', :action => 'trip_list'
-      @trips = [Trip.find(params[:rider_id])]
-  end
+  # def index
+  #     # redirect_to :controller => 'riders', :action => 'trip_list'
+  #     @trips = Trip.where(rider_id: @rider.id)
+  # end
 
   def show
     @trip = Trip.find(params[:id])
@@ -22,7 +22,7 @@ before_action :find_rider, only: [:create]
     @trip = @rider.trip_request
 
     if @trip.save
-      redirect_to rider_trips_path(@rider)
+      redirect_to rider_path(@rider)
     else
       render :new
     end
@@ -45,9 +45,10 @@ before_action :find_rider, only: [:create]
 
   def destroy
     trip = Trip.find(params[:id])
+    @id_destroyed = trip.rider_id
     trip.destroy
 
-    redirect_to rider_trips_path
+    redirect_to rider_path(@id_destroyed)
   end
 
   private
