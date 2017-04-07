@@ -4,8 +4,7 @@
 
 <%= link_to "Driver: #{@trip.driver_id}", driver_path(@trip.driver_id) %>
 <%= link_to "Rider: #{@trip.rider_id}", rider_path(@trip.rider_id) %>
-<%= "Trip: #{@trip.id}  Rating: #{@trip.rating}" %>
-
+<%= "Trip: #{@trip.id}  Rating: #{@trip.rating} Cost: #{@trip.assign_cost}" %>
 
 <%= button_to "Edit", edit_trip_path(@trip.id), method: :get%>
 
