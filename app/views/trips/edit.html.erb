@@ -1,6 +1,6 @@
 <% content_for :trips do %>
   <section class="yield">
     <h2 class="title">Edit Trip <%= @trip.id %></h2>
-    <%= render partial: "form", locals: { action_name: "Edit Trip"} %>
+    <%= render partial: "form", locals: { action_name: "Edit Trip", form_method: :patch} %>
   </section>
 <% end %>

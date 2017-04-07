@@ -4,7 +4,7 @@
       <ul class="list">
         <li><span>Date:</span> <%= @trip.date %> </li>
         <li><span>Cost:</span> <%= @trip.cost %> </li>
-        <li><span>Rating:</span> <%= @trip.rating %> </li>
+        <li><span>Rating:</span> <%= @trip.rating == nil || @trip.rating == "" ? "Not yet rated." : @trip.rating %> </li>
         <li><span>Driver:</span> <%= @trip.driver.name %> </li>
         <li><span>Passenger:</span> <%= @trip.passenger.name %> </li>
       </ul>
