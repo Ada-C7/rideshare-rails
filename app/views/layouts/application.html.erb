@@ -13,16 +13,18 @@
       <h2> RideShare </h2>
       <nav>
         <ul>
-          <li>Passengers
-            <ul>
-              <li><a href="">Passenger List</a></li>
-              <li><a href="">Passenger +</a></li>
+          <li class="menu">
+            <button class="drop-down">Passengers▾</button>
+            <ul class="hidden">
+              <li><%= link_to "Passenger List", passengers_path %></li>
+              <li><%= link_to "Passenger+", new_passenger_path %></li>
             </ul>
           </li>
-          <li>Drivers
-            <ul>
-              <li><a href="">Driver List</a></li>
-              <li><a href="">Driver +</a></li>
+          <li class="menu">
+            <button class="drop-down">Drivers▾</button>
+            <ul class="hidden">
+              <li><%= link_to "Driver List", drivers_path %></li>
+              <li><%= link_to "Driver+", new_driver_path %></li>
             </ul>
           </li>
         </ul>
