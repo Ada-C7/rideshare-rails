@@ -1,0 +1,12 @@
+<ul>
+  <li>Driver's Name: <%= @trip.driver.name %></li>
+  <li>Driver's ID: <%= @trip.driver.id %></li>
+  <li>Passenger's Name: <%= @trip.passenger.name %></li>
+  <li>Passenger's ID: <%= @trip.passenger.id %></li>
+  <li>Trip Date: <%= @trip.date %></li>
+  <li>Trip Cost: $<%= @trip.cost_in_cents.to_f / 100 %></li>
+  <li>Trip Rating: <%= @trip.rating %></li>
+</ul>
+
+<%= link_to "See Passenger Info", passenger_path(@trip.passenger_id) %>
+<%= link_to "See Driver Info", driver_path(@trip.driver_id) %>

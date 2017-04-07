@@ -14,7 +14,7 @@
     <h3>Trips:</h3>
       <ul>
       <% @driver.trips.each do |trip| %>
-           <li>Trip ID: <%= link_to "#{trip.id}", trip_path %>
+           <li>Trip ID: <%= link_to "#{trip.id}", trip_path(trip.id) %>
         <% end %>
       </ul>
 
@@ -26,8 +26,3 @@
     </div>
   </section>
 </main>
-
-<footer>
-  <p><%= link_to 'Drivers', drivers_path %></p>
-  <p><%= link_to 'Back', :back %></p>
-</footer>

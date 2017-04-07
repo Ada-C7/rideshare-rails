@@ -1,23 +1,22 @@
-<%= render "shared/menu" %>
-
 <header>
   <h1>Add Driver</h1>
 </header>
 
 <main>
 
-  <%= render partial: "form", locals: { submit_text: "Add Driver"} %>
+  <%= render "shared/menu" %>
 
-  <% if @driver.errors.any? %>
-    <ul>
-      <% @driver.errors.each do |column, message| %>
-        <li>
-          <%= column.capitalize %> <%= message %>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
+  <section>
+    <%= render partial: "form", locals: { submit_text: "Add Driver"} %>
+
+    <% if @driver.errors.any? %>
+      <ul>
+        <% @driver.errors.each do |column, message| %>
+          <li>
+            <%= column.capitalize %> <%= message %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </section>
 </main>
-
-<footer>
-</footer>

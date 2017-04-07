@@ -22,8 +22,8 @@
 }
 
 header {
+  background-color: lightgrey;
   text-align: center;
-  border-bottom: solid;
 }
 
 
@@ -50,11 +50,7 @@ section {
   display: inline-block;
   margin-top: 0.5%;
   vertical-align: text-top;
-  width: 60%;
-}
-
-section a {
-  display: inline-block;
+  width: 75%;
 }
 
 div {
@@ -73,6 +69,22 @@ p {
 }
 
 a {
+  /*display: block;*/
   text-decoration: none;
+}
 
+ul {
+  padding: 2%;
+  list-style-type: none;
+}
+
+h1 {
+  margin: 1%;
+  padding: 1%;
+}
+
+form {
+  display: inline-block;
+  margin: 2%;
+  /*width: 100%;*/
 }
