@@ -9,8 +9,8 @@ class TripsController < ApplicationController
   end
 
   def new
+    # @trip = Trip.new(rider_id: params[:rider_id])
     @trip = Trip.new
-
   end
 
 
@@ -24,6 +24,8 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
+    @trip.rider_id = params[:rider_id]
+    @trip.driver_id = Driver.random_driver_id
     if @trip.save
       redirect_to rider_path(@trip.rider.id) , notice: 'Issue was successfully created.'
     else
