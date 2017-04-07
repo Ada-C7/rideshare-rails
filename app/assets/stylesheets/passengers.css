@@ -6,3 +6,26 @@ ul.trip_details {
   display: inline-block;
   margin-right: 2%;
 }
+
+
+a.star {
+  text-decoration: none;
+  color: gray;
+
+}
+
+/*#star-rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}*/
+
+/*a.star:hover::before,
+#star-rating > a.star:hover ~ a.star:before {
+  content: "★";
+  position: absolute;
+}*/
+
+a.star:hover {
+  color: magenta;
+  text-shadow: 0.5px 0.5px gray;
+}
