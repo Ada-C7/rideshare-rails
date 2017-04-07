@@ -15,6 +15,16 @@
   Current Rating: <%= @result_driver.rating %>
 </p>
 
+<h2> Driver Trips</h2>
+<ul>
+<% @result_driver.trips.each do |t| %>
+<li>
+  <%= link_to t.id, trip_path(t.id) %>
+</li>
+<% end %>
+</ul
+
+
 <%= link_to "Delete", driver_path(@result_driver.id), method: :delete,
       data: { confirm: "Are you sure you want to delete?"}
  %>
