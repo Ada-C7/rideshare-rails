@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   resources :drivers
   resources :riders
-  resources :trips
+  resources :trips, except: [:create, :new]
+
+  # get 'riders/:id/new_trip', to: 'trips#new', as: 'new_trip'
+  post 'riders/:id/create_trip', to: 'trips#create', as: 'create_trip'
 
 end

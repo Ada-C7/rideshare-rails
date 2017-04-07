@@ -7,6 +7,6 @@ class Trip < ApplicationRecord
   validates :driver_id, presence: true, numericality: { only_integer: true }
   validates :rider_id, presence: true, numericality: { only_integer: true }
   validates :date, presence: true
-  validates :rating, presence: true, numericality: { only_integer: true, greater_than: 0, less_than: 6 }
+  validates :rating, numericality: { only_integer: true, greater_than: 0, less_than: 6 }, allow_nil: true
 
 end

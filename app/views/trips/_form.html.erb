@@ -1,18 +1,12 @@
 
+<h2>Date: <%= @trip.date %> </h2>
+<h2>Driver: <%= @trip.driver.name %></h2>
+<h2>Rider: <%= @trip.rider.name %></h2>
 
 <%= form_for @trip do |f| %>
 
-  <%= f.label :driver_id %>
-  <%= f.select :driver_id, Driver.all.map { |driver| [driver.name, driver.id] } %>
-
-  <%= f.label :rider_id %>
-  <%= f.select :rider_id, Rider.all.map { |rider| [rider.name, rider.id] } %>
-
-  <%= f.label :date %>
-  <%= f.text_field :date %>
-
   <%= f.label :rating %>
-  <%= f.text_field :rating %>
+  <%= f.select :rating, [1, 2, 3, 4, 5] %>
 
   <%= f.submit action_name %>
 

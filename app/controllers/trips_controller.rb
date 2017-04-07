@@ -29,10 +29,13 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = Trip.create trip_params
+    @trip = Trip.new
+    @trip.driver_id = 1 #assing a random driver (new method)
+    @trip.rider_id = params[:id]
+    @trip.date = "1/1/17" #create method for giving today's date
 
-    if @trip.id != nil
-      redirect_to trips_path
+    if @trip.save
+      redirect_to trip_path(@trip.id)
     end
   end
 
