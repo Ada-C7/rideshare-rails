@@ -24,6 +24,12 @@ body {
   padding: 2%;
 }
 
+header {
+  background-color: #3D9970;
+  color: white;
+
+}
+
 nav li {
   display: inline-block;
   padding: 0.5%;
@@ -34,18 +40,21 @@ nav {
 }
 
 a {
-   transition: color .4s;
-   color: #85144B;
    text-decoration: none;
  }
 
- a:link,
- a:visited { color: #359970; }
- a:hover   { color: #2ECC40; }
- a:active  {
-   transition: color .3s;
-   color: #01FF70;
- }
+nav a:link, nav a:visited {
+  color: #FFFFFF;
+}
+
+nav a:hover {
+  color: #AAAAAA;
+}
+
+nav a:active  {
+  transition: color 0.5s;
+  color: #01FF70;
+}
 
 li {
   list-style-type: none;
