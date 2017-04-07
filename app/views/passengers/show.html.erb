@@ -1,7 +1,8 @@
 <h2><%= @passenger[:name] %></h2>
 <p><%= @passenger[:phone_num]%></p>
 
+<p>Trips: <% @passenger.trips.each do |trip| %>
+  <%= link_to trip.id, trip_path(trip.id) %>
+  <%end%></p>
+
 <%= link_to "Back to passenger list", passengers_path %>
-<!-- <%= %>
-<%= %>
-<%= %> -->
