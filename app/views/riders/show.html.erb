@@ -6,7 +6,7 @@
     data: {confirm: "Are you sure"} %>
 
     <ul> <% @rider.trips.each_with_index do |trip, index| %>
-    <li><strong> <%= link_to "Trip: #{trip.id}", rider_trip_path(trip)  %> </strong></li>
+    <li><strong> <%= link_to "Trip: #{trip.id}", rider_trip_path(@rider, trip)  %> </strong></li>
     <li><%= trip.date %></li>
     <li><%= trip.rating %></li>
     <% end %>
