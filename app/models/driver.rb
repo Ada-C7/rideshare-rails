@@ -18,8 +18,26 @@ class Driver < ApplicationRecord
         return nil
       else
         added_ratings += trip.rating
-      end 
+      end
     end
     added_ratings / self.trips.length
   end
+
+  def all_trips_complete?
+    self.trips.each do |trip|
+      if trip.rating == nil
+        return false
+      end
+    end
+    return true
+  end
+
+  def self.first_available
+    self.all.shuffle.each do |driver|
+      if driver.all_trips_complete?
+        return driver
+      end
+    end
+  end
+
 end
