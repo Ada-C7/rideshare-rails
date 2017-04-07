@@ -9,7 +9,6 @@ class DriversController < ApplicationController
   end
 
   def create
-
     @driver = Driver.create(driver_params)
     if @driver.save
       redirect_to drivers_path

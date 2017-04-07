@@ -10,8 +10,12 @@ class TripsController < ApplicationController
 
   def create
     trip_data = trip_params
-    trip = Trip.create(trip_data)
-    redirect_to passenger_path(trip.passenger_id)
+    @trip = Trip.create(trip_data)
+    if @trip.save
+      redirect_to passenger_path(@trip.passenger_id)
+    else
+      render :new
+    end
   end
 
   def show

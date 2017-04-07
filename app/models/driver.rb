@@ -12,10 +12,13 @@ class Driver < ApplicationRecord
   end
 
   def rating
-    return nil if self.trips.empty?
     added_ratings = 0
     self.trips.each do |trip|
-      added_ratings += trip.rating
+      if trip.rating == nil
+        return nil
+      else
+        added_ratings += trip.rating
+      end 
     end
     added_ratings / self.trips.length
   end
