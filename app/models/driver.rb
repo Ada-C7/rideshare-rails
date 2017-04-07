@@ -7,6 +7,7 @@ class Driver < ApplicationRecord
   validates :vin, presence: true
 
   def ratings
+    # returns array of all trip ratings, excluding nil
     self.trips.map { |trip| trip.rating }.compact
   end
 
