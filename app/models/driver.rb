@@ -1,5 +1,4 @@
 class Driver < ApplicationRecord
-  attr_reader
   has_many :trips
 
   def avg_rating
@@ -11,7 +10,8 @@ class Driver < ApplicationRecord
     end
   end
 
-  def earning_per_trip
-    @earnings = Trip.total_cost * 0.85
+  def total_earnings
+    total = trips.select('sum(trips.cost) as total').take&.total
+    return total * 0.85
   end
 end
