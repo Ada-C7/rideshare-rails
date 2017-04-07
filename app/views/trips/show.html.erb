@@ -1,26 +1,33 @@
+<section>
 <h1> <%= @trip.rider.name %>'s Trip</h1>
+<div class="tbl-header">
+  <table cellpadding="0" cellspacing="0" border="0">
+    <thead>
+
+      <tr>
+        <th>Driver Name</th>
+        <th>Date</th>
+        <th>Rating</th>
 
 
 
-<table class="listing" summary="Riders Trip List">
+    </tr>
 
-  <tr class="header">
-    <th>Driver Name</th>
-    <th>Date</th>
-    <th>Rating</th>
-    <th>Show</th>
-  </tr>
-
-
-  <tr>
-
-
-    <td><%= @trip.driver.name %></td>
-    <td><%= @trip[:date] %></td>
-    <td><%= @trip[:rating] %></td>
-
-
-
-  </tr>
-
+  </thead>
 </table>
+</div>
+
+<div class="tbl-content">
+  <table cellpadding="0" cellspacing="0" border="0">
+
+
+    <tr>
+      <td><%= @trip.driver.name %></td>
+      <td><%= @trip[:date] %></td>
+      <td><%= @trip[:rating] %></td>
+    </tr>
+
+
+   </table>
+</div>
+</section>

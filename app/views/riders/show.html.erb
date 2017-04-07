@@ -1,52 +1,70 @@
-  <section id = "show_section">
-
-    <h1 class="table_link">
-      <%= @rider.name%></br></br>
-    </h1>
-
-    <p class="header">
-      Trip Average : <%= @rider.average_rating%></p></br>
-      <p class="header">
-      Phone Number : <%= @rider.phone_num%></p></br></br>
-    </p>
-
-    <table class="listing" summary="Riders Trip List">
-
-      <tr class="header">
+  <section>
+<h1><%= @rider.name%></h1>
+<div class="table_link">
+  <%= link_to "Add Trip", new_rider_trip_path(@rider), class: "button_link"%>
+</div>
+<div class="tbl-header">
+  <table cellpadding="0" cellspacing="0" border="0">
+    <thead>
+      <tr>
         <th>Driver Name</th>
         <th>Date</th>
         <th>Rating</th>
         <th>Show Trip</th>
+    </tr>
+  </thead>
+</table>
+</div>
+<div class="tbl-content">
+  <table cellpadding="0" cellspacing="0" border="0">
+    <% @rider.trips.each do |trip| %>
+    <tr>
+      <td><%= trip.driver[:name] %></td>
+      <td><%= trip[:date] %></td>
+        <td><%= trip[:rating] %></td>
+        <td class="table_link">
+          <%= link_to "Show", rider_trip_path(trip), class: "button_link"%>
+        </td>
+    </tr>
+    <% end %>
 
-      </tr>
+   </table>
+ </div>
 
-      <% @rider.trips.each do |trip| %>
-      <tr>
-        <td><%= trip.driver[:name] %></td>
-        <td><%= trip[:date] %></td>
-          <td><%= trip[:rating] %></td>
-          <td>
-            <%= link_to "Show", rider_trip_path(trip), class: "button_link" %>
-          </td>
+</section>
 
 
 
 
 
 
-      </tr>
-      <% end %>
-    </table></br></br></br>
 
 
 
-     <div class="table_link">
-    <%= link_to "Add Trip", new_rider_trip_path(@rider), class: "button_link"%>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <%#= link_to image_tag("left1.png", alt: "Back button", class: "button_image"), animals_path%>
     <%#= link_to image_tag("edit1.png", alt: "Edit button", class: "button_image"), edit_animal_path%>
     <%#= link_to image_tag("delete_blue1.png", alt: "Delete button", class: "button_image"), animal_path,
     data: {method: :delete, confirm: "Are you sure you want to remove #{@animal.name} from the list?"}%>
-  </section>
