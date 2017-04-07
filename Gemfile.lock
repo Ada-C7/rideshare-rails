@@ -48,10 +48,8 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.3)
     byebug (9.0.6)
-<<<<<<< HEAD
 =======
     choice (0.2.0)
->>>>>>> 39d8194f90ba2f988a8ba12efc9c24f7f543ecc0
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
