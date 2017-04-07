@@ -5,6 +5,7 @@ class DriversController < ApplicationController
 
   def new
     @driver = Driver.new
+    # @random_driver = Driver.sample
   end
 
   def create
@@ -38,6 +39,8 @@ class DriversController < ApplicationController
     driver.save
     # redirect_to animal_path(animal)
     redirect_to session[:return_to]
+
+
   end
 
   def destroy

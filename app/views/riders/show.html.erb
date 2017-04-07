@@ -1,24 +1,14 @@
-
-
   <section id = "show_section">
-    <h1>
-      Meet <%= @rider.name%>!
+
+    <h1 class="table_link">
+      <%= @rider.name%></br></br>
     </h1>
-    <%#= image_tag(@animal.image_pathway, alt: "Image not available", id: "show_image")%>
-    <p>
-      <%= @rider.name%>, <%= @rider.phone_num%>
-    </p>
 
-    <p>
-      Trip Average : <%= @rider.average_rating%>
-      <div class="table_link">
-      <%= link_to "Add Trip", new_trip_path, class: "button_link"%>
-      </div>
-
+    <p class="header">
+      Trip Average : <%= @rider.average_rating%></p></br>
+      <p class="header">
+      Phone Number : <%= @rider.phone_num%></p></br></br>
     </p>
-    <p id = "show_about_text">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p >
 
     <table class="listing" summary="Riders Trip List">
 
@@ -36,7 +26,7 @@
         <td><%= trip[:date] %></td>
           <td><%= trip[:rating] %></td>
           <td>
-            <%= link_to "Show", trip_path(trip), class: "button_link" %>
+            <%= link_to "Show", rider_trip_path(trip), class: "button_link" %>
           </td>
 
 
@@ -46,11 +36,13 @@
 
       </tr>
       <% end %>
-    </table>
+    </table></br></br></br>
 
 
 
-
+     <div class="table_link">
+    <%= link_to "Add Trip", new_rider_trip_path(@rider), class: "button_link"%>
+    </div>
 
 
     <%#= link_to image_tag("left1.png", alt: "Back button", class: "button_image"), animals_path%>

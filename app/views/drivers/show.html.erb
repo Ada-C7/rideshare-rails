@@ -1,17 +1,57 @@
 <section id = "show_section">
-  <h1>
-    Meet the driver <%= @driver.name%>!
+
+  <h1 class="table_link">
+    <%= @driver.name%></br></br>
   </h1>
 
   <%= @driver.name%> (vin: <%= @driver.vin%>)
 
-  <P>
-    Average rating from passengers: <%= @driver.average_rating %>
+  <P class="header">
+    Trip Average : <%= @driver.average_rating %>
   </P>
-  <p id = "show_about_text">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </p>
-  <p>
+
+  <table class="listing" summary="Riders Trip List">
+
+    <tr class="header">
+      <th>Name</th>
+      <th>Date</th>
+      <th>Rating</th>
+      <th>Show Trip</th>
+
+    </tr>
+
+    <% @driver.trips.each do |trip| %>
+    <tr>
+      <td><%= trip.driver[:name] %></td>
+      <td><%= trip[:date] %></td>
+        <td><%= trip[:rating] %></td>
+        <td>
+          <%= link_to "Show", rider_trip_path(trip), class: "button_link" %>
+        </td>
+
+
+
+
+
+
+    </tr>
+    <% end %>
+  </table></br></br></br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <p>
     <%= link_to "Back", drivers_path%>
     <%= link_to "Edit", edit_driver_path%>
     <%= link_to "Delete", driver_path,
@@ -25,12 +65,12 @@
 
   <!-- TABLE -->
 
-  <div class="tbl-header">
+  <!-- <div class="tbl-header"> -->
   <!-- <div> -->
-    <table cellpadding="0" cellspacing="0" border="0">
-      <thead>
+    <!-- <table cellpadding="0" cellspacing="0" border="0"> -->
+      <!-- <thead> -->
 
-        <tr>
+        <!-- <tr>
           <th>Name</th>
           <th>Date</th>
           <th>Rating</th>
@@ -40,9 +80,9 @@
       </thead>
     </table>
   </div>
-  <div class="tbl-content">
+  <div class="tbl-content"> -->
   <!-- <div> -->
-    <table cellpadding="0" cellspacing="0" border="0">
+    <!-- <table cellpadding="0" cellspacing="0" border="0">
       <% @driver.trips.each do |trip| %>
       <tr>
         <td><%= trip.rider[:name] %></td>
@@ -58,4 +98,4 @@
     </table>
   </div>
 
-</section>
+</section> -->

@@ -1,47 +1,33 @@
-<% if @trip.errors.messages.length > 0 %>
-  <section class="errors">
-    <h2>Something went wrong!</h2>
-    <ul>
-      <% @trip.errors.messages.each do |field, problem_list| %>
-        <% problem_list.each do |problem| %>
-          <li>
-            <strong><%= field %>:</strong>
-            <%= problem %>
-          </li>
-        <% end %>
-      <% end %>
-    </ul>
-  </section>
-<% end %>
 
-
+<h1>Add a Trip</h1>
 
 
 <section id = "_form_section">
-  <%= form_for @trip do |f| %>
-    <div>
-      <%= f.label :driver, class: "label" %>
-      <%= f.text_field :driver, class: "field"%>
-    </div>
-
-
-    <div>
-      <%= f.label :date, class: "label"%>
-      <%= f.text_field :date, class: "field"%>
-    </div>
-
-    <div>
-      <%= f.label :phone_num, class: "label"%>
-      <%= f.text_field :phone_num, class: "field"%>
-    </div>
+  <%= form_for @trips do |f| %>
 
 
 
+  <tr>
+    <th>Rider</th>
+    <td><%= f.select(:rider, Rider.all.map {|p| [p.name]} )%></td>
+  </tr>
+
+    <tr>
+      <th>Date Created</th>
+      <td><%= f.datetime_select(:created_at, :order => [:month, :day, :year]) %></td>
+    </tr>
+
+
+      <tr>
+          <th>Driver</th>
+          <td><%= f.select(:driver, Driver.all.map {|p| [p.name]} ) %></td>
+        </tr>
 
 
 
     <div id = "_form_section_submit">
       <%= f.submit value: "SAVE"%>
     </div>
+
   <% end %>
 </section>
