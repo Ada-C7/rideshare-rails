@@ -1,6 +1,7 @@
 class Driver < ApplicationRecord
   has_many :trips
-  validates :vin, uniqueness: true, length: {is: 17, message: "VIN must be 17 characters" }
+  validates :vin, presence: true, uniqueness: true, length: {is: 17, message: " must be 17 characters" }
+  validates :name, presence: true
 
   def total_amount_earned
     total_amount_earned = 0
