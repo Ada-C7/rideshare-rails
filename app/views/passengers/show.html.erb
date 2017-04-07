@@ -1,10 +1,9 @@
-<h1><%= "#{@passenger.name}"%></h1>
+<h1><%= "#{@passenger.name}" %></h1>
 
 <h3>Total spent: $<%= '%.2f' % (@passenger.spent/100.0) %></h3>
 <h3><%= @passenger.phone_number %></h3>
 
-
-<%= button_to "Request a ride", create_trip_path(@passenger.id), method: :post, data: {confirm: "We are sending a driver your way now. Confirm trip?"}%>
+<%= render partial: "request", locals: {passenger: @passenger} %>
 
 <ul>
   <% @passenger.trips.each do |trip| %>
@@ -12,8 +11,8 @@
     <ul class="trip_details">
       <li><%= link_to "Trip ID #{trip.id}", trip_path(trip) %>  </li>
       <li><%= "Date: #{trip.date}" %> </li>
-      <li><%= "Cost: $#{'%.2f' % (trip.cost/100.0)}"%> </li>
-      <li><%= "Rating: #{"★" * trip.rating}" %> </li>
+      <li><%= "Cost: $#{'%.2f' % (trip.cost/100.0)}" %> </li>
+      <%= render partial: "trips/rating", locals: {trip: trip} %>
     </ul>
   </li>
   <% end %>

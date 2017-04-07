@@ -6,12 +6,11 @@ class TripsController < ApplicationController
   end
 
   def create
+    #message if driver = nil and no driver available
+    trip_params = generate_params(params[:passenger_id])
+    Trip.create(trip_params) if trip_params[:driver] != nil
 
-
-
-    Trip.create(driver_id: rand(1..300), passenger_id: params[:pid], date: Date.today, cost: rand(1..5000), rating:2)
-    redirect_to passenger_path(params[:pid])
-    #render?
+    redirect_to passenger_path(params[:passenger_id])
   end
 
 
@@ -30,18 +29,31 @@ class TripsController < ApplicationController
     redirect_to trip_path(trip)
   end
 
+  # strong params?
+  def update_rating
+    trip = Trip.find(params[:id])
+    trip.update(params.permit(:rating))
+
+    redirect_to passenger_path(trip.passenger)
+  end
+
   def destroy
     Trip.find(params[:id]).destroy
     # where to redirect? passenger page?
     # redirect_to trips_path
   end
 
-
-
   private
   def trip_params
     return params.require(:trip).permit(:driver_id, :passenger_id, :rating, :date)
   end
 
-
+  def generate_params(passenger_id)
+    {
+      driver: Trip.find_driver,
+      passenger_id: passenger_id,
+      date: Date.today,
+      cost: rand(1..5000)
+    }
+  end
 end

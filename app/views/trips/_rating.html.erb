@@ -1,0 +1,16 @@
+<!-- disply rating as stars, out of a max rating of 5 stars -->
+<li class="rating"> Rating:
+  <% trip.rating ||= 0 %>
+
+  <% if trip.rating != 0 %>
+    <%= "★" * trip.rating + "☆" * (5 - trip.rating) %>
+  <% else %>
+    <!-- <div id="star-rating"> -->
+    <%= link_to "☆", update_rating_path(id: trip.id, rating: 1), method: :patch, id: "one", class: "star" %>
+    <%= link_to "☆", update_rating_path(id: trip.id, rating: 2), method: :patch, id: "two", class: "star" %>
+    <%= link_to "☆", update_rating_path(id: trip.id, rating: 3), method: :patch, id: "three", class: "star" %>
+    <%= link_to "☆", update_rating_path(id: trip.id, rating: 4), method: :patch, id: "four", class: "star"%>
+    <%= link_to "☆", update_rating_path(id: trip.id, rating: 5), method: :patch, id: "five", class: "star"%>
+    <!-- </div> -->
+  <% end %>
+</li>
