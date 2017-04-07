@@ -7,6 +7,11 @@
 
 
 
+  <tr>
+    <th>Rider</th>
+    <td><%= f.select(:rider, Rider.all.map {|p| [p.name]} )%></td>
+  </tr>
+
     <tr>
       <th>Date Created</th>
       <td><%= f.datetime_select(:created_at, :order => [:month, :day, :year]) %></td>
@@ -17,22 +22,6 @@
           <th>Driver</th>
           <td><%= f.select(:driver, Driver.all.map {|p| [p.name]} ) %></td>
         </tr>
-
-
-
-
-
-
-
-        <!-- #HASH
-        f.select (:visible, {"Visible"=> 1, "Hidden" => 2})
-
-        #Array of arrays
-        f.select (:trip_id, Trip.all.map {|p| [p.rating]}) -->
-
-
-
-
 
 
 

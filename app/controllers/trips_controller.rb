@@ -14,7 +14,10 @@ class TripsController < ApplicationController
 
 
   def edit
-    @trips = Trip.new
+    @trip = Trip.find(params[:id])
+    session.delete(:return_to)
+    session[:return_to] ||= request.referer
+    @back_url = session[:return_to]
   end
 
   def create
@@ -22,44 +25,37 @@ class TripsController < ApplicationController
 
     if @trip.save
       redirect_to trips_path
-    end
-
-
-
-  end
-
-  def update
-    respond_to do |format|
-      if @trip.update(trip_params)
-        format.html { redirect_to @trip, notice: 'Trip was successfully updated.' }
-        format.json { render :show, status: :ok, location: @trip}
-      else
-        format.html { render :edit }
-
-      end
+    else
+      render :new
     end
   end
 
 
-  def destroy
-    trip = Trip.find(params[:id])
-    trip.destroy
-    redirect_to trips_path
 
-  end
+end
 
-
-
-
-
-  private
-
-  def trip_params
-    params.require(:trip).permit(:rider_id , :driver_id , :date , :rating , :created_at )
-  end
+def update
+  trip = Trip.find(params[:id])
+  trip.update_attributes(trip_params)
+  trip.save
+  # redirect_to animal_path(animal)
+  redirect_to session[:return_to]
+end
 
 
+def destroy
+  trip = Trip.find(params[:id])
+  trip.destroy
+  redirect_to trips_path
+
+end
 
 
 
+
+
+private
+
+def trip_params
+  params.require(:trip).permit(:rider_id , :driver_id , :date , :rating , :created_at )
 end

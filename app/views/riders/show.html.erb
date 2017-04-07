@@ -1,4 +1,4 @@
-<section id = "show_section">
+  <section id = "show_section">
 
     <h1 class="table_link">
       <%= @rider.name%></br></br>
@@ -26,7 +26,7 @@
         <td><%= trip[:date] %></td>
           <td><%= trip[:rating] %></td>
           <td>
-            <%= link_to "Show", trip_path(trip), class: "button_link" %>
+            <%= link_to "Show", rider_trip_path(trip), class: "button_link" %>
           </td>
 
 
@@ -40,8 +40,8 @@
 
 
 
-    <div class="table_link">
-    <%= link_to "Add Trip", new_trip_path, class: "button_link"%>
+     <div class="table_link">
+    <%= link_to "Add Trip", new_rider_trip_path(@rider), class: "button_link"%>
     </div>
 
 

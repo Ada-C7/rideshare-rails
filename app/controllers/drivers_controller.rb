@@ -39,6 +39,8 @@ class DriversController < ApplicationController
     driver.save
     # redirect_to animal_path(animal)
     redirect_to session[:return_to]
+
+
   end
 
   def destroy

@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
     #DRIVERS
-    resources :drivers
+    resources :drivers do
+
+  end
+
       # get 'drivers', to: 'drivers#index', as: 'drivers'
       #
       # get 'drivers/new', to: 'drivers#new', as: 'new_driver'
@@ -19,31 +22,19 @@ Rails.application.routes.draw do
 
 
     #RIDERS
-    get 'riders', to: 'riders#index', as: 'riders'
+    resources :riders do
+      resources :trips
 
-    get 'riders/new', to: 'riders#new', as: 'new_rider'
-    post 'riders', to: 'riders#create'
-
-    get 'riders/:id', to: 'riders#show', as: 'rider'
-    get 'riders/:id/edit', to: 'riders#edit', as: 'edit_rider'
-
-    patch 'riders/:id', to: 'riders#update'
-    delete 'riders/:id', to: 'riders#destroy'
-
-    #TRIPS
-    get 'trips', to: 'trips#index', as: 'trips'
-
-    get 'trips/new', to: 'trips#new', as: 'new_trip'
-    post 'trips', to: 'trips#create'
-
-    get 'trips/:id', to: 'trips#show', as: 'trip'
-
-
-    patch 'trips/:id', to: 'trips#update'
-    delete 'trips/:id', to: 'trips#destroy'
+      member do
+        post 'complete_trip'
+      end
+    end
 
 
 
 
 
- end
+
+
+
+end

@@ -5,7 +5,6 @@ class Trip < ApplicationRecord
   belongs_to :driver
   belongs_to :rider
 
-  has_many :drivers
 
 
 
