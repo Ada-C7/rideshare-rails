@@ -1,6 +1,6 @@
 class Driver < ApplicationRecord
-     has_many :drivers
-     #
+     has_many :trips
+
      validates :name,
           presence:
           { message: "Please provide the driver's name." }
@@ -10,7 +10,7 @@ class Driver < ApplicationRecord
           uniqueness: { message:
                "%{value} is associated with another driver. Do try once more."
           }
-          
+
      validates :status,
           presence: { message: "Please select the driver's status." }
 end

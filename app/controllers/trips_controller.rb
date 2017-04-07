@@ -21,11 +21,20 @@ class TripsController < ApplicationController
   end
 
   def update
-    trip = Trip.find(params[:id])
-    if trip.update(trip_params)
-      redirect_to trip_path
-    end
-  end
+     @trip = Trip.find(params[:id])
+
+     @trip.date = trip_params[:date]
+     @trip.cost = trip_params[:cost]
+     @trip.rating = trip_params[:rating]
+     @trip.driver_id = Driver.find(trip_params[:driver_id])
+     @trip.passenger_id = Passenger.find(trip_params[:passenger_id])
+
+     if @trip.save
+          redirect_to trip_path
+     else
+          render "edit"
+     end
+end
 
   def destroy
     Trip.destroy(params[:id])
