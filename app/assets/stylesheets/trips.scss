@@ -60,7 +60,9 @@ html, body {
      display: flex;
      flex-direction: column;
      flex-wrap: wrap;
-     min-width: 33.4%;
+	min-height: 33.4vh;
+     min-width: 33.4vw;
+
 
      background-color: #e06a4e;
 }
@@ -69,6 +71,7 @@ html, body {
      display: flex;
      flex-direction: column;
      flex-wrap: wrap;
+	min-height: 33.4vh;
      min-width: 33.4vw;
 
      background-color: #deb853;
@@ -78,12 +81,25 @@ html, body {
      display: flex;
      flex-direction: column;
      flex-wrap: wrap;
+	min-height: 33.4vh;
      min-width: 33.4vw;
 
      background-color: #789f8a;
 }
 
 .branding {
+   display: flex;
+   flex: 1 1 auto;
+
+   align-items: center;
+   justify-content: center;
+   min-height: 6em;
+   max-height: 6em;
+
+   border-bottom: solid .1em #232423;
+}
+
+.branding-placeholder {
    display: flex;
    flex: 1 1 auto;
 
@@ -334,7 +350,7 @@ form {
 
      }
 
-@media all and (max-width: 750px) {
+@media all and (max-width: 800px) {
 
      body {
           flex-direction: column;
@@ -342,6 +358,18 @@ form {
 
 	.branding {
 		border: none;
+	}
+
+	.branding-placeholder {
+	   display: flex;
+	   flex: 1 1 auto;
+
+	   align-items: center;
+	   justify-content: center;
+	   min-height: 0em;
+	   max-height: 0em;
+
+	   border-bottom: none;
 	}
 
 	.trips {
@@ -355,6 +383,8 @@ form {
 	.passengers {
 		order: 3;
 	}
+
+
 
 
 }
