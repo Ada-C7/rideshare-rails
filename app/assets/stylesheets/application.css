@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+
+h1, h2, h3, p, a, th tr {
+  font-family: 'Rubik', sans-serif;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+p {
+
+}
+
+a {
+
+}
+
+th {
+
+}
+
+tr {
+
+}
