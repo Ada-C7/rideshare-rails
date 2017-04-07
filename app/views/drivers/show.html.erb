@@ -3,8 +3,17 @@
 </h2>
 
 <%= "Name:  #{@driver.name}" %> <br>
-<%= "VIN: #{@driver.vin}" %>
+<%= "VIN: #{@driver.vin}" %> <br>
+<%= "Average Rating: #{@driver.avg_rating}" %>
 
 <%= button_to "Edit", edit_driver_path(@driver.id), method: :get %>
 
 <%= button_to "Delete", driver_path(@driver.id), method: :delete, data: { confirm: "Are you sure you want to delete #{@driver.name}?"} %>
+
+<ul>
+  <% @driver.trips.each do |trip| %>
+  <li>
+    <%= link_to trip.id, trip_path(trip.id) %>
+  </li>
+  <% end %>
+</ul>

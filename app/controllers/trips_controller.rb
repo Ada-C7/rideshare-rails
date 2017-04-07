@@ -21,6 +21,7 @@ class TripsController < ApplicationController
 
   def create
     rider = Rider.find(params[:rider_id])
+<<<<<<< HEAD
     trip_info = {
       rider_id: Rider.find(params[:rider_id]),
       driver_id: 2,
@@ -34,6 +35,14 @@ class TripsController < ApplicationController
     #   # else
     #   render :new
     # end
+=======
+    @trip = rider.trips.build(trip_params)
+    if @trip.save
+      redirect_to trip_path(@trip.id)
+    else
+      render :new
+    end
+>>>>>>> e01eac1351041e55868e8e6b7b703f2e2564dad4
   end
 
   def show
