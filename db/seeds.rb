@@ -3,9 +3,9 @@
 
 require 'csv'
 
-Passenger.destroy.all
-Driver.destroy.all
-Trip.destroy.all
+Passenger.all.destroy
+Driver.all.destroy
+Trip.all.destroy
 
 drivers_csv_text = File.read( Rails.root.join('lib', 'seeds', 'drivers.csv') )
 
