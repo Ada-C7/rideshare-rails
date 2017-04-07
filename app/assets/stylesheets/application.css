@@ -14,31 +14,59 @@
  *= require_self
  */
  /*
- =================================
- Typography
- =================================
- */
- * {
-   font-family: sans-serif;
- }
+=================================
+Typography
+=================================
+*/
+* {
+ font-family: sans-serif;
+}
 
- /*
- ========================================
- Navigation
- ========================================
- */
- nav {
- 	text-align: left;
- }
- nav a {
-   text-decoration: none;
- }
- nav li {
- 	display: inline-block;
- 	margin: 0 10px;
- 	vertical-align: top;
-  list-style-type: none;
- }
- nav li:last-child {
- 	margin-right: 0;
- }
+/*
+========================================
+Header
+========================================
+*/
+
+body {
+  margin: 0;
+  background-color: #b1b5bc;
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  background-color: #3b66af;
+  color: white;
+}
+
+nav {
+	text-align: left;
+  background-color: #748ab2;
+}
+
+nav ul {
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+}
+
+nav a {
+ text-decoration: none;
+ color: white;
+}
+
+nav a:hover {
+  color: #305ead;
+}
+
+nav li {
+	display: inline-block;
+	margin: 0 10px;
+	vertical-align: top;
+list-style-type: none;
+}
+nav li:last-child {
+	margin-right: 0;
+}
