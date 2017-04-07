@@ -5,4 +5,5 @@ class Trip < ApplicationRecord
   validates :driver_id, presence: true
   validates :rider_id, presence: true
   validates :fare, presence: true
+  validates :rating, allow_nil: true, inclusion: { in: 1..5 }
 end
