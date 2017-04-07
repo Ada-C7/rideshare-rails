@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
 resources :trips, only:[:index, :show, :new, :create]
 resources :welcome, only:[:index, :show]
-resources :drivers, only:[:index, :show]
 resources :passengers, only: [:index, :show, :new, :create]
+resources :drivers, only:[:index, :show, :create, :new, :edit, :update, :destroy]
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
