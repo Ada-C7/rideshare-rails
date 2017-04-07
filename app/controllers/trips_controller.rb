@@ -29,7 +29,7 @@ class TripsController < ApplicationController
     elsif trip.save
       redirect_to edit_rating_path(trip.id)
     else
-      render "new"
+      render "show"
     end
   end
 
