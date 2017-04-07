@@ -24,7 +24,7 @@
       </td>
       <td>
         <%= form_tag(trips_path, method: :get, id: "search-cost-form") do %>
-          <%= text_field_tag :search_cost, params[:search_cost], placeholder: "$$.$$" %>
+          <%= text_field_tag :search_cost, params[:search_cost], placeholder: "name" %>
           <%= submit_tag "Search", name: nil %>
         <% end %>
       </td>
@@ -54,7 +54,7 @@
           <%= link_to trip.driver.name, driver_path(trip.driver.id) %>
         </td>
         <td>
-          <%= trip.cost %>
+          $<%= trip.cost %>
         </td>
         <td>
           <%= trip.rating %>
