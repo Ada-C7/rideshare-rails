@@ -34,6 +34,6 @@ csv_trips.each do |row|
   trip.date = row['date']
   trip.rating = row['rating']
   # want to generate random cost unit will be cents
-  trip.cost = rand(100..10000)
+  trip.cost_in_cents = rand(100..10000)
   trip.save
 end
