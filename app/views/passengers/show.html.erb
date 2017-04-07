@@ -1,7 +1,14 @@
-<h1> Passenger <%= @passenger.name %> </h1>
+<ul class="nextprev">
+  <li>
+    <%= link_to "Previous Passenger", @passenger.prev %>
+  </li>
+  <li>
+    <%= link_to "Next Passenger", @passenger.next %>
+  </li>
+</ul>
+
 <section class="passenger-details">
-  <%= link_to "Previous Passenger", @passenger.prev %>
-  <%= link_to "Next Passenger", @passenger.next %>
+  <h1> Passenger <%= @passenger.name %> </h1>
   <ul>
     <li>
       Name: <%= @passenger.name %>
@@ -36,7 +43,7 @@
   <% @passenger.trips.order("created_at DESC").each do |trip| %>
     <ul>
       <li>
-        Date: <%= link_to trip.date, trip_path(trip.id) %> -- Driver: <%= link_to trip.driver.name, driver_path(trip.driver_id) %>
+        Date: <%= link_to trip.date.strftime("%b %d, %Y"), trip_path(trip.id) %> -- Driver: <%= link_to trip.driver.name, driver_path(trip.driver_id) %>
       </li>
       <li>
         Rating: <%= trip.rating %>

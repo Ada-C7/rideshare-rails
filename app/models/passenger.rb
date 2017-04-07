@@ -24,11 +24,11 @@ class Passenger < ApplicationRecord
   end
 
   def next
-    Passenger.where("id > ?", self.id).first
+    Passenger.where("id < ?", self.id).last
   end
 
   def prev
-    Passenger.where("id < ?", self.id).last
+    Passenger.where("id > ?", self.id).first
   end
 
   def self.search(search)

@@ -1,7 +1,14 @@
-<h1> Viewing trip from <%= @trip.date %> </h1>
+<ul class="nextprev">
+  <li>
+    <%= link_to "Previous Trip", @trip.prev(@trip.id) %>
+  </li>
+  <li>
+    <%= link_to "Next Trip", @trip.next(@trip.id) %>
+  </li>
+</ul>
+
 <section class="trip-details">
-  <%= link_to "Previous Trip", @trip.prev(@trip.id) %>
-  <%= link_to "Next Trip", @trip.next(@trip.id) %>
+  <h1> Viewing trip from <%= @trip.date.strftime("%b %d, %Y") %> </h1>
   <ul>
     <li>
       Passenger: <%= link_to @trip.passenger.name, passenger_path(@trip.passenger.id) %>
@@ -10,7 +17,7 @@
       Driver: <%= link_to @trip.driver.name, driver_path(@trip.driver.id) %>
     </li>
     <li>
-      Date: <%= @trip.date %>
+      Date: <%= @trip.date.strftime("%b %d, %Y") %>
     </li>
     <li>
       Cost: $<%= @trip.cost %>

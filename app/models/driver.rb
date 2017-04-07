@@ -51,11 +51,11 @@ class Driver < ApplicationRecord
   end
 
   def next
-    Driver.where("id > ?", self.id).first
+    Driver.where("id < ?", self.id).last
   end
 
   def prev
-    Driver.where("id < ?", self.id).last
+    Driver.where("id > ?", self.id).first
   end
 
   def self.search(search)

@@ -1,7 +1,14 @@
-<h1> Driver <%= @driver.name %> </h1>
+<ul class="nextprev">
+  <li>
+    <%= link_to "Previous Driver", @driver.prev %>
+  </li>
+  <li>
+    <%= link_to "Next Driver", @driver.next %>
+  </li>
+</ul>
+
 <section class="driver-details">
-  <%= link_to "Previous Driver", @driver.prev %>
-  <%= link_to "Next Driver", @driver.next %>
+  <h1> Driver <%= @driver.name %> </h1>
   <ul>
     <li>
       Name: <%= @driver.name %>
@@ -23,7 +30,7 @@
   <% @driver.trips.each do |trip| %>
     <ul>
       <li>
-        Date: <%= link_to trip.date, trip_path(trip.id) %>  --  <%= link_to trip.passenger.name, passenger_path(trip.passenger.id) %>
+        Date: <%= link_to trip.date.strftime("%b %d, %Y"), trip_path(trip.id) %>  --  <%= link_to trip.passenger.name, passenger_path(trip.passenger.id) %>
       </li>
       <li>
         Rating: <%= trip.rating %>
