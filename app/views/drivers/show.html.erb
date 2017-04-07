@@ -5,9 +5,8 @@
   <li>Vin: <%= @result_driver.vin %></li>
 </ul>
 
-<% trips = Trip.all.select { |trip| trip.driver_id == @result_driver.id } %>
-
-<% trips.each do |trip| %>
+<%#= @result_driver.average_rating %>
+<% @result_driver.trips.each do |trip| %>
   <p>
     <%= link_to "Trip driven on #{trip.date}", trip_path(trip.id) %>
   </p>

@@ -5,9 +5,7 @@
   <li>Phone number: <%= @result_passenger.phone_num %></li>
 </ul>
 
-<% trips = Trip.all.select { |trip| trip.passenger_id == @result_passenger.id } %>
-
-<% trips.each do |trip| %>
+<% @result_passenger.trips.each do |trip| %>
   <p>
     <%= link_to "Trip taken on #{trip.date}", trip_path(trip.id) %>
   </p>
