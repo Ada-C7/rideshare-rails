@@ -1,0 +1,18 @@
+<h1>Trip Information</h1>
+
+<h2>Trip # <%= @result_trip.id %> taken on <%= @result_trip.date %></h2>
+<ul>
+  <li>
+    Driver ID: <%= @result_trip.driver_id %>
+  </li>
+  <li>
+    Passenger ID: <%= @result_trip.passenger_id %>
+  </li>
+  <li>
+    Rating: <%= @result_trip.rating %>
+  </li>
+</ul>
+
+<%= link_to "Back to all trips", trips_path %>
+<%= link_to "Edit this trip", edit_trip_path(@result_trip.id) %>
+<%= button_to 'Delete', trip_path(@result_trip.id), method: :delete, data: { confirm: 'Are you sure?' } %>
