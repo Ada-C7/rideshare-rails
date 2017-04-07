@@ -4,6 +4,9 @@
 <p>Trip Date: <%= @trip.date %></p>
 <p>Driver: <%= link_to @trip.driver.name, driver_path(@trip) %></p>
 <p>Rider: <%= link_to @trip.user.name, user_path(@trip.user) %></p>
+<p>
+Rating: <%= @trip.rating %>
+</p>
 
 <%= link_to 'All Trips', trips_path %>
 <%= link_to 'Edit', edit_trip_path(@trip.id) %>

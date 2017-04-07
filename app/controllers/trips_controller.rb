@@ -35,9 +35,7 @@ class TripsController < ApplicationController
 
   def edit_rating
     @trip = Trip.find(params[:id])
-    @trip.rating = [:trip][:rating]
-
-    redirect_to user_path(@trip.user_id)
+    # redirect_to user_path(@trip.user_id)
   end
 
   # def new
@@ -59,7 +57,7 @@ class TripsController < ApplicationController
       ##########################
       #@trip.id or @trip.user.id
       ##########################
-      redirect_to user_path(@trip.id)
+      redirect_to user_path(@trip.user.id)
     else
       render "edit"
     end
