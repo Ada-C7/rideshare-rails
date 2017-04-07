@@ -1,7 +1,7 @@
 <h2>Edit Trip <%= @trip.id %></h2>
 
 <!-- <%#= render partial: "form", locals: { action_name: "Update", form_method: :update } %> -->
-<%= form_for @trip, method: :update do |f| %>
+<%= form_for @trip, method: :patch do |f| %>
 
   <%= f.label :driver%>
   <%= f.select :driver, options_for_select(@drivers) %>

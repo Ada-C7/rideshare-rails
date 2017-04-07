@@ -44,11 +44,7 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find(params[:id])
 
-
     if @trip.update trip_params
-      ##########################
-      #@trip.id or @trip.user.id
-      ##########################
       redirect_to user_path(@trip.user.id)
     else
       render "edit"
