@@ -1,5 +1,11 @@
-<h1>All our Trips!</h1>
+<article class="index">
 
-<% @trips.each do |trip| %>
-  <%= trip.date %> : <%= trip.driver.name %>
-<% end %>
+  <h1>All our Trips!</h1>
+
+  <div class="scroll">
+    <% @trips.each do |trip| %>
+      <%= trip.date %> : <%= trip.driver.name %>
+    <% end %>
+  </div>
+
+</article>
