@@ -96,6 +96,7 @@ header ul {
 
 .main-content {
   padding-top: 200px;
+  padding-bottom: 50px;
 }
 /*index*/
 h1 {
@@ -128,6 +129,14 @@ h2 {
 
 }
 
+.next-prev {
+  display: block;
+}
+
+.next-prev li {
+  display: inline-block;
+}
+
 .passenger-details, .driver-details {
 
 }
@@ -146,6 +155,11 @@ h2 {
 
 }
 
+.new-edit {
+  padding-top: 50px;
+  padding-left: 100;
+  width: 100%;
+}
 .form {
 
 }

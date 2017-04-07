@@ -29,16 +29,9 @@
       <%= f.label :rating, "Rating: " %>
       <%= f.number_field(:rating, in: 1..5, step: 1)  %>
     </li>
+    <li>
+      <%= f.submit %>
+    </li>
   </ul>
-
-  <section class="button">
-    <ul>
-      <li>
-        <%= f.submit %>
-      </li>
-      <li>
-        <%= link_to "Cancel", :back %>
-      </li>
-    </ul>
-  </section>
 <% end %>
+<%= button_to "Cancel", :back, method: :get %>
