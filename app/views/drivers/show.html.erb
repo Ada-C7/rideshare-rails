@@ -1,0 +1,13 @@
+<h1>Driver Details</h1>
+
+<ul>
+  <li>Name: <%= @result_driver.name %></li>
+  <li>Vin: <%= @result_driver.vin %></li>
+</ul>
+
+<p>
+  <%= link_to "Back to Driver List", drivers_path %>
+  <%= link_to "Edit", edit_driver_path(@result_driver.id) %>
+  <%= button_to 'Delete', driver_path(@result_driver.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+</p>

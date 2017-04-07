@@ -7,6 +7,10 @@ class PassengersController < ApplicationController
     @result_passenger = Passenger.find(params[:id])
   end
 
+  def new
+    @passenger = Passenger.new
+  end
+
   def edit
     @passenger = Passenger.find(params[:id])
   end
@@ -20,10 +24,6 @@ class PassengersController < ApplicationController
     if @passenger.save
       redirect_to passenger_path(@passenger.id)
     end
-  end
-
-  def new
-    @passenger = Passenger.new
   end
 
   def create
