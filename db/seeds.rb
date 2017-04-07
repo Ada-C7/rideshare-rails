@@ -27,21 +27,6 @@
 
 require 'csv'
 
-csv_text = File.read(Rails.root.join('support', 'trips.csv'))
-csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
-csv.each do |row|
-  t = Trip.new
-  t.driver_id = row['driver_id']
-  t.rider_id = row['rider_id']
-  t.cost = row['cost']
-  t.rating = row['rating']
-  t.save
-  puts "#{t.id}, #{t.driver_id} saved"
-end
-
-puts "There are now #{Trip.count} rows in the trips table"
-
-
 #what are these parameters actually doing??
 driver_csv = File.read(Rails.root.join('support', 'drivers.csv'))
 driver = CSV.parse(driver_csv, :headers => true, :encoding => 'ISO-8859-1')
@@ -62,3 +47,17 @@ rider.each do |row|
     r.save
 end
 puts "There are now #{Rider.count} rows in the riders table"
+
+csv_text = File.read(Rails.root.join('support', 'trips.csv'))
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+  t = Trip.new
+  t.driver_id = row['driver_id']
+  t.rider_id = row['rider_id']
+  t.cost = row['cost']
+  t.rating = row['rating']
+  t.save
+  puts "#{t.id}, #{t.driver_id} saved"
+end
+
+puts "There are now #{Trip.count} rows in the trips table"

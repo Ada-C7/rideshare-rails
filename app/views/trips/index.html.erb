@@ -10,7 +10,7 @@
     <% @trips.each do |trip| %>
     <tr>
       <td> <%= link_to trip.id, trip_path(trip.id) %> </td>
-      <td> <%= my_link_to trip %> </td>
+      <td> <%= trip.driver.name if trip.driver %> </td>
       <td> <%= link_to trip.rider, rider_path(trip.rider_id) %> </td>
       <td> <%= trip.rating %> </td>
       <td> <%= link_to "Edit", edit_trip_path(trip.id)%> </td>
