@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Luckiest+Guy|Open+Sans');
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -13,3 +15,60 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  margin: 10px 5%;
+}
+
+h1, h2, h3 {
+  font-family: 'Luckiest Guy', cursive;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #7084B0;
+}
+
+a:hover {
+  color: #B4E688;
+}
+
+/*Styling the Navigation bar*/
+.nav {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.5em;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.nav li {
+  display: inline;
+  padding: 10px 2.5%;
+  border-right: 2px solid #B4E688;
+}
+
+/*styling index pages*/
+article.index {
+  margin: 50px 20%;
+  font-size: 1.25em;
+  text-align: center;
+}
+
+.scroll {
+  height: 400px;
+  overflow: scroll;
+  border: 5px solid #AA66AC;
+}
+
+.index h1 {
+  color: #AA66AC;
+  font-size: 2em;
+  text-align: center;
+  margin: 25px 0 10px 0;
+}
