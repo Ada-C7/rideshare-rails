@@ -29,11 +29,10 @@ class TripsController < ApplicationController
       if @trip.save
         redirect_to passenger_path(params[:passenger_id])
       else
-        puts "didn't create new trip"
         redirect_to passenger_path(params[:passenger_id])
       end
     else
-      flash[:error] = "You must rate all your trips before creating a new trip!"
+      flash[:failure] = "Please rate all trips before creating a new trip!"
       redirect_to passenger_path(params[:passenger_id])
     end
   end

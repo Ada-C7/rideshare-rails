@@ -19,6 +19,10 @@
 <section class="passenger-trips">
   <%= button_to "New Trip", new_trip_path(@passenger.id), method: :post %>
 
+  <% flash.each do |key, value| %>
+    <p class="alert alert-<%= key %>"><%= value %></p>
+  <% end %>
+
   <% if @passenger.errors.any? %>
     <ul class="error">
       <% @passenger.errors.each do |field, msg| %>
@@ -29,7 +33,7 @@
     </ul>
   <% end %>
 
-  <% @passenger.trips.order("date ASC").each do |trip| %>
+  <% @passenger.trips.order("created_at DESC").each do |trip| %>
     <ul>
       <li>
         Date: <%= link_to trip.date, trip_path(trip.id) %> -- Driver: <%= link_to trip.driver.name, driver_path(trip.driver_id) %>
