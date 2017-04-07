@@ -17,7 +17,7 @@ class TripsController < ApplicationController
     last_trip = find_user.trips.last
 
     trip = Trip.new
-    trip[:user_id] = params[:id]
+    trip[:user_id] = params[:user_id]
     trip[:rating] = 0
     trip[:date] = Date.today
     trip[:driver_id] = Driver.find_driver
