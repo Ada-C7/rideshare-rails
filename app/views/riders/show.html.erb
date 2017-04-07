@@ -6,7 +6,7 @@
     data: {confirm: "Are you sure"} %>
 
     <ul> <% @rider.trips.each_with_index do |trip, index| %>
-    <h3> Trip <%= trip.id %> </h3>
+    <li><strong> Trip: <%= trip.id %> </strong></li>
     <li><%= trip.date %></li>
     <li><%= trip.rating %></li>
     <% end %>
