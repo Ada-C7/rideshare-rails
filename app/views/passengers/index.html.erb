@@ -1,0 +1,15 @@
+<h1>Passengers List</h1>
+<!-- <%= link_to "Create a new Passenger", new_passenger_path %> -->
+
+<div>
+  <ul class="Passenger_marked">
+    <% @passengers.each do |passenger| %>
+    <li>
+      <%= link_to passenger[:name], passenger_path(passenger.id) %>
+      <!-- <%= button_to "completed_at", "/passengers/#{passenger.id}/mark_complete" %> -->
+  
+    </li>
+
+    <% end %>
+  </ul>
+</div>

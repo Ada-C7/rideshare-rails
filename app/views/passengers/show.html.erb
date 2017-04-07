@@ -1,0 +1,13 @@
+<h2><%= @passenger.name %></h2>
+<table>
+<tr><th>trip_id</th><th>driver_id</th><th>passenger_id</th><th>date</th><th>rating</th><th>cost</th></tr>
+<tr></tr>
+<% @trips_by_passenger.each do |trip| %>
+<tr><td><%=trip.id%></td><td><%=trip.driver_id%></td><td><%=trip.passenger_id%></td><td><%=trip.date%></td><td><%=trip.rating%></td><td><%=trip.cost%></td></tr>
+<% end %>
+
+</table>
+
+<%= button_to "Passengers", passengers_path, method: :get %>
+<%= button_to "Edit", edit_passenger_path, method: :get %>
+<%= button_to "Delete", passenger_path, method: :delete %>
