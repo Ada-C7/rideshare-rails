@@ -7,8 +7,12 @@ class Driver < ApplicationRecord
 
   def self.available_driver
     drivers = Driver.where(available: true)
-    driver = drivers.sample
-    return driver.id
+    driver = drivers.first #########TESTING
+    return driver
+  end
+
+  def make_unavailable
+    self.available = false
   end
 
   def total_cost

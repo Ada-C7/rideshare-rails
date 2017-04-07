@@ -31,8 +31,10 @@ class TripsController < ApplicationController
       @trip.cost = rand(100..10000)
 
       # call available_driver method inside Driver model
-      @trip.driver_id = Driver.available_driver
+      driver = Driver.available_driver
+      @trip.driver_id = driver.id
 
+      driver.make_unavailable
       # saves the new trip instance
       @trip.save
     else

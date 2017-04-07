@@ -3,8 +3,8 @@
 <ul>
   <li>Cost: <%= @result_trip.cost %></li>
   <li>Rating: <%= @result_trip.rating %></li>
-  <li>Driver: <%= @result_trip.driver.name %></li>
-  <li>passenger: <%= @result_trip.passenger.name %></li>
+  <li>Driver: <%= link_to "#{@result_trip.driver.name}", driver_path(@result_trip.driver.id) %></li>
+  <li>Passenger: <%= link_to "#{@result_trip.passenger.name}", passenger_path(@result_trip.passenger.id) %></li>
 </ul>
 
 <h2><%= link_to "Edit", edit_trip_path(@result_trip.id)%></h2>
