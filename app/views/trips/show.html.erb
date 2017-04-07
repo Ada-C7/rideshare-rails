@@ -4,8 +4,8 @@
           <p>Date: <%= @trip.date %></p>
           <p>Cost: <%= @trip.cost %></p>
           <p>Rating: <%= @trip.rating %></p>
-          <p>Driver: PLACEHOLDER</p>
-          <p>Passenger: PLACEHOLDER</p>
+          <p>Driver: <%= @trip.driver_id %> (placeholder)</p>
+          <p>Passenger: <%= @trip.passenger_id %> (placeholder)</p>
           <p>
             <%= link_to "Edit Trip #{@trip.id}", edit_trip_path %> |
             <%=
