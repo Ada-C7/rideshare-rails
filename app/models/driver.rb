@@ -29,10 +29,10 @@ class Driver < ApplicationRecord
     qual_drivers = []
     Trip.all.each do |trip|
       if trip.driver.average_rating >= 4
-        qual_drivers << trip.driver
+        qual_drivers << trip.driver.name
       end
     end
-    return qual_drivers
+    return qual_drivers.sample(1).join()
   end
 
 end

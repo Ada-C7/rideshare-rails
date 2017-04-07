@@ -4,6 +4,7 @@ class TripsController < ApplicationController
   end
 
   def new # if statement for brand new trip vs. trip via rider
+    @rider = Rider.find(params[:id])
     @trip = Trip.new
     @trip.date = Date.current
   end

@@ -1,9 +1,10 @@
-<h4>Congrats Rider. You are starting a new trip.</h4>
 
-<h5> Confirm New Trip Details:
-<%= form_for [@rider, @trip] do |f| %>
+<h5> <%= @rider.name %>, please confirm your new trip details:
+<%= form_for @trip do |f| %>
   <%= f.label :driver %>
-  <%= f.select :driver , Driver.qual_driver %>
+  <%= Driver.qual_driver %>
+  <%= f.submit action_name %>
+
 <% end %>
 <h5>
 <h4><%= link_to "Rideshare home", trips_path %></h4>
