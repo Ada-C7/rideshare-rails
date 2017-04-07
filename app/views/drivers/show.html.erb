@@ -4,6 +4,15 @@
 
 <h4><%= "Name: " + @driver.name %></h4>
 <h4><%= "VIN Number: " + @driver.vin  %></h4>
+<h4><%= "Total Earned: " @driver.total_earnings %></h4>
+
+<table>
+<tr><th>Trip ID</th><th>Passenger ID</th></th><th>Earnings</th></tr>
+<% @driver.trips.each do |trip| %>
+<tr><td><%= trip.trip_id %></td><td><%= trip.passenger_id %></td><td><%= trip.cost %></td></tr>
+<% end %>
+</table>
 
 <%= link_to "Back to Driver List", drivers_path %>
 <%= link_to "Edit This Driver", edit_driver_path %>
+<%= link_to "Delete", driver_path, method: :delete %>
