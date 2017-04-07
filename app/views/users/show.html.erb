@@ -16,7 +16,7 @@ method: :delete %></p>
 <ul>
 <% @user.trips.each do |t| %>
 <li>
-  Trip id: <%= link_to t.id, trip_path(t.id) %> |  Date: <%= t.date %>
+  Trip id: <%= link_to t.id, trip_path(t.id) %> |  Date: <%= t.date %> Rating: <%= t.rating %>
 </li>
 <% end %>
 </ul
