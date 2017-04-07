@@ -1,6 +1,6 @@
 <h1><%= @trip[:id] %></h1>
 <p> Date: <%@trip[:date] %>
     Rating: <%@trip[:rating] %>
-    Driver: <%@driver[:id] %>
-    Passenger: <%@driver[:id] %></p>
-<%= link_to "Back to Trip List", trip_path %>
+    Driver: <%@trip[:driver_id] %>
+    Passenger: <%@trip[:passenger_id] %></p>
+<%= link_to "Back to Trip List", trips_path %>
