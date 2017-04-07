@@ -1,7 +1,14 @@
 <h1>Drivers</h1>
 
-<ul>
+<table>
+  <tr>
+    <th> Name </th>
+    <th> VIN </th>
+  </tr>
     <% @drivers.each do |driver| %>
-      <li> Driver: <%= link_to driver.name, driver_path(driver.id)%> VIN: <%= driver.vin %> </li>
+    <tr>
+      <td> <%= link_to driver.name, driver_path(driver.id)%> </td>
+      <td> <%= driver.vin %> </td>
+    </tr>
     <% end %>
-</ul>
+</table>

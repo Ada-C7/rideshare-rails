@@ -1,7 +1,17 @@
 <h1>TRIPS</h1>
 
-<ul>
+<table>
+    <tr>
+      <th> Driver </th>
+      <th> Rider </th>
+      <th> Rating </th>
+    </tr>
     <% @trips.each do |trip| %>
-      <li> Driver: <%= link_to trip.driver_id, driver_path(trip.driver_id) %> Rider: <%= link_to trip.rider, rider_path(trip.rider_id) %> Rating: <%= trip.rating %></li>
+    <tr>
+      <td> <%= link_to trip.driver, driver_path(trip.driver_id) %> </td>
+      <td> <%= link_to trip.rider, rider_path(trip.rider_id) %> </td>
+      <td> <%= trip.rating %> </td>
+      <td> <%= link_to "Edit", edit_trip_path(trip.id)</td>
+    </tr>
     <% end %>
-</ul>
+</table>
