@@ -21,7 +21,13 @@ Typography
 * {
  font-family: sans-serif;
 }
-
+a {
+  text-decoration: none;
+  color: #748ab2;
+}
+a:hover {
+  color: 	#305ead;
+}
 /*
 ========================================
 Header
@@ -69,4 +75,27 @@ list-style-type: none;
 }
 nav li:last-child {
 	margin-right: 0;
+}
+/*
+========================================
+Main
+========================================
+*/
+h2 {
+  text-align: center;
+  padding-top: 10px;
+}
+main {
+  background-color: white;
+  margin: 0 auto;
+  max-width: 750px;
+  min-width: 400px;
+}
+table {
+  margin: 0px auto;
+  text-align: center;
+}
+th {
+  border-top: 1px dashed gray;
+  border-bottom: 1px dashed gray;
 }
