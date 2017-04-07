@@ -11,7 +11,7 @@ class TripsController < ApplicationController
 
   def create
     rider = Rider.find(params[:rider_id])
-    default_params = {id: rand(601...10000),date: Time.now, rating: nil, rider_id: rider.id, driver_id: rand(1..100)}
+    default_params = {id: rand(601...10000),date: Date.today, rating: nil, rider_id: rider.id, driver_id: rand(1..100)}
     @trip = rider.trips.create(default_params)
 
     @trip.update_attributes(trip_params)
@@ -20,8 +20,6 @@ class TripsController < ApplicationController
   end
 
   def show
-    # rider = Rider.find(params[:rider_id])
-    # @trip = rider.trips.find(params[:id])
     @trip = Trip.find(params[:id])
   end
 
@@ -43,7 +41,7 @@ class TripsController < ApplicationController
   def destroy
     @trip = Trip.find(params[:id])
     @trip.destroy
-    redirect_to trips_path
+    redirect_to rider_path(@trip.rider_id)
   end
 
   private

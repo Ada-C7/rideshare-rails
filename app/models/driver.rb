@@ -6,10 +6,10 @@ class Driver < ApplicationRecord
 
       validates :vin, presence: true
       validates :vin, format: {with: /[1-9a-zA-Z]+/}
-
-      validates :driver_id, presence: true
-      validates :driver_id, numericality: {greater_than: 0}
-      
+      # 
+      # validates :driver_id, presence: true
+      # validates :driver_id, numericality: {greater_than: 0}
+      #
     def total_amount
       total = 0
       self.trips.each do |trip|

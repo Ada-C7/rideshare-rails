@@ -1,6 +1,14 @@
+<h1>Trip info</h1>
+<p>Driver: <%=Driver.find(@trip.driver_id).name%></p>
+<p>Rider: <%=Rider.find(@trip.rider_id).name%></p>
+<p>Trip Cost: <%=@trip.cost%></p>
+<p>Rating: <%=@trip.rating%></p>
 
-<p>Trip id: <%= @trip.id%></p>
-<p>Date: <%= @trip.date%></p>
-<p>Rating:<%= @trip.rating%></p>
-<p>Rider id:<%= @trip.rider_id%></p>
-<p>Driver id:<%= @trip.driver_id%></p>
+<%= button_to 'Delete trip', trip_path(@trip.id), method: :delete, data: {confirm: 'Are you sure?' } %>
+
+<%= link_to "See Rider", rider_path(@trip.rider_id)%>
+<%= link_to "See all Riders", riders_path%>
+<br>
+<%= link_to "See Driver", driver_path(@trip.driver_id)%>
+<%= link_to "See all Drivers", drivers_path%>
+<br>

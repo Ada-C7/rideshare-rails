@@ -1,6 +1,5 @@
 class Rider < ApplicationRecord
   has_many :trips
-
   validates :name, presence: true
   validates :name, format: {with: /[a-zA-Z]+/}
 
@@ -21,19 +20,7 @@ class Rider < ApplicationRecord
 
     def trips_rated?
 
-      # l = self.trips.length - 1
-      # (0..l).each do |i|
-      #   if self.trips[i].rating == nil
-      #     return false
-      #   else
-      #     return true
-      #   end
-      # end
-      # self.trips.each do |trip|
-      #   if trip.rating == nil
-      #     return false
-      #   end
-      # end
+
       return true
     end
 
