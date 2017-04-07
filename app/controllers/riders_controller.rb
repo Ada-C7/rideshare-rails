@@ -15,6 +15,7 @@ class RidersController < ApplicationController
   end
 
 
+
   def edit
     @rider = Rider.find(params[:id])
     session.delete(:return_to)

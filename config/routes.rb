@@ -24,11 +24,15 @@ Rails.application.routes.draw do
 
     #RIDERS
     resources :riders do
-      resources :trips
+      resources :trips do
+        member do
 
-      member do
-        post 'complete_trip'
+          get  'complete_trip'
+          post 'complete_trip'
+        end
       end
+
+
     end
 
 

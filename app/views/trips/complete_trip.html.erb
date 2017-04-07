@@ -1,0 +1,18 @@
+<h1> Rate Your Ride </h1>
+<section >
+  <%= form_for @trip ,  :url => { :action => "update" } do |f| %>
+
+
+  <tr>
+    <td><%= f.label :rating, class: "label" %>
+    <%= f.number_field :rating, class: "field"%> </td>
+  </tr>
+
+
+
+    <div id = "_form_section_submit">
+      <%= f.submit value: "SAVE"%>
+    </div>
+
+  <% end %>
+</section>

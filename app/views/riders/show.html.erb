@@ -11,6 +11,8 @@
         <th>Date</th>
         <th>Rating</th>
         <th>Show Trip</th>
+        <th>Rate Your Trip</th>
+
     </tr>
   </thead>
 </table>
@@ -21,10 +23,20 @@
     <tr>
       <td><%= trip.driver[:name] %></td>
       <td><%= trip[:date] %></td>
+
         <td><%= trip[:rating] %></td>
+
         <td class="table_link">
           <%= link_to "Show", rider_trip_path(trip), class: "button_link"%>
         </td>
+
+        <td class="table_link">
+          <%= link_to "Rate", complete_trip_rider_trip_path(@rider), class: "button_link"%>
+        </td>
+
+
+
+
     </tr>
     <% end %>
 

@@ -4,18 +4,18 @@ class TripsController < ApplicationController
     @trips = Trip.all
   end
 
-  def show
-    @trip = Trip.find(params[:id])
-  end
-
   def new
     # @trip = Trip.new(rider_id: params[:rider_id])
     @trip = Trip.new
   end
 
+  def show
+    @trip = Trip.find(params[:id])
+  end
+
+
 
   def edit
-
     @trip = Trip.find(params[:id])
     session.delete(:return_to)
     session[:return_to] ||= request.referer
@@ -37,30 +37,34 @@ class TripsController < ApplicationController
 
 
 
-end
-
-def update
-  trip = Trip.find(params[:id])
-  trip.update_attributes(trip_params)
-  trip.save
-  # redirect_to animal_path(animal)
-  redirect_to session[:return_to]
-end
-
-
-def destroy
-  trip = Trip.find(params[:id])
-  trip.destroy
-  redirect_to trips_path
-
-end
+  def complete_trip
+    @trip = Trip.find(params[:id])
+  end
 
 
 
 
+  def update
+    trip = Trip.find(params[:id])
+    trip.update!(trip_params)
+    # trip.save
+    redirect_to rider_path
+  end
 
-private
 
-def trip_params
-  params.require(:trip).permit(:rider_id , :driver_id , :date , :rating  )
+  def destroy
+    trip = Trip.find(params[:id])
+    trip.destroy
+    redirect_to trips_path
+
+  end
+
+
+
+
+  private
+
+  def trip_params
+    params.require(:trip).permit(:rider_id , :driver_id , :date , :rating  )
+  end
 end
