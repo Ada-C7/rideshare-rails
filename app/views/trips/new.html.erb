@@ -1,1 +1,14 @@
-<%= render partial: "form", locals: {url: rider_trips_path}%>
+<h2>
+  THANKS FOR RIDING WITH US! Have a great trip!
+</h2>
+<%= form_for @trip, url: rider_trips_path do |trip| %>
+<div>
+  <p>
+    Please note you will be locked in the vehicle until you provide us with a rating of 1-5 stars. How many stars did we earn today?
+  </p>
+
+  <%= trip.label :rating %><br>
+  <%= trip.select :rating, options_for_select(0..5) %>
+  <%= trip.submit value: "I RATED YOU CORRECTLY" %>
+</div>
+<% end %>
