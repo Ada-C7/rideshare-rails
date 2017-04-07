@@ -1,6 +1,7 @@
 <h1> Driver <%= @driver.name %> </h1>
 <section class="driver-details">
-
+  <%= link_to "Previous Driver", @driver.prev %>
+  <%= link_to "Next Driver", @driver.next %>
   <ul>
     <li>
       Name: <%= @driver.name %>
@@ -22,7 +23,7 @@
   <% @driver.trips.each do |trip| %>
     <ul>
       <li>
-        Date: <%= link_to trip.date, trip_path(trip.id) %>
+        Date: <%= link_to trip.date, trip_path(trip.id) %>  --  <%= link_to trip.passenger.name, passenger_path(trip.passenger.id) %>
       </li>
       <li>
         Rating: <%= trip.rating %>

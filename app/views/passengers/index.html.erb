@@ -1,3 +1,9 @@
+<%= form_tag(passengers_path, method: :get, id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Passengers" %>
+  <%= submit_tag "Search", name: nil %>
+<% end %>
+<%= button_to 'Reset', passengers_path, method: :get %>
+
 <h1>Passengers</h1>
 <section id="passengers-list">
   <% @passengers.each do |passenger| %>

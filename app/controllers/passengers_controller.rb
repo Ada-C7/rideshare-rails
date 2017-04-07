@@ -1,6 +1,11 @@
 class PassengersController < ApplicationController
   def index
-    @passengers = Passenger.all
+    @passengers = Passenger.all.order("created_at DESC")
+    if params[:search]
+      @passengers = @passengers.search(params[:search]).order("created_at DESC")
+    else
+      @passengers = @passengers.all.order("created_at DESC")
+    end
   end
 
   def new
