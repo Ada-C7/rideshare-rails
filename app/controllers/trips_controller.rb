@@ -37,10 +37,13 @@ class TripsController < ApplicationController
 
   def edit
     @trip = Trip.find(params[:id])
+    @drivers = Driver.all
+    @users = User.all
   end
 
   def update
     @trip = Trip.find(params[:id])
+
 
     if @trip.update trip_params
       ##########################
