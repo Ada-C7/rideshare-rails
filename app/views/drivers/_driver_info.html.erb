@@ -1,0 +1,7 @@
+<ul>
+  <li>ID: <%= @driver[:id] %></li>
+  <li>Name: <%= @driver[:name] %></li>
+  <li>Vin: <%= @driver[:vin] %></li>
+  <li>Average Rating: <%= @driver.calculate_average_rating %></li>
+  <li>Earnings: $<%= @driver.calculate_earnings %></li>
+</ul>
