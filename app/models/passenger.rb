@@ -7,7 +7,7 @@ class Passenger < ApplicationRecord
   def total_cost
 
     trips_array = trips
-    
+
     cost_array = []
 
     trips_array.each do |trip|
@@ -16,6 +16,16 @@ class Passenger < ApplicationRecord
 
     cost = cost_array.sum
 
+  end
+
+  def can_make_new_trip
+    trips.each do |trip|
+      rating = trip.rating
+      if rating == nil
+        return false
+      end
+    end
+    return true
   end
 
 end
