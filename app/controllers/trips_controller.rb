@@ -10,13 +10,16 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = Trip.create trip_params
+    @trip = Trip.create! trip_params
+
+    puts @trip.errors.messages
 
     unless @trip.id == nil
       redirect_to trips_path
     else
       render "new"  #need to add validations to trip model
     end
+
   end
 
   def show

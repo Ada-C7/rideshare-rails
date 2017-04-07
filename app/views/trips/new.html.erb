@@ -1,23 +1,23 @@
 
 <h5> , please confirm your new trip details: </h5>
-<%= form_for [@trip, @rider] do |f| %>
+<%= form_for @trip do |f| %>
   <%= f.label :driver_id, 'Driver' %>
   <% driver = Driver.qual_driver[0] %>
-  <%= f.select :driver_id, options_for_select([driver.id.to_i, driver.name]) %>
+  <%= f.select :driver_id, options_for_select([driver.id, driver.name]) %>
 
   <%= f.label :date %>
-  <%= f.select :date, "04/07/2017" %>
+  <%= f.date_field :date, :value => Date.current %>
 
   <%= f.label :rider_id %>
-  <%= f.select :rider_id, options_for_select([@rider.id, @rider.name])%>
+  <%= f.select :rider_id, [@rider.name, @rider.id]%>
 
-  <%= f.label :rating %>
-  <%= f.select :rating, ["Assign Rating when trip is complete", nil] %>
+  <% f.label :rating %>
+  <% f.number_field :rating, placeholder: nil %>
 
-  <%= f.label :cost %>
-  <%= f.select :cost, ["Final Cost given later", 0] %>
+  <% f.label :cost %>
+  <% f.number_field :cost, placeholder: 20 %>
 
-  <%= f.submit action_name %>
+  <%= f.submit %>
 
 <% end %>
 
