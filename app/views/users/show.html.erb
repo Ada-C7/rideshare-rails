@@ -2,10 +2,11 @@
 
 <p> User id: <%= @user.id %></p>
 <p> User name: <%= @user.name %></p>
-<!-- put or patch? -->
+
 <p><%= link_to "edit", edit_user_path(@user.id) %></p>
 <p><%= link_to "delete", user_path(@user.id), data: { confirm: "Are you sure you would like to delete this user?"},
 method: :delete %></p>
 <p>
-  <%= link_to "add trip", create_trip_path %>
+  <%#= link_to "add trip", trips_path, method: :create,  id: @user.id %>
+  <%= link_to "Add Trip", create_trip_path #, {:controller => "trips", :action => "create", :user => @user.id } %>
 </p>

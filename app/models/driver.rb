@@ -4,6 +4,8 @@ class Driver < ApplicationRecord
   validates :vin, presence: true, uniqueness: true, length: { is: 17 }
 
   def self.find_driver
+    drivers = Driver.all
+    return drivers.sample.id
   end
 
 
@@ -13,7 +15,7 @@ class Driver < ApplicationRecord
     self.trips.each do |trip|
       rating << trip.rating.to_f
     end
-    
+
     return "Driver has no trips" if rating.length == 0
 
     rating = rating.select { |r| r != 0 }
