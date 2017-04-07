@@ -1,10 +1,23 @@
 <h2><%= @passenger.name %></h2>
 <h4><%= "Total Cost: " + @passenger.total_cost.to_s %></h4>
 <table>
-  <tr><th>trip_id</th><th>driver_id</th><th>passenger_id</th><th>date</th><th>rating</th><th>cost</th></tr>
-  <tr></tr>
+  <tr><th>trip_id</th><th>driver_id</th><th>passenger_id</th><th>date</th><th>rating</th><th>cost</th><th>add_rating</th></tr>
+
   <% @trips_by_passenger.each do |trip| %>
-  <tr><td><%=trip.id%></td><td><%=trip.driver_id%></td><td><%=trip.passenger_id%></td><td><%=trip.date%></td><td><%=trip.rating%></td><td><%=trip.cost%></td></tr>
+
+  <tr>
+    <%= form_for trip do |f| %>
+    <td><%=trip.id%></td>
+    <td><%=trip.driver_id%></td>
+    <td><%=trip.passenger_id%></td>
+    <td><%=trip.date%></td>
+    <td><%=trip.cost%></td>
+    <td><%= f.text_field :rating %></td>
+    <td><%= f.submit value: "Add Rating" %></td>
+  <% end %>
+  </tr>
+
+
   <% end %>
 
 </table>
