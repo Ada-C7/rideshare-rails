@@ -1,15 +1,25 @@
-<section class="show">
-<h1>Driver Details</h1>
+<article class="show">
+  <h1>Driver Details</h1>
 
-<ul>
-  <li> Name: <%= @result_driver.name %> </li>
-  <li> VIN: <%= @result_driver.vin %> </li>
-  <li> Available? <%= @result_driver.availability %> </li>
-  <li> <%= @result_driver.avg_rating %> </li>
-  <li> <%= @result_driver.total_earnings %> </li>
-</ul>
 
-<%= link_to "Edit", edit_driver_path(@result_driver.id) %>
+  <h2> Name: <%= @result_driver.name %> </h2>
+  <h2> VIN: <%= @result_driver.vin %> </h2>
+  <h2> Available? <%= @result_driver.availability %> </h2>
+  <h2> This Driver's Average Rating: <%= @result_driver.avg_rating %> </h2>
+  <h2> Total Earnings: $<%= @result_driver.total_earnings %> </h2>
 
-<%= link_to "Delete", driver_path(@result_driver.id), data: { confirm: "Are you sure you want to delete" }, method: :delete %>
-</section>
+  <%= link_to "Edit", edit_driver_path(@result_driver.id) %>
+  <%= link_to "Delete", driver_path(@result_driver.id), data: { confirm: "Are you sure you want to delete" }, method: :delete %>
+
+  <section class="past_trips">
+    <h4>Past Trips</h4>
+    <ul>
+      <% @result_driver.trips.each do |trip| %>
+      <li><%= trip.date %> <%= trip.cost %> <%= trip.rating %></li>
+      <% end %>
+    </ul>
+
+  </section>
+
+
+</article>
