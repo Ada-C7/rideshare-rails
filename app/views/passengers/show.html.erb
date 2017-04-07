@@ -5,9 +5,14 @@
   <li>Phone number: <%= @result_passenger.phone_num %></li>
 </ul>
 
+<% trips = Trip.all.select { |trip| trip.passenger_id == @result_passenger.id } %>
+<% trips.each do |trip| %>
+  <p>
+    <%= link_to "Trip", trip_path(trip.id) %>
+  </p>
+<% end %>
 <p>
   <%= link_to "Back to Passenger List", passengers_path %>
   <%= link_to "Edit", edit_passenger_path(@result_passenger.id) %>
   <%= button_to 'Delete', passenger_path(@result_passenger.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-
 </p>
