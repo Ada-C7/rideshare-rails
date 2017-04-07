@@ -1,7 +1,7 @@
 <section>
   <%= form_for @driver do |f| %>
 
-  <%= f.label  "Driver # #{@driver.id}"%>
+    <%=f.hidden_field :id ,:value => rand(100..1000)%>
   Name: <%= f.text_field :name%>
   Vehicle Identification Number: <%= f.text_field :vin %>
   <%= f.submit value: "#{submit_text}"%>

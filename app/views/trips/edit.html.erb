@@ -15,11 +15,9 @@ Rating: <%= f.text_field  :rating%>
 <% end %>
 
 
-<%= link_to "See Rider", rider_path(@trip.rider_id)%>   
+<%= link_to "See Rider", rider_path(@trip.rider_id)%>
 <%= link_to "See all Riders", riders_path%>
 <br>
 <%= link_to "See Driver", driver_path(@trip.driver_id)%>
-
-
 <%= link_to "See all Drivers", drivers_path%>
 <br>
