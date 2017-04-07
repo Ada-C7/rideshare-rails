@@ -12,9 +12,12 @@ class PassengersController < ApplicationController
   end
 
   def create
-    Passenger.create(passenger_params)
-
-    redirect_to passengers_path
+    @passenger = Passenger.new(passenger_params)
+    if @passenger.save
+      redirect_to passengers_path
+    else
+      render :new
+    end
   end
 
 
