@@ -21,7 +21,7 @@ class Driver < ApplicationRecord
 
   def total_earnings
     if self.trips.empty?
-      "n/a"
+      0
     else
       self.trips.map { |trip| trip.fare }.reduce(:+).round(2)
     end
