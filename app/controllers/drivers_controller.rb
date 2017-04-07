@@ -19,7 +19,6 @@ class DriversController < ApplicationController
   def update
     @driver = Driver.find(params[:id])
     @driver.name = driver_params[:name]
-    @driver.lic_plate = driver_params[:lic_plate]
     @driver.vin = driver_params[:vin]
     if @driver.save
       redirect_to driver_path(@driver.id)
