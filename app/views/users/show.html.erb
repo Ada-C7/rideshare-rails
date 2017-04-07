@@ -11,3 +11,12 @@ method: :delete %></p>
 <%= link_to "Add Trip", new_trip_path(@user.id), :method => :post %>
 
 </p>
+
+<h2> User Trips</h2>
+<ul>
+<% @user.trips.each do |t| %>
+<li>
+  Trip id: <%= link_to t.id, trip_path(t.id) %> |  Date: <%= t.date %>
+</li>
+<% end %>
+</ul
