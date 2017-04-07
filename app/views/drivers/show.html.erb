@@ -4,7 +4,10 @@
 
   <h2> Name: <%= @result_driver.name %> </h2>
   <h2> VIN: <%= @result_driver.vin %> </h2>
-  <h2> Available? <%= @result_driver.availability %> </h2>
+  <h2> Available?
+    <%#not complete %>
+    <% if @result_driver.availability != true %>
+    <%= @result_driver.availability %> </h2>
   <h2> This Driver's Average Rating: <%= @result_driver.avg_rating %> </h2>
   <h2> Total Earnings: $<%= @result_driver.total_earnings %> </h2>
 
@@ -15,7 +18,7 @@
     <h4>Past Trips</h4>
     <ul>
       <% @result_driver.trips.each do |trip| %>
-      <li><%= trip.date %> <%= trip.cost %> <%= trip.rating %></li>
+      <li><%= link_to trip.date, trip_path %> <%= trip.cost %> <%= trip.rating %></li>
       <% end %>
     </ul>
 

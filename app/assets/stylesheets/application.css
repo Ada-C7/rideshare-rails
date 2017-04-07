@@ -55,9 +55,9 @@ footer, .nav {
 }
 
 footer {
-  width: 100%;
-  /*position: absolute;*/
-  right: 5px;
+  /*width: 100%;*/
+  position: relative;
+  /*right: 10px;*/
   bottom: auto;
   color: #7084B0;
   background-color: #B4E688;
