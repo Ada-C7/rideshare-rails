@@ -10,8 +10,12 @@ class PassengersController < ApplicationController
   end
 
   def create
-    Passenger.create(passenger_params)
-    redirect_to passengers_path
+    @passenger = Passenger.create(passenger_params)
+    if @passenger.save
+      redirect_to passengers_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -30,10 +34,10 @@ class PassengersController < ApplicationController
   end
 
   def destroy
-  passenger = Passenger.find(params[:id])
-  passenger.destroy
+    passenger = Passenger.find(params[:id])
+    passenger.destroy
 
-  redirect_to passengers_path
+    redirect_to passengers_path
   end
 
   private
