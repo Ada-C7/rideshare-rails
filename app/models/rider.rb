@@ -19,9 +19,10 @@ class Rider < ApplicationRecord
       self.trips.each do |trip|
         if trip.rating == nil
           return false
+        else
+          return true
         end
       end
-      return true
     end
 
 
