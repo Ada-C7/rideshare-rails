@@ -1,7 +1,7 @@
 <link href="https://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet">
 
 <h2>Trips</h2>
-<h3><% link_to "Add a new trip", new_trip_path %></h3>
+<h3><%= link_to "Add a new trip", new_trip_path %> <%= link_to "Home", welcome_path %></h3>
 
 <ul>
   <% @trips.each do |trip| %>
