@@ -15,6 +15,6 @@ class Driver < ApplicationRecord
       # @avg_rating = "%.2f" % (@trips.sum { | trip | trip.rating }/@trips.length.to_f)
       total += trip.rating.to_f
     end
-    return total/trips.length
+    return total / trips.length
   end
 end
