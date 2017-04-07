@@ -11,6 +11,7 @@ class Passenger < ApplicationRecord
         return true
       end
     end
+
     return false
   end
 

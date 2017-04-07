@@ -34,7 +34,6 @@ class TripsController < ApplicationController
       driver = Driver.available_driver
       @trip.driver_id = driver.id
 
-      driver.make_unavailable
       # saves the new trip instance
       @trip.save
     else
