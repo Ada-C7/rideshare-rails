@@ -1,5 +1,7 @@
 <h1>All Drivers</h1>
 
+<% @avg_rating = Trip.where(driver_id: @result_driver.id) %>
+
 <table>
   <tr>
     <th>Name</th>
@@ -10,7 +12,7 @@
   <tr>
     <td><%= link_to driver.name, driver_path(driver.id) %></td>
     <td><%= driver.vin %></td>
-    <td><%= driver.avg_rating %></td>
+    <td><%= driver %></td>
   </tr>
   <% end %>
 </table>
