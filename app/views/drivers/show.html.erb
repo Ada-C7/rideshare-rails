@@ -3,13 +3,19 @@
 <h2>Name:</h2> <%= @driver.name %>
 <h2>Vin:</h2> <%= @driver.vin %>
 <h2>Trips:</h2>
-<ul>
-    <% @driver.trips.each do |trip| %>
-    <li>
-        Trip id: <%= trip.id %>
-        Rider id: <%= trip.rider.id %>
-        Rider name: <%= link_to trip.rider.name, rider_path(trip.rider.id) %>
-        Rating: <%= trip.rating %>
-    </li>
-    <% end %>
-</ul>
+<table>
+  <tr>
+    <th>Trip ID</th>
+    <th>Rider ID</th>
+    <th>Rider Name</th>
+    <th>Rating</th>
+  </tr>
+  <% @driver.trips.each do |trip| %>
+  <tr>
+    <td> <%= trip.id %> </td>
+    <td> <%= trip.rider.id %> </td>
+    <td> <%= link_to trip.rider.name, rider_path(trip.rider.id) %> </td>
+    <td> <%= trip.rating %> </td>
+  </tr>
+  <% end %>
+</table>
