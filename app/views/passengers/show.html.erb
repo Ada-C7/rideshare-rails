@@ -6,7 +6,7 @@
 <%= render partial: "request", locals: {passenger: @passenger} %>
 
 <ul>
-  <% @passenger.trips.each do |trip| %>
+  <% @passenger.trips.order(:id).each do |trip| %>
   <li>
     <ul class="trip_details">
       <li><%= link_to "Trip ID #{trip.id}", trip_path(trip) %>  </li>
