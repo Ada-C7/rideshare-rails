@@ -1,0 +1,9 @@
+<h2>Trip#<%= @trip.id %></h2>
+<table>
+<tr><th>trip_id</th><th>driver_id</th><th>passenger_id</th><th>date</th><th>rating</th><th>cost</th></tr>
+<tr></tr>
+
+<tr><td><%=@trip.id%></td><td><%=@trip.driver_id%></td><td><%=@trip.passenger_id%></td><td><%=@trip.date%></td><td><%=@trip.rating%></td><td><%=@trip.cost%></td></tr>
+</table>
+
+<%= button_to "Trips", trips_path, method: :get %>
