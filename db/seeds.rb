@@ -3,6 +3,10 @@
 
 require 'csv'
 
+Passenger.destroy.all
+Driver.destroy.all
+Trip.destroy.all
+
 drivers_csv_text = File.read( Rails.root.join('lib', 'seeds', 'drivers.csv') )
 
 csv_drivers = CSV.parse(drivers_csv_text, :headers => true)
