@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     #DRIVERS
     resources :drivers do
 
+
   end
 
       # get 'drivers', to: 'drivers#index', as: 'drivers'

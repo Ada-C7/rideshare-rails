@@ -14,7 +14,7 @@ class DriversController < ApplicationController
     @driver = Driver.new(driver_params)
 
     if @driver.save
-      redirect_to drivers_path
+      redirect_to drivers_path, notice: 'Issue was successfully created.'
     else
       # We know the validations didn't pass
       render :new

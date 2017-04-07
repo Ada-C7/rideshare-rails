@@ -2,26 +2,39 @@
 <h1>Add a Trip</h1>
 
 
-<section id = "_form_section">
-  <%= form_for @trips do |f| %>
 
+
+<section id = "_form_section">
+  <%= form_for @trip , :url => { :action => "create" } do |f| %>
 
 
   <tr>
     <th>Rider</th>
-    <td><%= f.select(:rider, Rider.all.map {|p| [p.name]} )%></td>
+    <td><%= f.label :rider_id, class: "label" %>
+    <%= f.text_field :rider_id, class: "field"%> </td>
+  </tr>
+
+  <tr>
+    <th>Date</th>
+    <td><%= f.label :date, class: "label" %>
+    <%= f.text_field :date, class: "field"%> </td>
   </tr>
 
     <tr>
-      <th>Date Created</th>
-      <td><%= f.datetime_select(:created_at, :order => [:month, :day, :year]) %></td>
+      <th>Driver</th>
+      <td><%= f.label :driver_id, class: "label" %>
+      <%= f.text_field :driver_id, class: "field"%> </td>
     </tr>
 
-
-      <tr>
+      <!-- <tr>
           <th>Driver</th>
           <td><%= f.select(:driver, Driver.all.map {|p| [p.name]} ) %></td>
-        </tr>
+        </tr> -->
+
+        <tr>
+            <th>Rating</th>
+            <td><%= f.select(:rating, Trip.all.map {|p| [p.rating]} ) %></td>
+          </tr>
 
 
 

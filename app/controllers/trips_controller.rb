@@ -9,11 +9,13 @@ class TripsController < ApplicationController
   end
 
   def new
-    @trips = Trip.new
+    @trip = Trip.new
+
   end
 
 
   def edit
+
     @trip = Trip.find(params[:id])
     session.delete(:return_to)
     session[:return_to] ||= request.referer
@@ -22,13 +24,14 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
-
     if @trip.save
-      redirect_to trips_path
+      redirect_to rider_path(@trip.rider.id) , notice: 'Issue was successfully created.'
     else
       render :new
     end
   end
+
+
 
 
 
@@ -57,5 +60,5 @@ end
 private
 
 def trip_params
-  params.require(:trip).permit(:rider_id , :driver_id , :date , :rating , :created_at )
+  params.require(:trip).permit(:rider_id , :driver_id , :date , :rating  )
 end
