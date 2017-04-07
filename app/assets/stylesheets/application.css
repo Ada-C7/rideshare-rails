@@ -90,3 +90,7 @@
   text-decoration: none;
   color: white;
 }
+
+.home-button:hover {
+  color: #E87085;
+}
