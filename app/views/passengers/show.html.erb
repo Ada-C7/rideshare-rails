@@ -9,7 +9,7 @@
       Phone: <%= @passenger.phone %>
     </li>
     <li>
-      Total charged: $TBD
+      Total charged: $<%= @passenger.total_charged.round(2) %>
     </li>
   </ul>
 
