@@ -7,6 +7,17 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
   end
 
+  def new
+     @trip = Trip.new
+  end
+
+  def create
+     trip = Trip.create trip_params
+     unless trip.id == nil
+         redirect_to trips_path
+     end
+  end
+
   def edit
     @trip = Trip.find(params[:id])
   end
@@ -28,5 +39,10 @@ class TripsController < ApplicationController
     Trip.destroy(params[:id])
 
     redirect_to trips_path
+  end
+
+  private
+  def trip_params
+    params.require(:trip).permit(:driver_id, :rider_id, :cost, :rating)
   end
 end
