@@ -1,8 +1,10 @@
 <% content_for :drivers do %>
-     <section class="details">
-          <h1>Driver</h1>
-          <p> Driver Name: <%= @driver.name %> </p>
-          <p> Driver VIN: <%= @driver.vin %> </p>
-          <p> Driver Status: <%= @driver.status ? "Available" : "Not Available"%> </p>
+     <section class="yield">
+          <h1 class="title"> Driver </h1>
+          <ul class="list">
+               <li> <span> Driver Name: </span> <%= @driver.name %> </li>
+               <li> <span> Driver VIN: </span> <%= @driver.vin %> </li>
+               <li> <span> Driver Status: </span> <%= @driver.status ? "Available" : "Not Available"%> </li>
+          </ul>
      </section>
 <% end %>

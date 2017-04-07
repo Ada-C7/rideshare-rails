@@ -6,35 +6,61 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Righteous|Lato' %>
   </head>
 
   <body>
       <section class="drivers">
+           <section class="branding-placeholder"></section>
           <nav>
               <ul>
-                  <li><%= link_to "Drivers", drivers_path %></li>
-                  <li><%= link_to "Add Driver", new_driver_path %></li>
+                  <li class="driver-button"><%= link_to "Drivers", drivers_path %></li>
+                  <li class="driver-button"><%= link_to "Add Driver", new_driver_path %></li>
               </ul>
           </nav>
           <%= yield :drivers %>
-      </section>
-      <section class="trips">
           <nav>
               <ul>
-                  <li><%= link_to "Trips", trips_path %></li>
-                  <li><%= link_to "Add Trip", new_trip_path %></li>
+                  <li class="driver-button"><%= link_to "Drivers", drivers_path %></li>
+                  <li class="driver-button"><%= link_to "Add Driver", new_driver_path %></li>
+              </ul>
+          </nav>
+      </section>
+      <section class="trips">
+          <section class="branding">
+               <%= link_to root_path do %>
+                    <%= image_tag "hitch-icon.png"%>
+               <% end %>
+          </section>
+          <nav>
+              <ul>
+                  <li class="trip-button"><%= link_to "Trips", trips_path %></li>
+                  <li class="trip-button"><%= link_to "Add Trip", new_trip_path %></li>
               </ul>
           </nav>
           <%= yield :trips %>
-      </section>
-      <section class="passengers">
           <nav>
               <ul>
-                  <li><%= link_to "Passengers", passengers_path %></li>
-                  <li><%= link_to "Add Passenger", new_passenger_path %></li>
+                  <li class="trip-button"><%= link_to "Trips", trips_path %></li>
+                  <li class="trip-button"><%= link_to "Add Trip", new_trip_path %></li>
+              </ul>
+          </nav>
+      </section>
+      <section class="passengers">
+           <section class="branding-placeholder"></section>
+          <nav>
+              <ul>
+                  <li class="passenger-button"><%= link_to "Passengers", passengers_path %></li>
+                  <li class="passenger-button"><%= link_to "Add Passenger", new_passenger_path %></li>
               </ul>
           </nav>
           <%= yield :passengers %>
+          <nav>
+              <ul>
+                  <li class="passenger-button"><%= link_to "Passengers", passengers_path %></li>
+                  <li class="passenger-button"><%= link_to "Add Passenger", new_passenger_path %></li>
+              </ul>
+          </nav>
       </section>
   </body>
 </html>

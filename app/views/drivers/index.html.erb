@@ -1,12 +1,26 @@
 <% content_for :drivers do %>
-     <h1>Drivers</h1>
-     <ul>
-          <% @drivers.each do |driver| %>
-               <%= link_to driver.name, driver_path(driver.id) %>
-          <% end %>
-     </ul>
+     <section class="yield">
+          <h1 class="title">Drivers</h1>
+          <ul class="list">
+               <% @drivers.each do |driver| %>
+                    <li> <%= link_to driver.name, driver_path(driver.id) %> </li>
+               <% end %>
+          </ul>
+     </section>
+<%end%>
+
+<% content_for :trips do %>
+     <section class="yield">
+          <h1 class="title">Trips</h1>
+          <ul class="list">
+          </ul>
+     </section>
 <%end%>
 
 <% content_for :passengers do %>
-     <h1>Passengers</h1>
+     <section class="yield">
+          <h1 class="title">Passengers</h1>
+          <ul class="list">
+          </ul>
+     </section>
 <%end%>
