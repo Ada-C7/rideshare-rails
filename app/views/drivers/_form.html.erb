@@ -9,7 +9,7 @@
   </ul>
   <% end %>
 
-<%= form_for @driver do |f| %>
+  <%= form_for @driver do |f| %>
   <ul>
     <li>
       <%= f.label :name, "Name: " %>
@@ -22,14 +22,14 @@
   </ul>
 </section>
 
-  <section class="button">
-    <ul>
-      <li>
-        <%= f.submit %>
-      </li>
-      <li>
-        <%= link_to "Cancel", :back %>
-      </li>
-    </ul>
-  </section>
+<section class="button">
+  <ul>
+    <li>
+      <%= f.submit %>
+    </li>
+    <li>
+      <%= link_to "Cancel", :back %>
+    </li>
+  </ul>
+</section>
 <% end %>
