@@ -12,9 +12,11 @@ class TripsController < ApplicationController
 #id: rand(601...10000),
   def create
     rider = Rider.find(params[:rider_id])
-    default_params = {date: Date.today, rating: nil, rider_id: rider.id, driver_id: rand(1..100)}
+    default_params = {date: Date.today, rating: nil, rider_id: rider.id}
+
     @trip = rider.trips.create(default_params)
     @trip.update_attributes(trip_params)
+    @trip.driver = Driver.all.sample
     @trip.save
     if @trip.save
       redirect_to rider_path(@trip.rider_id)
@@ -36,11 +38,9 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @trip.update_attributes(rating_params)
     @trip.save
-    # if @trip.save
-    #   redirect_to trip_path(@trip)
-    # else
-    #   render :edit
-    # end
+
+    redirect_to rider_path(@trip.rider.id)
+
 
   end
 
