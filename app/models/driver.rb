@@ -8,8 +8,13 @@ class Driver < ApplicationRecord
 
 
   def find_avg_rating
+
     trips = self.trips
     total = 0
+
+    if trips.length == 0
+      return 0
+    end
 
     trips.each do | trip |
       # @avg_rating = "%.2f" % (@trips.sum { | trip | trip.rating }/@trips.length.to_f)
