@@ -10,6 +10,8 @@
   <ul>
     <li>Rider: <%= @rider.name %></li>
     <li>Phone: <%= @rider.phone_num %></li>
+    <li>Total spending: $<%= @rider.total_spending %></li>
+
     <li><%= link_to "[edit this rider]", edit_rider_path(@rider.id) %> |
       <%= link_to "[delete this rider]", rider_path(@rider.id), data: {confirm: "Delete this rider?"}, method: :delete %></li>
   </ul>
