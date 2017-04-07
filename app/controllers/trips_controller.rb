@@ -45,7 +45,7 @@ class TripsController < ApplicationController
 
   private
   def trip_params
-    return params.require(:trip).permit(:name, :vin) #coming from the form
+    return params.require(:trip).permit(:rating) #coming from the form
   end
 
 
