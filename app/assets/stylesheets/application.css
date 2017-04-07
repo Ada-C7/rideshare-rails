@@ -45,11 +45,11 @@
 header, footer {
   background-color: #4DDECA;
   position: fixed;
+  width: 100%;
 }
 
 header {
-  height: 185px;
-  width: 100%;
+  height: 200px;
 }
 
 header h1 {
@@ -99,13 +99,25 @@ header ul {
 }
 /*index*/
 h1 {
-
+  display: block;
+  text-align: center;
 }
 
-#passengers-list {
-
+#passengers-list, #drivers-list {
+  height: 400px;
+  column-count: 3;
+  display: block;
+  text-align: center;
 }
 
+#passengers-list li, #drivers-list li {
+  display: inline-block;
+}
+
+#search-form {
+  padding-left: 20px;
+  display: inline-block;
+}
 
 /*show*/
 h1 {
@@ -147,13 +159,19 @@ h2 {
 }
 
 /*footer*/
+footer {
+  bottom: 0;
+  height: 50px;
+}
+
 footer h4 {
   margin: 75px;
   display: inline;
 }
 
 footer ul {
-  text-align: right;
+  text-align: center;
+  padding-top: 10px;
 }
 
 footer li {
