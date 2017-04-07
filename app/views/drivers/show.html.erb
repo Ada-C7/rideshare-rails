@@ -14,7 +14,7 @@ Average rating: <%= @result_driver.find_avg_rating %>
     <th>Date</th>
     <th>Rating</th>
   </tr>
-  <% @trips.each do |trip| %>
+  <% @result_driver.trips.each do |trip| %>
   <tr>
     <td><%= link_to trip.id, trip_path(trip.id) %></td>
     <td><%= link_to trip.driver.id, driver_path(trip.driver_id) %></td>
