@@ -1,4 +1,4 @@
-require "CSV"
+require "csv"
 
 CSV.foreach("support/passengers.csv", :headers => true) do |line|
   p = Passenger.new
