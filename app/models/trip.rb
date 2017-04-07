@@ -9,4 +9,8 @@ class Trip < ApplicationRecord
   validates :date, presence: true
   validates :rating, numericality: { only_integer: true, greater_than: 0, less_than: 6 }, allow_nil: true
 
+  def rand_driver
+    rand_driver = Driver.where(availability: true)
+    rand_driver.sample
+  end
 end
