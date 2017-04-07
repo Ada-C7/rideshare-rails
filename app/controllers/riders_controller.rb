@@ -44,6 +44,6 @@ class RidersController < ApplicationController
 
     private
     def rider_params
-      return params.require(:rider).permit(:name, :phone_num, :rating)
+      return params.require(:rider).permit(:name, :phone_num, :rating, :id)
     end
 end

@@ -18,18 +18,13 @@ class Rider < ApplicationRecord
   end
 
 
-    def trips_rated?
-
-      self.trips.each do |trip|
-        if trip.rating == nil
-          return false
-        else
-          return true
-        end
+       def trips_rated?
+         self.trips[0...-1].each do |t|
+           if t.rating == nil
+             return false
+           end
+         end
       end
-
-      return true
-    end
 
 
 
