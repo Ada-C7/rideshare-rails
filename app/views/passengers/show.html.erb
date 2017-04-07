@@ -1,15 +1,18 @@
 <% content_for :passengers do %>
-     <section class="details">
-          <h1><%= @passenger.name %></h1>
-          <p>Passenger Name: <%= @passenger.name %></p>
-          <p>Phone Number: <%= @passenger.phone %></p>
-          <p>
-            <%= link_to "Edit " + @passenger.name, edit_passenger_path %> |
-            <%=
-              link_to "Delete " + @passenger.name, passenger_path,
-              data: { confirm: "Are you sure you want to delete this passenger?" },
-              method: :delete
-            %>
-          </p>
+     <section class="yield">
+          <h1 class="title"><%= @passenger.name %></h1>
+            <ul class="list">
+              <li><span>Passenger Name:</span> <%= @passenger.name %></li>
+              <li><span>Phone Number:</span> <%= @passenger.phone %></li>
+            </ul>
+
+            <p>
+              <%= button_to "Edit", edit_passenger_path, method: :get %>
+              <%=
+                button_to "Delete", passenger_path,
+                data: { confirm: "Are you sure you want to delete this passenger?" },
+                method: :delete
+              %>
+            </p>
      </section>
 <% end %>

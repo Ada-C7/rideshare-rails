@@ -1,18 +1,21 @@
 <% content_for :trips do %>
-     <section class="details">
-          <h1>Trip <%= "#{@trip.id}" %></h1>
-          <p>Date: <%= @trip.date %></p>
-          <p>Cost: <%= @trip.cost %></p>
-          <p>Rating: <%= @trip.rating %></p>
-          <p>Driver: <%= @trip.driver_id %> (placeholder)</p>
-          <p>Passenger: <%= @trip.passenger_id %> (placeholder)</p>
-          <p>
-            <%= link_to "Edit Trip #{@trip.id}", edit_trip_path %> |
-            <%=
-              link_to "Delete Trip #{@trip.id}", trip_path,
-              data: { confirm: "Are you sure you want to delete this trip?" },
-              method: :delete
-            %>
-          </p>
-     </section>
+   <section class="yield">
+      <h1 class="title">Trip <%= "#{@trip.id}" %></h1>
+      <ul class="list">
+        <li><span>Date:</span> <%= @trip.date %></li>
+        <li><span>Cost:</span> <%= @trip.cost %></li>
+        <li><span>Rating:</span> <%= @trip.rating %></li>
+        <li><span>Driver:</span><%= @trip.driver_id %> (placeholder)</li>
+        <li><span>Passenger:</span> <%= @trip.passenger_id %> (placeholder)</li>
+      </ul>
+
+      <p><%= button_to "Edit", edit_trip_path, method: :get %></p>
+      <p>
+         <%=
+            button_to "Delete", driver_path, method: :delete,
+            data: { confirm: "Are you confident you'd like to delete this trip?" },
+            method: :delete
+         %>
+      </p>
+   </section>
 <% end %>
