@@ -5,15 +5,15 @@
 
 <h3> Trips: </h3>
 <% @driver.trips.each do |trip| %>
-  <%= link_to trip.id, trip_path(trip.id) %>
+  <%= link_to trip.id, trip_path(trip.id), :class => "driver-index" %>
   <% end %>
 
 <h3>Total Amount Earned: $<%= @driver.total_amount_earned %> </h3>
 
 <h3> Average Rating: <%= @driver.rating %> </h3>
 
-<%= link_to "Edit Driver", edit_driver_path %>
-<%= link_to "Delete", driver_path(@driver), data: {method: :delete, confirm: "Are you sure you want to delete #{@driver.id}"} %>
+<%= link_to "Edit Driver", edit_driver_path, :class => "driver-index" %>
+<%= link_to "Delete", driver_path(@driver), data: {method: :delete, confirm: "Are you sure you want to delete #{@driver.id}"}, :class => "driver-index" %>
 
 <br>
-<%= link_to "Drivers Home Page", drivers_path %>
+<%= link_to "Drivers Home Page", drivers_path, :class => "driver-index" %>

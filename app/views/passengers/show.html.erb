@@ -3,14 +3,14 @@
 
 <h3>Trips:</h3>
 <% @passenger.trips.each do |trip| %>
-  <%= link_to trip.id, trip_path(trip.id) %>
+  <%= link_to trip.id, trip_path(trip.id), :class => "driver-index" %>
 <% end %>
 
 <h3>Total amount charged: $<%= @passenger.total_amount_charged %></h3>
 
 <% if @passenger.all_trips_complete? %>
-  <%= link_to "Add a new trip", new_trip_path(:passenger_id => @passenger.id) %>
+  <%= link_to "Add a new trip", new_trip_path(:passenger_id => @passenger.id), :class => "driver-index" %>
 <% end %>
 
-<%= link_to "Edit passenger", edit_passenger_path %>
-<%= link_to "Delete passenger", passenger_path(@passenger), data: {method: :delete, confirm: "Are you sure you want to delete this passenger: #{@passenger.name}?"} %>
+<%= link_to "Edit passenger", edit_passenger_path, :class => "driver-index" %>
+<%= link_to "Delete passenger", passenger_path(@passenger), data: {method: :delete, confirm: "Are you sure you want to delete this passenger: #{@passenger.name}?"}, :class => "driver-index" %>
