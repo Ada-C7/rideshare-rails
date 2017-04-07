@@ -1,7 +1,9 @@
+<link href="https://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet">
 <h2><%= @passenger[:name] %></h2>
 <p>Phone Number:<%= @passenger[:phone_num]%></p>
 
+<p>Trips: <% @passenger.trips.each do |trip| %>
+  <%= link_to trip.id, trip_path(trip.id) %>
+  <%end%></p>
+
 <%= link_to "Back to passenger list", passengers_path %>
-<!-- <%= %>
-<%= %>
-<%= %> -->
