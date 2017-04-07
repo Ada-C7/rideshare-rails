@@ -14,12 +14,11 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.create(trip_params)
 
-    if @trip.id != nil
-     redirect_to trips_path
-   else
-     render "new"
-end
-
+     if @trip.id != nil
+          redirect_to trips_path
+     else
+          render "new"
+     end
   end
 
   def edit
@@ -33,12 +32,9 @@ end
      @trip.cost = trip_params[:cost]
      @trip.rating = trip_params[:rating]
 
-     # Verify the driver and passenger actrually exist
-     # by doing a find
      @trip.driver_id = Driver.find(trip_params[:passenger_id]).id
      @trip.passenger_id = Passenger.find(trip_params[:passenger_id]).id
 
-     puts ">>>>> DPR"
      puts @trip.attributes
      if @trip.save
           redirect_to trip_path
