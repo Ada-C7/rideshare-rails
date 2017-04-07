@@ -2,11 +2,11 @@
    <section class="yield">
       <h1 class="title">Trip <%= "#{@trip.id}" %></h1>
       <ul class="list">
-        <li><span>Date:</span> <%= @trip.date %></li>
-        <li><span>Cost:</span> <%= @trip.cost %></li>
-        <li><span>Rating:</span> <%= @trip.rating %></li>
-        <li><span>Driver:</span><%= @trip.driver_id %> (placeholder)</li>
-        <li><span>Passenger:</span> <%= @trip.passenger_id %> (placeholder)</li>
+        <li><span>Date:</span> <%= @trip.date %> </li>
+        <li><span>Cost:</span> <%= @trip.cost %> </li>
+        <li><span>Rating:</span> <%= @trip.rating %> </li>
+        <li><span>Driver:</span> <%= @trip.driver.name %> </li>
+        <li><span>Passenger:</span> <%= @trip.passenger.name %> </li>
       </ul>
 
       <p><%= button_to "Edit", edit_trip_path, method: :get %></p>
