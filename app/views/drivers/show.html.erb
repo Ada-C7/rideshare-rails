@@ -1,8 +1,5 @@
 <link href="https://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet">
 <h1><%= @driver[:name] %></h1>
-<<<<<<< HEAD
-<p> Vin: <%=@driver[:vin] %></p>
-=======
 <p>Vin: <%=@driver[:vin] %></p>
 
 <p>Trips:<% @driver.trips.each do |trip| %>
@@ -12,5 +9,4 @@
 
 
 
->>>>>>> master
   <p><%= link_to "Back to Driver List", drivers_path %></p>
