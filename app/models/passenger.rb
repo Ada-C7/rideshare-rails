@@ -5,7 +5,7 @@ class Passenger < ApplicationRecord
   validates :phone_number, presence: true, length: {minimum:7}
 
   def spent
-    trips.map {|trip| trip.cost}.reduce(:+)
+    trips.empty? ? 0 : trips.map {|trip| trip.cost}.reduce(:+)
   end
 
   def rated_all_trips?
