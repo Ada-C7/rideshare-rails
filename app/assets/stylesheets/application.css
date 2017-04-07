@@ -54,7 +54,7 @@ a:hover {
 }
 
 /*styling index pages*/
-article.index {
+article.index, article.show {
   margin: 50px 20%;
   font-size: 1.25em;
   text-align: center;
@@ -71,4 +71,12 @@ article.index {
   font-size: 2em;
   text-align: center;
   margin: 25px 0 10px 0;
+}
+
+/*Styling Footer*/
+footer {
+  border-top: 2px solid #B4E688;
+  margin: 0 10%;
+  padding-top: 10px;
+  color: #7084B0;
 }
