@@ -10,6 +10,7 @@
   <tr>
     <th>Trip ID</th>
     <th>Driver ID</th>
+    <th>Driver name</th>
     <th>Passenger ID</th>
     <th>Date</th>
     <th>Rating</th>
@@ -17,6 +18,7 @@
   <% @trips.each do |trip| %>
   <tr>
     <td><%= link_to trip.id, trip_path(trip.id) %></td>
+    <td><%= link_to trip.driver.id, driver_path(trip.driver_id) %></td>
     <td><%= link_to trip.driver.name, driver_path(trip.driver_id) %></td>
     <td><%= link_to trip.passenger.name, passenger_path(trip.passenger_id) %></td>
     <td><%= trip.date %></td>
