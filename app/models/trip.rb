@@ -2,6 +2,8 @@ class Trip < ApplicationRecord
   belongs_to :driver
   belongs_to :passenger
 
+  validates :date, presence: true
+
   def self.find_driver
     # a driver of a trip that has yet to be rated is not available
     unavialbe_drivers = Trip.where(rating: nil).map {|trip| trip.driver.id}
