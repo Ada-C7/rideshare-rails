@@ -27,6 +27,4 @@ csv.each do |row|
   trip.date = row['date']
   trip.rating = row['rating']
   trip.save!
-
-  puts row.to_hash
 end
