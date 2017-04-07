@@ -18,11 +18,12 @@ class TripsController < ApplicationController
     trip[:user_id] = params[:id]
     trip[:rating] = 0
     trip[:date] = Date.today
-    # trip[:driver_id] = call class function to get random driver ID
+    trip[:driver_id] = Driver.find_driver
 
     if last_trip.rating == 0
       # redirect_to edit_rating_path(last_trip.id)
-      redirect_to last_trip_path
+      # redirect_to last_trip_path
+      redirect_to edit_rating_path(last_trip.id)
     elsif trip.save
       redirect_to edit_rating_path(trip.id)
     else
