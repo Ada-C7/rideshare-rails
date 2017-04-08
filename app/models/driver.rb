@@ -12,7 +12,8 @@ class Driver < ApplicationRecord
       all_ratings << trip.rating
     end
 
-    @average = all_ratings.reduce(:+)/all_ratings.length
+    average = all_ratings.reduce(:+)/all_ratings.length
+    average.round(2)
   end
 
   def say

@@ -1,4 +1,5 @@
 <h1>Rider Info</h1>
+
 <h2>Name:</h2> <%= @rider.name %>
 <h2>Phone:</h2> <%= @rider.phone_num %>
 <h2>Trips:</h2>
@@ -9,12 +10,16 @@
     <th> Rating </th>
   </tr>
   <% @rider.trips.each do |trip| %>
-    <tr>
-      <td> <%= link_to trip.id, trip_path(trip.id) %> </td>
-      <td> <%= link_to trip.driver_id, driver_path(trip.driver.id) %> </td>
-      <td> <%= trip.rating %> </td>
-      </li>
-    </tr>
+  <tr>
+    <td> <%= link_to trip.id, trip_path(trip.id) %> </td>
+    <td> <%= link_to trip.driver_id, driver_path(trip.driver.id) %> </td>
+    <td> <% if trip.rating != nil %>
+           <%= trip.rating %>
+         <% else %>
+           <%= link_to "Add a rating to this trip", edit_trip_path(trip.id) %>
+         <% end %>
+    </td>
+  </tr>
   <% end %>
 </table>
 
