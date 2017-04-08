@@ -1,0 +1,8 @@
+<h1 class="passengers">Passengers</h1>
+<ul>
+  <% @passengers.each do |passenger| %>
+  <li>
+    <%= link_to "Passenger Id: #{passenger.id}", passenger_path(passenger.id), :class => "passenger-index"  %>
+  </li>
+  <% end %>
+</ul>

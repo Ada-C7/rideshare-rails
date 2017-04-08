@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RideshareRails</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body id="<%= controller_name %>">
+  <%= yield %>
+  <header>
+    <nav>
+      <button class="dropbtn"><%=link_to "Home", root_path, :class => "home-button" %></button>
+      <div class="dropdown">
+        <button class="dropbtn">Passenger</button>
+        <div class="dropdown-content">
+          <%= link_to "Create new passenger", new_passenger_path, :class => "link" %>
+          <%= link_to "View all passengers", passengers_path, :class => "link" %>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Driver</button>
+        <div class="dropdown-content">
+          <%= link_to "Create new driver", new_driver_path, :class => "link" %>
+          <%= link_to "View all drivers", drivers_path, :class => "link" %>
+        </div>
+      </div>
+
+    </nav>
+  </header>
+</body>
+</html>

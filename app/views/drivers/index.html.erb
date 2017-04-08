@@ -1,0 +1,9 @@
+<h1 class="drivers">Drivers</h1>
+<ul>
+  <% @drivers.each do |driver| %>
+  <li>
+    <%= link_to "Driver: #{driver.id}", driver_path(driver.id), :class => "driver-index" %>
+
+  </li>
+  <% end %>
+</ul>

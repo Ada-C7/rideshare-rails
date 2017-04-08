@@ -1,0 +1,9 @@
+<div class="trip">
+  <h2>Trip # <%= @trip[:id] %></h2>
+  <h3>Driver: <%= link_to "#{@trip[:driver_id]}", driver_path(@trip.driver_id), :class => "driver-index" %></h3>
+  <h3>Passenger: <%= link_to "#{@trip[:passenger_id]}", passenger_path(@trip.passenger_id), :class => "driver-index" %></h3>
+  <h3>Rating: <%= @trip[:rating] %> <br> Date: <%= @trip[:date] %> <br> Price: $<%= @trip[:price] %></h3>
+
+  <%= link_to "Edit Trip", edit_trip_path, :class => "driver-index" %>
+  <%= link_to "Delete Trip", trip_path(@trip), data: {method: :delete, confirm: "Are you sure you want to delete this trip?"}, :class => "driver-index" %>
+</div>
