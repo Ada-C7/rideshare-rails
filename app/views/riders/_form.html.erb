@@ -1,0 +1,18 @@
+<%= link_to "Return to the previous page", :back %>
+
+
+<section>
+  <%= form_for @rider do |f| %>
+    <div>Name: <%= f.text_field :name %></div>
+    <div>Phone Number: <%= f.text_field :phone_num %></div>
+    <div><%= f.submit value: "#{submit_text} Rider" %></div>
+  <% end %>
+</section>
+
+<section>
+<% if @rider.errors.any? %>
+  <% @rider.errors.each do |attribute, message| %>
+     <%= message %>
+  <% end %>
+<% end %>
+</section>

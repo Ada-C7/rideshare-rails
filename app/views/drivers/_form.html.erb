@@ -1,0 +1,13 @@
+<%= link_to "Return to the previous page", :back %>
+
+<%= form_for @driver do |d| %>
+  Name: <%= d.text_field :name %>
+  VIN: <%= d.text_field :vin %>
+  <%= d.submit value: "#{submit_text}"%>
+<%end%>
+
+<% if @driver.errors.any? %>
+  <% @driver.errors.each do |attribute, message| %>
+    <%= attribute.capitalize %> <%= message %>
+  <% end %>
+<% end %>

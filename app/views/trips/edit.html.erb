@@ -1,0 +1,18 @@
+<h1> Trip #<%= @trip[:id]%> Edit Form </h1>
+
+<%= link_to "Return to the previous page", :back %>
+
+<%= form_for @trip do |f| %>
+  Driver ID: <%= f.number_field :driver_id %>
+  Rider ID: <%= f.number_field :rider_id %>
+  Date: <%= f.date_field :date%>
+  Cost: $<%= f.number_field :cost, class: :text_field, step: :any%>
+  Rating: <%= f.number_field :rating, class: :text_field, step: :any%>
+  <%= f.submit "Save Changes"%>
+<%end%>
+
+<% if @trip.errors.any? %>
+  <% @trip.errors.each do |attribute, message| %>
+    <%= attribute.capitalize %> <%= message %>
+  <% end %>
+<% end %>
