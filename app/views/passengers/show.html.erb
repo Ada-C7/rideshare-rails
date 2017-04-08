@@ -9,8 +9,9 @@
                     <% if @passenger.trips.count("ratings" == nil) > 0 %>
                          To create a new trip for <%= @passenger.name %>,<br>
                          rate all of <%= @passenger.name %>'s trips.
-
-                         <%= button_to "Create Trip", edit_passenger_path, method: :get %>
+                         <br>
+                         <%= button_to "Create Trip", @passenger.trips.create(@trip_hash)
+                         %>
                     <% end %>
                </li>
                <p>
