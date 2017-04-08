@@ -11,15 +11,18 @@
 
 html, body {
   height: 100%;
+}
+
+body {
   background-image: url("rideshare.jpg");
   background-size: cover;
 }
 
-#content {
+#content, #form {
   padding: 30px;
   margin: 120px 30px 30px 30px;
   clear: both;
-  background: whitesmoke;
+  background: rgba(245,245,245, .75);
   border-radius: 10px;
 }
 
@@ -67,6 +70,7 @@ a:hover {
   display: block;
   color: #333333;
   box-shadow: none;
+  margin-top: 2em;
 }
 
 .button:hover {
@@ -158,7 +162,7 @@ footer p {
 /* HOMEPAGE
 ****************************************/
 
-#homepage, #form {
+#homepage {
   clear: both;
   height: 100%;
   width: 100%;
