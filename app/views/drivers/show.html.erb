@@ -1,10 +1,15 @@
 <h1>Driver Details</h1>
 
+<% if @result_driver.trips.length == 0 %>
+  <h4>This driver is trip-less :(</h4>
+<% else %>
+  <h4><%= @result_driver.average_rating %></h4>
+<% end %>
+
 <ul>
   <li>Name: <%= @result_driver.name %></li>
   <li>Driver_id: <%= @result_driver.id %></li>
   <li>Vin: <%= @result_driver.vin %></li>
-  <li>Average Rating: <%= @result_driver.average_rating %></li>
 </ul>
 
 <% @result_driver.trips.each do |trip| %>
