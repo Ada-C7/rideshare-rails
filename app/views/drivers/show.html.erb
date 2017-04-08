@@ -2,11 +2,12 @@
   <h1>Driver Details</h1>
 
   <h1>
-    <% if @result_driver.availability =! true %>
+    <% if @result_driver.availability == false %>
     <%= link_to "GO ONLINE!", available_driver_path(@result_driver.id), data: { confirm: "Are you sure you want to go online?" }, method: :available %>
-    <% else %>
+    <% elsif @result_driver.availability == true %>
     <%= link_to "GO OFFLINE!", offline_driver_path(@result_driver.id), data: { confirm: "Are you sure you want to go offline?" }, method: :offline %>
     <% end %>
+    <%# raise %>
   </h1>
 
   <h2> Name: <%= @result_driver.name %> </h2>
