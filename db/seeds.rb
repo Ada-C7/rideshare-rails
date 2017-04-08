@@ -3,25 +3,25 @@
 
 require 'csv'
 
-# drivers_csv_text = File.read( Rails.root.join('lib', 'seeds', 'drivers.csv') )
-#
-# csv_drivers = CSV.parse(drivers_csv_text, :headers => true)
-# csv_drivers.each do |row|
-#   driver = Driver.new
-#   driver.name = row['name']
-#   driver.vin = row['vin']
-#   driver.save
-# end
-#
-# passengers_csv_text = File.read( Rails.root.join('lib', 'seeds', 'passengers.csv'))
-#
-# csv_passengers = CSV.parse(passengers_csv_text, :headers => true)
-# csv_passengers.each do |row|
-#   passenger = Passenger.new
-#   passenger.name = row['name']
-#   passenger.phone_num = row['phone_num']
-#   passenger.save
-# end
+drivers_csv_text = File.read( Rails.root.join('lib', 'seeds', 'drivers.csv') )
+
+csv_drivers = CSV.parse(drivers_csv_text, :headers => true)
+csv_drivers.each do |row|
+  driver = Driver.new
+  driver.name = row['name']
+  driver.vin = row['vin']
+  driver.save
+end
+
+passengers_csv_text = File.read( Rails.root.join('lib', 'seeds', 'passengers.csv'))
+
+csv_passengers = CSV.parse(passengers_csv_text, :headers => true)
+csv_passengers.each do |row|
+  passenger = Passenger.new
+  passenger.name = row['name']
+  passenger.phone_num = row['phone_num']
+  passenger.save
+end
 
 
 trips_csv_text = File.read( Rails.root.join('lib', 'seeds', 'trips.csv') )
