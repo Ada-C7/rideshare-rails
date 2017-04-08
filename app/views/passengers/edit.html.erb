@@ -1,0 +1,23 @@
+
+<header>
+  <h1>Edit a Passenger</h1>
+</header>
+
+<main>
+  <%= render "shared/menu" %>
+
+  <section>
+    <%= render partial: "form", locals: { submit_text: "Edit" } %>
+
+    <% if @passenger.errors.any? %>
+      <ul>
+        <% @passenger.errors.each do |column, message| %>
+          <li>
+            <%= column.capitalize %> <%= message %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </section>
+  
+</main>

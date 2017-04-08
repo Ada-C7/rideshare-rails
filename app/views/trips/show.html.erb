@@ -1,0 +1,18 @@
+
+
+<header>
+  <h1>Trip Info:</h1>
+</header>
+
+<main>
+  <%= render "shared/menu" %>
+
+
+  <section>
+    <%= render "trip_summary" %>
+    
+    <%= button_to "Edit Trip", edit_trip_path, :class => "button", :method => :get %>
+    <%= button_to "Delete Trip", trip_path(@trip), :class => "button", :method => :delete,
+        data: { confirm: "Are you sure you want to delete trip #{@trip.id}?" } %>
+    </section>
+</main>
