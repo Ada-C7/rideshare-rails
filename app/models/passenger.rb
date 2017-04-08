@@ -4,14 +4,13 @@ class Passenger < ApplicationRecord
   validates :name, presence: true
   validates :phone_num, presence:true
 
-  def has_incomplete_rating
+  def has_incomplete_rating?
     passenger_trips = self.trips
     passenger_trips.each do |trip|
       if trip.rating == 0
         return true
       end
     end
-
     return false
   end
 

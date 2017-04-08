@@ -6,7 +6,7 @@ class Driver < ApplicationRecord
 
   def self.available_driver
     drivers = Driver.where(available: true)
-    driver = drivers.first #########TESTING
+    driver = drivers.sample
     return driver
   end
 
