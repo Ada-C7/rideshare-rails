@@ -1,5 +1,5 @@
 class Driver < ApplicationRecord
-     has_many :trips
+  has_many :trips
 
      validates :name,
           presence:
@@ -14,4 +14,11 @@ class Driver < ApplicationRecord
      validates_inclusion_of :status,
           in: [true, false],
           message: "Please select the driver's status."
+
+    def earnings
+          trip_payments = trips.map { |trip| trip.cost }
+          total_payments = trip_payments.reduce(:+)
+          earnings = total_payments * 0.85
+          return sprintf('%.2f', earnings)
+    end
 end
