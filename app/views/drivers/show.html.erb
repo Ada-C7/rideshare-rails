@@ -13,3 +13,6 @@
 
 <%= button_to "Delete driver", driver_path(@driver), method: :delete,
   data: {confirm: "Are you sure you want to delete #{@driver.name}?"} %>
+
+<%= render partial: "trips/trips-list", locals: {person: @driver} %>
+  
