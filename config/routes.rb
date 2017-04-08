@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root 'trips#index'
 
      post '/passengers/:id/create-trip', to: 'passengers#create_trip', as: 'passenger_create_trip'
-
      post 'trips/:id', to: 'trips#show'
 
      resources :drivers

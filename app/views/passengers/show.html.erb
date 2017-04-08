@@ -4,14 +4,21 @@
           <ul class="list">
                <li><span> Passenger Name: </span> <%= @passenger.name %></li>
                <li><span> Phone Number: </span> <%= @passenger.phone %></li>
-               <li><span> Total Amount Charged: </span> $<%= @passenger.trips.sum("cost") %></li>
-               <li>
-                    <% if @passenger.trips.count("ratings" == nil) > 0 %>
-                         To create a new trip for <%= @passenger.name %>,<br>
-                         rate all of <%= @passenger.name %>'s trips.
-                         <br>
-                         <%= button_to "Create Trip", @passenger.trips.create(@trip_hash)
-                         %>
+               <li><span> Total Amount Charged: </span> $<%= @passenger.trips.sum("cost") %>
+
+                    <%= @passenger.trips.where(rating: nil).count%>
+                    <% if @passenger.trips.where(rating: nil).count == 0 %>
+                         <li>
+                              <%=
+                                   button_to "Create Trip", @passenger.trips.create(@trip_hash)
+                                   #data: { confirm: "Are you sure you to create a trip for this passenger?" }
+                              %>
+                         </li>
+                    <% else %>
+                         <li>
+                              To create a new trip for <%= @passenger.name %>,<br>
+                              rate all of <%= @passenger.name %>'s trips.
+                         </li>
                     <% end %>
                </li>
                <p>
