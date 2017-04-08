@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rideshare.</title>
+    <%= csrf_meta_tags %>
+
+    <%= favicon_link_tag 'favicon-car.png' %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1>Rideshare.</h1>
+
+    <nav>
+      <ul>
+        <li><%= link_to "Trips", root_path %></li>
+        <li><%= link_to "Drivers", drivers_path %></li>
+        <li><%= link_to "New Driver", new_driver_path %></li>
+        <li><%= link_to "Riders", riders_path %></li>
+        <li><%= link_to "New Rider", new_rider_path %></li>
+      </ul>
+    </nav>
+
+    <main>
+      <%= yield %>
+    </main>
+  </body>
+</html>

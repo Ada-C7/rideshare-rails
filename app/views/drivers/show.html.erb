@@ -1,0 +1,33 @@
+<section class="details">
+  <%= image_tag "default-user-image.png" %>
+
+  <ul>
+    <li class="display-name"><%= @driver.name %></li>
+    <li>VIN: <%= @driver.vin %></li>
+    <li>Average rating: <%= @driver.average_rating %></li>
+    <li>Total earnings: $<%= @driver.total_earnings %></li>
+    <li><%= link_to "[edit]", edit_driver_path(@driver.id), method: :get %> | <%= link_to "[delete]", driver_path(@driver.id), method: :delete, data: {confirm: "Are you sure you want to delete this driver?"} %></li>
+  </ul>
+</section>
+
+<% unless @driver.trips.empty? %>
+  <h3>Trips</h3>
+  <table>
+    <tr>
+      <th>Trip ID</th>
+      <th>Rider</th>
+      <th>Date</th>
+      <th>Fare</th>
+      <th>Rating</th>
+    </tr>
+    <% @driver.trips.each do |trip| %>
+      <tr>
+        <td><%= link_to trip.id, trip_path(trip.id), method: :get %></td>
+        <td><%= link_to trip.rider.name, rider_path(trip.rider.id), method: :get %></td>
+        <td><%= trip.date %></td>
+        <td>$<%= trip.fare %></td>
+        <td><%= trip.rating %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

@@ -1,0 +1,43 @@
+<section class="details">
+  <%= image_tag "default-user-image.png" %>
+
+  <ul>
+    <li class="display-name"><%= @rider.name %></li>
+    <li>Phone: <%= @rider.phone_num %></li>
+    <li>Total spending: $<%= @rider.total_spending %></li>
+
+    <li><%= link_to "[edit this rider]", edit_rider_path(@rider.id) %> |
+      <%= link_to "[delete this rider]", rider_path(@rider.id), data: {confirm: "Delete this rider?"}, method: :delete %></li>
+  </ul>
+</section>
+
+<% unless @rider.trips.empty? %>
+  <h3>Trips</h3>
+
+  <table>
+    <tr>
+      <th>Trip ID</th>
+      <th>Driver</th>
+      <th>Date</th>
+      <th>Fare</th>
+      <th>Rating</th>
+    </tr>
+    <% @rider.trips.each do |trip| %>
+      <tr>
+        <td><%= link_to trip.id, trip_path(trip.id), method: :get %></td>
+        <td><%= link_to trip.driver.name, driver_path(trip.driver.id) %></td>
+        <td><%= trip.date %></td>
+        <td>$<%= trip.fare %></td>
+        <td>
+          <% if trip.rating.nil? %>
+            <%= link_to "[add rating]", edit_trip_path(trip.id), method: :get %>
+          <% else %>
+            <%= trip.rating %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
+<%= link_to "Start New Trip", new_trip_path(@rider.id), method: :post %>

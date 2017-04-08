@@ -1,0 +1,19 @@
+<h2>Drivers</h2>
+
+<table>
+    <tr>
+      <th>Name</th>
+      <th>VIN</th>
+      <th>Average Rating</th>
+      <th colspan="2">Actions</th>
+    </tr>
+  <% @drivers.each do |driver| %>
+    <tr>
+      <td><%= link_to driver.name, driver_path(driver.id), method: :get %></td>
+      <td><%= driver.vin %></td>
+      <td><%= driver.average_rating %></td>
+      <td><%= link_to "[edit]", edit_driver_path(driver.id), method: :get %></td>
+      <td><%= link_to "[delete]", driver_path(driver.id), method: :delete, data: {confirm: "Are you sure you want to delete this driver?"} %></td>
+    </tr>
+  <% end %>
+</table>

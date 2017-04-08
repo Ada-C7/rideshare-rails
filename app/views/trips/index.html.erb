@@ -1,0 +1,22 @@
+<h2>Trips</h2>
+
+<table>
+  <tr>
+    <th>Trip ID</th>
+    <th>Driver</th>
+    <th>Rider</th>
+    <th>Date</th>
+    <th>Fare</th>
+    <th>Rating</th>
+  </tr>
+  <% @trips.each do |trip| %>
+    <tr>
+      <td><%= link_to trip.id, trip_path(trip.id), method: :get %></td>
+      <td><%= link_to trip.driver.name, driver_path(trip.driver.id), method: :get %></td>
+      <td><%= link_to trip.rider.name, rider_path(trip.rider.id) %></td>
+      <td><%= trip.date %></td>
+      <td>$<%= trip.fare %></td>
+      <td><%= trip.rating %></td>
+    </tr>
+  <% end %>
+</table>
