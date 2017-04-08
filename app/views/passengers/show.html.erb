@@ -5,9 +5,17 @@
                <li><span> Passenger Name: </span> <%= @passenger.name %></li>
                <li><span> Phone Number: </span> <%= @passenger.phone %></li>
                <li><span> Total Amount Charged: </span> $<%= @passenger.trips.sum("cost") %></li>
+               <li>
+                    <% if @passenger.trips.count("ratings" == nil) > 0 %>
+                         To create a new trip for <%= @passenger.name %>,<br>
+                         rate all of <%= @passenger.name %>'s trips.
+
+                         <%= button_to "Create Trip", edit_passenger_path, method: :get %>
+                    <% end %>
+               </li>
                <p>
                     <%= button_to "Edit", edit_passenger_path, method: :get %>
-                    <%=button_to "Delete", passenger_path,
+                    <%= button_to "Delete", passenger_path,
                          data: { confirm: "Are you sure you want to delete this passenger?" },
                          method: :delete
                     %>
@@ -21,7 +29,12 @@
           <h1 class="title"><%= @passenger.name %>'s <br>Trips</h1>
           <ul class="list">
                <% @passenger.trips.map do | trip | %>
-                    <li><%= link_to trip.date.strftime("%e %B %Y, %l:%M%p"), trip_path(trip.id) %></li>
+                    <li>
+                         <%= link_to "Rate Now", edit_trip_path(trip.id) if trip.rating == nil || trip.rating == "" %>
+                         <%= " | " if trip.rating == nil || trip.rating == "" %>
+                         <span> Trip <span> <%= trip.id %> <br>
+                         <%= link_to trip.date.strftime("%e %B %Y, %l:%M%p"), trip_path(trip.id) %>
+                    </li>
                <% end %>
           </ul>
      </section>
@@ -32,10 +45,8 @@
           <h1 class="title"><%= @passenger.name %>'s <br>Drivers</h1>
           <ul class="list">
                <% @passenger.trips.map do | trip | %>
-               <li>
-                    <%= link_to trip.driver.name, driver_path(trip.driver.id) %>
-                    <% end %>
-               </li>
+                    <li><%= link_to trip.driver.name, driver_path(trip.driver.id) %></li>
+               <% end %>
           </ul>
      </section>
 <% end %>
