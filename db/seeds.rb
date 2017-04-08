@@ -54,8 +54,8 @@ puts "Created #{passenger_successes} out of #{passengers.length} passengers."
 
 trip_successes = 0
 trips.each do |trip|
-  trip = Trip.create(trip)
-  if trip.id
+  if Driver.find_by(id: trip[:driver_id]) && Passenger.find_by(id: trip[:passenger_id])
+    trip = Trip.create(trip)
     trip_successes += 1
   else
     # puts "FAILED ON Trip with cost #{trip[:cost]}"
