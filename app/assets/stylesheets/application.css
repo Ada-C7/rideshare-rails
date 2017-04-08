@@ -1,54 +1,76 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 @import url('https://fonts.googleapis.com/css?family=Rubik');
 
-h1, h2, h3, p, a, th tr {
+/* GLOBAL STYLES
+****************************************/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background: WhiteSmoke;
+}
+
+h1, h2, h3, p, a, th, tr {
   font-family: 'Rubik', sans-serif;
-}
-
-h1 {
-
-}
-
-h2 {
-
-}
-
-h3 {
-
-}
-
-p {
-
+  color: #4d4d4d;
+  font-kerning: normal;
+  text-align: left;
 }
 
 a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: limegreen;
+}
+
+header {
 
 }
 
-th {
-
+input, select {
+  background: White;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.2), 0 1px 1px #FFF, 0 1px 0 #FFF;
+  margin-bottom: 1em;
+  padding: .5em;
+  border: 0px;
+  font-size: 1em;
 }
 
-tr {
-
+select {
+  height: 33px;
 }
 
 .button {
-  border: 1px solid black;
+  width: 120px;
+  border: 2pt solid #4d4d4d;
+  padding: .75em 1.25em .75em 1.25em;
+  text-transform: uppercase;
   border-radius: 500px;
-  padding: .25em;
+  clear: both;
+  display: block;
 }
+
+/* HOMEPAGE
+****************************************/
+
+
+
+/* CONROLLER INDEX PAGES (LIST VIEW)
+****************************************/
+
+
+
+/* NEW/EDIT PAGES (FORM)
+****************************************/
+
+
+
+/* SHOW PAGES
+****************************************/

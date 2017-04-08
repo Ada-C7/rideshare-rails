@@ -12,10 +12,10 @@
     <header>
       <h1><%= link_to "RideShare", root_path %></h1>
       <nav>
-        <ul><p><%= link_to "New Passenger", new_passenger_path %></p></ul>
-        <ul><p><%= link_to "New Driver", new_driver_path %></p></ul>
-        <ul><p><%= link_to "View Passengers", passengers_path %></p></ul>
-        <ul><p><%= link_to "View Drivers", drivers_path %></p></ul>
+        <ul><%= link_to "New Passenger", new_passenger_path %></ul>
+        <ul><%= link_to "New Driver", new_driver_path %></ul>
+        <ul><%= link_to "View Passengers", passengers_path %></ul>
+        <ul><%= link_to "View Drivers", drivers_path %></ul>
       </nav>
     </header>
     <%= yield %>

@@ -1,10 +1,10 @@
 <h2><%= @result_driver.name %></h2>
 
-<h3>VIN: <%= @result_driver.vin %></h3>
+<h3><span class="show-field">VIN:</span> <%= @result_driver.vin %></h3>
 
-<h3>Average rating: <%= @result_driver.find_avg_rating.round(1) %></h3>
+<h3><span class="show-field">Average Rating:</span> <%= @result_driver.find_avg_rating.round(1) %></h3>
 
-<h3>Total Earned: $<%= @result_driver.calc_income.round(2) %></h3>
+<h3><span class="show-field">Total Earned:</span> $<%= @result_driver.calc_income.round(2) %></h3>
 
 <h2><%= @result_driver.name %>'s Trips</h2>
 

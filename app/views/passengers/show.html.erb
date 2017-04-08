@@ -1,8 +1,8 @@
 <h2><%= @result_passenger.name %></h2>
 
-<h3>Phone: <%= @result_passenger.phone_num %></h3>
+<h3><span class="show-field">Phone:</span> <%= @result_passenger.phone_num %></h3>
 
-<h3>Total Spent: $ <%= @result_passenger.trips_cost %></h3>
+<h3><span class="show-field">Total Spent:</span> $ <%= @result_passenger.trips_cost.round(2) %></h3>
 
 <h2><%= @result_passenger.name %>'s Trips</h2>
 
@@ -26,7 +26,7 @@
     <td><%= link_to trip.passenger.name, passenger_path(trip.passenger_id) %></td>
     <td><%= trip.date %></td>
     <td><%= trip.rating %></td>
-    <td><%= trip.cost %></td>
+    <td>$<%= trip.cost %></td>
   </tr>
   <% end %>
 </table>
