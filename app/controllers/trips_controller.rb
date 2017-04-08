@@ -14,10 +14,10 @@ class TripsController < ApplicationController
   def create
     trip = Trip.new
     trip.rider_id = params[:rider_id]
-    trip.driver_id = rand(1..100)
+    trip.driver_id = rand(1..Driver.last.id)
 
     if trip.save
-      redirect_to root_path
+      redirect_to rider_path(trip.rider_id)
     else
       puts trip.errors.messages
     end
