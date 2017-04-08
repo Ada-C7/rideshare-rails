@@ -6,7 +6,7 @@ class Trip < ApplicationRecord
           presence: { message: "Please enter valid date." }
 
      validates :cost,
-          presence: { message: "Please enter at least one dollar." }
+          presence: { message: "Please enter an amount." }
 
      validates :driver_id,
           presence: { message: "Please select a driver." }
