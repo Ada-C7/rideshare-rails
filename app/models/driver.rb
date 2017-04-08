@@ -11,6 +11,7 @@ class Driver < ApplicationRecord
                "%{value} is associated with another driver. Do try once more."
           }
 
-     validates :status,
-          presence: { message: "Please select the driver's status." }
+     validates_inclusion_of :status,
+          in: [true, false],
+          message: "Please select the driver's status."
 end
