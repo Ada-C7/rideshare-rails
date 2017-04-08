@@ -11,7 +11,7 @@
                   <li><span> Trips: </span></li>
                   <% @driver.trips.map do | trip | %>
                     <li>
-                         <span> Trip </span> #<%= trip.id %> with <span>passenger</span> <%= trip.passenger.name %>.
+                         <%= link_to "Trip ##{trip.id}", trip_path(trip.id) %> with <span>passenger</span> <%= trip.passenger.name %>.
                     </li>
                   <% end %>
                </ul>
