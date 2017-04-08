@@ -7,6 +7,22 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <header>
+      <ul>
+          <li>
+              <%= link_to "Driver List", drivers_path %>
+          </li>
+          <li>
+              <%= link_to "New Driver", new_driver_path %>
+          </li>
+          <li>
+              <%= link_to "Rider List", riders_path %>
+          </li>
+          <li>
+              <%= link_to "New Rider", new_rider_path %>
+          </li>
+      </ul>
+  </header>
 
   <body>
     <%= yield %>
