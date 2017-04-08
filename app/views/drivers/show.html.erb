@@ -9,6 +9,12 @@
     <% else %>
         NO
     <% end %>
+
+    <% if @result_driver.available %>
+          <%= button_to "Make Unavailable", available_driver_path(@result_driver.id), method: :patch, form_class: "toggle-button" %>
+      <% else %>
+          <%= button_to "Make Available", available_driver_path(@result_driver.id), method: :patch, form_class: "toggle-button" %>
+<% end %>
   </li>
 </ul>
 
