@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'drivers#index'
+  root 'homes#index'
 
   post 'passengers/:passenger_id', to: 'trips#create', as: 'new_trip'
   patch 'drivers/:id/available', to: 'drivers#available', as: 'available_driver'
