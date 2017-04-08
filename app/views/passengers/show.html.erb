@@ -5,9 +5,11 @@
   <li>Phone number: <%= @result_passenger.phone_num %></li>
 </ul>
 
+<%= link_to "Add A Trip", new_passenger_trip_path(@result_passenger.id) %>
+
 <% @result_passenger.trips.each do |trip| %>
   <p>
-    <%= link_to "Trip taken on #{trip.date}", trip_path(trip.id) %>
+    <%= link_to "Trip #{trip.id} taken on #{trip.date}", passenger_trip_path(trip.passenger_id, trip.id) %>
   </p>
 <% end %>
 

@@ -1,14 +1,15 @@
 <h1>Driver Details</h1>
 
-<h4>Average Rating: <%= @result_driver.average_rating %></h4>
 <ul>
   <li>Name: <%= @result_driver.name %></li>
+  <li>Driver_id: <%= @result_driver.id %></li>
   <li>Vin: <%= @result_driver.vin %></li>
+  <li>Average Rating: <%= @result_driver.average_rating %></li>
 </ul>
 
 <% @result_driver.trips.each do |trip| %>
   <p>
-    <%= link_to "Trip driven on #{trip.date}", trip_path(trip.id) %>
+    <%= link_to "Trip #{trip.id} driven on #{trip.date}", driver_trip_path(trip.driver_id, trip.id) %>
   </p>
 <% end %>
 

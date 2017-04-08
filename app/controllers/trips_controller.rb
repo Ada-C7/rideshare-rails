@@ -24,14 +24,31 @@ class TripsController < ApplicationController
     end
   end
 
+  # def new
+  #   @trip = Trip.new
+  # end
+  #
+  # def create
+  #   @trip = Trip.create trip_params
+  #
+  #   redirect_to trips_path
+  # end
+
   def new
-    @trip = Trip.new
+    @trip = Trip.new(passenger_id: params[:passenger_id])
   end
 
   def create
-    @trip = Trip.create trip_params
+    trip = Trip.new
+    trip.passenger_id = params[:passenger_id]
+    trip.driver_id = rand(1..(Driver.all.length))
+    trip.date = Time.now
 
-    redirect_to trips_path
+    if trip.save
+      redirect_to passenger_path(params[:passenger_id])
+    else
+      puts trip.errors.messages
+    end
   end
 
   def destroy

@@ -13,6 +13,5 @@
   </li>
 </ul>
 
-<%= link_to "Back to all trips", trips_path %>
-<%= link_to "Edit this trip", edit_trip_path(@result_trip.id) %>
-<%= button_to 'Delete', trip_path(@result_trip.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to "Edit this trip", edit_passenger_trip_path(@result_trip.id) %>
+<%= button_to 'Delete', passenger_trip_path(@result_trip.id), method: :delete, data: { confirm: 'Are you sure?' } %>
