@@ -7,6 +7,34 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 
+Passenger.destroy_all
+Driver.destroy_all
+Trip.destory_all
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'passengers.csv'))
+
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+  passenger = Passenger.new
+  passenger.passenger_id = row["passenger_id"]
+  passenger.name = row["name"]
+  passenger.phone_num = row["phone_num"]
+
+  passenger.save!
+end
+
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'drivers.csv'))
+
+csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
+csv.each do |row|
+  driver = Driver.new
+  driver.driver_id = row["driver_id"]
+  driver.name = row["name"]
+  driver.vin = row["vin"]
+
+  driver.save!
+end
+
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'trips.csv'))
 
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
@@ -19,29 +47,5 @@ csv.each do |row|
   trip.rating = row["rating"]
   trip.cost = rand(1..600)
 
-  trip.save
-end
-
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'passengers.csv'))
-
-csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
-csv.each do |row|
-  passenger = Passenger.new
-  passenger.passenger_id = row["passenger_id"]
-  passenger.name = row["name"]
-  passenger.phone_num = row["phone_num"]
-
-  passenger.save
-end
-
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'drivers.csv'))
-
-csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
-csv.each do |row|
-  driver = Driver.new
-  driver.driver_id = row["driver_id"]
-  driver.name = row["name"]
-  driver.vin = row["vin"]
-
-  driver.save
+  trip.save!
 end
