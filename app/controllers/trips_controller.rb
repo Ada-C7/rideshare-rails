@@ -15,10 +15,14 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
 
     if @trip.update(trip_params)
-      redirect_to trip_path
+      redirect_to passenger_path(@trip.passenger_id)
     else
       render "edit"
     end
+  end
+
+  def rating
+    redirect_to edit_trip_path
   end
 
   def create
