@@ -43,12 +43,17 @@ class TripsController < ApplicationController
 
 
 
-
   def update
+
+
     trip = Trip.find(params[:id])
+    data = trip_params
+    puts data.to_hash
     trip.update!(trip_params)
-    # trip.save
-    redirect_to rider_path
+    result = trip.save
+    puts result
+    puts trip.errors.messages
+    redirect_to rider_path(params[:rider_id])
   end
 
 

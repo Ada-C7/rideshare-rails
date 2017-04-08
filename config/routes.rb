@@ -28,12 +28,15 @@ Rails.application.routes.draw do
         member do
 
           get  'complete_trip'
-          post 'complete_trip'
         end
       end
 
+      # resources :trips, only: [:new, :create]
+
 
     end
+
+    # resources :trips, except: [:new, :create]
 
 
 

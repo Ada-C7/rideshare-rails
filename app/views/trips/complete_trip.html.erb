@@ -1,6 +1,6 @@
 <h1> Rate Your Ride </h1>
 <section >
-  <%= form_for @trip ,  :url => { :action => "update" } do |f| %>
+  <%= form_for @trip ,  :url => rider_trip_path(@trip.rider.id, @trip.id) do |f| %>
 
 
   <tr>
