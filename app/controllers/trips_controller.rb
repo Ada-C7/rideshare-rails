@@ -8,7 +8,13 @@ class TripsController < ApplicationController
   end
 
   def new
-    @trip = Trip.new(rider_id: params[:rider_id])
+      Rider.find(params[:rider_id]).trips.each do |trip|
+          if trip.rating != nil
+              @trip = Trip.new(rider_id: params[:rider_id])
+          else
+              raise 'error'
+          end
+      end
   end
 
   def create
