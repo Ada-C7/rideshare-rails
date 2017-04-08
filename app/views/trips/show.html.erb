@@ -19,3 +19,58 @@
       </p>
    </section>
 <% end %>
+
+<% content_for :passengers do %>
+   <section class="yield">
+      <h1 class="title"><%= @trip.passenger.name %></h1>
+      <ul class="list">
+           <li><span> Passenger Name: </span> <%= @trip.passenger.name %></li>
+           <li><span> Phone Number: </span> <%= @trip.passenger.phone %></li>
+           <li><span> Total Amount Charged: </span> $<%= @trip.passenger.trips.sum("cost") %>
+
+      <p><%= button_to "Edit", edit_trip_path, method: :get %></p>
+      <p>
+         <%=
+            button_to "Delete", driver_path, method: :delete,
+            data: { confirm: "Are you confident you'd like to delete this trip?" },
+            method: :delete
+         %>
+      </p>
+   </section>
+<% end %>
+
+<% content_for :drivers do %>
+   <section class="yield">
+        <h1 class="title"> <%= @trip.driver.name %> </h1>
+        <ul class="list">
+             <li> <span> Driver Name: </span> <%= @trip.driver.name %> </li>
+             <li> <span> Driver VIN: </span> <%= @trip.driver.vin %> </li>
+             <li> <span> Driver Status: </span> <%= @trip.driver.status ? "Available" : "Not Available"%> </li>
+             <% if @trip.driver.trips.average("rating") %>
+                <li><span> Average Rating: </span> <%= @trip.driver.trips.average("rating").round(2) %></li>
+             <% end %>
+             <% if @trip.driver.trips.length > 0 %>
+                 <li><span>Total Earnings: </span> $<%= @trip.driver.earnings %></li>
+                 <ul>
+                      <li><span> Trips: </span></li>
+                      <% @trip.driver.trips.map do | trip | %>
+                         <li>
+                              <%= link_to "Trip ##{trip.id}", trip_path(trip.id) %> with <span>passenger</span> <%= trip.passenger.name %>.
+                         </li>
+                      <% end %>
+                 </ul>
+             <% else %>
+                 <li><span>Driver has no trips to display.</span></li>
+             <% end %>
+        </ul>
+
+        <p><%= button_to "Edit", edit_driver_path, method: :get %> </p>
+        <p>
+             <%=
+                  button_to "Delete", driver_path, method: :delete,
+                  data: { confirm: "Are you confident you'd like to delete this driver?" },
+                  method: :delete
+             %>
+        </p>
+   </section>
+<% end %>
