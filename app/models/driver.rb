@@ -5,8 +5,6 @@ class Driver < ApplicationRecord
   validates :vin, presence: true, uniqueness: true, length: { is: 17 }
 
 
-
-
   def find_avg_rating
 
     trips = self.trips

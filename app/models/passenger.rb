@@ -12,9 +12,9 @@ class Passenger < ApplicationRecord
       return 0
     end
 
-    trips.each do | trip |
-      total += trip.cost
-    end
+      trips.each do | trip |
+        total += trip.cost
+      end
 
     return total
   end
