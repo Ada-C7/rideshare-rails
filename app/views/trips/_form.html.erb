@@ -26,7 +26,7 @@
   <%= f.text_field :date %>
 
   <%= f.label :cost %>
-  <%= f.text_field :cost %>
+  <%= f.text_field :cost, value: (render partial: "cost", locals: {trip: @trip})%>
 
 
   <%= f.label :rating %>

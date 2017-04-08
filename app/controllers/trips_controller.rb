@@ -8,7 +8,10 @@ class TripsController < ApplicationController
   def create
     #message if driver = nil and no driver available
     trip_params = generate_params(params[:passenger_id])
-    Trip.create(trip_params) if trip_params[:driver] != nil
+    puts ">>>>> DPR"
+    puts trip_params.to_hash
+    trip = Trip.create(trip_params) if trip_params[:driver] != nil
+    puts trip.errors.messages
 
     redirect_to passenger_path(params[:passenger_id])
   end

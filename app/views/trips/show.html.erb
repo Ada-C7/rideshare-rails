@@ -6,7 +6,7 @@
 <li>Passenger: <%= link_to @trip.passenger.name, passenger_path(@trip.passenger)%></li>
 <li>Driver: <%= link_to @trip.driver.name, driver_path(@trip.driver)%></li>
 <li><%= "Date: #{@trip.date.strftime('%m %d %Y')}"%></li>
-<li><%= "Cost: $#{'%.2f' % (@trip.cost/100.0)}"%></li>
+<li><%= "Cost: $" %><%= render partial: "cost", locals: {trip: @trip} %></li>
 <%= render partial: "rating", locals: {trip: @trip} %>
 </ul>
 
