@@ -1,0 +1,20 @@
+/*// Place all the styles related to the Drivers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
+
+/************************************************
+INDEX
+*************************************************/
+
+#index_site section {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  line-height: 1.5em;
+}
+
+#index_site p {
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+}
