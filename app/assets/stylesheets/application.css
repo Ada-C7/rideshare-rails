@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css?family=Bungee+Hairline');
+
+body {
+  background-color: lightsteelblue;
+  color: lightyellow;
+  font-family: 'Bungee Hairline', cursive;
+}
+
+button {
+  border: solid black 10vw;
+}
