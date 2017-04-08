@@ -1,6 +1,6 @@
 <h1><%= "#{@passenger.name}" %></h1>
 
-<h3>Total spent: $<%= '%.2f' % (@passenger.spent/100.0) %></h3>
+<h3>Total spent: $<%= '%.2f' % (@passenger.total_money/100.0) %></h3>
 <h3>Contact number: <%= @passenger.phone_number %></h3>
 
 <%= render partial: "request", locals: {passenger: @passenger} %>
