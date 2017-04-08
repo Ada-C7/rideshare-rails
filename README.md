@@ -1,5 +1,3 @@
-FAKE FILE CHANGE
-
 # Rideshare Rails
 
 In this application you will build a website to model a small community ridesharing app.

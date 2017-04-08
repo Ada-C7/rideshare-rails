@@ -5,7 +5,13 @@ class PassengersController < ApplicationController
 
      def show
           @passenger = Passenger.find(params[:id])
+     end
+
+     def create_trip
+          @passenger = Passenger.find(params[:id])
           @trip_hash = {date: Time.now, cost: 0, driver: Passenger.select_driver, passenger: @passenger }
+          @passenger.trips.create(@trip_hash)
+          redirect_to passenger_path
      end
 
      def new
