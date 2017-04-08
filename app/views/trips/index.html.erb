@@ -1,0 +1,15 @@
+<%= render partial: "welcome/header" %>
+<h1>Trips List</h1>
+<!-- <%= link_to "Create a new Trip", new_passenger_path %> -->
+
+<div>
+  <ul class="Trip_marked">
+    <% @trips.each do |trip| %>
+    <li>
+      <%= link_to trip[:name], trip_path(trip.id) %>
+
+    </li>
+
+    <% end %>
+  </ul>
+</div>

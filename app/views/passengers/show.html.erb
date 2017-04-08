@@ -1,0 +1,35 @@
+<%= render partial: "welcome/header" %>
+<h2><%= @passenger.name %></h2>
+<h4><%= "Total Cost: " + @passenger.total_cost.to_s %></h4>
+<table>
+  <tr><th>trip_id</th><th>driver_id</th><th>passenger_id</th><th>date</th><th>rating</th><th>cost</th><th>add_rating</th></tr>
+
+  <% @trips_by_passenger.each do |trip| %>
+
+  <tr>
+    <%= form_for trip do |f| %>
+    <td><%=trip.id%></td>
+    <td><%=trip.driver_id%></td>
+    <td><%=trip.passenger_id%></td>
+    <td><%=trip.date%></td>
+    <td><%=trip.cost%></td>
+    <td><%= f.text_field :rating %></td>
+    <td><%= f.submit value: "Add Rating" %></td>
+  <% end %>
+  </tr>
+
+
+  <% end %>
+
+</table>
+
+<%= button_to "Passengers", passengers_path, method: :get %>
+
+  <% if @passenger.can_make_new_trip  %>
+    <%= button_to "Edit", edit_passenger_path, method: :get %>
+  <% else %>
+    <%= "Please rate last trip." %>
+  <% end %>
+
+<%= button_to "Delete", passenger_path, method: :delete %>
+<%= button_to "New Ride", trips_path(:id=>@passenger.id), method: :post %>
