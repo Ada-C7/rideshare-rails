@@ -10,8 +10,8 @@ class Driver < ApplicationRecord
     end
   end
 
-  def total_earnings
-    total = trips.select('sum(trips.cost) as total').take&.total
-    return total * 0.85
-  end
+  # def total_earnings
+  #   total = trips.select('sum(trips.cost) as total').take&.total
+  #   return total * 0.85
+  # end
 end
