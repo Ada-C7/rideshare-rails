@@ -32,7 +32,7 @@ class TripsController < ApplicationController
      @trip.cost = trip_params[:cost]
      @trip.rating = trip_params[:rating]
 
-     @trip.driver_id = Driver.find(trip_params[:passenger_id]).id
+     @trip.driver_id = Driver.find(trip_params[:driver_id]).id
      @trip.passenger_id = Passenger.find(trip_params[:passenger_id]).id
 
      puts @trip.attributes
