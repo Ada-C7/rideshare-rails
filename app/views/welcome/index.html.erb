@@ -1,0 +1,31 @@
+<link href="https://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet">
+
+<h1>Welcome to RideShare</h1>
+<p>we'll add stuff to this page soon! Like a cool header with drop down things<p>
+<p><strong>Edit: We did it! :D</strong></p>
+
+<header>
+<div class="dropdown">
+  <h3>Driver</h3>
+  <div class="dropdown-content">
+    <%= link_to "All Drivers", drivers_path %><br />
+    <%= link_to "New Driver", new_driver_path %>
+  </div>
+</div>
+
+<div class="dropdown">
+  <h3>Passenger</h3>
+  <div class="dropdown-content">
+    <%= link_to "All Passengers", passengers_path %><br />
+    <%= link_to "New Passenger", new_passenger_path %>
+  </div>
+</div>
+
+<div class="dropdown">
+  <h3>Trip</h3>
+  <div class="dropdown-content">
+    <%= link_to "All Trips", trips_path %><br />
+    <%= link_to "New Trip", new_trip_path %>
+  </div>
+</div>
+</header>

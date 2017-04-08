@@ -1,0 +1,13 @@
+<link href="https://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet">
+
+<header><h1>Passengers</h1></header>
+<h3><%= link_to "Add a new passenger", new_passenger_path %> <%= link_to "Home", welcome_path %></h3>
+
+
+<ul>
+  <% @passengers.each do |passenger| %>
+    <li>
+      <%= render partial: "passenger_summary", locals: {passenger: passenger} %>
+    </li>
+  <% end %>
+</ul>

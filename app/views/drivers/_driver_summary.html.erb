@@ -1,0 +1,6 @@
+<link href="https://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet">
+
+<%= link_to driver.name, driver_path(driver.id) %>
+<%= link_to "Edit", "/drivers/#{driver.id}/edit" %>
+<%= link_to "Delete", "/drivers/#{driver.id}", method: :delete,
+data: { confirm: "Are you sure you want to delete #{driver.id}" } %>
