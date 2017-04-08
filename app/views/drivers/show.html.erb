@@ -6,15 +6,19 @@
                <li> <span> Driver Name: </span> <%= @driver.name %> </li>
                <li> <span> Driver VIN: </span> <%= @driver.vin %> </li>
                <li> <span> Driver Status: </span> <%= @driver.status ? "Available" : "Not Available"%> </li>
-               <li><span> Average Rating: </span> <%= @driver.trips.average("rating") %></li>
-               <ul>
-                  <li><span> Trips: </span></li>
-                  <% @driver.trips.map do | trip | %>
-                    <li>
-                         <%= link_to "Trip ##{trip.id}", trip_path(trip.id) %> with <span>passenger</span> <%= trip.passenger.name %>.
-                    </li>
-                  <% end %>
-               </ul>
+               <% if @driver.trips.average("rating") %>
+                 <li><span> Average Rating: </span> <%= @driver.trips.average("rating") %></li>
+               <% end %>
+               <% if @driver.trips.length > 0 %>
+                 <ul>
+                    <li><span> Trips: </span></li>
+                    <% @driver.trips.map do | trip | %>
+                      <li>
+                           <%= link_to "Trip ##{trip.id}", trip_path(trip.id) %> with <span>passenger</span> <%= trip.passenger.name %>.
+                      </li>
+                    <% end %>
+                 </ul>
+              <% end %>
           </ul>
 
           <p><%= button_to "Edit", edit_driver_path, method: :get %> </p>
