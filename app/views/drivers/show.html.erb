@@ -4,6 +4,8 @@
 
 <h3>ID: <%= @driver.id %></h3>
 
+<h3>Total earnings: $<%= '%.2f' % (@driver.earnings/100.0) %></h3>
+
 <h3><%=  display_ave_rating %></h3>
 
 <%= button_to "Update driver's information", edit_driver_path, method: :get %>
