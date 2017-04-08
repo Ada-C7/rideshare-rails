@@ -1,18 +1,5 @@
 <h1>Add a Trip</h1>
 
-<section>
-  <% if @trip.errors.any? %>
-    <h2>Something went wrong</h2>
-   <ul class = "errors">
-     <% @trip.errors.each do |column, message| %>
-       <li>
-         <strong><%= column.capitalize %></strong> <%= message %>
-       </li>
-     <% end %>
-   </ul>
-  <% end %>
-</section>
-
 <%= form_for @trip do |f| %>
 
   <%= f.label :driver_id, "Driver ID" %>
