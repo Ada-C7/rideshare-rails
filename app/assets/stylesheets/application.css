@@ -23,9 +23,12 @@ body {
   font-family: 'Oswald', sans-serif;
 }
 
-h2{
+/*#logo{
   display: inline-block;
-}
+  background-color: #E0EAFC;
+  font-size: 36px;
+font-family: 'Oswald', sans-serif;
+}*/
 
 table{
   width: 60%;
