@@ -7,6 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 
+Passenger.destroy_all
+Driver.destroy_all
+Trip.destroy_all
+
 csv_text = File.read(Rails.root.join('lib', 'seeds', 'passengers.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
