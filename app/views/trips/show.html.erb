@@ -1,7 +1,7 @@
 <h1>Trip Details</h1>
 
 <ul>
-  <li>Cost: <%= @result_trip.cost %></li>
+  <li>Cost: $ <%= (@result_trip.cost / 100.0).round(2)%></li>
   <li>Rating: <%= @result_trip.rating %></li>
   <li>Driver: <%= link_to "#{@result_trip.driver.name}", driver_path(@result_trip.driver.id) %></li>
   <li>Passenger: <%= link_to "#{@result_trip.passenger.name}", passenger_path(@result_trip.passenger.id) %></li>
