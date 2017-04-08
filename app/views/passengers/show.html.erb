@@ -1,0 +1,9 @@
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+<h2>Passenger Details</h2>
+
+<p>Passenger name: <%= @passenger[:name] %></p>
+<p>Passenger ID: <%= @passenger[:id] %></p>
+<p>Passenger phone number: <%= @passenger[:phone_num] %></p>
+
+<%= link_to "Return to List of Passengers", passengers_path %>

@@ -1,0 +1,17 @@
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+<h2>Edit Driver</h2>
+
+<%= form_for @driver do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :id %>
+  <%= f.text_field :id %>
+
+  <%= f.label :vin %>
+  <%= f.text_field :vin %>
+
+  <%= f.submit value: "Submit changes" %>
+  <%= link_to "Cancel", drivers_path %>
+<% end %>

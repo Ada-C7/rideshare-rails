@@ -1,0 +1,20 @@
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+<header>
+
+<h2>Rideshare Trips List</h2>
+
+<%= link_to "Add a new trip", new_trip_path %>
+<%= link_to "All Passengers", passengers_path %>
+<%= link_to "All Drivers", drivers_path %>
+<%= link_to "Return to homepage", welcome_path %>
+
+</header>
+
+<body>
+<ul>
+  <% @trips.each do |trip| %>
+    <li><%= link_to trip.id, trip_path(trip.id) %></li>
+  <% end %>
+</ul>
+
+</body>

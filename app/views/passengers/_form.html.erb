@@ -1,0 +1,29 @@
+<h1>Add a Passenger</h1>
+
+<section>
+  <% if @passenger.errors.any? %>
+    <h2>Something went wrong</h2>
+   <ul class = "errors">
+     <% @passenger.errors.each do |column, message| %>
+       <li>
+         <strong><%= column.capitalize %></strong> <%= message %>
+       </li>
+     <% end %>
+   </ul>
+  <% end %>
+</section>
+
+<section>
+  <%= form_for @passenger do |f| %>
+    <%= f.label :id, "Passenger ID" %>
+    <%= f.text_field :id %>
+
+    <%= f.label :name, "Passenger name" %>
+    <%= f.text_field :name %>
+
+    <%= f.label :phone_num, "Passenger Phone Number" %>
+    <%= f.text_field :phone_num %>
+
+    <%= f.submit value: "Add #{submit_text} Passenger" %>
+  <% end %>
+</section>

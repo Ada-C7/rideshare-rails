@@ -1,0 +1,15 @@
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+<h2>Driver Details</h2>
+
+<p>Driver: <%= @driver[:name] %></p>
+<p>Driver ID: <%= @driver[:id] %></p>
+<p>VIN Number: <%= @driver[:vin] %></p>
+
+<%= link_to "Edit Driver", edit_driver_path %>
+<%= link_to "Delete Driver", driver_path(@driver), data:{method: :delete, confirm:"Are you sure you want to delete this driver?"} %>
+
+<%= link_to "All Trips", trips_path %>
+<%= link_to "All Passengers", passengers_path %>
+<%= link_to "All Drivers", drivers_path %>
+<%= link_to "Return to homepage", welcome_path %>
