@@ -4,14 +4,6 @@
           <ul class="list">
                <li><span> Passenger Name: </span> <%= @passenger.name %></li>
                <li><span> Phone Number: </span> <%= @passenger.phone %></li>
-               <ul>
-                    <li><span> Trips: </span></li>
-                    <% @passenger.trips.map do | trip | %>
-                    <li>
-                         <span> Trip </span> #<%= trip.id %> with <span>driver</span> <%= trip.driver.name %> for $<%= trip.cost %>.
-                         <% end %>
-                    </li>
-               </ul>
                <li><span> Total Amount Charged: </span> $<%= @passenger.trips.sum("cost") %></li>
                <p>
                     <%= button_to "Edit", edit_passenger_path, method: :get %>
@@ -20,6 +12,30 @@
                          method: :delete
                     %>
                </p>
+          </ul>
+     </section>
+<% end %>
+
+<% content_for :trips do %>
+     <section class="yield">
+          <h1 class="title"><%= @passenger.name %>'s <br>Trips</h1>
+          <ul class="list">
+               <% @passenger.trips.map do | trip | %>
+                    <li><%= link_to trip.date.strftime("%e %B %Y, %l:%M%p"), trip_path(trip.id) %></li>
+               <% end %>
+          </ul>
+     </section>
+<% end %>
+
+<% content_for :drivers do %>
+     <section class="yield">
+          <h1 class="title"><%= @passenger.name %>'s <br>Drivers</h1>
+          <ul class="list">
+               <% @passenger.trips.map do | trip | %>
+               <li>
+                    <%= link_to trip.driver.name, driver_path(trip.driver.id) %>
+                    <% end %>
+               </li>
           </ul>
      </section>
 <% end %>
