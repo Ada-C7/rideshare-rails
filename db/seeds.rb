@@ -16,7 +16,7 @@ csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
   passenger = Passenger.new
   passenger.name = row['name']
-  passenger.id = row['id']
+  passenger.id = row['passenger_id']
   passenger.phone_num = row['phone_num']
   passenger.save!
 end
@@ -25,7 +25,7 @@ csv_text = File.read(Rails.root.join('lib', 'seeds', 'drivers.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
   d = Driver.new
-  d.id = row['id']
+  d.id = row['driver_id']
   d.name = row['name']
   d.vin = row['vin']
   d.save!
@@ -35,7 +35,7 @@ csv_text = File.read(Rails.root.join('lib', 'seeds', 'trips.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
   trip = Trip.new
-  trip.id = row['id']
+  trip.id = row['trip_id']
   trip.driver_id = row['driver_id']
   trip.passenger_id = row['passenger_id']
   trip.date = row['date']
