@@ -24,7 +24,7 @@ class TripsController < ApplicationController
   def create
     # call incomplete_rating method inside the Passenger model to ensure that all conditions for creating a new trip has been met
     passenger = Passenger.find(params[:passenger_id])
-    if !passenger.has_incomplete_rating
+    if !passenger.has_incomplete_rating?
       @trip = Trip.new
       @trip.passenger_id = params[:passenger_id]
       @trip.rating = 0
@@ -36,11 +36,14 @@ class TripsController < ApplicationController
 
       # saves the new trip instance
       @trip.save
+      redirect_to passenger_path(params[:passenger_id])
     else
      #fails: there was a unrated trip for that passenger
+     redirect_to passenger_path(params[:passenger_id]), warning: "Trip Canceled: you have one or more unrated trips. You must rate all your trips before starting a new trip!"
+
     end
     # returns to the passenger details page where the new trip request originated from
-    redirect_to passenger_path(params[:passenger_id])
+
   end
 
   def destroy
