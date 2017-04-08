@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   resources :trips, except: [:create, :new]
 
   post 'riders/:id/create_trip', to: 'trips#create', as: 'create_trip'
+  post 'drivers/:id', to: 'drivers#available', as: 'available_driver'
+  post 'drivers/:id', to: 'drivers#offline', as: 'offline_driver'
 
 end

@@ -45,6 +45,24 @@ class DriversController < ApplicationController
     redirect_to drivers_path
   end
 
+  def available
+    driver = Driver.find(params[:id])
+    driver.availability = true
+
+    if driver.save
+      redirect_to driver_path(driver.id)
+    end
+  end
+
+  def offline
+    driver = Driver.find(params[:id])
+    driver.availability = false
+
+    if driver.save
+      redirect_to driver_path(driver.id)
+    end
+  end
+
   private
 
   def driver_params
