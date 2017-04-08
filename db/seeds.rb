@@ -13,7 +13,7 @@ CSV.open('support/drivers.csv', 'r', :headers => true).each do |line|
   name = line["name"].to_s
   vin = line["vin"].to_s
 
-  driver_array << {name: name, vin: vin}
+  driver_array << {name: name, vin: vin, availability: true}
 end
 
 Driver.create(driver_array)

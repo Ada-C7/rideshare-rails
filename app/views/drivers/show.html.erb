@@ -11,7 +11,7 @@
     <% end %>
   <h2> This Driver's Average Rating: <%= @result_driver.avg_rating %> </h2>
   <h2> Total Earnings: $<%= @result_driver.total_earnings %> </h2>
-
+<%#make a new route for availability on the driver show page, for toggling availability, new controller action to go with it %>
   <%= link_to "Edit", edit_driver_path(@result_driver.id) %>
   <%= link_to "Delete", driver_path(@result_driver.id), data: { confirm: "Are you sure you want to delete" }, method: :delete %>
 
