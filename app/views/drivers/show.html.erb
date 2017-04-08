@@ -1,7 +1,9 @@
-<h1>Driver Details</h1>
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+<h2>Driver Details</h2>
 
 <p>Driver: <%= @driver[:name] %></p>
-<p>Driver ID: <%= @driver[:driver_id] %></p>
+<p>Driver ID: <%= @driver[:id] %></p>
 <p>VIN Number: <%= @driver[:vin] %></p>
 
 <%= link_to "Edit Driver", edit_driver_path %>
