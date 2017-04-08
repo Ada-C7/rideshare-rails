@@ -1,3 +1,5 @@
+FAKE FILE CHANGE
+
 # Rideshare Rails
 
 In this application you will build a website to model a small community ridesharing app.
@@ -58,7 +60,7 @@ However far you and your partner get, the application should have, at a minimum,
 1.  Use Semantic HTML
 1.  Make good use of partial views
 1.  Don't forget validations! (can a trip exist without a driver or passenger...)
-1.  You may not be able to get all the user stories done.  **Prioritize!** 
+1.  You may not be able to get all the user stories done.  **Prioritize!**
 
 ## User Stories
 
@@ -72,7 +74,7 @@ However far you and your partner get, the application should have, at a minimum,
 ### Viewing Passengers
 
 - On the passenger list page I can click on a passenger to see that passenger's details
-- On the passenger's details page: 
+- On the passenger's details page:
     -  I can see a list of trips that passenger went on
     - Shows the total amount the passenger has been charged
     - Clicking on an individual trip will bring up details for the trip
@@ -83,11 +85,11 @@ However far you and your partner get, the application should have, at a minimum,
     		- The trip starts with no rating
     	- A new trip cannot be created until all that passengers trips are rated.
     - When viewing a passenger's trips you can assign a rating for the trip, 1-5
-	
+
 ### Investigating Trips
 On the trip details page
   -  I can view details of the trip and links to the driver and the passenger
-  -  I can choose to edit and delete details about the trip	
+  -  I can choose to edit and delete details about the trip
 
 ### Viewing Drivers
   - From any page I can click a menu entry to be taken to the driver index page and see a list of all the drivers
@@ -97,5 +99,3 @@ On the trip details page
     - The driver details page will also show the driver's total earnings (total of each trip minus 15%)
   - The driver list and driver details pages show the driver's average rating
   - On the drivers page I can create, edit and delete drivers
-
-
