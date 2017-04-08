@@ -1,34 +1,34 @@
-<h2><%= @result_driver.name %></h2>
+  <h2><%= @result_driver.name %></h2>
 
-<h3><span class="show-field">VIN:</span> <%= @result_driver.vin %></h3>
+  <h3><span class="show-field">VIN:</span> <%= @result_driver.vin %></h3>
 
-<h3><span class="show-field">Average Rating:</span> <%= @result_driver.find_avg_rating.round(1) %></h3>
+  <h3><span class="show-field">Average Rating:</span> <%= @result_driver.find_avg_rating.round(1) %></h3>
 
-<h3><span class="show-field">Total Earned:</span> $<%= @result_driver.calc_income.round(2) %></h3>
+  <h3><span class="show-field">Total Earned:</span> $<%= @result_driver.calc_income.round(2) %></h3>
 
-<h2><%= @result_driver.name %>'s Trips</h2>
+  <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>&ensp;Edit'.html_safe, edit_driver_path %>
+  <%= link_to '<i class="fa fa-minus-circle" aria-hidden="true"></i>&ensp;Delete'.html_safe, driver_path(@result_driver.id),
+  data: { confirm: "Are you sure you want to delete your account?" },
+  method: :delete
+  %>
 
-<table>
-  <tr>
-    <th>Trip ID</th>
-    <th>Passenger ID</th>
-    <th>Date</th>
-    <th>Rating</th>
-    <th>Cost</th>
-  </tr>
-  <% @result_driver.trips.each do |trip| %>
-  <tr>
-    <td><%= link_to trip.id, trip_path(trip.id) %></td>
-    <td><%= link_to trip.passenger.name, passenger_path(trip.passenger_id) %></td>
-    <td><%= trip.date %></td>
-    <td><%= trip.rating %></td>
-    <td>$<%= trip.cost %></td>
-  </tr>
-  <% end %>
-</table>
+  <h2><%= @result_driver.name %>'s Trips</h2>
 
- <%= link_to "Delete", driver_path(@result_driver.id),
-   data: {confirm: "Do you want to delete this driver? NO GOING BACK!!!"},
-   method: :delete, class: :button
- %>
-<%= link_to "Edit", edit_driver_path, class: :button %>
+  <table>
+    <tr>
+      <th>Trip ID</th>
+      <th>Passenger ID</th>
+      <th>Date</th>
+      <th>Rating</th>
+      <th>Cost</th>
+    </tr>
+    <% @result_driver.trips.each do |trip| %>
+    <tr>
+      <td><%= link_to trip.id, trip_path(trip.id) %></td>
+      <td><%= link_to trip.passenger.name, passenger_path(trip.passenger_id) %></td>
+      <td><%= trip.date %></td>
+      <td><%= trip.rating %></td>
+      <td>$<%= trip.cost %></td>
+    </tr>
+    <% end %>
+  </table>

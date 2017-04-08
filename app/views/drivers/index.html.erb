@@ -1,17 +1,17 @@
-<h2>Our Drivers</h2>
+  <h2>Our Drivers</h2>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>VIN</th>
-    <th>Average Rating</th>
-  </tr>
-  <% @drivers.each do |driver| %>
-  <tr>
-    <td><%= link_to driver.name, driver_path(driver.id) %></td>
-    <td><%= driver.vin %></td>
-    <td><%= driver.find_avg_rating.round(1) %></td>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>VIN</th>
+      <th>Average Rating</th>
+    </tr>
+    <% @drivers.each do |driver| %>
+    <tr>
+      <td><%= link_to driver.name, driver_path(driver.id) %></td>
+      <td><%= driver.vin %></td>
+      <td><%= driver.find_avg_rating.round(1) %></td>
 
-  </tr>
-  <% end %>
-</table>
+    </tr>
+    <% end %>
+  </table>

@@ -6,18 +6,26 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <%= favicon_link_tag 'rideshare-favicon.ico' %>
   </head>
 
   <body>
     <header>
       <h1><%= link_to "RideShare", root_path %></h1>
-      <nav>
-        <ul><%= link_to "New Passenger", new_passenger_path %></ul>
-        <ul><%= link_to "New Driver", new_driver_path %></ul>
-        <ul><%= link_to "View Passengers", passengers_path %></ul>
-        <ul><%= link_to "View Drivers", drivers_path %></ul>
-      </nav>
+      <section class="dropdown">
+        <button class="drop-button"><h1><i class="fa fa-bars" aria-hidden="true"></h1></i>
+</button>
+        <section class="drop-content">
+          <%= link_to "View Drivers", drivers_path %>
+          <%= link_to "New Driver", new_driver_path %>
+          <%= link_to "View Passengers", passengers_path %>
+          <%= link_to "New Passenger", new_passenger_path %>
+        </section>
+      </section>
     </header>
-    <%= yield %>
+    <section id="content">
+      <%= yield %>
+    </section>
   </body>
 </html>

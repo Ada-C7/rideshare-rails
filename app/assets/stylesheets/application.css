@@ -11,14 +11,42 @@
 
 html, body {
   height: 100%;
-  background: WhiteSmoke;
+  background-image: url("rideshare.jpg");
+  background-size: cover;
 }
 
-h1, h2, h3, p, a, th, tr {
+#content {
+  padding: 30px;
+  margin: 120px 30px 30px 30px;
+  clear: both;
+  background: whitesmoke;
+  border-radius: 10px;
+}
+
+#form {
+  width: 33%;
+}
+
+
+/* TEXT STYLES
+****************************************/
+
+h1, h2, h3, h4, p, a, th, tr, label {
   font-family: 'Rubik', sans-serif;
-  color: #4d4d4d;
   font-kerning: normal;
   text-align: left;
+}
+
+header h1 a, header h1 {
+  color: whitesmoke;
+}
+
+h1, h2, h3, h4, p, a, th, tr, label {
+  color: #333333;
+}
+
+h4 {
+  border-bottom: 2pt solid #333333;
 }
 
 a {
@@ -29,8 +57,131 @@ a:hover {
   color: limegreen;
 }
 
-header {
+.button {
+  width: 120px;
+  border: 2pt solid #333333;
+  padding: .75em 1.25em .75em 1.25em;
+  text-transform: uppercase;
+  border-radius: 500px;
+  clear: both;
+  display: block;
+  color: #333333;
+  box-shadow: none;
+}
 
+.button:hover {
+  border: 2pt solid limegreen;
+  background: limegreen;
+  color: white;
+}
+
+
+/* HEADER
+****************************************/
+
+header {
+  position: absolute;
+  display: block;
+  padding: 2em;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 120px;
+
+  /*z-index: 10;*/
+}
+
+header h1 {
+  display: inline-block;
+  float: left;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  float: right;
+}
+
+button {
+  background: none;
+}
+
+.drop-button {
+  color: #333333;
+  border: none;
+  font-size: 1em;
+}
+
+.drop-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.drop-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.drop-content a:hover {
+  background-color: #f1f1f1}
+
+.dropdown:hover .drop-content {
+    display: block;
+}
+
+header h1 {
+  width: 60%;
+}
+
+footer {
+  background: #333333;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  color: WhiteSmoke;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-top: 2em;
+  padding-bottom: 4em;
+}
+
+
+/* HOMEPAGE
+****************************************/
+
+#homepage, #form {
+  clear: both;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+}
+
+/* CONROLLER INDEX PAGES (LIST VIEW)
+****************************************/
+table {
+  width: 100%;
+}
+
+table td {
+  padding: .5em, 1em, .5em, 1em;
+}
+
+
+/* NEW/EDIT PAGES (FORM)
+****************************************/
+
+#form {
+  padding: 30px;
+  clear: both;
 }
 
 input, select {
@@ -46,29 +197,6 @@ input, select {
 select {
   height: 33px;
 }
-
-.button {
-  width: 120px;
-  border: 2pt solid #4d4d4d;
-  padding: .75em 1.25em .75em 1.25em;
-  text-transform: uppercase;
-  border-radius: 500px;
-  clear: both;
-  display: block;
-}
-
-/* HOMEPAGE
-****************************************/
-
-
-
-/* CONROLLER INDEX PAGES (LIST VIEW)
-****************************************/
-
-
-
-/* NEW/EDIT PAGES (FORM)
-****************************************/
 
 
 
