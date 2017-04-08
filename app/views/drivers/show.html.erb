@@ -2,6 +2,7 @@
 <h2>Driver id:</h2> <%= @driver.id %>
 <h2>Name:</h2> <%= @driver.name %>
 <h2>Vin:</h2> <%= @driver.vin %>
+<h2>Average Rating:</h2> <%= @driver.av_rating(@driver.id) %>
 <h2>Trips:</h2>
 <table>
   <tr>

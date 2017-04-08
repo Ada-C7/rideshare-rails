@@ -1,4 +1,6 @@
 class DriversController < ApplicationController
+  helper_method :say
+
   def index
     @drivers = Driver.all
   end
