@@ -41,7 +41,7 @@ class PassengersController < ApplicationController
     passenger = Passenger.find(params[:id])
     passenger.destroy
 
-    redirect_to passenger_path
+    redirect_to passengers_path
   end
 
   private

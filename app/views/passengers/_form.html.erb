@@ -1,20 +1,15 @@
 <link href="https://fonts.googleapis.com/css?family=Dosis:700" rel="stylesheet">
 
-<section>
-  <% if @passenger.errors.messages.length > 0 %>
-  <h2>Something went wrong!</h2>
-  <ul>
-    <% @passenger.errors.messages.each do |field, problem_list| %>
-      <% problem_list.each do |problem| %>
+<section class="form">
+  <% if @passenger.errors.any? %>
+  <ul class="errors">
+  <% @passenger.errors.each do |column, message| %>
     <li>
-      <strong><%= field %>: </strong>
-      <%= problem %>
+      <strong><%= column.capitalize %></strong> <%= message %>
     </li>
-      <% end %>
-    <% end %>
-  </ul>
   <% end %>
-</section>
+</ul>
+<% end %>
 
 <section>
   <%= form_for @passenger do |f| %>
