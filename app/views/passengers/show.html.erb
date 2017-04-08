@@ -5,7 +5,7 @@
                <li><span> Passenger Name: </span> <%= @passenger.name %></li>
                <li><span> Phone Number: </span> <%= @passenger.phone %></li>
                <% if @passenger.trips.length > 0 %>
-                    <li><span> Total Amount Charged: </span> $<%= @passenger.sum_cost %>
+                    <li><span> Total Amount Charged: </span> $<%= @passenger.sum_cost %></li>
                <% else %>
                     <li><span>Passenger has no trips to display.</span></li>
                <% end %>
@@ -22,15 +22,14 @@
                          rate all of <%= @passenger.name %>'s trips.
                     </li>
                <% end %>
+               <li><%= button_to "Edit", edit_passenger_path, method: :get %></li>
+               <li>
+                 <%= button_to "Delete", passenger_path,
+                      data: { confirm: "Are you sure you want to delete this passenger?" },
+                      method: :delete
+                 %>
                </li>
              </ul>
-           <p>
-                <%= button_to "Edit", edit_passenger_path, method: :get %>
-                <%= button_to "Delete", passenger_path,
-                     data: { confirm: "Are you sure you want to delete this passenger?" },
-                     method: :delete
-                %>
-           </p>
      </section>
 <% end %>
 

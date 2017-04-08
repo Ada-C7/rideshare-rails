@@ -7,16 +7,15 @@
         <li><span>Rating:</span> <%= @trip.rating == nil || @trip.rating == "" ? "Not yet rated." : @trip.rating %> </li>
         <li><span>Driver:</span> <%= @trip.driver.name %> </li>
         <li><span>Passenger:</span> <%= @trip.passenger.name %> </li>
+        <li><%= button_to "Edit", edit_trip_path, method: :get %></li>
+        <li>
+          <%=
+             button_to "Delete", driver_path, method: :delete,
+             data: { confirm: "Are you confident you'd like to delete this trip?" },
+             method: :delete
+          %>
+        </li>
       </ul>
-
-      <p><%= button_to "Edit", edit_trip_path, method: :get %></p>
-      <p>
-         <%=
-            button_to "Delete", driver_path, method: :delete,
-            data: { confirm: "Are you confident you'd like to delete this trip?" },
-            method: :delete
-         %>
-      </p>
    </section>
 <% end %>
 
@@ -27,15 +26,15 @@
            <li><span> Passenger Name: </span> <%= @trip.passenger.name %></li>
            <li><span> Phone Number: </span> <%= @trip.passenger.phone %></li>
            <li><span> Total Amount Charged: </span> $<%= @trip.passenger.trips.sum("cost") %>
+           <li><%= button_to "Edit", edit_passenger_path(@trip.passenger.id), method: :get %></li>
+           <li>
+             <%=
+                button_to "Delete", driver_path, method: :delete,
+                data: { confirm: "Are you confident you'd like to delete this trip?" },
+                method: :delete
+             %>
+           </li>
       </ul>
-      <p><%= button_to "Edit", edit_passenger_path(@trip.passenger.id), method: :get %></p>
-      <p>
-         <%=
-            button_to "Delete", driver_path, method: :delete,
-            data: { confirm: "Are you confident you'd like to delete this trip?" },
-            method: :delete
-         %>
-      </p>
    </section>
 <% end %>
 
@@ -62,15 +61,14 @@
              <% else %>
                  <li><span>Driver has no trips to display.</span></li>
              <% end %>
+             <li><%= button_to "Edit", edit_driver_path(@trip.driver.id), method: :get %> </li>
+             <li>
+               <%=
+                    button_to "Delete", driver_path, method: :delete,
+                    data: { confirm: "Are you confident you'd like to delete this driver?" },
+                    method: :delete
+               %>
+             </li>
         </ul>
-
-        <p><%= button_to "Edit", edit_driver_path(@trip.driver.id), method: :get %> </p>
-        <p>
-             <%=
-                  button_to "Delete", driver_path, method: :delete,
-                  data: { confirm: "Are you confident you'd like to delete this driver?" },
-                  method: :delete
-             %>
-        </p>
    </section>
 <% end %>

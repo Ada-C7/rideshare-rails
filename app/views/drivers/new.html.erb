@@ -1,6 +1,6 @@
 <% content_for :drivers do %>
      <section class="yield">
           <h2 class="title"> Add New Driver </h2>
-          <%= render partial: "driver-form" %>
+          <%= render partial: "driver-form", locals: { action_name: "Add Driver" } %>
      </section>
 <% end %>

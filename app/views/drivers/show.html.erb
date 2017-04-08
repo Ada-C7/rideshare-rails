@@ -9,29 +9,18 @@
                <% if @driver.trips.average("rating") %>
                   <li><span> Average Rating: </span> <%= @driver.trips.average("rating").round(2) %></li>
                <% end %>
-               <% if @driver.trips.length > 0 %>
-                   <li><span>Total Earnings: </span> $<%= @driver.earnings %></li>
-                   <ul>
-                        <li><span> Trips: </span></li>
-                        <% @driver.trips.map do | trip | %>
-                            <li>
-                                <%= link_to "Trip ##{trip.id}", trip_path(trip.id) %> with <span>passenger</span> <%= trip.passenger.name %>.
-                            </li>
-                        <% end %>
-                   </ul>
-               <% else %>
+               <% if @driver.trips.length == 0 %>
                    <li><span>Driver has no trips to display.</span></li>
                <% end %>
+               <li><%= button_to "Edit", edit_driver_path, method: :get %></li>
+               <li>
+                 <%=
+                      button_to "Delete", driver_path, method: :delete,
+                      data: { confirm: "Are you confident you'd like to delete this driver?" },
+                      method: :delete
+                 %>
+               </li>
           </ul>
-
-          <p><%= button_to "Edit", edit_driver_path, method: :get %> </p>
-          <p>
-               <%=
-                    button_to "Delete", driver_path, method: :delete,
-                    data: { confirm: "Are you confident you'd like to delete this driver?" },
-                    method: :delete
-               %>
-          </p>
      </section>
 <% end %>
 
