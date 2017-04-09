@@ -22,6 +22,24 @@ class TripsController < ApplicationController
 
   end
 
+  def edit
+    @trip = Trip.find params[:id]
+  end
+
+  def update
+    @trip = Trip.find params[:id]
+
+    @trip.rating = trip_params[:rating]
+    @trip.cost = rand(500..1000)
+
+    if @trip.save
+      redirect_to trip_path
+    else
+      render "edit"
+    end
+
+  end
+
   def show
     @selected_trip = Trip.find params[:id]
   end
