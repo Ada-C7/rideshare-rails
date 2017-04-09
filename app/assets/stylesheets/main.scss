@@ -1,0 +1,44 @@
+@mixin button {
+  background: #428BCA;
+    color: #fff;
+    border-radius: 15px;
+    font-size: 20px;
+    height: 60px;
+    width: 150px;
+    line-height: 60px;
+    padding: 1%;
+    margin: 15px 15px;
+    text-align: center;
+    border: 0;
+    transition: all 0.3s ease 0s;
+}
+
+@mixin gradient {
+  background: #43C6AC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+header {
+  @include gradient;
+  padding:3%;
+  h1 {
+    text-align:center;
+  }
+  ul {
+    text-align:center;
+    li {
+      list-style: none;
+      display:inline;
+    }
+  }
+  a {
+    @include button;
+    text-decoration: none;
+    &:hover {
+      background: darken(#428BCA, 10%);
+
+    }
+  }
+}

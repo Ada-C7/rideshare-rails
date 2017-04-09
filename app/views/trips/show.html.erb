@@ -7,6 +7,9 @@
 <p>
 Rating: <%= @trip.rating %>
 </p>
+<p>
+Cost: <%= @trip.cost %>
+</p>
 
 <%= link_to 'All Trips', trips_path %>
 <%= link_to 'Edit', edit_trip_path(@trip.id) %>
