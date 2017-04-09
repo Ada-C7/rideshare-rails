@@ -25,5 +25,17 @@ class Rider < ApplicationRecord
     return total_cost
   end
 
+  def rated_all_trips rider
+    rating_count = 0
+    rider.trips.each do |trip|
+      if trip.rating != nil
+        rating_count += 1
+      end
+    end
+    if rating_count == rider.trips.count
+      return true
+    end
+  end
+
 
 end

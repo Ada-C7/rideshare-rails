@@ -8,8 +8,14 @@
 
 <h4>Trips Taken: <%= @rider.trips.length %> </h4>
 <ul><% @rider.trips.each do |trip| %>
-  <li><%=link_to "Trip #{trip.id}", trip_path(trip.id) %></li>
+  <% if trip.rating != nil %>
+  <li><%=link_to "Trip #{trip.id}", trip_path(trip.id) %>: rated <%= trip.rating %> out of 5</li>
+  <% else %>
+  <p class="notice"><%= notice %></p>
+  <li><%=link_to "Trip #{trip.id}", trip_path(trip.id) %>: This trip has not been rated</li>
   <% end %>
+  <% end %>
+
 </ul>
 
 <h4><%= link_to "{Add a Trip}", new_rider_trip_path %></h4>

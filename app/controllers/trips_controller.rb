@@ -10,12 +10,18 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = Trip.create! trip_params
+    rider = Rider.find(trip_params[:rider_id])
+    if rider.rated_all_trips(rider) == true
+      @trip = Trip.create! trip_params
 
-    unless @trip.id == nil
-      redirect_to trip_path(@trip.id)
+      unless @trip.id == nil
+        redirect_to trip_path(@trip.id)
+      else
+        render "new"
+      end
     else
-      render "new"
+      flash[:notice] = 'Sorry, all previous trips must be rated before creating a new trip'
+      redirect_to rider_path(rider.id)
     end
   end
 
