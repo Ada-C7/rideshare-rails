@@ -1,14 +1,19 @@
-<h3>Name: <%= @rider.name %></h3>
+<main>
+
+
+<h3>Rider: <%= @rider.name %></h3>
 <p>Phone: <%= @rider.phone %></p>
 <p>Total Charged: $<%= (@rider.total_cost/100.00).to_f.round(2)%></p>
 <!-- NOT CENTS -->
 
-<h2>Trips Taken: <%= @rider.trips.length %> </h2>
+<h4>Trips Taken: <%= @rider.trips.length %> </h4>
 <ul><% @rider.trips.each do |trip| %>
   <li><%=link_to "Trip #{trip.id}", trip_path(trip.id) %></li>
   <% end %>
 </ul>
 
-<h3><%= link_to "{Add a Trip}", new_rider_trip_path %></h2>
-<h3><%= link_to "{Edit this Rider}", edit_rider_path %> </h2>
-<h3><%= link_to "{Delete this Rider}", rider_path(@rider.id), data: { confirm: "Are you sure you want to delete this rider profile?"}, method: :delete %> </h2>
+<h4><%= link_to "{Add a Trip}", new_rider_trip_path %></h4>
+<h4><%= link_to "{Edit this Rider}", edit_rider_path %> </h4>
+<h4><%= link_to "{Delete this Rider}", rider_path(@rider.id), data: { confirm: "Are you sure you want to delete this rider profile?"}, method: :delete %> </h4>
+
+</main>

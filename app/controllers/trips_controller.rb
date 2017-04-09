@@ -3,7 +3,7 @@ class TripsController < ApplicationController
     @trips = Trip.all
   end
 
-  def new # if statement for brand new trip vs. trip via rider
+  def new #trip is only made via rider
     @rider = Rider.find(params[:id])
     @trip = Trip.new
     @trip.date = Date.current
@@ -12,14 +12,11 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.create! trip_params
 
-    puts @trip.errors.messages
-
     unless @trip.id == nil
       redirect_to trip_path(@trip.id)
     else
-      render "new"  #need to add validations to trip model
+      render "new"
     end
-
   end
 
   def edit
@@ -37,7 +34,6 @@ class TripsController < ApplicationController
     else
       render "edit"
     end
-
   end
 
   def show

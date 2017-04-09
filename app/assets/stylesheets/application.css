@@ -20,14 +20,19 @@
    font-family: Helvetica, sans-serif;
  }
 
-body {
-  padding: 2%;
+main {
+  padding-left: 2%;
 }
 
 header {
   background-color: #3D9970;
   color: white;
+  width: 100%;
+  padding: 2% 0 0 2%;
+}
 
+h3, h4 {
+  padding: 2% 0 0 0;
 }
 
 nav li {
@@ -47,14 +52,26 @@ nav a:link, nav a:visited {
   color: #FFFFFF;
 }
 
-nav a:hover {
+a:link {
+  color: #3D9970;
+}
+
+a:visited {
+  color: #3D9970;
+}
+
+a:hover, nav a:hover {
   color: #AAAAAA;
 }
 
-nav a:active  {
-  transition: color 0.5s;
+a:active, nav a:active  {
+  transition: color 0.3s;
   color: #01FF70;
 }
+
+
+
+
 
 li {
   list-style-type: none;
