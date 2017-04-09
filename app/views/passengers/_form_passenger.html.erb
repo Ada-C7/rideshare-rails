@@ -6,12 +6,11 @@
   <% end %>
 </ul>
 
-<%= form_for @passenger, method: form_method do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
 
-  <%= f.label :phone_num %>
-  <%= f.text_field :phone_num %>
-
-  <%= f.submit nil %>
-<% end %>
+<ul class="form">
+  <%= form_for @passenger, method: form_method do |f| %>
+  <li><%= f.label :name %> <%= f.text_field :name %></li>
+  <li><%= f.label nil, "Phone Number" %> <%= f.text_field :phone_num %></li>
+  <li><%= f.submit nil %></li>
+  <% end %>
+</ul>
