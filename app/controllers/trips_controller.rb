@@ -15,7 +15,7 @@ class TripsController < ApplicationController
     puts @trip.errors.messages
 
     unless @trip.id == nil
-      redirect_to trips_path
+      redirect_to trip_path(@trip.id)
     else
       render "new"  #need to add validations to trip model
     end
