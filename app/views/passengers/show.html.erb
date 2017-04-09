@@ -5,7 +5,7 @@
   <li>Phone number: <%= @result_passenger.phone_num %></li>
 </ul>
 
-<%= link_to "Add A Trip", new_passenger_trip_path(@result_passenger.id) %>
+<%= link_to "Take a new trip!", new_passenger_trip_path(@result_passenger.id) %>
 
 <% @result_passenger.trips.each do |trip| %>
   <p>

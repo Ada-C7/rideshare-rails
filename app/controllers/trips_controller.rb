@@ -20,7 +20,7 @@ class TripsController < ApplicationController
     @trip.rating = trip_params[:rating]
 
     if @trip.save
-      redirect_to trip_path(@trip.id)
+      redirect_to passenger_path()
     end
   end
 
@@ -45,8 +45,7 @@ class TripsController < ApplicationController
     trip.date = Time.now
 
     if trip.save
-      redirect_to passenger_path(params[:passenger_id])
-    else
+      redirect_to passenger_trip_path(params[:passenger_id], trip.id)
       puts trip.errors.messages
     end
   end

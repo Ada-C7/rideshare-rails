@@ -1,3 +1,5 @@
-<h1>Add a new trip</h1>
+<h1>You are requesting a new trip!</h1>
 
-<%= render partial: "form", locals: { action_name: "Create a new trip", form_method: :post } %>
+Your trip will be requested on <%= Time.now %>
+
+<%= render partial: "form_new_trip", locals: { action_name: "Request a new trip", form_method: :post } %>
