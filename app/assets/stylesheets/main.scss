@@ -1,3 +1,6 @@
+$header_font: 'Bungee Shade', cursive;
+$body_font: 'Quicksand', sans-serif;
+
 @mixin button {
   background: #428BCA;
     color: #fff;
@@ -13,16 +16,13 @@
     transition: all 0.3s ease 0s;
 }
 
-@mixin gradient {
-  background: #43C6AC;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #F8FFAE, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #F8FFAE, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
 
 header {
-  @include gradient;
   padding:3%;
+  img {
+    display:block;
+    margin:auto;
+  }
   h1 {
     text-align:center;
   }
@@ -40,5 +40,22 @@ header {
       background: darken(#428BCA, 10%);
 
     }
+  }
+}
+
+h1 {
+  font-family: $header_font;
+}
+
+body {
+  font-family: $body_font;
+}
+
+.index {
+  border-style:solid;
+  display:inline;
+  img {
+    height:200px;
+    width:200px;
   }
 }
