@@ -13,7 +13,6 @@ class Trip < ApplicationRecord
     Driver.all.each do |driver|
       return driver unless unavialbe_drivers.include? driver.id
     end
-    # render html: "No driver is currently available"
     return nil
   end
 
