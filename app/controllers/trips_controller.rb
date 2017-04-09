@@ -43,7 +43,7 @@ class TripsController < ApplicationController
       redirect_to passenger_path(params[:passenger_id])
     else
      #fails: there was a unrated trip for that passenger
-     redirect_to passenger_path(params[:passenger_id]), warning: "Trip Canceled: you have one or more unrated trips. You must rate all your trips before starting a new trip!"
+     redirect_to passenger_path(params[:passenger_id]), warning: "Trip Canceled: You must rate all your trips before starting a new trip!"
 
     end
     # returns to the passenger details page where the new trip request originated from
