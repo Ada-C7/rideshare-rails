@@ -35,6 +35,10 @@ class PassengersController < ApplicationController
   end
 
   def destroy
+    passenger = Passenger.find(params[:id])
+    passenger.trips.each do |trip|
+      Trip.destroy(trip.id)
+    end
     Passenger.destroy(params[:id])
     redirect_to passengers_path
   end
