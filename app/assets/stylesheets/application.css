@@ -18,8 +18,17 @@
  background-color: #c0d2e5;
  color: #ed6b47;
  font-family: muli;
+ margin: auto;
+ width: 25%;
+ align-items: center;
+ text-align: center;
+ vertical-align:middle;
  }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
  a:visited {
    color: #618293;
  }

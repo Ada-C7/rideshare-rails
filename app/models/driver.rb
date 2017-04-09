@@ -8,6 +8,6 @@ class Driver < ApplicationRecord
     driver_ratings = trips.map { |trip| trip.rating.to_f  }
     average = driver_ratings.inject(:+) / driver_ratings.length
 
-    average
+    average.round(2)
   end
 end
