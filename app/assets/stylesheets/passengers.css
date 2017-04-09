@@ -1,3 +1,24 @@
+main {
+  padding: 0 2vw;
+}
+/*
+.button_to {
+  cursor: pointer;
+}*/
+
+ul.trips {
+  list-style: none;
+  padding: 0;
+}
+
+.trips a {
+  color: black;
+}
+
+.trips a:hover {
+  color: magenta;
+}
+
 ul.trip_details {
   padding-left: 0;
 }
