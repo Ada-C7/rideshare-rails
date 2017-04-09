@@ -8,20 +8,25 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <header>
-      <ul>
-          <li>
-              <%= link_to "Driver List", drivers_path %>
-          </li>
-          <li>
-              <%= link_to "New Driver", new_driver_path %>
-          </li>
-          <li>
-              <%= link_to "Rider List", riders_path %>
-          </li>
-          <li>
-              <%= link_to "New Rider", new_rider_path %>
-          </li>
-      </ul>
+      <nav>
+        <ul>
+            <li>
+              <%= link_to "Home", root_path %>
+            </li>
+            <li>
+                <%= link_to "Driver List", drivers_path %>
+            </li>
+            <li>
+                <%= link_to "New Driver", new_driver_path %>
+            </li>
+            <li>
+                <%= link_to "Rider List", riders_path %>
+            </li>
+            <li>
+                <%= link_to "New Rider", new_rider_path %>
+            </li>
+        </ul>
+      </nav>
   </header>
 
   <body>
