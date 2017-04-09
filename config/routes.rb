@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   patch "drivers/:id", to: "drivers#update_active", as: "update_active_driver"
 
+  patch "riders/:id", to: "riders#update_active", as: "update_active_rider"
+
   resources :drivers
 
   resources :riders

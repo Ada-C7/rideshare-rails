@@ -1,6 +1,6 @@
 class RidersController < ApplicationController
   def index
-    @riders = Rider.all
+    @riders = Rider.active_riders
   end
 
   def show
@@ -37,7 +37,15 @@ class RidersController < ApplicationController
     else
       render "edit"
     end
+  end
 
+  def update_active
+    @rider = Rider.find params[:id]
+    @rider.active = false
+
+    if @rider.save
+      redirect_to riders_path
+    end
   end
 
   def destroy
