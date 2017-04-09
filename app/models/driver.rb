@@ -22,10 +22,14 @@ class Driver < ApplicationRecord
   def average_rating
     total = 0.0
     driver_trips = self.trips
+    trip_count = driver_trips.length
     driver_trips.each do |trip|
       total += trip.rating
+      if trip.rating == 0
+        trip_count -= 1
+      end
     end
-    return "#{total / (self.trips.length)}"
+    return "#{(total / trip_count).round(2)}"
   end
 
 end
