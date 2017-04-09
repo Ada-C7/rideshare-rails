@@ -18,6 +18,8 @@ class DriversController < ApplicationController
      end
 
      def create
+          @passengers = Passenger.all
+          @trips = Trip.all
           @driver = Driver.create driver_params
 
           if @driver.id  != nil
@@ -35,6 +37,8 @@ class DriversController < ApplicationController
 
      def update
           @driver = Driver.find(params[:id])
+          @passengers = Passenger.all
+          @trips = Trip.all
 
           @driver.name = driver_params[:name]
           @driver.vin = driver_params[:vin]
@@ -45,6 +49,7 @@ class DriversController < ApplicationController
           else
                render 'edit'
           end
+
      end
 
      def destroy

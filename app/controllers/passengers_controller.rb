@@ -28,7 +28,8 @@ class PassengersController < ApplicationController
 
      def create
           @passenger = Passenger.create(passenger_params)
-
+          @drivers = Driver.all
+          @trips = Trip.all
           unless @passenger.id == nil
                 redirect_to passengers_path
           else
@@ -43,9 +44,13 @@ class PassengersController < ApplicationController
      end
 
      def update
-          passenger = Passenger.find(params[:id])
-          if passenger.update(passenger_params)
+          @drivers = Driver.all
+          @trips = Trip.all
+          @passenger = Passenger.find(params[:id])
+          if @passenger.update(passenger_params)
                 redirect_to passenger_path
+          else
+            render "edit"
           end
      end
 

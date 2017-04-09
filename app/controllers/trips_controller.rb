@@ -19,6 +19,8 @@ class TripsController < ApplicationController
   end
 
   def create
+    @drivers = Driver.all
+    @passengers = Passenger.all
     @trip = Trip.create(trip_params)
 
      if @trip.id != nil
@@ -36,7 +38,8 @@ class TripsController < ApplicationController
 
 def update
    @trip = Trip.find(params[:id])
-
+   @drivers = Driver.all
+   @passengers = Passenger.all
    @trip.date = trip_params[:date]
    @trip.cost = trip_params[:cost]
    @trip.rating = trip_params[:rating]
