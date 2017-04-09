@@ -1,14 +1,20 @@
 class PassengersController < ApplicationController
      def index
           @passengers = Passenger.all
+          @drivers = Driver.all
+          @trips = Trip.all
      end
 
      def show
           @passenger = Passenger.find(params[:id])
+          @drivers = Driver.all
+          @trips = Trip.all
      end
 
      def create_trip
           @passenger = Passenger.find(params[:id])
+          @drivers = Driver.all
+          @trips = Trip.all
           @trip_hash = {date: Time.now, cost: 0, driver: Passenger.select_driver, passenger: @passenger }
           @passenger.trips.create(@trip_hash)
           redirect_to passenger_path
@@ -16,6 +22,8 @@ class PassengersController < ApplicationController
 
      def new
           @passenger = Passenger.new
+          @drivers = Driver.all
+          @trips = Trip.all
      end
 
      def create
@@ -30,6 +38,8 @@ class PassengersController < ApplicationController
 
      def edit
           @passenger = Passenger.find(params[:id])
+          @drivers = Driver.all
+          @trips = Trip.all
      end
 
      def update

@@ -18,7 +18,18 @@
                   <li class="driver-button"><%= link_to "Add Driver", new_driver_path %></li>
               </ul>
           </nav>
-          <%= yield :drivers %>
+          <% if @driver_content %>
+            <%= yield :drivers %>
+          <% else %>
+              <section class="yield">
+                   <h1 class="title">Drivers</h1>
+                   <ul class="list">
+                        <% @drivers.each do |driver| %>
+                             <li> <%= link_to driver.name, driver_path(driver.id) %> </li>
+                        <% end %>
+                   </ul>
+              </section>
+          <% end %>
           <nav>
               <ul>
                   <li class="driver-button"><%= link_to "Drivers", drivers_path %></li>
@@ -38,7 +49,18 @@
                   <li class="trip-button"><%= link_to "Add Trip", new_trip_path %></li>
               </ul>
           </nav>
-          <%= yield :trips %>
+          <% if @trip_content %>
+            <%= yield :trips %>
+          <% else %>
+            <section class="yield">
+              <h1 class="title">Trips</h1>
+              <ul class="list">
+                 <% @trips.each do |trip| %>
+                    <li> <%= link_to "Trip #{trip.id}", trip_path(trip.id) %> </li>
+                 <% end %>
+              </ul>
+            </section>
+          <% end %>
           <nav>
               <ul>
                   <li class="trip-button"><%= link_to "Trips", trips_path %></li>
@@ -54,7 +76,18 @@
                   <li class="passenger-button"><%= link_to "Add Passenger", new_passenger_path %></li>
               </ul>
           </nav>
-          <%= yield :passengers %>
+          <% if @passenger_content %>
+            <%= yield :passengers %>
+          <% else %>
+            <section class="yield">
+              <h1 class="title">Passengers</h1>
+              <ul class="list">
+                 <% @passengers.each do |passenger| %>
+                    <li><%= link_to passenger.name, passenger_path(passenger.id) %> </li>
+                 <% end %>
+              </ul>
+            </section>
+          <% end %>
           <nav>
               <ul>
                   <li class="passenger-button"><%= link_to "Passengers", passengers_path %></li>

@@ -1,14 +1,20 @@
 class DriversController < ApplicationController
      def index
           @drivers = Driver.all
+          @passengers = Passenger.all
+          @trips = Trip.all
      end
 
      def show
           @driver = Driver.find(params[:id])
+          @passengers = Passenger.all
+          @trips = Trip.all
      end
 
      def new
           @driver = Driver.new
+          @passengers = Passenger.all
+          @trips = Trip.all
      end
 
      def create
@@ -23,6 +29,8 @@ class DriversController < ApplicationController
 
      def edit
        @driver = Driver.find(params[:id])
+       @passengers = Passenger.all
+       @trips = Trip.all
      end
 
      def update
