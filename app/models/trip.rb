@@ -4,8 +4,9 @@ class Trip < ApplicationRecord
 
   validates :date, presence: true
   validates :cost, presence: true, numericality: true
-  validates :rating, numericality: { only_integer: true, :allow_nil => true, greater_than: 0, less_than: 6, message: "must be an integer between 1 and 5" }
-  #inclusion: { in: 1..5, message: "must be between 1 and 5" }
+  validates :rating, numericality: { only_integer: true, :allow_nil => true,
+    greater_than: 0, less_than: 6, message: "must be an integer between 1 and 5" }
+
 
   def self.find_driver
     # a driver of a trip that has yet to be rated is not available

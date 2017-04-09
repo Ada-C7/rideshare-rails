@@ -14,18 +14,18 @@ a.star {
 
 }
 
-/*#star-rating {
+#star-rating {
+  display: inline-block;
+}
+
+#star-rating {
   unicode-bidi: bidi-override;
   direction: rtl;
-}*/
+}
 
-/*a.star:hover::before,
+a.star:hover::before,
 #star-rating > a.star:hover ~ a.star:before {
   content: "★";
   position: absolute;
-}*/
-
-a.star:hover {
-  color: magenta;
-  text-shadow: 0.5px 0.5px gray;
+  color: rgba(255, 0, 255, 0.4);
 }
