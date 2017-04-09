@@ -1,6 +1,16 @@
 $header_font: 'Bungee Shade', cursive;
 $body_font: 'Quicksand', sans-serif;
 
+@mixin icon($margin) {
+  margin-left: $margin;
+  float:left;
+  height:200px;
+  width:200px;
+  display:inline;
+  padding:20px;
+  float:clear;
+}
+
 @mixin button {
   background: #428BCA;
     color: #fff;
@@ -51,11 +61,17 @@ body {
   font-family: $body_font;
 }
 
-.index {
-  border-style:solid;
-  display:inline;
+.index1 {
+  text-align:center;
   img {
-    height:200px;
-    width:200px;
+    @include icon(400px)
   }
+}
+
+.index2 {
+  text-align:center;
+  img {
+    @include icon(10px);
+  }
+
 }
