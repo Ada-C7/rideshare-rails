@@ -8,11 +8,11 @@ class TripsController < ApplicationController
   end
 
   def edit
-    @trip = Trip.find(params[:id])
+    @trip = Trip.find(params[:passenger_id])
   end
 
   def update
-    @trip = Trip.find(params[:id])
+    @trip = Trip.find(params[:passenger_id])
 
     @trip.driver_id = trip_params[:driver_id]
     @trip.passenger_id = trip_params[:passenger_id]
@@ -20,7 +20,7 @@ class TripsController < ApplicationController
     @trip.rating = trip_params[:rating]
 
     if @trip.save
-      redirect_to passenger_path()
+      redirect_to passenger_trip_path(@trip.id)
     end
   end
 

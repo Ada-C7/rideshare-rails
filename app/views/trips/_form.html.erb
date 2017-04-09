@@ -1,4 +1,4 @@
-<%= form_for @trip, url: passenger_trips_path(@trip.passenger_id) do |f| %>
+<%= form_for @trip, url: passenger_trip_path(@trip.id) do |f| %>
 
 <%= f.label :driver_id, class: "trip" %></br>
 <%= f.text_field :driver_id %></br>
