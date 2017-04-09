@@ -43,7 +43,7 @@ trip_info.each do |row|
   t.user_id = row['rider_id']
   t.date = row['date']
   t.rating = row['rating']
-  t.cost = rand((1.01)..(50.99))
+  t.cost = rand((1.01)..(50.99)).round(2)
   t.save
   puts "#{t.cost} and #{t.date}"
 end
