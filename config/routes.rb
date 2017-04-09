@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  get "/riders/:id/trips/new", to: 'trips#new', as: "new_rider_trip"
+  get "/riders/:id/trips/new", to: 'trips#create', as: "new_rider_trip"
 
   post "/riders/:id/trips", to: 'trips#create'
-  
+
   resources :drivers
 
   resources :riders
