@@ -41,6 +41,7 @@ class DriversController < ApplicationController
   end
 
   def destroy
+    
     Driver.destroy(params[:id])
     redirect to drivers_path
 
