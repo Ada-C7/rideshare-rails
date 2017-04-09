@@ -11,11 +11,11 @@ ul.trips {
   padding: 0;
 }
 
-.trips a {
+a {
   color: black;
 }
 
-.trips a:hover {
+a:hover {
   color: magenta;
 }
 
