@@ -1,8 +1,17 @@
-<h2>Trip <%= @selected_trip.id %> on <%= @selected_trip.date.to_formatted_s(:long_ordinal) %></h3>
+<main>
 
-<h3>Driver: <%= link_to @selected_trip.driver.name, driver_path(@selected_trip.driver.id) %></h3>
-<h3>Rider: <%= link_to @selected_trip.rider.name, rider_path(@selected_trip.rider.id) %> </h3>
-<h4>Rating: <%= @selected_trip.rating %></h4>
-<h4>Cost: $<%= @selected_trip.cost/100.00 %></h4>
 
-<h3><%= link_to 'Edit Rating', edit_trip_path %></h3>
+<h3>Trip <%= @selected_trip.id %> on <%= @selected_trip.date.to_formatted_s(:long_ordinal) %></h3>
+
+
+<ul>
+  <li><h5>Driver: <%= link_to @selected_trip.driver.name, driver_path(@selected_trip.driver.id) %></h5></li>
+  <li><h5>Rider: <%= link_to @selected_trip.rider.name, rider_path(@selected_trip.rider.id) %> </h5></li>
+  <li>Rating: <%= @selected_trip.rating %></li>
+  <li>Cost: $<%= @selected_trip.cost/100.00 %></li>
+</ul>
+
+
+<h4>{<%= link_to 'Edit Rating', edit_trip_path %>}</h4>
+
+</main>

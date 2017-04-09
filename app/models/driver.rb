@@ -30,12 +30,13 @@ class Driver < ApplicationRecord
   end
 
   def self.qual_driver
-    qual_drivers = []
+    return @qual_drivers if defined? @qual_drivers
+    @qual_drivers = Array.new
     Trip.all.each do |trip|
       if trip.driver.average_rating >= 4
-        qual_drivers << trip.driver
+        @qual_drivers << trip.driver
       end
     end
-    return qual_drivers.sample(1)
+    return @qual_drivers
   end
 end

@@ -1,9 +1,12 @@
+<main>
 
-<h5> Please confirm your new trip details before creating a new trip </h5>
+
+<h3>New Trip. Please confirm your trip details before hitting submit.</h3>
+<br>
 <%= form_for @trip do |f| %>
   <%= f.label :driver_id, 'Driver' %>
-  <% driver = Driver.qual_driver[0] %>
-  <%= f.select :driver_id, [ [driver.id, driver.id] ] %>
+  <% qual_driver = Driver.qual_driver[0] %>
+  <%= f.select :driver_id, [ [qual_driver.name, qual_driver.id] ] %>
 
   <%= f.label :date %>
   <%= f.date_field :date, :value => Date.current %>
@@ -22,3 +25,5 @@
 <% end %>
 
 <h4><%= link_to "Rideshare home", trips_path %></h4>
+
+</main>
