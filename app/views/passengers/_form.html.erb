@@ -1,0 +1,16 @@
+<ul>
+  <% @passenger.errors.each do |field, msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+
+
+<%= form_for @passenger do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+
+  <%= f.submit action_name, class: "passenger-submit" %>
+<% end %>

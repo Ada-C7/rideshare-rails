@@ -1,0 +1,8 @@
+<% @trip_content = true %>
+
+<% content_for :trips do %>
+  <section class="yield">
+    <h2 class="title">Add New Trip</h2>
+    <%= render partial: "form", locals: { action_name: "Add Trip", form_method: :post } %>
+  </section>
+<% end %>

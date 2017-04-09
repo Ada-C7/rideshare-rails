@@ -1,0 +1,24 @@
+<ul>
+  <% @trip.errors.each do |field, msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+
+
+<%= form_for @trip, method: form_method do |f| %>
+  <%= f.date_field :date, placeholder: "Date"  %>
+
+  <%= f.text_field :cost, placeholder: "Cost" %>
+
+  <% if form_method == :patch %>
+
+       <%= f.select :rating, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5]], prompt: "Select Rating" %>
+
+  <% end %>
+
+  <%= f.select :driver_id, Driver.all.map { |driver| [driver.name, driver.id]}, prompt: "Select Driver" %>
+
+  <%= f.select :passenger_id, Passenger.all.map { |passenger| [passenger.name, passenger.id]}, prompt: "Select Passenger" %>
+
+  <%= f.submit action_name, class: "trip-submit"%>
+<% end %>

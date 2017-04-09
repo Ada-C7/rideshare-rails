@@ -1,0 +1,57 @@
+<% @passenger_content = true %>
+<% @trip_content = true %>
+<% @driver_content = true %>
+
+<% content_for :drivers do %>
+
+     <section class="yield">
+          <h1 class="title"> <%= @driver.name %> </h1>
+          <ul class="list">
+               <li> <span> Driver Name: </span> <%= @driver.name %> </li>
+               <li> <span> Driver VIN: </span> <%= @driver.vin %> </li>
+               <li> <span> Driver Status: </span> <%= @driver.status ? "Available" : "Not Available"%> </li>
+               <% if @driver.trips.average("rating") %>
+                  <li><span> Average Rating: </span> <%= @driver.trips.average("rating").round(2) %></li>
+               <% end %>
+               <% if @driver.trips.length == 0 %>
+                   <li><span>Driver has no trips to display.</span></li>
+               <% else %>
+                  <li><span>Total earned:</span> $<%= @driver.earnings %></li>
+               <% end %>
+               <li><%= button_to "Edit", edit_driver_path, method: :get %></li>
+               <li>
+                 <%=
+                      button_to "Delete", driver_path, method: :delete,
+                      data: { confirm: "Are you confident you'd like to delete this driver?" },
+                      method: :delete
+                 %>
+               </li>
+          </ul>
+     </section>
+<% end %>
+
+<% content_for :trips do %>
+     <section class="yield">
+          <h1 class="title"><%= @driver.name %>'s <br>Trips</h1>
+          <ul class="list">
+               <% @driver.trips.each do |trip| %>
+                    <li>
+                         <span> Trip #<span> <%= trip.id %> <br>
+                         <%= link_to trip.date.strftime("%e %B %Y, %l:%M%p"), trip_path(trip.id) %>
+                    </li>
+               <% end %>
+          </ul>
+     </section>
+<% end %>
+
+
+<% content_for :passengers do %>
+     <section class="yield">
+          <h1 class="title"><%= @driver.name %>'s <br>Passengers</h1>
+          <ul class="list">
+               <% @driver.trips.each do | trip | %>
+                    <li><%= link_to trip.passenger.name, passenger_path(trip.passenger.id) %></li>
+               <% end %>
+          </ul>
+     </section>
+<% end %>

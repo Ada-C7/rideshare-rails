@@ -1,0 +1,22 @@
+<ul>
+  <% @driver.errors.each do |field, msg| %>
+    <li>
+      <%= msg %>
+    </li>
+    <% end %>
+</ul>
+
+<%= form_for @driver do |f| %>
+
+     <%= f.label :name, class: "hidden" %>
+     <%= f.text_field :name, placeholder: "Name" %>
+
+     <%= f.label :vin, class: "hidden" %>
+     <%= f.text_field :vin, placeholder: "Enter VIN" %>
+
+     <%= f.label :status, class: "hidden" %>
+     <%= f.select :status, [["Available", true], ["Not Available", false]], prompt: "Please Select" %>
+
+     <%= f.submit action_name, class: "driver-submit"%>
+
+<% end %>

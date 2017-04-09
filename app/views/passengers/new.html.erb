@@ -1,0 +1,8 @@
+<% @passenger_content = true %>
+
+<% content_for :passengers do %>
+  <section class="yield">
+    <h2 class="title">Add New Passenger</h2>
+    <%= render partial: "form", locals: { action_name: "Add New Passenger"} %>
+  </section>
+<% end %>

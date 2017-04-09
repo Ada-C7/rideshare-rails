@@ -1,0 +1,70 @@
+<% @driver_content = true %>
+<% @passenger_content = true %>
+<% @trip_content = true %>
+
+<% content_for :trips do %>
+   <section class="yield">
+      <h1 class="title">Trip <%= "#{@trip.id}" %></h1>
+      <ul class="list">
+        <li><span>Date:</span> <%= @trip.date.strftime("%e %B %Y, %l:%M%p") %> </li>
+        <li><span>Cost:</span> $<%= sprintf('%.2f', @trip.cost) %> </li>
+        <li><span>Rating:</span> <%= @trip.rating == nil || @trip.rating == "" ? "Not yet rated." : @trip.rating %> </li>
+        <li><span>Driver:</span> <%= @trip.driver.name %> </li>
+        <li><span>Passenger:</span> <%= @trip.passenger.name %> </li>
+        <li><%= button_to "Edit", edit_trip_path, method: :get %></li>
+        <li>
+          <%=
+             button_to "Delete", trip_path, method: :delete,
+             data: { confirm: "Are you confident you'd like to delete this trip?" },
+             method: :delete
+          %>
+        </li>
+      </ul>
+   </section>
+<% end %>
+
+<% content_for :passengers do %>
+   <section class="yield">
+      <h1 class="title"><%= @trip.passenger.name %></h1>
+      <ul class="list">
+           <li><span> Passenger Name: </span> <%= @trip.passenger.name %></li>
+           <li><span> Phone Number: </span> <%= @trip.passenger.phone %></li>
+           <li><span> Total Amount Charged: </span> $<%= sprintf('%.2f', @trip.passenger.trips.sum("cost")) %>
+           <li><%= button_to "Edit", edit_passenger_path(@trip.passenger.id), method: :get %></li>
+           <li>
+             <%=
+                button_to "Delete", driver_path, method: :delete,
+                data: { confirm: "Are you confident you'd like to delete this trip?" },
+                method: :delete
+             %>
+           </li>
+      </ul>
+   </section>
+<% end %>
+
+<% content_for :drivers do %>
+   <section class="yield">
+        <h1 class="title"> <%= @trip.driver.name %> </h1>
+        <ul class="list">
+             <li> <span> Driver Name: </span> <%= @trip.driver.name %> </li>
+             <li> <span> Driver VIN: </span> <%= @trip.driver.vin %> </li>
+             <li> <span> Driver Status: </span> <%= @trip.driver.status ? "Available" : "Not Available"%> </li>
+             <% if @trip.driver.trips.average("rating") %>
+                <li><span> Average Rating: </span> <%= @trip.driver.trips.average("rating").round(2) %></li>
+             <% end %>
+             <% if @trip.driver.trips.length == 0 %>
+                <li><span>Driver has no trips to display.</span></li>
+             <% else %>
+                <li><span>Total earned:</span> $<%= @trip.driver.earnings %></li>
+             <% end %>
+             <li><%= button_to "Edit", edit_driver_path(@trip.driver.id), method: :get %> </li>
+             <li>
+               <%=
+                    button_to "Delete", driver_path, method: :delete,
+                    data: { confirm: "Are you confident you'd like to delete this driver?" },
+                    method: :delete
+               %>
+             </li>
+        </ul>
+   </section>
+<% end %>
