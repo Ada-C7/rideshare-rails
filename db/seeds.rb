@@ -18,6 +18,7 @@ temp_csv.each do |driver|
   driver_hash = Hash.new
   driver_hash[:name] = driver[1]
   driver_hash[:vin] = driver[2]
+  driver_hash[:active] = true
 
 drivers << driver_hash
 end
@@ -39,6 +40,7 @@ temp_csv.each do |rider|
   rider_hash = Hash.new
   rider_hash[:name] = rider[1]
   rider_hash[:phone] = rider[2]
+  rider_hash[:active] = true
 riders << rider_hash
 end
 
