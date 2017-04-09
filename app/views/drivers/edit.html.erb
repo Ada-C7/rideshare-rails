@@ -1,0 +1,9 @@
+<h1>Meet our Drivers</h1>
+<header>
+<!-- render partial: header  -->
+</header>
+
+
+     <%=render partial: 'form', locals:{submit_text: "Edit"}%>
+     
+  <%=link_to "Return to Driver: #{@driver.id}",driver_path(@driver.id)%>

@@ -1,0 +1,14 @@
+<section>
+
+ <%= form_for @rider do |f| %>
+
+ Name: <%= f.text_field :name%>
+ Phone Number: <%= f.text_field :phone_num %>
+ <%= f.submit value: "#{submit_text}"%>
+<br>
+<br>
+
+ <% end %>
+
+ <%=link_to "Return Home", riders_path%>
+</section>

@@ -1,0 +1,14 @@
+<h1>Meet our Drivers</h1>
+<header>
+  <!-- render partial: header  -->
+</header>
+
+<table  >
+
+
+  <% @drivers.each do |item| %>
+  <%= render partial: 'driver_summary', locals:{item:item}%>
+  <% end %>
+
+
+</table>
