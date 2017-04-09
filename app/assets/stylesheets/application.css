@@ -115,3 +115,21 @@ a {
   list-style: none;
   padding: 1%;
 }
+
+.main {
+  width: 500px;
+  margin: 30px auto;
+}
+
+.main h1, .main p  {
+  color: white;
+  background-color: black;
+}
+
+.main p {
+font-size: 0.8em;
+padding-bottom: 10px;}
+
+.main:first-of-type {
+  margin-top: 5%;
+}
