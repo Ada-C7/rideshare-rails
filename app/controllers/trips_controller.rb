@@ -14,6 +14,12 @@ class TripsController < ApplicationController
     trip[:driver_id] = Driver.find_driver
     trip[:cost] = rand((1.01)..(50.99)).round(2)
 
+    if last_trip == nil
+      if trip.save
+      redirect_to edit_rating_path(trip.id)
+      end
+    end
+
     if last_trip.rating == 0
       redirect_to edit_rating_path(last_trip.id)
     elsif trip.save
