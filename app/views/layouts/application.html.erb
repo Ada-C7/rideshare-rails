@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RideshareRails</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Quicksand" rel="stylesheet">
+
+  </head>
+
+
+    <header>
+      <%= image_tag "carmmunity-logo-2.png" %>
+    <nav>
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "New User", new_user_path %></li>
+        <li><%= link_to "New Driver", new_driver_path %></li>
+        <li><%= link_to "All Users", users_path %></li>
+        <li><%= link_to "All Drivers", drivers_path %></li>
+      </ul>
+    </nav>
+  </header>
+  <body>
+      <%= yield %>
+  </body>
+</html>

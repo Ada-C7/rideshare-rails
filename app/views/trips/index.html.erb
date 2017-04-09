@@ -1,0 +1,8 @@
+<h1>All trips</h1>
+
+totes neccessary
+
+
+  <% Trip.all.each do |trip| %>
+  <p> Trip id: <%= link_to trip.id, trip_path(trip.id)%>  Driver: <%= link_to trip.driver.name, driver_path(trip.driver) %> User: <%= link_to trip.user.name, user_path(trip.user) %></p>
+  <% end %>

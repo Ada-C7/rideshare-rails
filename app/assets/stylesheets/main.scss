@@ -1,0 +1,77 @@
+$header_font: 'Bungee Shade', cursive;
+$body_font: 'Quicksand', sans-serif;
+
+@mixin icon($margin) {
+  margin-left: $margin;
+  float:left;
+  height:200px;
+  width:200px;
+  display:inline;
+  padding:20px;
+  float:clear;
+}
+
+@mixin button {
+  background: #428BCA;
+    color: #fff;
+    border-radius: 15px;
+    font-size: 20px;
+    height: 60px;
+    width: 150px;
+    line-height: 60px;
+    padding: 1%;
+    margin: 15px 15px;
+    text-align: center;
+    border: 0;
+    transition: all 0.3s ease 0s;
+}
+
+
+header {
+  padding:3%;
+  img {
+    display:block;
+    margin:auto;
+  }
+  h1 {
+    text-align:center;
+  }
+  ul {
+    text-align:center;
+    li {
+      list-style: none;
+      display:inline;
+    }
+  }
+  a {
+    @include button;
+    text-decoration: none;
+    &:hover {
+      background: darken(#428BCA, 10%);
+
+    }
+  }
+}
+
+h1 {
+  font-family: $header_font;
+}
+
+body {
+  font-family: $body_font;
+}
+
+.index1 {
+  text-align:center;
+  img {
+    @include icon(400px)
+  }
+}
+
+.index2 {
+  text-align:center;
+  img {
+    @include icon(10px);
+  }
+
+}

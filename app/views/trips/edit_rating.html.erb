@@ -1,0 +1,19 @@
+<h1> Please Rate Your Trip Before Making a New Trip</h1>
+
+<ul class="errors">
+  <% if @trip.errors.any? %>
+    <% @trip.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+      <% end %>
+  <% end %>
+</ul>
+
+<%= form_for @trip, method: :patch do |f| %>
+
+  <%= f.label :rating %>
+  <%= f.select :rating, options_for_select(1..5) %>
+
+  <%= f.submit action_name %>
+<% end %>
