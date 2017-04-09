@@ -1,9 +1,10 @@
 <h1>Driver Details</h1>
 
-<ul>
+<ul class="profile">
   <li>Name: <%= @result_driver.name %></li>
   <li>VIN: <%= @result_driver.vin %></li>
   <li>Total Earned: <%= @result_driver.total_cost %></li>
+  <li>Average Rating: <%= @result_driver.average_rating %></li>
   <li>Available:
     <% if @result_driver.available %>
         YES
@@ -19,16 +20,23 @@
   </li>
 </ul>
 
-<ul>
+<ul class="list">
     <% @result_driver.trips.each do |trip| %>
       <li>Trip ID: <%= link_to trip.id, trip_path(trip.id) %>
       Passenger: <%= link_to trip.passenger.name, passenger_path(trip.passenger.id) %>
       Cost: $ <%= (trip.cost / 100.0).round(2) %>
-      Rating: <%= trip.rating %>
+      Rating:
+        <%if trip.rating == 0%>
+        <%= "Not Rated" %>
+        <% else %>
+        <%= trip.rating %>
+        <% end %>
       </li>
     <% end %>
 </ul>
 
-<h2><%= link_to "All Drivers", drivers_path %></h2>
-<h2><%= link_to "Edit", edit_driver_path(@result_driver.id)%></h2>
-<h2><%= link_to "Delete", driver_path(@result_driver.id), data: { confirm: "Are you sure you want to delete this driver?" }, method: :delete %></h2>
+<div class="options">
+  <h4><%= link_to "All Drivers", drivers_path %></h4>
+  <h4><%= link_to "Edit", edit_driver_path(@result_driver.id)%></h4>
+  <h4><%= link_to "Delete", driver_path(@result_driver.id), data: { confirm: "Are you sure you want to delete this driver?" }, method: :delete %></h4>
+</div>

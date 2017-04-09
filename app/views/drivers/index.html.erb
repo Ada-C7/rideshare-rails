@@ -1,8 +1,8 @@
-<h1>List of Drivers</h1>
+<h1 class="header">List of Drivers</h1>
 
-<ul>
+<ul class="list">
   <% @drivers.each do |driver| %>
-    <li>
+    <li class="list">
       <%= link_to driver.name, driver_path(driver.id) %>
     </li>
   <% end %>
