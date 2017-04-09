@@ -1,14 +1,16 @@
 <h1><%= "#{@driver.name}"%></h1>
 
 <h3>VIN: <%= @driver.vin %></h3>
+
 <h3>ID: <%= @driver.id %></h3>
 
-<h3>Average rating:
-<%= '%.2f' % @driver.ave_rating %>
-</h3>
+<h3>Total earnings: $<%= '%.2f' % (@driver.total_money/100.0) %></h3>
 
+<h3><%=  display_ave_rating %></h3>
 
 <%= button_to "Update driver's information", edit_driver_path, method: :get %>
 
 <%= button_to "Delete driver", driver_path(@driver), method: :delete,
   data: {confirm: "Are you sure you want to delete #{@driver.name}?"} %>
+
+<%= render partial: "trips/trips-list", locals: {person: @driver} %>
