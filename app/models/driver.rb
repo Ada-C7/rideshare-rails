@@ -11,9 +11,13 @@ class Driver < ApplicationRecord
     total_rating = 0.0
     trips.each do |trip|
       trip_count += 1
-      total_rating += trip.rating
+      if trip.rating != nil
+        total_rating += trip.rating
+        return (total_rating/trip_count).round(2)
+      else
+        return total_rating
+      end
     end
-    return (total_rating/trip_count).round(2)
   end
 
   def total_earnings
@@ -34,5 +38,4 @@ class Driver < ApplicationRecord
     end
     return qual_drivers.sample(1)
   end
-
 end

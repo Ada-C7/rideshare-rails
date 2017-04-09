@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  get "/riders/:id/trips/new", to: 'trips#create', as: "new_rider_trip"
+  root "trips#index" #root defaults to first one
+
+  get "/riders/:id/trips/new", to: 'trips#new', as: "new_rider_trip"
 
   post "/riders/:id/trips", to: 'trips#create'
 
@@ -8,10 +10,7 @@ Rails.application.routes.draw do
 
   resources :riders
 
-  root "trips#index" #root defaults to first one
   resources :trips
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-
 
 end

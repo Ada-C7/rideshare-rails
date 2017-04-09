@@ -3,19 +3,19 @@
 <%= form_for @trip do |f| %>
   <%= f.label :driver_id, 'Driver' %>
   <% driver = Driver.qual_driver[0] %>
-  <%= f.select :driver_id, options_for_select([driver.id, driver.name]) %>
+  <%= f.select :driver_id, [ [driver.id, driver.id] ] %>
 
   <%= f.label :date %>
   <%= f.date_field :date, :value => Date.current %>
 
   <%= f.label :rider_id %>
-  <%= f.select :rider_id, [@rider.name, @rider.id]%>
+  <%= f.select :rider_id, [ [@rider.name, @rider.id] ]%>
 
   <% f.label :rating %>
-  <% f.number_field :rating, placeholder: nil %>
+  <% f.number_field :rating, :value => 0 %>
 
-  <% f.label :cost %>
-  <% f.number_field :cost, placeholder: 20 %>
+  <%= f.label :cost %>
+  <%= f.select :cost, [ [0, 0] ] %>
 
   <%= f.submit %>
 
