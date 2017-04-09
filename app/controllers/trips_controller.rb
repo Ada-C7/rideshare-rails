@@ -1,21 +1,16 @@
 class TripsController < ApplicationController
 
-
   def new
      @trip = Trip.new
   end
 
   def create
-    #message if driver = nil and no driver available
+    #message if driver = nil (no driver available)
     trip_params = generate_params(params[:passenger_id])
-    puts ">>>>> DPR"
-    puts trip_params.to_hash
-    trip = Trip.create(trip_params) if trip_params[:driver] != nil
-    puts trip.errors.messages
+    Trip.create(trip_params) if trip_params[:driver] != nil
 
     redirect_to passenger_path(params[:passenger_id])
   end
-
 
   def show
     @trip = Trip.find(params[:id])
@@ -28,6 +23,8 @@ class TripsController < ApplicationController
 
   def update
     @trip = Trip.find(params[:id])
+
+    cost_to_cents if params[:trip][:cost] != ""
     @trip.assign_attributes(trip_params)
 
     if @trip.save
@@ -37,7 +34,6 @@ class TripsController < ApplicationController
     end
   end
 
-  # strong params?
   def update_rating
     trip = Trip.find(params[:id])
     trip.update(params.permit(:rating))
@@ -63,5 +59,9 @@ class TripsController < ApplicationController
       date: Date.today,
       cost: rand(1..5000)
     }
+  end
+
+  def cost_to_cents
+      params[:trip][:cost] = params[:trip][:cost].to_f * 100
   end
 end

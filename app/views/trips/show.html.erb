@@ -1,13 +1,11 @@
 <h1><%= "Trip ID: #{@trip.id}"%></h1>
 
 <ul>
-
-
-<li>Passenger: <%= link_to @trip.passenger.name, passenger_path(@trip.passenger)%></li>
-<li>Driver: <%= link_to @trip.driver.name, driver_path(@trip.driver)%></li>
-<li><%= "Date: #{@trip.date.strftime('%m %d %Y')}"%></li>
-<li><%= "Cost: $" %><%= render partial: "cost", locals: {trip: @trip} %></li>
-<%= render partial: "rating", locals: {trip: @trip} %>
+  <li>Passenger: <%= link_to @trip.passenger.name, passenger_path(@trip.passenger)%></li>
+  <li>Driver: <%= link_to @trip.driver.name, driver_path(@trip.driver)%></li>
+  <li><%= "Date: #{@trip.date.strftime('%m %d %Y')}"%></li>
+  <li>Cost: $<%= render partial: "cost", locals: {trip: @trip} %></li>
+  <%= render partial: "rating", locals: {trip: @trip} %>
 </ul>
 
 <%= button_to "Update trip infomration", edit_trip_path(@trip),
