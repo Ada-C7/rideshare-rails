@@ -15,6 +15,8 @@
                <% end %>
                <% if @driver.trips.length == 0 %>
                    <li><span>Driver has no trips to display.</span></li>
+               <% else %>
+                  <li><span>Total earned:</span> $<%= @driver.earnings %></li>
                <% end %>
                <li><%= button_to "Edit", edit_driver_path, method: :get %></li>
                <li>

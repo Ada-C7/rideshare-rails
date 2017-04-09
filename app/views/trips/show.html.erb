@@ -7,7 +7,7 @@
       <h1 class="title">Trip <%= "#{@trip.id}" %></h1>
       <ul class="list">
         <li><span>Date:</span> <%= @trip.date.strftime("%e %B %Y, %l:%M%p") %> </li>
-        <li><span>Cost:</span> <%= @trip.cost %> </li>
+        <li><span>Cost:</span> $<%= sprintf('%.2f', @trip.cost) %> </li>
         <li><span>Rating:</span> <%= @trip.rating == nil || @trip.rating == "" ? "Not yet rated." : @trip.rating %> </li>
         <li><span>Driver:</span> <%= @trip.driver.name %> </li>
         <li><span>Passenger:</span> <%= @trip.passenger.name %> </li>
@@ -29,7 +29,7 @@
       <ul class="list">
            <li><span> Passenger Name: </span> <%= @trip.passenger.name %></li>
            <li><span> Phone Number: </span> <%= @trip.passenger.phone %></li>
-           <li><span> Total Amount Charged: </span> $<%= @trip.passenger.trips.sum("cost") %>
+           <li><span> Total Amount Charged: </span> $<%= sprintf('%.2f', @trip.passenger.trips.sum("cost")) %>
            <li><%= button_to "Edit", edit_passenger_path(@trip.passenger.id), method: :get %></li>
            <li>
              <%=
@@ -54,6 +54,8 @@
              <% end %>
              <% if @trip.driver.trips.length == 0 %>
                 <li><span>Driver has no trips to display.</span></li>
+             <% else %>
+                <li><span>Total earned:</span> $<%= @trip.driver.earnings %></li>
              <% end %>
              <li><%= button_to "Edit", edit_driver_path(@trip.driver.id), method: :get %> </li>
              <li>

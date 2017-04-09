@@ -9,7 +9,7 @@
                <li><span> Passenger Name: </span> <%= @passenger.name %></li>
                <li><span> Phone Number: </span> <%= @passenger.phone %></li>
                <% if @passenger.trips.length > 0 %>
-                    <li><span> Total Amount Charged: </span> $<%= @passenger.sum_cost %></li>
+                    <li><span> Total Amount Charged: </span> $<%= sprintf('%.2f', @passenger.sum_cost) %></li>
                <% else %>
                     <li><span>Passenger has no trips to display.</span></li>
                <% end %>
