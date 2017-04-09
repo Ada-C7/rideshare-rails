@@ -46,9 +46,12 @@ class TripsController < ApplicationController
   end
 
   def destroy
-    Trip.find(params[:id]).destroy
-    # where to redirect? passenger page?
-    # redirect_to trips_path
+    trip = Trip.find(params[:id])
+    this_passenger = trip.passenger
+    trip.destroy
+    redirect_to passenger_path(this_passenger)
+    # redirects to show page of the trip's passenger
+
   end
 
   private
