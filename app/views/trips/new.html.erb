@@ -1,7 +1,7 @@
 <main>
 
 
-<h3>New Trip. Please confirm your trip details before hitting submit.</h3>
+<h3>New trip for <%= @rider.name %>. Please confirm trip details.</h3>
 <br>
 <%= form_for @trip do |f| %>
   <%= f.label :driver_id, 'Driver' %>
@@ -21,9 +21,10 @@
   <%= f.select :cost, [ [0, 0] ] %>
 
   <%= f.submit %>
+  <h4><%= link_to "{Cancel this Trip}", rider_path(@rider.id), data: { confirm: "Are you sure you want to cancel this trip?"}, method: :get %>
 
 <% end %>
 
-<h4><%= link_to "Rideshare home", trips_path %></h4>
+
 
 </main>

@@ -6,6 +6,18 @@ class Driver < ApplicationRecord
   validates :vin, presence: true,
                   length: { is: 17 }, allow_blank: false
 
+  def self.active_drivers
+    @active_drivers if defined? @active_drivers
+    @active_drivers = Array.new
+    Driver.all.each do |driver|
+      if driver.active
+        @active_drivers << driver
+      end
+    end
+    return @active_drivers
+    
+  end
+
   def average_rating
     trip_count = 0
     total_rating = 0.0

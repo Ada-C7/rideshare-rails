@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   post "/riders/:id/trips", to: 'trips#create'
 
+  patch "drivers/:id", to: "drivers#update_active", as: "update_active_driver"
+
   resources :drivers
 
   resources :riders

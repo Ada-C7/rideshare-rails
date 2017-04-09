@@ -1,6 +1,6 @@
 class DriversController < ApplicationController
   def index
-    @drivers = Driver.all
+    @drivers = Driver.active_drivers
   end
 
   def new
@@ -40,10 +40,20 @@ class DriversController < ApplicationController
 
   end
 
+
+  def update_active
+    @driver = Driver.find params[:id]
+    @driver.active = false
+
+    if @driver.save
+      redirect_to drivers_path
+    end
+  end
+
   def destroy
-    
+
     Driver.destroy(params[:id])
-    redirect to drivers_path
+    redirect
 
   end
 
