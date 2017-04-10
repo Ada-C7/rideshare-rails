@@ -14,8 +14,4 @@ class Trip < ApplicationRecord
     rand_driver.sample
   end
 
-  def today_date
-    date = Date.today
-    return date
-  end
 end

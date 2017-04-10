@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   post 'riders/:id/create_trip', to: 'trips#create', as: 'create_trip'
 
+
   post 'drivers/:id', to: 'drivers#change_availability', as: 'change_driver_status'
 
   # post 'drivers/:id', to: 'drivers#available', as: 'available_driver'

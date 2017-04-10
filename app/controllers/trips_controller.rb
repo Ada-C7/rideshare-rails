@@ -34,7 +34,7 @@ class TripsController < ApplicationController
     end
     @trip.rider_id = params[:id]
     @trip.cost = (rand(0.00...100.00)).round(2)
-    @trip.date = @trip.today_date
+    @trip.date = Date.today #create method for giving today's date
 
     if @trip.save
       redirect_to edit_trip_path(@trip.id)
