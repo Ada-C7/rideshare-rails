@@ -7,6 +7,8 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
+  <body>
   <header class="nav">
     <ul>
       <li>
@@ -30,8 +32,14 @@
     </ul>
   </header>
 
-  <body>
+  <main>
+
     <%= yield %>
-  </body>
+
+  </main>
+  
   <footer>® 2017 by Lynn Trickey and Haby Randall</footer>
+
+  </body>
+
 </html>

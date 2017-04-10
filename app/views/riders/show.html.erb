@@ -7,9 +7,9 @@
   <h2>Phone: <%= @rider.phone_num %></h2>
   <h2>Total cost: <%= @rider.total_cost %></h2>
 
-  <%= link_to "START NEW TRIP!", create_trip_path, method: :post  %>
-  <%= link_to "EDIT TRIP", edit_rider_path(@rider.id) %>
-  <%= link_to "DELETE TRIP", rider_path(@rider.id),
+  <%= link_to "START NEW TRIP!", create_trip_path, method: :post  %> </br></br>
+  <%= link_to "EDIT RIDER", edit_rider_path(@rider.id) %>
+  <%= link_to "DELETE RIDER", rider_path(@rider.id),
   data: { confirm: "Are you sure you want to delete this rider?" },
   method: :delete %>
 
@@ -30,6 +30,7 @@
         <td> <%= trip.rating %> </td>
       </tr>
       <% end %>
+    </table>
   </div>
 
   </section>
