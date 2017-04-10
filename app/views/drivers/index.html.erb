@@ -1,0 +1,13 @@
+<article class="index">
+
+  <h1>All Drivers</h1>
+
+  <div class="scroll">
+    <ul>
+      <% @drivers.each do |driver| %>
+        <li> <%= link_to driver.name, driver_path(driver.id) %> </li>
+      <% end %>
+    </ul>
+  </div>
+
+</article>

@@ -1,0 +1,47 @@
+<article class="show">
+  <h1>Rider Details</h1>
+
+
+  <h2>Name: <%= link_to @rider.name, rider_path(@rider.id) %>
+  </h2>
+  <h2>Phone: <%= @rider.phone_num %></h2>
+  <h2>Total cost: <%= @rider.total_cost %></h2>
+
+  <%= link_to "START NEW TRIP!", create_trip_path, method: :post  %> </br></br>
+  <%= link_to "EDIT RIDER", edit_rider_path(@rider.id) %>
+  <%= link_to "DELETE RIDER", rider_path(@rider.id),
+  data: { confirm: "Are you sure you want to delete this rider?" },
+  method: :delete %>
+
+  <h4>Past Trips</h4>
+  <div class="scroll">
+    <table style="width:100%">
+      <tr>
+        <th>Date</th>
+        <th>Driver Name</th>
+        <th>Cost</th>
+        <th>Rating</th>
+      </tr>
+      <% @rider.trips.each do |trip| %>
+      <tr>
+        <td> <%= link_to trip.date, trip_path(trip.id) %> </td>
+        <td> <%= trip.driver.name %> </td>
+        <td> $<%= trip.cost %> </td>
+        <td> <%= trip.rating %> </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+
+  </section>
+
+
+
+  <%# update create method to automatically assign price for trip, and automatically assign rider and driver
+  <%#form_for @trip do |f|
+  <%#f.label :rating
+  <%#f.select :rating, [1, 2, 3, 4, 5] %>
+  <%#f.submit %>
+  <%#end %>
+
+</article>

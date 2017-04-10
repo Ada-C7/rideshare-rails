@@ -1,0 +1,24 @@
+<article class="show">
+  <h1>Trip Details</h1>
+
+  <h2>
+    Date: <%= @result_trip.date %>
+  </h2>
+  <h2>
+    Driver Name: <%= link_to @result_trip.driver.name, driver_path(@result_trip.driver_id) %>
+  </h2>
+  <h2>
+    Rider Name: <%= link_to @result_trip.rider.name, rider_path(@result_trip.rider_id) %>
+  </h2>
+  <h2>
+    Rating: <%= @result_trip.rating %>
+  </h2>
+
+  </p>
+
+  <%= link_to "Edit", edit_trip_path(@result_trip.id) %>
+  <%= link_to "Delete", trip_path(@result_trip.id),
+    data: { confirm: "Are you sure you want to delete this trip?" },
+    method: :delete
+  %>
+</article>

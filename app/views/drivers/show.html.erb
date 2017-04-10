@@ -1,0 +1,48 @@
+<article class="show">
+  <h1>Driver Details</h1>
+
+  <h1>
+    <%#
+    #if @result_driver.availability == false %>
+    <%# link_to "GO ONLINE!", available_driver_path(@result_driver.id), data: { confirm: "Are you sure you want to go online?" }, method: :available %>
+    <%# elsif @result_driver.availability == true %>
+
+    <%# end %>
+    <%# raise %>
+  </h1>
+
+  <h2> Name: <%= @result_driver.name %> </h2>
+  <h2> VIN: <%= @result_driver.vin %> </h2>
+  <h2>Available?
+    <%= @result_driver.availability %> </h2>
+
+    <h2><%= link_to "Change Status!", change_driver_status_path(@result_driver.id), data: { confirm: "Are you sure you want to change your availablility?" }, method: :change_availability %> </h2>
+
+    <h2> This Driver's Average Rating: <%= @result_driver.avg_rating %> </h2>
+    <h2> Total Earnings: $<%= @result_driver.total_earnings %> </h2>
+    <%#make a new route for availability on the driver show page, for toggling availability, new controller action to go with it %>
+    <%= link_to "Edit", edit_driver_path(@result_driver.id) %>
+    <%= link_to "Delete", driver_path(@result_driver.id), data: { confirm: "Are you sure you want to delete" }, method: :delete %>
+
+    <h4>Past Trips</h4>
+    <section class="scroll">
+      <table style="width:100%">
+        <tr>
+          <th>Date</th>
+          <th>Rider Name</th>
+          <th>Cost</th>
+          <th>Rating</th>
+        </tr>
+        <% @result_driver.trips.each do |trip| %>
+        <tr>
+          <td> <%= link_to trip.date, trip_path(trip.id) %> </td>
+          <td> <%= trip.rider.name %> </td>
+          <td> <%= trip.cost %> </td>
+          <td> <%= trip.rating %> </td>
+        </tr>
+        <% end %>
+      </table>
+    </section>
+
+
+  </article>

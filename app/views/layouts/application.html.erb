@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RideshareRails</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header class="nav">
+    <ul>
+      <li>
+        <%= link_to "Home", root_path %>
+      </li>
+      <li>
+        <%= link_to "All Drivers", drivers_path %>
+      </li>
+      <li>
+        <%= link_to "All Riders", riders_path %>
+      </li>
+      <li>
+        <%= link_to "All Trips", trips_path %>
+      </li>
+      <li>
+        <%= link_to "New Driver", new_driver_path %>
+      </li>
+      <li>
+        <%= link_to "New Rider", new_rider_path %>
+      </li>
+    </ul>
+  </header>
+
+  <main>
+
+    <%= yield %>
+
+  </main>
+  
+  <footer>® 2017 by Lynn Trickey and Haby Randall</footer>
+
+  </body>
+
+</html>
