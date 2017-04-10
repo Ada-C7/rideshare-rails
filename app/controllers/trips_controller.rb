@@ -14,9 +14,6 @@ class TripsController < ApplicationController
 
   def update
     trip = Trip.find(params[:id])
-    trip.driver_id = trip_params[:driver_id]
-    trip.rider_id = trip_params[:rider_id]
-    trip.date = trip_params[:date]
     trip.rating = trip_params[:rating]
 
     if trip.save
@@ -35,10 +32,11 @@ class TripsController < ApplicationController
     end
     @trip.driver_id = @trip.rand_driver.id
     @trip.rider_id = params[:id]
+    @trip.cost = (rand(0.00...100.00)).round(2)
     @trip.date = "1/1/17" #create method for giving today's date
 
     if @trip.save
-      redirect_to trip_path(@trip.id)
+      redirect_to edit_trip_path(@trip.id)
     end
   end
 

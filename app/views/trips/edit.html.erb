@@ -1,3 +1,18 @@
-<h1>Edit a trip</h1>
+<article class="edit">
+  <h1>Edit a trip</h1>
 
-<%= render partial: "form", locals: { action_name: "Edit"} %>
+  <h2>Date: <%= @trip.date %> </h2>
+  <h2>Driver: <%= @trip.driver.name %></h2>
+  <h2>Rider: <%= @trip.rider.name %></h2>
+  <h2>Cost: <%= @trip.cost %> </h2>
+
+  <%= form_for @trip do |f| %>
+
+    <%= f.label :rating, "Please Choose a Rating for this Trip" %>
+    <%= f.select :rating, [1, 2, 3, 4, 5] %>
+
+    <%= f.submit "Save Trip Details" %>
+
+  <% end %>
+
+</article>
