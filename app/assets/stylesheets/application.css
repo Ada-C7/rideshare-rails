@@ -27,10 +27,20 @@ body {
   margin: 0 10%;
 }
 
-nav ul {
+#banner a {
+  background: none;
+  color: black;
+  font-size: 2.0em;
+}
+
+.header {
+  padding: 3%;
+}
+
+/*nav ul {
   margin: 0 1%;
   padding: 0;
-}
+}*/
 
 nav li {
   display: inline;
@@ -52,13 +62,12 @@ nav a {
   background-color: lightgray;
 }
 
-#banner a {
-  background: none;
-  color: black;
-  font-size: 2.0em;
+.list {
+  max-height: 450px;
+  overflow: scroll;
 }
 
-.list li {
+.list li, .trip-list {
   list-style: none;
   background-color: black;
   padding: 10px;
@@ -66,27 +75,18 @@ nav a {
   color: white;
 }
 
+.trip-list li {
+  display: inline-block;
+  padding: 0 10px;
+}
 
-.profile li {
+.profile li, .form li {
   list-style: none;
-  color: black;
   padding: 2px;
 }
 
-.profile {
-  padding: 20px 10px;
-  background-color: silver;
-  margin: auto;
-}
-
-.header {
-  background-color: white;
-  margin: auto;
-  padding: 3%;
-}
-
-.options {
-  padding: 20px 10px 100px 10px;
+.profile, .options {
+  padding: 2%;
   background-color: silver;
   margin: auto;
   color: black;
@@ -109,25 +109,22 @@ a {
   text-decoration: none;
 }
 
-.form li {
-  list-style: none;
-  padding: 1%;
-}
-
 .main {
-  width: 500px;
-  margin: 30px auto;
-}
-
-.main h1, .main p  {
+  width: 45%;
+  margin: 15% 0;
+  padding: 10% 0;
   color: white;
   background-color: black;
+  display: inline-block;
 }
 
-.main p {
-font-size: 0.8em;
-padding-bottom: 10px;}
+.main a {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.5em;
+  font-weight: lighter;
+}
 
-.main:first-of-type {
-  margin-top: 5%;
+.main:hover, .main a:hover {
+  color: black;
+  background-color: lightgrey;
 }

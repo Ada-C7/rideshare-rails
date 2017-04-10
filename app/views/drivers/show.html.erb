@@ -20,12 +20,13 @@
   </li>
 </ul>
 
-<ul class="list">
-    <% @result_driver.trips.each do |trip| %>
+<ul>
+  <% @result_driver.trips.each do |trip| %>
+    <div class="trip-list">
+      <li><strong>Trip ID: </strong><%= link_to trip.id, trip_path(trip.id) %></li>
+      <li><strong>Passenger: </strong><%= link_to trip.passenger.name, passenger_path(trip.passenger.id) %></li>
+      <li><strong>Cost: </strong>$ <%= (trip.cost / 100.0).round(2) %></li>
       <li>
-        <strong>Trip ID: </strong><%= link_to trip.id, trip_path(trip.id) %>
-        <strong>Passenger: </strong><%= link_to trip.passenger.name, passenger_path(trip.passenger.id) %>
-        <strong>Cost: </strong>$ <%= (trip.cost / 100.0).round(2) %>
         <strong>Rating: </strong>
           <% if trip.rating == 0%>
           <%= "Not Rated" %>
@@ -33,6 +34,7 @@
           <%= trip.rating %>
           <% end %>
       </li>
+    </div>
     <% end %>
 </ul>
 

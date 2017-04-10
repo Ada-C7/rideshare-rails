@@ -6,11 +6,11 @@
 </ul>
 
 <% @result_passenger.trips.each do |trip| %>
-<ul class="list">
+<ul class="trip-list">
+  <li><strong>Trip ID: </strong><%= link_to trip.id, trip_path(trip.id) %></li>
+  <li><strong>Driver: </strong><%= link_to trip.driver.name, driver_path(trip.driver.id) %></li>
+  <li><strong>Cost: </strong>$ <%= (trip.cost / 100.0).round(2) %></li>
   <li>
-    <strong>Trip ID: </strong><%= link_to trip.id, trip_path(trip.id) %>
-    <strong>Driver: </strong><%= link_to trip.driver.name, driver_path(trip.driver.id) %>
-    <strong>Cost: </strong>$ <%= (trip.cost / 100.0).round(2) %>
     <strong>Rating: </strong>
       <% if trip.rating == 0%>
       <%= "Not Rated" %>
