@@ -1,0 +1,130 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Permanent+Marker');
+
+* {
+  text-align: center;
+  font-family: 'Open Sans', cursive;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0 10%;
+}
+
+#banner a {
+  background: none;
+  color: black;
+  font-size: 2.0em;
+}
+
+.header {
+  padding: 3%;
+}
+
+/*nav ul {
+  margin: 0 1%;
+  padding: 0;
+}*/
+
+nav li {
+  display: inline;
+  position: relative;
+  color: black;
+}
+
+nav a:hover {
+  color: white;
+  background-color: black;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Permanent Marker', cursive;
+  padding: 0 7px;
+  margin: 0 1px;
+  background-color: lightgray;
+}
+
+.list {
+  max-height: 450px;
+  overflow: scroll;
+}
+
+.list li, .trip-list {
+  list-style: none;
+  background-color: black;
+  padding: 10px;
+  margin: 3px auto;
+  color: white;
+}
+
+.trip-list li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.profile li, .form li {
+  list-style: none;
+  padding: 2px;
+}
+
+.profile, .options {
+  padding: 2%;
+  background-color: silver;
+  margin: auto;
+  color: black;
+}
+
+.options * {
+  display: inline;
+  margin: 0 1%;
+  color: black;
+}
+
+#flash {
+  display: block;
+  color: red;
+  margin-top: 20px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.main {
+  width: 45%;
+  margin: 15% 0;
+  padding: 10% 0;
+  color: white;
+  background-color: black;
+  display: inline-block;
+}
+
+.main a {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.5em;
+  font-weight: lighter;
+}
+
+.main:hover, .main a:hover {
+  color: black;
+  background-color: lightgrey;
+}

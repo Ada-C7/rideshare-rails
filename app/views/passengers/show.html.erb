@@ -1,0 +1,33 @@
+<h1 class="header">Passenger Details</h1>
+<ul class="profile">
+  <li><strong>Name: </strong><%= @result_passenger.name %></li>
+  <li><strong>Phone number: </strong><%= @result_passenger.phone_num %></li>
+  <li><strong>Total Spent: </strong><%= @result_passenger.total_cost %></li>
+</ul>
+
+<% @result_passenger.trips.each do |trip| %>
+<ul class="trip-list">
+  <li><strong>Trip ID: </strong><%= link_to trip.id, trip_path(trip.id) %></li>
+  <li><strong>Driver: </strong><%= link_to trip.driver.name, driver_path(trip.driver.id) %></li>
+  <li><strong>Cost: </strong>$ <%= "#{sprintf("%.2f",(trip.cost / 100.0))}" %></li>
+  <li>
+    <strong>Rating: </strong>
+      <% if trip.rating == 0%>
+      <%= "Not Rated" %>
+      <% else %>
+      <%= trip.rating %>
+      <% end %>
+  </li>
+  <li><%= button_to "Update Rating", rating_trips_path(trip.id), method: :patch %></li>
+</ul>
+<% end %>
+
+<div class="options">
+  <h4><%= link_to "All Passengers", passengers_path %></h4>
+  <h4><%= link_to "Edit", edit_passenger_path(@result_passenger.id)%></h4>
+  <h4><%= link_to "Delete", passenger_path(@result_passenger.id), data: { confirm: "Are you sure you want to delete this passenger?" }, method: :delete %></h4>
+  <h4><%= link_to "Make New Trip", new_trip_path(@result_passenger.id), method: :post %></h4>
+  <div id="flash">
+    <%= warning %>
+  </div>
+</div>

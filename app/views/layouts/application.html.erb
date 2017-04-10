@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alena and Bo's Rideshare App</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag %>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <h1 id="banner"><%= link_to "A&B Rideshare", root_path %></h1>
+        <ul>
+          <li><%= link_to "See Drivers", drivers_path %></li>
+          <li><%= link_to "See Passengers", passengers_path %></li>
+          <li><%= link_to "Add New Driver", new_driver_path %></li>
+          <li><%= link_to "Add New Passenger", new_passenger_path %></li>
+        </ul>
+      </nav>
+    </header>
+    <%= yield %>
+  </body>
+</html>
