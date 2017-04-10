@@ -1,0 +1,11 @@
+<main>
+
+
+<h3>Drivers</h3>
+<ul>
+  <% @drivers.each do |driver| %>
+    <li><%=link_to driver.name, driver_path(driver.id) %>   (average rating: <%=driver.average_rating %>)</li>
+  <% end %>
+</ul>
+
+</main>

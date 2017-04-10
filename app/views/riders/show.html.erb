@@ -1,0 +1,25 @@
+<main>
+
+
+<h3>Rider: <%= @rider.name %></h3>
+<p>Phone: <%= @rider.phone %></p>
+<p>Total Charged: $<%= (@rider.total_cost/100.00).to_f.round(2)%></p>
+<!-- NOT CENTS -->
+
+<h4>Trips Taken: <%= @rider.trips.length %> </h4>
+<ul><% @rider.trips.each do |trip| %>
+  <% if trip.rating != nil %>
+  <li><%=link_to "Trip #{trip.id}", trip_path(trip.id) %>: rated <%= trip.rating %> out of 5</li>
+  <% else %>
+  <p class="notice"><%= notice %></p>
+  <li><%=link_to "Trip #{trip.id}", trip_path(trip.id) %>: This trip has not been rated</li>
+  <% end %>
+  <% end %>
+
+</ul>
+
+<h4><%= link_to "{Add a Trip}", new_rider_trip_path %></h4>
+<h4><%= link_to "{Edit this Rider}", edit_rider_path %> </h4>
+<h4><%= link_to "{De-Activate this Rider}", update_active_rider_path, data: { confirm: "This rider profile will no longer be available"}, method: :patch %> </h4>
+
+</main>

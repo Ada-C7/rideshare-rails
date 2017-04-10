@@ -1,0 +1,30 @@
+<main>
+
+
+<h3>New trip for <%= @rider.name %>. Please confirm trip details.</h3>
+<br>
+<%= form_for @trip do |f| %>
+  <%= f.label :driver_id, 'Driver' %>
+  <% qual_driver = Driver.qual_driver[0] %>
+  <%= f.select :driver_id, [ [qual_driver.name, qual_driver.id] ] %>
+
+  <%= f.label :date %>
+  <%= f.date_field :date, :value => Date.current %>
+
+  <%= f.label :rider_id %>
+  <%= f.select :rider_id, [ [@rider.name, @rider.id] ]%>
+
+  <% f.label :rating %>
+  <% f.number_field :rating, :value => 0 %>
+
+  <%= f.label :cost %>
+  <%= f.select :cost, [ [0, 0] ] %>
+
+  <%= f.submit %>
+  <h4><%= link_to "{Cancel this Trip}", rider_path(@rider.id), data: { confirm: "Are you sure you want to cancel this trip?"}, method: :get %>
+
+<% end %>
+
+
+
+</main>

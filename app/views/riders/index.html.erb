@@ -1,0 +1,13 @@
+<main>
+
+
+<h3>All Riders</h3>
+
+<ul>
+<% @riders.each do |rider| %>
+  <li><p> <%= link_to rider.name, rider_path(rider.id) %></p>
+
+<% end %>
+
+</ul>
+</main>
