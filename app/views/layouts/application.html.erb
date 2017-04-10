@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RideshareRails</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+  <div id = "container" >
+
+
+  <header>
+    <h1>RideShare</h1>
+  <nav>
+    <div class="dropdown">
+      <button class="dropbtn"><%= link_to "Home", rideshare_index_path %></button>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Drivers</button>
+      <div class="dropdown-content">
+        <%= link_to "Show all", drivers_path %>
+        <%= link_to "Create New", new_driver_path %>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Passengers</button>
+      <div class="dropdown-content">
+        <%= link_to "Show all", passengers_path %>
+        <%= link_to "Create New", new_passenger_path %>
+      </div>
+    </div>
+  </header>
+
+
+
+  </na>
+
+  <body>
+
+    <%= yield %>
+
+  </body>
+  <div id = "footer">
+  <footer>&copy; 2017 Rana & Kelly</footer>
+  </div>
+</div>
+</html>

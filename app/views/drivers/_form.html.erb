@@ -1,0 +1,19 @@
+<ul>
+  <% @driver.errors.each do |field, message| %>
+  <li>
+    <%= field %> <%= message %>
+  </li>
+  <% end %>
+</ul>
+
+<%= form_for @driver do |f| %>
+
+<%= f.label :name %></br>
+<%= f.text_field :name %></br>
+
+<%= f.label :vin %></br>
+<%= f.text_field :vin %></br>
+
+<%= f.submit action_name %></br>
+
+<% end %>
