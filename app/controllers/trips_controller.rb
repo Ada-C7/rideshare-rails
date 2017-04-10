@@ -35,7 +35,7 @@ class TripsController < ApplicationController
     end
     @trip.driver_id = @trip.rand_driver.id
     @trip.rider_id = params[:id]
-    @trip.date = "1/1/17" #create method for giving today's date
+    @trip.date = Date.today #create method for giving today's date
 
     if @trip.save
       redirect_to trip_path(@trip.id)
