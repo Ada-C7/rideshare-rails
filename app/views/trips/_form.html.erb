@@ -1,0 +1,15 @@
+<%= form_for @trip do |f| %>
+  <%= f.label :driver_id %>
+  <%= f.text_field :driver_id %>
+
+  <%= f.label :rider_id %>
+  <%= f.text_field :rider_id %>
+
+  <%= f.label :cost %>
+  <%= f.text_field :cost %>
+
+  <%= f.label :rating %>
+  <%= f.select :rating, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
+
+  <%= f.submit %>
+<% end %>

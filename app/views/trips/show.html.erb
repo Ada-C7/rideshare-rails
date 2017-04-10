@@ -1,0 +1,11 @@
+<h2>Trip Info</h2>
+<h3>Trip id</h3> <%= @trip.id %>
+<h3>Trip rider</h3> <%= link_to @trip.rider.name, rider_path(@trip.rider_id) %>
+<h3>Trip driver</h3> <%= link_to @trip.driver.name, driver_path(@trip.driver_id) %>
+<h3>Trip cost</h3> <%= @trip.cost %>
+<h3>Trip rating</h3> <%= @trip.rating %>
+
+
+<%= link_to "Edit", edit_trip_path(@trip.id) %>
+<%= link_to "Delete", trip_path(@trip.id), data: { confirm: "Are you sure you want to delete this trip?" }, method: :delete %>
+<%= link_to "Home", root_path %>

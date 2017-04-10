@@ -1,0 +1,25 @@
+<h2>Meet your Driver</h2>
+<h3>Driver id:</h3> <%= @driver.id %>
+<h3>Name:</h3> <%= @driver.name %>
+<h3>Vin:</h3> <%= @driver.vin %>
+<h3>Average Rating:</h3> <%= @driver.av_rating(@driver.id) %>
+<h3>Trips:</h3>
+<table>
+  <tr>
+    <th>Trip ID</th>
+    <th>Rider ID</th>
+    <th>Rider Name</th>
+    <th>Rating</th>
+  </tr>
+  <% @driver.trips.each do |trip| %>
+  <tr>
+    <td> <%= link_to trip.id, trip_path(trip.id) %> </td>
+    <td> <%= trip.rider.id %> </td>
+    <td> <%= link_to trip.rider.name, rider_path(trip.rider.id) %> </td>
+    <td> <%= trip.rating %> </td>
+  </tr>
+  <% end %>
+</table>
+<%= link_to "Edit", edit_driver_path(@driver.id)%>
+<%= link_to "Delete", driver_path(@driver.id), data: { confirm: "Are you sure you want to delete this driver?" }, method: :delete %>
+<%= link_to "Home", root_path %>

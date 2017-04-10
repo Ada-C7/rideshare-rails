@@ -1,0 +1,6 @@
+<h2>New Trip</h2>
+
+<%= form_for @trip, url: rider_trips_path(@trip.rider_id) do |f| %>
+
+<%= f.submit %>
+<% end %>

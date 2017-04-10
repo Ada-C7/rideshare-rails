@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RideshareRails</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <header>
+      <nav>
+          <h1>vrooooom</h1>
+        <ul>
+            <li>
+              <%= link_to "Home", root_path %>
+            </li>
+            <li>
+                <%= link_to "Driver List", drivers_path %>
+            </li>
+            <li>
+                <%= link_to "New Driver", new_driver_path %>
+            </li>
+            <li>
+                <%= link_to "Rider List", riders_path %>
+            </li>
+            <li>
+                <%= link_to "New Rider", new_rider_path %>
+            </li>
+        </ul>
+      </nav>
+  </header>
+
+  <body>
+    <%= yield %>
+  </body>
+  <footer>
+      @JSAZ 2017
+  </footer>
+
+</html>

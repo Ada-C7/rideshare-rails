@@ -1,0 +1,14 @@
+<h2>RIDERS</h2s>
+
+<table>
+  <tr>
+    <th> Name </th>
+    <th> Phone </th>
+  </tr>
+  <% @riders.each do |rider| %>
+  <tr>
+    <td> <%= link_to rider.name, rider_path(rider.id) %> </td>
+    <td> <%= rider.phone_num %> </td>
+  </tr>
+  <% end %>
+</table>

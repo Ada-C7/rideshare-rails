@@ -1,0 +1,18 @@
+<h2>TRIPS</h2>
+
+<table>
+    <tr>
+      <th> Trip ID </th>
+      <th> Driver </th>
+      <th> Rider </th>
+      <th> Rating </th>
+    </tr>
+    <% @trips.each do |trip| %>
+    <tr>
+      <td> <%= link_to trip.id, trip_path(trip.id) %> </td>
+      <td> <%= trip.driver.name %> </td>
+      <td> <%= trip.rider.name %> </td>
+      <td> <%= trip.rating %> </td>
+    </tr>
+    <% end %>
+</table>
