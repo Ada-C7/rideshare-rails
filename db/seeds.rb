@@ -11,7 +11,11 @@ require "csv"
 drivers = []
 
 CSV.foreach("support/drivers.csv", { :headers => true }) do |line|
-  drivers << {name: line[1], vin: line[2], available: true }
+  avail_status = true
+  if rand(0..1) == 1
+    avail_status = false
+  end
+  drivers << { name: line[1], vin: line[2], available: avail_status }
 end
 
 success_count = 0
@@ -20,7 +24,7 @@ drivers.each do |driver|
   temp_driver = Driver.create(driver)
   if temp_driver.id
     success_count += 1
-    puts "#{temp_driver.name} successfully added"
+    puts "#{temp_driver.name} successfully added. Status: #{temp_driver.available}"
   end
 end
 
