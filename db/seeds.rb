@@ -12,7 +12,7 @@ drivers = []
 
 CSV.foreach("support/drivers.csv", { :headers => true }) do |line|
   avail_status = true
-  if rand(0..1) == 1
+  if rand(2) == 1
     avail_status = false
   end
   drivers << { name: line[1], vin: line[2], available: avail_status }
