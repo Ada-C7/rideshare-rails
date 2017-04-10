@@ -29,11 +29,12 @@ class TripsController < ApplicationController
     @trip = Trip.new
     if @trip.rand_driver != nil
       @trip.driver_id = @trip.rand_driver.id
+    else
+      render "create"
     end
-    @trip.driver_id = @trip.rand_driver.id
     @trip.rider_id = params[:id]
     @trip.cost = (rand(0.00...100.00)).round(2)
-    @trip.date = "1/1/17" #create method for giving today's date
+    @trip.date = @trip.today_date
 
     if @trip.save
       redirect_to edit_trip_path(@trip.id)
