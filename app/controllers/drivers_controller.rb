@@ -54,6 +54,7 @@ class DriversController < ApplicationController
       driver.availability = false
       # raise
     end
+    
     if driver.save
         # render plain: "show"
         # driver.available
