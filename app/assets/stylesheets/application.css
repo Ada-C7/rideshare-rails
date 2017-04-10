@@ -74,8 +74,8 @@ footer {
   border-right: 2px solid #B4E688;
 }
 
-/*styling index pages*/
-article.index, article.show {
+/*styling individual pages*/
+article.index, article.show, article.new {
   margin: 50px 10%;
   font-size: 1.25em;
   text-align: center;
@@ -87,9 +87,19 @@ article.index, article.show {
   border: 5px solid #AA66AC;
 }
 
-.index h1, .show h1 {
+.index h1, .show h1, .new h1 {
   color: #AA66AC;
   font-size: 2em;
   text-align: center;
   margin: 25px 0 10px 0;
+}
+
+/*styling new pages*/
+.new_rider, .new_driver {
+  border: 5px solid #AA66AC;
+  padding: 20px;
+}
+
+.new_rider label, .new_driver label {
+  padding-left: 20px;
 }
