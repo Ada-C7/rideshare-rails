@@ -3,9 +3,19 @@
   <h1>All our Trips!</h1>
 
   <div class="scroll">
-    <% @trips.each do |trip| %>
-      <%= trip.date %> : <%= trip.driver.name %>
-    <% end %>
+    <table style="width:100%">
+      <tr>
+        <th>Date</th>
+        <th>Driver Name</th>
+        <th>Rider Name</th>
+      </tr>
+      <% @trips.each do |trip| %>
+      <tr>
+        <td> <%= link_to trip.date, trip_path(trip.id) %> </td>
+        <td> <%= trip.driver.name %> </td>
+        <td> <%= trip.rider.name %> </td>
+      </tr>
+      <% end %>
   </div>
 
 </article>

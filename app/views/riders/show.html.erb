@@ -1,5 +1,5 @@
 <article class="show">
-  <h1>Rider Info</h1>
+  <h1>Rider Details</h1>
 
 
   <h2>Name: <%= link_to @rider.name, rider_path(@rider.id) %>
@@ -13,13 +13,25 @@
   data: { confirm: "Are you sure you want to delete this rider?" },
   method: :delete %>
 
-
   <h4>Past Trips</h4>
-    <ul>
+  <div class="scroll">
+    <table style="width:100%">
+      <tr>
+        <th>Date</th>
+        <th>Driver Name</th>
+        <th>Cost</th>
+        <th>Rating</th>
+      </tr>
       <% @rider.trips.each do |trip| %>
-      <li><%= link_to trip.date, trip_path %> <%= trip.cost %> <%= trip.rating %></li>
+      <tr>
+        <td> <%= link_to trip.date, trip_path(trip.id) %> </td>
+        <td> <%= trip.driver.name %> </td>
+        <td> $<%= trip.cost %> </td>
+        <td> <%= trip.rating %> </td>
+      </tr>
       <% end %>
-    </ul>
+  </div>
+
   </section>
 
 
