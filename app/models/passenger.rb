@@ -20,7 +20,7 @@ class Passenger < ApplicationRecord
     passenger_trips.each do |trip|
       total_cost += trip.cost
     end
-    return "$ #{(total_cost / 100.0).round(2)}"
+    return "$ #{sprintf("%.2f",(total_cost / 100.0))}"
   end
 
 end
