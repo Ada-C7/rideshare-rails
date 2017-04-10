@@ -4,7 +4,6 @@ class PassengersController < ApplicationController
     @passengers = Passenger.all
   end
 
-
   def new
      @passenger = Passenger.new
   end
@@ -18,7 +17,6 @@ class PassengersController < ApplicationController
       render :new
     end
   end
-
 
   def show
     @passenger = Passenger.find(params[:id])
@@ -45,8 +43,8 @@ class PassengersController < ApplicationController
     redirect_to passengers_path
   end
 
-
   private
+  
   def passenger_params
     return params.require(:passenger).permit(:name, :phone_number)
   end

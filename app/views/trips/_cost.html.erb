@@ -1,1 +1,3 @@
-<%='%.2f' % (@trip.cost/100.0) %>
+<% if !trip.cost.nil? %>
+  <%='%.2f' % (trip.cost/100.0) %>
+<%  end %>

@@ -18,7 +18,6 @@ class DriversController < ApplicationController
     end
   end
 
-
   def show
     @driver = Driver.find(params[:id])
   end
@@ -39,10 +38,6 @@ class DriversController < ApplicationController
     end
   end
 
-
-
-
-
   def destroy
     Driver.find(params[:id]).destroy
 
@@ -54,5 +49,5 @@ class DriversController < ApplicationController
   def driver_params
     return params.require(:driver).permit(:name, :vin)
   end
-
+  
 end
