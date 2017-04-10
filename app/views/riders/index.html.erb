@@ -1,0 +1,12 @@
+<h2> Who Rides With Us? (Also, You.) </h2>
+
+<ul>
+  <% @riders.each do |rider| %>
+  <li>
+    <%= link_to rider.name, rider_path(rider.id) %>
+
+  </li>
+  <% end %>
+</ul>
+
+<%= button_to "Add new rider", new_rider_path, method: :get %>

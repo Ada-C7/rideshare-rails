@@ -1,0 +1,9 @@
+<%= form_for @rider do |rider| %>
+  <%= rider.label :name %>
+  <%= rider.text_field :name %>
+
+  <%= rider.label :phone_num %>
+  <%= rider.text_field :phone_num %>
+
+  <%= rider.submit value: "Submit Rider" %>
+<% end %>

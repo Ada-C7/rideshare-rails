@@ -1,0 +1,143 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+ @keyframes movecar {
+    0%      { left: -55%; }
+    50%     { left: 65%; }
+    100%    { left: -55%; }
+}
+
+    @-webkit-keyframes movecar {
+        0%      { left: 0px; }
+        50%     { left: 60%; }
+        100%    { left: 0px; }
+    }
+
+    @-moz-keyframes movecar {
+        0%      { left: 0px; }
+        50%     { left: 60%; }
+        100%    { left: 0px; }
+    }
+
+header {
+    background: #afedf4;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 2px solid black;
+    overflow: hidden;   /* this keeps car inside sky div */
+    position: static
+}
+
+header img {
+    margin-top: px;
+    position: relative;
+    display: inline;
+
+    animation: movecar 10s linear 1s infinite alternate;
+        -webkit-animation: movecar 10s ease-in-out 1s infinite alternate;
+        -moz-animation: movecar 10s ease-in-out 1a infinite alternate;
+}
+
+h1 {
+  text-align: center;
+  font-size: large;
+}
+
+
+.rode1 {
+    margin-top: 0px;
+    border-top: 2px solid #000000;
+}
+
+.rode2 {
+    border-top: 2px dashed #ffffff;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+ @keyframes movecar {
+    0%      { left: -55%; }
+    50%     { left: 65%; }
+    100%    { left: -55%; }
+}
+
+    @-webkit-keyframes movecar {
+        0%      { left: 0px; }
+        50%     { left: 60%; }
+        100%    { left: 0px; }
+    }
+
+    @-moz-keyframes movecar {
+        0%      { left: 0px; }
+        50%     { left: 60%; }
+        100%    { left: 0px; }
+    }
+
+header {
+    background: #afedf4;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 2px solid black;
+    overflow: hidden;   /* this keeps car inside sky div */
+    position: static
+}
+
+header img {
+    margin-top: px;
+    position: relative;
+    display: inline;
+
+    animation: movecar 10s linear 1s infinite alternate;
+        -webkit-animation: movecar 10s ease-in-out 1s infinite alternate;
+        -moz-animation: movecar 10s ease-in-out 1a infinite alternate;
+}
+
+h1 {
+  text-align: center;
+  font-size: large;
+}
+
+body {
+  cursor: image_url("drericajcase.png") auto;
+}
+
+/*body {
+  cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.png"), auto;
+}*/
+
+.rode1 {
+    margin-top: 0px;
+    border-top: 2px solid #000000;
+}
+
+.rode2 {
+    border-top: 2px dashed #ffffff;
+}

@@ -1,0 +1,14 @@
+<h2> Who Rides With Us? (Also, You.) </h2>
+
+<ul>
+  <% @drivers.each do |driver| %>
+  <li>
+    <%= link_to driver.name, driver_path(driver.id) %>
+    <%= "Average Rating: #{driver.avg_rating}" %>
+    <%= button_to "Edit", edit_driver_path(driver.id), method: :get %>
+    <%= button_to "Delete", driver_path(driver.id), method: :delete, data: { confirm: "Are you sure you want to delete #{driver.name}?"} %>
+  </li>
+  <% end %>
+</ul>
+
+<%= button_to "Add new driver", new_driver_path, method: :get %>

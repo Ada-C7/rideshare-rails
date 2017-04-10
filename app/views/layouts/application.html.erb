@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RideshareRails</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+        <div class="sky">
+            <h1> RIDESHARE FUN </h1>
+            <img src="https://lh4.googleusercontent.com/-bBB40VF4pGM/VPCtLsmGJ3I/AAAAAAAAAEw/kTbSVtCWqMo/w366-h182-no/pic-car.png"/>
+            <div class="rode1"></div>
+            <div class="rode2"></div>
+        </div>
+    </header>
+
+
+    <h2><%= button_to "View drivers", drivers_path, method: :get %></h2>
+    <%= yield %>
+  </body>
+</html>

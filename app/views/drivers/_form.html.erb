@@ -1,0 +1,9 @@
+<%= form_for @driver do |driver| %>
+  <%= driver.label :name %>
+  <%= driver.text_field :name %>
+
+  <%= driver.label :vin %>
+  <%= driver.text_field :vin %>
+
+  <%= driver.submit value: "Submit Driver" %>
+<% end %>
