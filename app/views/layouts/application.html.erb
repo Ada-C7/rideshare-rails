@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RideshareRails</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <h2> RideShare </h2>
+      <nav>
+        <ul>
+          <li class="menu">
+            <button class="drop-down">Passengers▾</button>
+            <ul class="hidden">
+              <li><%= link_to "Passenger List", passengers_path %></li>
+              <li><%= link_to "Passenger+", new_passenger_path %></li>
+            </ul>
+          </li>
+          <li class="menu">
+            <button class="drop-down">Drivers▾</button>
+            <ul class="hidden">
+              <li><%= link_to "Driver List", drivers_path %></li>
+              <li><%= link_to "Driver+", new_driver_path %></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main><%= yield %></main>
+  </body>
+</html>

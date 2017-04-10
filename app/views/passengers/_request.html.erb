@@ -1,0 +1,9 @@
+<section>
+  <% if passenger.rated_all_trips? %>
+    <%= button_to "Request a ride", create_trip_path(passenger.id), method: :post,
+      data: {confirm: "We are sending a driver your way now. Confirm trip?"} %>
+  <% else %>
+    <%= button_to "Request a ride", passenger_path(passenger.id), method: :get,
+      data: {confirm: "You must rate all trips before requesting a ride."} %>
+  <% end %>
+</section>

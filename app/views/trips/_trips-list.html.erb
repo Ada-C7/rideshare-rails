@@ -1,0 +1,14 @@
+<section >
+  <ul class="trips">
+    <% person.trips.order(:id).each do |trip| %>
+    <li>
+      <ul class="trip_details">
+        <li><%= link_to "Trip ID #{trip.id}", trip_path(trip) %>  </li>
+        <li><%= "Date: #{trip.date}" %> </li>
+        <li>Cost: $<%= render partial: "trips/cost", locals: {trip: trip} %> </li>
+        <%= render partial: "trips/rating", locals: {trip: trip} %>
+      </ul>
+    </li>
+    <% end %>
+  </ul>
+</section>

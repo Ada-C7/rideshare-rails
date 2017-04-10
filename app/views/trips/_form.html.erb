@@ -1,0 +1,38 @@
+<section>
+  <% if @trip.errors.messages.length > 0 %>
+    <h2> Unable to <%= text %>: </h2>
+
+    <ul>
+      <% @trip.errors.messages.each do |field, problem_list| %>
+        <% problem_list.each do |problem| %>
+          <li><%= field %> : <%= problem %></li>
+        <% end %>
+      <% end %>
+    </ul>
+
+  <% end %>
+</section>
+
+<section>
+  <%= form_for @trip do |f| %>
+
+  <%= f.label :passenger_id %>
+  <%= f.text_field :passenger_id, value: @trip.passenger.name, disabled: true  %>
+
+  <%= f.label :driver_id %>
+  <%= f.text_field :driver_id, value: @trip.driver.name, disabled: true  %>
+
+  <%= f.label :date, "Date (YYYY-MM-DD)" %>
+  <%= f.text_field :date %>
+
+  <%= f.label :cost, "Cost: $" %>
+  <%= f.text_field :cost, value: (render partial: "cost", locals: {trip: @trip}) %>
+
+
+  <%= f.label :rating %>
+  <%= f.number_field :rating, class: :text_field, step: 1, in: 1..5 %>
+
+  <%= f.submit text.capitalize%>
+
+  <% end %>
+</section>

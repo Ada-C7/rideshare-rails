@@ -1,0 +1,48 @@
+main {
+  padding: 0 2vw;
+}
+
+ul.trips {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: magenta;
+}
+
+ul.trip_details {
+  padding-left: 0;
+}
+
+.trip_details li  {
+  display: inline-block;
+  margin-right: 2%;
+}
+
+
+a.star {
+  text-decoration: none;
+  color: gray;
+
+}
+
+#star-rating {
+  display: inline-block;
+}
+
+#star-rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
+a.star:hover::before,
+#star-rating > a.star:hover ~ a.star:before {
+  content: "★";
+  position: absolute;
+  color: rgba(255, 0, 255, 0.4);
+}
