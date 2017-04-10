@@ -17,8 +17,8 @@
       <% else %>
       <%= trip.rating %>
       <% end %>
-      <%= button_to "Update Rating", rating_trips_path(trip.id), method: :patch %>
   </li>
+  <li><%= button_to "Update Rating", rating_trips_path(trip.id), method: :patch %></li>
 </ul>
 <% end %>
 

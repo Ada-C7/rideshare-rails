@@ -20,23 +20,22 @@
   </li>
 </ul>
 
-<ul>
-  <% @result_driver.trips.each do |trip| %>
-    <div class="trip-list">
-      <li><strong>Trip ID: </strong><%= link_to trip.id, trip_path(trip.id) %></li>
-      <li><strong>Passenger: </strong><%= link_to trip.passenger.name, passenger_path(trip.passenger.id) %></li>
-      <li><strong>Cost: </strong>$ <%= (trip.cost / 100.0).round(2) %></li>
-      <li>
-        <strong>Rating: </strong>
-          <% if trip.rating == 0%>
+<% @result_driver.trips.each do |trip| %>
+  <ul class="trip-list">
+    <li><strong>Trip ID: </strong><%= link_to trip.id, trip_path(trip.id) %></li>
+    <li><strong>Passenger: </strong><%= link_to trip.passenger.name, passenger_path(trip.passenger.id) %></li>
+    <li><strong>Cost: </strong>$ <%= (trip.cost / 100.0).round(2) %></li>
+    <li>
+      <strong>Rating: </strong>
+        <% if trip.rating == 0%>
           <%= "Not Rated" %>
-          <% else %>
+        <% else %>
           <%= trip.rating %>
-          <% end %>
-      </li>
-    </div>
-    <% end %>
-</ul>
+        <% end %>
+    </li>
+  </ul>
+<% end %>
+
 
 <div class="options">
   <h4><%= link_to "All Drivers", drivers_path %></h4>
