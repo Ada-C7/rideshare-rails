@@ -1,0 +1,19 @@
+<%= form_for @passenger, method: form_method do |f| %>
+
+<%= f.label :name, class: "passenger" %></br>
+<%= f.text_field :name %></br>
+
+<%= f.label :phone_num %></br>
+<%= f.text_field :phone_num %></br>
+
+<%#= f.submit "Create" %>
+<%= f.submit action_name, method: :put %>
+
+<%#= button_to "Home", passengers_path, method: :get %>
+
+
+
+<% end %>
+
+
+<%= link_to "Back to Passenger List", passengers_path %>
