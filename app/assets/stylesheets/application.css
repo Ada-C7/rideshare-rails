@@ -24,13 +24,20 @@
  color: #B4E688;
  padding: 30px;
  width: 45%;
- margin-left: 210px;
- margin-top: 20px;
+ margin: 20px 27.5%;
+}
+
+.home h1 {
+  font-size: 3em;
+  color: #AA66AC;
+}
+
+.home h2 {
+  font-size: 2em;
 }
 
 html, body {
   font-family: 'Open Sans', sans-serif;
-  margin: 10px 5%;
 }
 
 main {
@@ -40,6 +47,8 @@ main {
 .errors {
   font-family: 'Luckiest Guy';
   color: red;
+  text-align: center;
+  padding-top: 100px;
 }
 
 h1, h2, h3 {
