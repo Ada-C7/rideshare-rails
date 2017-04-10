@@ -64,7 +64,7 @@ footer, .nav {
 footer {
   width: 100%;
   height: 5%;
-  position: absolute;
+  position: relative;
   right: 1px;
   bottom: -5em;
   color: #7084B0;

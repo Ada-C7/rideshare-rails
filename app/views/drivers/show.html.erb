@@ -2,11 +2,12 @@
   <h1>Driver Details</h1>
 
   <h1>
-    <% if @result_driver.availability == false %>
-    <%= link_to "GO ONLINE!", available_driver_path(@result_driver.id), data: { confirm: "Are you sure you want to go online?" }, method: :available %>
-    <% elsif @result_driver.availability == true %>
-    <%= link_to "GO OFFLINE!", offline_driver_path(@result_driver.id), data: { confirm: "Are you sure you want to go offline?" }, method: :offline %>
-    <% end %>
+    <%#
+    #if @result_driver.availability == false %>
+    <%# link_to "GO ONLINE!", available_driver_path(@result_driver.id), data: { confirm: "Are you sure you want to go online?" }, method: :available %>
+    <%# elsif @result_driver.availability == true %>
+
+    <%# end %>
     <%# raise %>
   </h1>
 
@@ -14,6 +15,9 @@
   <h2> VIN: <%= @result_driver.vin %> </h2>
   <h2>Available?
     <%= @result_driver.availability %> </h2>
+
+    <h2><%= link_to "Change Status!", change_driver_status_path(@result_driver.id), data: { confirm: "Are you sure you want to change your availablility?" }, method: :change_availability %> </h2>
+
     <h2> This Driver's Average Rating: <%= @result_driver.avg_rating %> </h2>
     <h2> Total Earnings: $<%= @result_driver.total_earnings %> </h2>
     <%#make a new route for availability on the driver show page, for toggling availability, new controller action to go with it %>

@@ -45,26 +45,30 @@ class DriversController < ApplicationController
     redirect_to drivers_path
   end
 
-  def offline
+  def change_availability
     driver = Driver.find(params[:id])
     # driver.availability = false
+    if driver.availability == false
+      driver.availability = true
+    else
       driver.availability = false
-    # raise
+      # raise
+    end
     if driver.save
-      # render plain: "show"
-      # driver.available
+        # render plain: "show"
+        # driver.available
       redirect_to driver_path(driver.id)
     end
   end
 
-  def available
-    driver = Driver.find(params[:id])
-    driver.availability = true
-
-    if driver.save
-      redirect_to driver_path(driver.id)
-    end
-  end
+    # def available
+    #   driver = Driver.find(params[:id])
+    #   driver.availability = true
+    #
+    #   if driver.save
+    #     redirect_to driver_path(driver.id)
+    #   end
+  # end
 
 
 
