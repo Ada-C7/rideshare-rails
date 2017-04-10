@@ -1,17 +1,18 @@
-<h1>Passenger Details</h1>
+<h1 class="header">Passenger Details</h1>
 <ul class="profile">
-  <li>Name: <%= @result_passenger.name %></li>
-  <li>Phone number: <%= @result_passenger.phone_num %></li>
-  <li>Total Spent: <%= @result_passenger.total_cost %></li>
+  <li><strong>Name: </strong><%= @result_passenger.name %></li>
+  <li><strong>Phone number: </strong><%= @result_passenger.phone_num %></li>
+  <li><strong>Total Spent: </strong><%= @result_passenger.total_cost %></li>
 </ul>
 
 <% @result_passenger.trips.each do |trip| %>
 <ul class="list">
-  <li>Trip ID: <%= link_to trip.id, trip_path(trip.id) %>
-    Driver: <%= link_to trip.driver.name, driver_path(trip.driver.id) %>
-    Cost: $ <%= (trip.cost / 100.0).round(2) %>
-    Rating:
-      <%if trip.rating == 0%>
+  <li>
+    <strong>Trip ID: </strong><%= link_to trip.id, trip_path(trip.id) %>
+    <strong>Driver: </strong><%= link_to trip.driver.name, driver_path(trip.driver.id) %>
+    <strong>Cost: </strong>$ <%= (trip.cost / 100.0).round(2) %>
+    <strong>Rating: </strong>
+      <% if trip.rating == 0%>
       <%= "Not Rated" %>
       <% else %>
       <%= trip.rating %>

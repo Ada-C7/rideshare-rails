@@ -47,7 +47,6 @@ class TripsController < ApplicationController
 
     end
     # returns to the passenger details page where the new trip request originated from
-
   end
 
   def destroy
