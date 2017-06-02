@@ -1,3 +1,5 @@
+link to heroku app here: https://a-b-rideshare.herokuapp.com/
+
 # Rideshare Rails
 
 In this application you will build a website to model a small community ridesharing app.
