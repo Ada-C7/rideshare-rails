@@ -1,0 +1,28 @@
+<ul id="search-form">
+  <li>
+    <%= form_tag(drivers_path, method: :get) do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Drivers" %>
+      <%= submit_tag "Search", name: nil %>
+    <% end %>
+  </li>
+  <li>
+    <%= button_to 'Reset', drivers_path, method: :get %>
+  </li>
+</ul>
+
+<h1>Drivers</h1>
+<section id="drivers-list">
+
+  <% @drivers.each do |driver| %>
+    <ul>
+      <li>
+        <%= link_to driver.name, driver_path(driver.id) %>
+      </li>
+    </ul>
+  <% end %>
+  <% if @drivers.size == 0 %>
+    <p>
+      No drivers found.
+    </p>
+  <% end %>
+</section>

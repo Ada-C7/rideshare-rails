@@ -1,0 +1,27 @@
+<ul id="search-form">
+  <li>
+    <%= form_tag(passengers_path, method: :get) do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Passengers" %>
+      <%= submit_tag "Search", name: nil %>
+    <% end %>
+  </li>
+  <li>
+    <%= button_to 'Reset', passengers_path, method: :get %>
+  </li>
+</ul>
+
+<h1>Passengers</h1>
+<section id="passengers-list">
+  <% @passengers.each do |passenger| %>
+    <ul>
+      <li>
+        <%= link_to passenger.name, passenger_path(passenger.id) %>
+      </li>
+    </ul>
+  <% end %>
+  <% if @passengers.size == 0 %>
+    <p>
+      No passengers found.
+    </p>
+  <% end %>
+</section>

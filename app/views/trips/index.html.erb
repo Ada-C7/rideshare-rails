@@ -1,0 +1,72 @@
+<%= button_to 'Reset Search', trips_path, method: :get %>
+
+<h1>Trips</h1>
+<section id="trips-list">
+  <table>
+    <tr>
+      <td>
+        <%= form_tag(trips_path, method: :get, id: "search-date-form") do %>
+          <%= text_field_tag :search_date, params[:search_date], placeholder: "yyyy, mm, or dd" %>
+          <%= submit_tag "Search", name: nil %>
+        <% end %>
+      </td>
+      <td>
+        <%= form_tag(trips_path, method: :get, id: "search-passenger-form") do %>
+          <%= text_field_tag :search_passenger, params[:search_passenger], placeholder: "first, last or full" %>
+          <%= submit_tag "Search", name: nil %>
+        <% end %>
+      </td>
+      <td>
+        <%= form_tag(trips_path, method: :get, id: "search-driver-form") do %>
+          <%= text_field_tag :search_driver, params[:search_driver], placeholder: "name" %>
+          <%= submit_tag "Search", name: nil %>
+        <% end %>
+      </td>
+      <td>
+        <%= form_tag(trips_path, method: :get, id: "search-cost-form") do %>
+          <%= text_field_tag :search_cost, params[:search_cost], placeholder: "name" %>
+          <%= submit_tag "Search", name: nil %>
+        <% end %>
+      </td>
+      <td>
+        <%= form_tag(trips_path, method: :get, id: "search-rating-form") do %>
+          <%= text_field_tag :search_rating, params[:search_rating], placeholder: "0-5" %>
+          <%= submit_tag "Search", name: nil %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th>Passenger</th>
+      <th>Driver</th>
+      <th>Cost</th>
+      <th>Rating</th>
+    </tr>
+    <% @trips.each do |trip| %>
+      <tr>
+        <td>
+          <%= link_to trip.date.strftime("%b %d, %Y"), trip_path(trip.id) %>
+        </td>
+        <td>
+          <%= link_to trip.passenger.name, passenger_path(trip.passenger.id) %>
+        </td>
+        <td>
+          <%= link_to trip.driver.name, driver_path(trip.driver.id) %>
+        </td>
+        <td>
+          $<%= trip.cost %>
+        </td>
+        <td>
+          <%= trip.rating %>
+        </td>
+      </tr>
+
+    <% end %>
+  </table>
+
+  <% if @trips.size == 0 %>
+    <p>
+      No trips found.
+    </p>
+  <% end %>
+</section>

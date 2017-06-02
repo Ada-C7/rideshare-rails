@@ -1,0 +1,28 @@
+<section class="form">
+  <% if @passenger.errors.any? %>
+  <ul class="error">
+    <% @passenger.errors.each do |field, msg| %>
+    <li>
+      Oops! <strong><%= field.capitalize %></strong> <%= msg %>
+    </li>
+    <% end %>
+  </ul>
+  <% end %>
+
+  <%= form_for @passenger do |f| %>
+  <ul>
+    <li>
+      <%= f.label :name, "Name: " %>
+      <%= f.text_field :name %>
+    </li>
+    <li>
+      <%= f.label :phone, "Phone Number: " %>
+      <%= f.text_field :phone %>
+    </li>
+    <li>
+      <%= f.submit %>
+    </li>
+  </ul>
+  <% end %>
+</section>
+<%= button_to "Cancel", :back, method: :get %>

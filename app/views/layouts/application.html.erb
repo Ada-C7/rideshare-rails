@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ride Share</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <h1 id="home"> <%= link_to "Ride Share", :root %> </h1>
+      <ul>
+        <li>
+          <%= link_to "All Drivers", drivers_path %>
+        </li>
+        <li>
+          <%= link_to "New Driver", new_driver_path, method: :get %>
+        </li>
+        <li>
+          <%= link_to "All Passengers", passengers_path %>
+        </li>
+        <li>
+          <%= link_to "New Passenger", new_passenger_path, method: :get %>
+        </li>
+        <li>
+          <%= link_to "All Trips", trips_path %>
+        </li>
+      </ul>
+
+    </header>
+    <section class="main-content">
+      <%= yield %>
+    </section>
+
+    <footer>
+      <ul>
+        <li>
+          <%= link_to "Brenna", "http://github.com/bcmdarroch" %>
+        </li>
+        <li>
+          <%= link_to "Aurora", "http://github.com/auroralemieux" %>
+        </li>
+        <li>
+          &copy; 2017
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
